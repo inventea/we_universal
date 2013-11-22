@@ -70,10 +70,10 @@
 
 <fieldset class="submit-buttons">
 	{S_HIDDEN_FIELDS}
-	<!-- IF S_DISPLAY_GALLERY --><input type="submit" name="display_gallery" value="{L_DISPLAY_GALLERY}" class="button2" />&nbsp; <!-- ENDIF -->
+	<input type="submit" name="update" value="{L_SUBMIT}" class="button1" />&nbsp; 
 	<!-- IF S_IN_AVATAR_GALLERY --><input type="submit" name="cancel" value="{L_CANCEL}" class="button2" />&nbsp; <!-- ELSE -->
 	<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp; <!-- ENDIF -->
-	<input type="submit" name="update" value="{L_SUBMIT}" class="button1" />
+	<!-- IF S_DISPLAY_GALLERY --><input type="submit" name="display_gallery" value="{L_DISPLAY_GALLERY}" class="button2" />&nbsp; <!-- ENDIF -->
 	{S_FORM_TOKEN}
 </fieldset>
 
@@ -213,8 +213,8 @@
 			<dl>
 				<dt><a href="{leader.U_EDIT}" class="topictitle"<!-- IF leader.GROUP_COLOUR --> style="color: #{leader.GROUP_COLOUR};"<!-- ENDIF -->>{leader.GROUP_NAME}</a>
 					<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF --></dt>
-				<dd class="option"><span><a href="{leader.U_EDIT}" >{L_EDIT}</a></span></dd>
-				<dd class="option"><span><a href="{leader.U_LIST}">{L_GROUP_LIST}</a></span></dd>
+				<dd class="option" style="width: 15%; text-align: center;"><a href="{leader.U_EDIT}" >{L_EDIT}</a></dd>
+				<dd class="option" style="width: 25%"><a href="{leader.U_LIST}">{L_GROUP_LIST}</a></dd>
 			</dl>
 		</li>
 		<!-- END leader -->

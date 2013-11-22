@@ -137,8 +137,9 @@ a.top2 {
 	background: none no-repeat 0 50%;
 	text-decoration: none;
 	margin-top: 5px;
-	padding-left: 15px;
+	padding-left: 13px;
 	display: block;
+	font-size: 0.9em;
 }
 
 /* Arrow links  */

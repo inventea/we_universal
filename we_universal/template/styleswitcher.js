@@ -1,4 +1,3 @@
-
 function fontsizeup()
 {
 	var active = getActiveStyleSheet();

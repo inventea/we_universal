@@ -271,7 +271,7 @@ fieldset.submit-buttons input {
 
 /* Resizable textarea */
 .grippie {
-	background: #eeeeee url("{T_THEME_PATH}/images/grippie.png") no-repeat scroll center;
+	background: #eeeeee url("{T_THEME_PATH}/images/grippie.gif") no-repeat scroll center;
 	border-color: #c2c2c2;
 	border-style: solid;
 	border-width: 0 1px 1px 1px;
@@ -320,7 +320,7 @@ input.button1, input.button2 {
 
 a.button1, input.button1, input.button3, a.button2, input.button2 {
 	width: auto !important;
-	padding: 2px 3px;
+	padding: 2px 5px;
 	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
 	color: #000;
 	background: #FAFAFA none repeat-x top;
@@ -349,7 +349,7 @@ a.button2, input.button2, input.button3 {
 a.button1, a.button1:link, a.button1:visited, a.button2, a.button2:link, a.button2:visited {
 	text-decoration: none;
 	color: #000000;
-	padding: 2px 8px;
+	padding: 3px 10px;
 	line-height: 250%;
 	vertical-align: text-bottom;
 }
@@ -387,4 +387,3 @@ input.search {
 .medium { width: 50%;}
 .narrow { width: 25%;}
 .tiny { width: 10%;}
-

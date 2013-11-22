@@ -11,7 +11,7 @@
 	<!-- ENDIF -->
 
 	<fieldset>
-	<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
+	<!-- IF ERROR --><div class="error">{ERROR}</div><!-- ENDIF -->
 	<dl>
 		<dt><label <!-- IF S_CHANGE_USERNAME -->for="username"<!-- ENDIF -->>{L_USERNAME}:</label><br /><span>{L_USERNAME_EXPLAIN}</span></dt>
 		<dd><!-- IF S_CHANGE_USERNAME --><input type="text" name="username" id="username" value="{USERNAME}" class="inputbox" title="{L_USERNAME}" /><!-- ELSE --><strong>{USERNAME}</strong><!-- ENDIF --></dd>

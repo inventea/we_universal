@@ -1,6 +1,5 @@
-/* we_universal Content Styles
+/* Content Styles
 ---------------------------------------- */
-
 ul.topiclist {
 	display: block;
 	list-style-type: none;
@@ -540,8 +539,7 @@ dl.codebox code {
 	clear: left;
 }
 
-.attachbox p.stats
-{
+.attachbox p.stats {
 	line-height: 110%;
 	color: #666666;
 	font-weight: normal;
@@ -556,8 +554,7 @@ dl.codebox code {
 }
 
 .attach-image img {
-	border: 1px solid #999999;
-/*	cursor: move; */
+	margin-top: 4px;
 	cursor: default;
 }
 
@@ -567,12 +564,8 @@ div.inline-attachment dl.thumbnail, div.inline-attachment dl.file {
 	margin-bottom: 4px;
 }
 
-div.inline-attachment p {
-	font-size: 100%;
-}
-
 dl.file {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: Verdana, Arial, Helvetica, Sans-serif;
 	display: block;
 }
 
@@ -581,15 +574,18 @@ dl.file dt {
 	margin: 0;
 	padding: 0;
 	font-weight: bold;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 0.9em;
+	font-family: Verdana, Arial, Helvetica, Sans-serif;
+	font-size: 11px;
 }
 
-dl.file dd {
+dl.file dd, dl.thumbnail dd {
 	color: #666666;
 	margin: 0;
 	padding: 0;	
-	font-size: 0.9em;
+	font-family: Verdana, Arial, Helvetica, Sans-serif;
+	font-size: 11px;
+	line-height: 1.4em;
+	font-style: italic;
 }
 
 dl.thumbnail img {
@@ -598,18 +594,8 @@ dl.thumbnail img {
 	background-color: #FFF;
 }
 
-dl.thumbnail dd {
-	color: #666666;
-	font-style: italic;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-}
-
 .attachbox dl.thumbnail dd {
 	font-size: 100%;
-}
-
-dl.thumbnail dt a:hover {
-	background-color: #EEEEEE;
 }
 
 dl.thumbnail dt a:hover img {

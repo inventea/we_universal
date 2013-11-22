@@ -1,7 +1,3 @@
-/* we_universal Control Panel Styles
----------------------------------------- */
-
-
 /* Main CP box
 ----------------------------------------*/
 #cp-menu {
@@ -108,7 +104,7 @@ ul.cplist {
 ----------------------------------------*/
 #tabs {
 	line-height: normal;
-	margin: 10px 0 -1px 10px;
+	margin: 10px 0 -1px 8px;
 	min-width: 570px;
 }
 

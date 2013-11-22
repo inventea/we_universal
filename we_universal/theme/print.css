@@ -1,14 +1,3 @@
-/* we_universal Print Style Sheet
--------------------------------------------------
-	Author: subBlue  ( http://www.subBlue.com/ )
-	Version: 25 August 2004
-
-	Copyright 2004 phpBB Group
--------------------------------------------------*/
-
-
-/* Lots still TODO here! */
-
 /* General markup styles */
 * {
 	padding: 0;
@@ -27,8 +16,8 @@ a:active	{ color: #000000; text-decoration: none; }
 img, .noprint, #sub-header, #sub-footer, .navbar, .box1, .divider, .signature { display: none; }
 
 /* Container for the main body */
-#wrap {
-	margin: 0 2em;
+#wrapper{
+	margin: 0 1em;
 }
 
 p { font-size: 85%; }

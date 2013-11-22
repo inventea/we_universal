@@ -2,9 +2,8 @@
 
 <h2>{L_FAQ_TITLE}</h2>
 
-
 <div class="panel bg1" id="faqlinks">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner"><span class="corners-top bg1"><span></span></span>
 		<div class="column1">
 		<!-- BEGIN faq_block -->
 			<!-- IF faq_block.S_ROW_COUNT == 4 -->
@@ -24,13 +23,11 @@
 	<span class="corners-bottom"><span></span></span></div>
 </div>
 
-
-
 <div class="clear"></div>
 
 <!-- BEGIN faq_block -->
 	<div class="panel <!-- IF faq_block.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
-		<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="inner"><span class="corners-top <!-- IF faq_block.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->"><span></span></span>
 
 		<div class="content">
 			<h2>{faq_block.BLOCK_TITLE}</h2>

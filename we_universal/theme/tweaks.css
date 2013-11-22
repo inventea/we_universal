@@ -1,9 +1,5 @@
-/* we_universal Style Sheet Tweaks
-
-These style definitions are mainly IE specific 
-tweaks required due to its poor CSS support.
+/* These style definitions are mainly IE specific tweaks required due to its poor CSS support.
 -------------------------------------------------*/
-
 * html table, * html select, * html input { font-size: 100%; }
 * html hr { margin: 0; }
 * html span.corners-top, * html span.corners-bottom { background-image: url("{T_THEME_PATH}/images/corners_left.gif"); }
@@ -24,9 +20,8 @@ html>body table.table1 { width: 100%; }	/* Reset 100% for opera */
 /* Form styles */
 html>body dd label input { vertical-align: text-bottom; }	/* Align checkboxes/radio buttons nicely */
 
-* html input.button1, * html input.button2 {
-	padding-bottom: 0;
-	margin-bottom: 1px;
+input.button1, input.button2 {
+	#padding: 1px 0;
 }
 
 /* Misc layout styles */
@@ -41,7 +36,6 @@ html>body dd label input { vertical-align: text-bottom; }	/* Align checkboxes/ra
 	clear: both; 
 	visibility: hidden;
 }*/
-
 .clearfix, #tabs, #minitabs, fieldset dl, ul.topiclist dl, dl.polls {
 	height: 1%;
 	overflow: hidden;
@@ -67,10 +61,6 @@ dl.icon {
 	height: 35px;
 }
 
-* html #search-box {
-	width: 25%;
-}
-
 /* Correctly clear floating for details on profile view */
 *:first-child+html dl.details dd {
 	margin-left: 30%;
@@ -82,3 +72,6 @@ dl.icon {
 	float: none;
 }
 
+table.table1 tbody td {
+	#height: 25px;
+}

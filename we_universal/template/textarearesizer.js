@@ -14,15 +14,19 @@
 
 	
 */
-(function($) {
+
+(function($)
+{
 	/* private variable "oHover" used to determine if you're still hovering over the same element */
 	var textarea, staticOffset;  // added the var declaration for 'staticOffset' thanks to issue logged by dec.
 	var iLastMousePos = 0;
 	var iMin = 32;
 	var grip;
 	/* TextAreaResizer plugin */
-	$.fn.TextAreaResizer = function() {
-		return this.each(function() {
+	$.fn.TextAreaResizer = function()
+	{
+		return this.each(function()
+		{
 		    textarea = $(this).addClass('processed'), staticOffset = null;
 
 			// 18-01-08 jQuery bind to pass data element rather than direct mousedown - Ryan O'Dell
@@ -37,7 +41,8 @@
 		});
 	};
 	/* private functions */
-	function startDrag(e) {
+	function startDrag(e)
+	{
 		textarea = $(e.data.el);
 		textarea.blur();
 		iLastMousePos = mousePosition(e).y;
@@ -46,22 +51,26 @@
 		return false;
 	}
 
-	function performDrag(e) {
+	function performDrag(e)
+	{
 		var iThisMousePos = mousePosition(e).y;
 		var iMousePos = staticOffset + iThisMousePos;
-		if (iLastMousePos >= (iThisMousePos)) {
+		if (iLastMousePos >= (iThisMousePos))
+		{
 			iMousePos -= 5;
 		}
 		iLastMousePos = iThisMousePos;
 		iMousePos = Math.max(iMin, iMousePos);
 		textarea.height(iMousePos + 'px');
-		if (iMousePos < iMin) {
+		if (iMousePos < iMin)
+		{
 			endDrag(e);
 		}
 		return false;
 	}
 
-	function endDrag(e) {
+	function endDrag(e)
+	{
 		$(document).unbind('mousemove', performDrag).unbind('mouseup', endDrag);
 		textarea.focus();
 		textarea = null;
@@ -69,8 +78,8 @@
 		iLastMousePos = 0;
 	}
 
-	function mousePosition(e) {
+	function mousePosition(e)
+	{
 		return { x: e.clientX + document.documentElement.scrollLeft, y: e.clientY + document.documentElement.scrollTop };
 	};
 })(jQuery);
-

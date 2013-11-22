@@ -31,23 +31,13 @@ hr.dashed {
 
 /* Main blocks
 ---------------------------------------- */
-#block {
+#block, #container, #secondar_navigation {
 	background-color: #ffffff;
 	border-color: #e7e7e7;
 }
 
 #header {
 	background-color: #292c2f;
-}
-
-#container {
-	background-color: #ffffff;
-	border-color: #e7e7e7;
-}
-
-#secondar_navigation {
-	background-color: #ffffff;
-	border-color: #e7e7e7;
 }
 
 /* Site name and description
@@ -121,7 +111,7 @@ ul.navlinks {
 /* Table styles
 ----------------------------------------*/
 table.table1 thead th {
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 table.table1 tbody tr {
@@ -138,7 +128,6 @@ table.table1 td {
 }
 
 table.table1 tbody td {
-	border-top: 1px solid #ffffff;
 	border-bottom: 1px solid #cccccc;
 	border-right: 1px solid #cccccc;
 }
@@ -146,7 +135,7 @@ table.table1 tbody td {
 table.table1 tbody th {
 	border-bottom-color: #000000;
 	color: #333333;
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 }
 
 table.info tbody th {
@@ -490,25 +479,17 @@ dl.codebox code {
 }
 
 /* Inline image thumbnails */
-dl.file dd {
+dl.file dd, dl.thumbnail dd {
 	color: #666666;
 }
 
 dl.thumbnail img {
-	border-color: #666666;
+	border-color: #999999;
 	background-color: #FFFFFF;
 }
 
-dl.thumbnail dd {
-	color: #666666;
-}
-
-dl.thumbnail dt a:hover {
-	background-color: #EEEEEE;
-}
-
 dl.thumbnail dt a:hover img {
-	border-color: #368AD2;
+	border-color: #c20031;
 }
 
 /* Post poll styles
@@ -532,12 +513,12 @@ fieldset.polls dd div {
 
 .pollbar1 {
 	background-color: #c20031;
-	border-bottom-color: #74162C;
-	border-right-color: #74162C;
+	border-bottom-color: #942a43;
+	border-right-color: #942a43;
 }
 
 .rtl .pollbar1 {
-	border-left-color: #74162C;
+	border-left-color: #942a43;
 }
 
 .pollbar2 {
@@ -571,13 +552,13 @@ fieldset.polls dd div {
 }
 
 .pollbar5 {
-	background-color: #F81157;
-	border-bottom-color: #D11A4E;
-	border-right-color: #D11A4E;
+	background-color: #d61c54;
+	border-bottom-color: #b8294b;
+	border-right-color: #b8294b;
 }
 
 .rtl .pollbar5 {
-	border-left-color: #D11A4E;
+	border-left-color: #b8294b;
 }
 
 /* Poster profile block
@@ -642,21 +623,28 @@ a.fontsize {
 	background-image: url("{T_THEME_PATH}/images/icon_fontsize.gif");
 }
 
+a.subscribe {
+	background-image: url("{T_THEME_PATH}/images/icon_subscribe.gif");
+}
+
+a.unsubscribe {
+	background-image: url("{T_THEME_PATH}/images/icon_unsubscribe.gif");
+}
+
+a.bookmark {
+	background-image: url("{T_THEME_PATH}/images/icon_bookmark.gif");
+}
+
+a.unbookmark {
+	background-image: url("{T_THEME_PATH}/images/icon_unbookmark.gif");
+}
+
+a.bump {
+	background-image: url("{T_THEME_PATH}/images/icon_bump.gif");
+}
+
 /* Icon images
 ---------------------------------------- */
-.sitehome						{ background-image: url("{T_THEME_PATH}/images/icon_home.gif"); }
-.icon-faq						{ background-image: url("{T_THEME_PATH}/images/icon_faq.gif"); }
-.icon-members					{ background-image: url("{T_THEME_PATH}/images/icon_members.gif"); }
-.icon-home						{ background-image: url("{T_THEME_PATH}/images/icon_home.gif"); }
-.icon-ucp						{ background-image: url("{T_THEME_PATH}/images/icon_ucp.gif"); }
-.icon-register					{ background-image: url("{T_THEME_PATH}/images/icon_register.gif"); }
-.icon-logout					{ background-image: url("{T_THEME_PATH}/images/icon_logout.gif"); }
-.icon-bookmark					{ background-image: url("{T_THEME_PATH}/images/icon_bookmark.gif"); }
-.icon-bump						{ background-image: url("{T_THEME_PATH}/images/icon_bump.gif"); }
-.icon-subscribe					{ background-image: url("{T_THEME_PATH}/images/icon_subscribe.gif"); }
-.icon-unsubscribe				{ background-image: url("{T_THEME_PATH}/images/icon_unsubscribe.gif"); }
-.icon-pages						{ background-image: url("{T_THEME_PATH}/images/icon_pages.gif"); }
-.icon-search					{ background-image: url("{T_THEME_PATH}/images/icon_search.gif"); }
 
 /* Profile & navigation icons */
 .email-icon, .email-icon a		{ background-image: url("{IMG_ICON_CONTACT_EMAIL_SRC}"); }
@@ -702,7 +690,7 @@ ul.cplist {
 
 #cp-main table.table1 thead th {
 	color: #333333;
-	border-bottom-color: #333333;
+	border-bottom-color: #999999;
 }
 
 #cp-main .pm-message {

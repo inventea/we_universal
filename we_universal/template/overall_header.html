@@ -8,11 +8,11 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="resource-type" content="document" />
 <meta name="distribution" content="global" />
-<meta name="copyright" content="" />
+<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 {META}
-<title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
+<title>{SITENAME} &#8226; <!-- IF S_IN_MCP -->{L_MCP} &#8226; <!-- ELSEIF S_IN_UCP -->{L_UCP} &#8226; <!-- ENDIF -->{PAGE_TITLE}</title>
 
 <script type="text/javascript">
 // <![CDATA[
@@ -78,12 +78,11 @@
 
 <link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
 <link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+
 <link href="{T_THEME_PATH}/normal.css" rel="stylesheet" type="text/css" title="A" />
 <link href="{T_THEME_PATH}/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
 <link href="{T_THEME_PATH}/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
-<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
-<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
-<!-- ENDIF -->
+<!-- IF S_CONTENT_DIRECTION eq 'rtl' --><link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" /><!-- ENDIF -->
 
 </head>
 <body class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
@@ -128,30 +127,43 @@
 				<p>{SITE_DESCRIPTION}</p>
 			</div>
 			
+			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
 			<ul class="left">
-				<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
 					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="u">{L_PROFILE}</a></li>
 					<!-- IF S_DISPLAY_PM --><li><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
 					<li><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
+					<!-- IF U_TEAM --><li><a href="{U_TEAM}" title="{L_THE_TEAM}">{L_THE_TEAM}</a></li> <!-- ENDIF -->
 					<!-- IF U_RESTORE_PERMISSIONS --><li><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
 					<!-- IF U_MCP --><li><a href="{U_MCP}" title="{L_MCP}">{L_MCP}</a></li><!-- ENDIF -->
 					<!-- IF U_ACP --> <li><a href="{U_ACP}" title="{L_ACP}">{L_ACP}</a></li><!-- ENDIF -->
-				<!-- ENDIF -->
 			</ul>
+			<!-- ENDIF -->
 		</div>
 	</div>
 	
 	<div id="container">
 		<div id="content">
-		
-			<div id="breadcrumb">
-				<p>{L_JUMP_TO}: <a href="{U_INDEX}" title="{SITENAME}" accesskey="h">{L_INDEX}</a> <!-- BEGIN navlinks --> &#187; <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks --></p>
-			</div>
+
+				<div id="breadcrumb" class="left">
+					<p>{L_JUMP_TO}: <a href="{U_INDEX}" title="{SITENAME}" accesskey="h">{L_INDEX}</a> <!-- BEGIN navlinks --> &#187; <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks --></p>
+				</div>
+				
+				<ul class="topic_icons right">
+					<li><a href="#" onclick="fontsizeup(); return false;" onkeypress="fontsizeup(); return false;" class="fontsize" title="{L_CHANGE_FONT_SIZE}">{L_CHANGE_FONT_SIZE}</a></li>
+					<!-- IF S_WATCH_FORUM_LINK --><li><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}" <!-- IF S_WATCHING_FORUM -->class="unsubscribe"<!-- ELSE -->class="subscribe"<!-- ENDIF -->>{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
+					<!-- IF U_WATCH_TOPIC --><li><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}" <!-- IF S_WATCHING_TOPIC -->class="unsubscribe"<!-- ELSE -->class="subscribe"<!-- ENDIF -->>{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_BOOKMARK_TOPIC --><li><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"  <!-- IF S_BOOKMARKING_TOPIC -->class="unbookmark"<!-- ELSE -->class="bookmark"<!-- ENDIF -->>{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_BUMP_TOPIC --><li><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}" class="bump">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_EMAIL_TOPIC --><li><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}" class="sendemail">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_EMAIL_PM --><li><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class="sendemail">{L_EMAIL_PM}</a></li><!-- ENDIF -->
+					<!-- IF U_PRINT_TOPIC --><li><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p" class="print">{L_PRINT_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_PRINT_PM --><li><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p" class="print">{L_PRINT_PM}</a></li><!-- ENDIF -->
+				</ul>
+			
+			<div class="clear"></div>
 			
 			 <!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) --> 
 			<div id="message" class="rules">
-				<div class="inner"><span class="corners-top"><span></span></span>
-					<strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
-				<span class="corners-bottom"><span></span></span></div>
+				<strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
 			</div>
 			<!-- ENDIF -->
