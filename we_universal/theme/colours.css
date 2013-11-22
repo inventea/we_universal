@@ -614,10 +614,6 @@ a.bookmark {
 	background-image: url("{T_THEME_PATH}/images/icon_bookmark.gif");
 }
 
-a.unbookmark {
-	background-image: url("{T_THEME_PATH}/images/icon_unbookmark.gif");
-}
-
 a.bump {
 	background-image: url("{T_THEME_PATH}/images/icon_bump.gif");
 }

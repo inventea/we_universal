@@ -55,7 +55,7 @@
 
 /* Sub-header (navigation bar)
 --------------------------------------------- */
-a.print, a.sendemail, a.fontsize, a.subscribe, a.unsubscribe, a.bookmark, a.unbookmark, a.bump {
+a.print, a.sendemail, a.fontsize, a.subscribe, a.unsubscribe, a.bookmark, a.bump {
 	display: block;
 	overflow: hidden;
 	height: 16px;
@@ -64,7 +64,7 @@ a.print, a.sendemail, a.fontsize, a.subscribe, a.unsubscribe, a.bookmark, a.unbo
 	background-repeat: no-repeat;
 }
 
-a.print, a.sendemail, a.subscribe, a.unsubscribe, a.bookmark, a.unbookmark, a.bump {
+a.print, a.sendemail, a.subscribe, a.unsubscribe, a.bookmark, a.bump {
 	background-image: none;
 	width: 23px;
 }

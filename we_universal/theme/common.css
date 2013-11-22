@@ -637,6 +637,11 @@ div.rules {
 	font-size: 1.1em;
 }
 
+.rules-header {
+	margin-bottom: 5px;
+	display: block;
+}
+
 div.rules ul, div.rules ol {
 	margin-left: 20px;
 }
