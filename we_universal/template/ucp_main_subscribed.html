@@ -3,6 +3,7 @@
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
 
 <h2>{L_TITLE}</h2>
+
 <div class="panel">
 	<div class="inner"><span class="corners-top"><span></span></span>
 
@@ -24,9 +25,10 @@
 		<li class="row<!-- IF forumrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
 			<dl class="icon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC}); background-repeat: no-repeat;">
 				<dt><a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a><br />{forumrow.FORUM_DESC}</dt>
-				<dd class="lastpost"><!-- IF forumrow.LAST_POST_TIME --><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {forumrow.LAST_POST_AUTHOR_FULL}
-					<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a> <br />{forumrow.LAST_POST_TIME}</span>
-					<!-- ELSE -->{L_NO_POSTS}<br />&nbsp;<!-- ENDIF -->
+				<dd class="lastpost">
+					<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG}</a><!-- ENDIF -->
+					<span class="left-box"><a href="{forumrow.U_LAST_POST}">{LAST_POST_IMG}</a></span>
+					<span class="left-box"><!-- IF forumrow.LAST_POST_TIME --><dfn>{L_LAST_POST}</dfn> {L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}<br />{forumrow.LAST_POST_TIME}<!-- ELSE -->{L_NO_POSTS}<!-- ENDIF --></span>
 				</dd>
 				<dd class="mark"><input type="checkbox" name="f[{forumrow.FORUM_ID}]" id="f{forumrow.FORUM_ID}" /></dd>
 			</dl>
@@ -60,14 +62,8 @@
 					<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
 				</dt>
 				<dd class="lastpost">
-					<span class="left">
-						<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a>
-					</span>
-						
-					<span class="left">
-						<dfn>{L_LAST_POST}</dfn> {topicrow.LAST_POST_TIME}<br />
-						{topicrow.LAST_POST_AUTHOR_FULL}
-					</span>
+					<span class="left-box"><a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a></span>
+					<span class="left-box"><dfn>{L_LAST_POST}</dfn> {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}<br />{topicrow.LAST_POST_TIME}</span>
 				</dd>
 				<dd class="mark"><input type="checkbox" name="t[{topicrow.TOPIC_ID}]" id="t{topicrow.TOPIC_ID}" /></dd>
 			</dl>

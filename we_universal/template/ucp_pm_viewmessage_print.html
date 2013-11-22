@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
 <meta http-equiv="content-style-type" content="text/css" />
 <meta http-equiv="content-language" content="{S_USER_LANG}" />
-<title>{PAGE_TITLE} &#8226; {SITENAME}</title>
+<title>{SITENAME} :: {PAGE_TITLE}</title>
 
 <style type="text/css">
 /* <![CDATA[ */
@@ -83,7 +83,7 @@ hr.sep	{
 		<td width="10%" nowrap="nowrap">{L_TO}:</td>
 		<td>
 		<!-- BEGIN to_recipient -->
-			<!-- IF to_recipient.COLOUR --><span style="color:{to_recipient.COLOUR}"><!-- ELSE --><span<!-- IF to_recipient.IS_GROUP --> class="sep"<!-- ENDIF -->><!-- ENDIF -->{to_recipient.NAME}</span>&nbsp;
+			<span<!-- IF to_recipient.IS_GROUP --> class="sep"<!-- ENDIF -->>{to_recipient.NAME}</span>&nbsp;
 		<!-- END to_recipient -->
 		</td>
 	</tr>

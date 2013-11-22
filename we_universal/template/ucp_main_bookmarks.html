@@ -10,7 +10,7 @@
 	<p>{L_BOOKMARKS_EXPLAIN}</p>
 
 <!-- IF S_NO_DISPLAY_BOOKMARKS -->
-	<div class="error">{L_BOOKMARKS_DISABLED}</div>
+	<p class="error">{L_BOOKMARKS_DISABLED}</p>
 <!-- ELSE -->
 
 <!-- IF .topicrow -->
@@ -40,14 +40,8 @@
 					<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
 				</dt>
 				<dd class="lastpost">
-					<span class="left">
-						<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a>
-					</span>
-						
-					<span class="left">
-						<dfn>{L_LAST_POST}</dfn> {topicrow.LAST_POST_TIME}<br />
-						{topicrow.LAST_POST_AUTHOR_FULL}
-					</span>
+					<span class="left-box"><a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a></span>
+					<span class="left-box"><dfn>{L_LAST_POST}</dfn> {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}<br />{topicrow.LAST_POST_TIME}</span>
 				</dd>
 				<dd class="mark"><input type="checkbox" name="t[{topicrow.TOPIC_ID}]" id="t{topicrow.TOPIC_ID}" /></dd>
 			</dl>

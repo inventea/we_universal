@@ -10,7 +10,7 @@ input {
 	font-weight: normal;
 	cursor: pointer;
 	vertical-align: middle;
-	padding: 0 3px;
+	padding: 2px 4px;
 	font-size: 1em;
 	font-family: Verdana, Helvetica, Arial, sans-serif;
 }
@@ -21,7 +21,7 @@ select {
 	cursor: pointer;
 	vertical-align: middle;
 	border: 1px solid #666666;
-	padding: 1px 0 1px 3px;
+	padding: 1px;
 	background-color: #FAFAFA;
 }
 
@@ -94,6 +94,10 @@ fieldset.fields1 div {
 }
 
 /* Specific layout 2 */
+fieldset.fields2 {
+	margin-top: 5px;
+}
+
 fieldset.fields2 dt {
 	width: 15em;
 	border-right-width: 0;
@@ -269,25 +273,6 @@ fieldset.submit-buttons input {
 	margin: 3px;
 }
 
-/* Resizable text field */
-.grippie {
-	background: #eeeeee url("{T_THEME_PATH}/images/grippie.gif") no-repeat center;
-	border-color: #c2c2c2;
-	border-style: solid;
-	border-width: 0 1px 1px 1px;
-	height: 9px;
-	padding: 0 2px;
-	overflow: hidden;
-	cursor: s-resize;
-}
-
-.resizable-textarea textarea {
-	display: block;
-	margin-bottom: 0;
-	width: 95%;
-	height: 20%;
-}
-
 /* Input field styles
 ---------------------------------------- */
 .inputbox {
@@ -322,12 +307,12 @@ a.button1, input.button1, input.button3, a.button2, input.button2 {
 	padding: 2px 5px;
 	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
 	color: #000;
-	background: #FAFAFA none repeat-x top;
+	background: #FAFAFA none repeat-x top left;
 }
 
 a.button1, input.button1 {
 	font-weight: bold;
-	border: 1px solid #666666;
+	border: 1px solid #666;
 }
 
 input.button3 {
@@ -341,16 +326,17 @@ input.button3 {
 
 /* Alternative button */
 a.button2, input.button2, input.button3 {
-	border: 1px solid #666666;
+	border: 1px solid #666;
 }
 
 /* <a> button in the style of the form buttons */
-a.button1, a.button1:link, a.button1:visited, a.button2, a.button2:link, a.button2:visited {
+a.button1, a.button1:link, a.button1:visited, a.button1:active, a.button2, a.button2:link, a.button2:visited, a.button2:active {
 	text-decoration: none;
 	color: #000000;
 	padding: 3px 10px;
 	line-height: 250%;
 	vertical-align: text-bottom;
+	background-position: 0 1px;
 }
 
 /* Hover states */
@@ -367,22 +353,20 @@ input.disabled {
 
 /* Topic and forum Search */
 .search-box {
-	margin-top: 3px;
+	margin-top: 2px;
 	margin-left: 5px;
 	float: left;
-}
-
-.search-box input {
 }
 
 input.search {
 	background-image: none;
 	background-repeat: no-repeat;
 	background-position: left 1px;
-	padding-left: 17px;
+	padding-left: 18px;
 }
 
 .full { width: 95%; }
 .medium { width: 50%;}
 .narrow { width: 25%;}
 .tiny { width: 10%;}
+

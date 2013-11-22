@@ -7,10 +7,10 @@
 <!-- IF SIGNATURE_PREVIEW -->
 	<div class="panel">
 		<div class="inner"><span class="corners-top"><span></span></span>
+		
 		<h3>{L_SIGNATURE_PREVIEW}</h3>
-
-			<div class="signature" style="border-top:none; margin-top: 0; ">{SIGNATURE_PREVIEW}</div>
-
+		<div class="signature" style="border-top:none; margin-top: 0; ">{SIGNATURE_PREVIEW}</div>
+		
 		<span class="corners-bottom"><span></span></span></div>
 	</div>
 <!-- ENDIF -->
@@ -33,7 +33,7 @@
 		<!-- IF S_LINKS_ALLOWED -->
 			<div><label for="disable_magic_url"><input type="checkbox" name="disable_magic_url" id="disable_magic_url"{S_MAGIC_URL_CHECKED} /> {L_DISABLE_MAGIC_URL}</label></div>
 		<!-- ENDIF -->
-	
+
 	</fieldset>
 
 	<span class="corners-bottom"><span></span></span></div>
@@ -41,9 +41,9 @@
 
 <fieldset class="submit-buttons">
 	{S_HIDDEN_FIELDS}
-	<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />&nbsp; 
-	<input type="submit" name="preview" value="{L_PREVIEW}" class="button2" />&nbsp; 
-	<input type="reset" name="reset" value="{L_RESET}" class="button2" /> 
+	<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />&nbsp;
+	<input type="submit" name="preview" value="{L_PREVIEW}" class="button1" />&nbsp;
+	<input type="reset" name="reset" value="{L_RESET}" class="button2" />
 	{S_FORM_TOKEN}
 </fieldset>
 </form>

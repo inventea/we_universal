@@ -4,9 +4,9 @@
 <!-- IF IGNORED_WORDS --> <p>{L_IGNORED_TERMS}: <strong>{IGNORED_WORDS}</strong></p><!-- ENDIF -->
 
 <!-- IF SEARCH_TOPIC -->
-	<p><a class="{S_CONTENT_FLOW_BEGIN}" href="{U_SEARCH_TOPIC}">{L_RETURN_TO}: {SEARCH_TOPIC}</a></p><br />
+	<p><a class="{S_CONTENT_FLOW_BEGIN}" href="{U_SEARCH_TOPIC}">{L_RETURN_TO}: {SEARCH_TOPIC}</a></p>
 <!-- ELSE -->
-	<p><a class="{S_CONTENT_FLOW_BEGIN}" href="{U_SEARCH}" title="{L_SEARCH_ADV}">{L_RETURN_TO_SEARCH_ADV}</a></p><br />
+	<p><a class="{S_CONTENT_FLOW_BEGIN}" href="{U_SEARCH}" title="{L_SEARCH_ADV}">{L_RETURN_TO_SEARCH_ADV}</a></p>
 <!-- ENDIF -->
 
 <!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
@@ -14,15 +14,16 @@
 
 	<div class="topic-actions">
 
-	<!-- IF SEARCH_MATCHES -->
-		<div class="search-box" style="clear: both;">
-			<!-- IF SEARCH_IN_RESULTS -->
-				<label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" size="50" class="inputbox narrow" /></label>
-				<input type="hidden" name="show_results" value="posts" />
-				<input class="button2" type="submit" name="submit" value="{L_SEARCH}" />
-			<!-- ENDIF -->
-		</div>
-	<!-- ENDIF -->
+		<!-- IF SEARCH_MATCHES -->
+			<div class="search-box">
+				<form method="post" id="forum-search" action="{S_SEARCHBOX_ACTION}">
+				<fieldset>
+					<input class="inputbox search tiny" type="text" name="add_keywords" id="add_keywords" size="20" value="{L_SEARCH_IN_RESULTS}" onclick="if (this.value == '{L_SEARCH_IN_RESULTS}') this.value = '';" onblur="if (this.value == '') this.value = '{L_SEARCH_IN_RESULTS}';" />
+					<input class="button2" type="submit" value="{L_SEARCH}" />
+				</fieldset>
+				</form>
+			</div>
+		<!-- ENDIF -->
 
 		<div class="rightside pagination">
 			{SEARCH_MATCHES}<!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF -->
@@ -35,7 +36,7 @@
 <!-- IF S_SHOW_TOPICS -->
 
 	<!-- IF .searchresults -->
-	<div class="forumbg">
+	<div class="forabg">
 
 		<div class="inner"><span class="corners-top"><span></span></span>
 		<ul class="topiclist">
@@ -51,7 +52,7 @@
 		<ul class="topiclist topics">
 
 		<!-- BEGIN searchresults -->
-			<li class="row<!-- IF searchresults.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF --> <!-- IF searchresults.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
+			<li class="row<!-- IF searchresults.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
 				<dl class="icon" style="background-image: url({searchresults.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;">
 					<dt <!-- IF searchresults.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->>
 						<!-- IF searchresults.S_UNREAD_TOPIC --><a href="{searchresults.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF -->
@@ -64,16 +65,8 @@
 					<dd class="posts">{searchresults.TOPIC_REPLIES}</dd>
 					<dd class="views">{searchresults.TOPIC_VIEWS}</dd>
 					<dd class="lastpost">
-						<!-- IF not S_IS_BOT -->
-						<span class="left">
-							<a href="{searchresults.U_LAST_POST}">{LAST_POST_IMG}</a>
-						</span>
-						<!-- ENDIF -->
-						
-						<span class="left">
-							<dfn>{L_LAST_POST}</dfn> {searchresults.LAST_POST_AUTHOR_FULL}
-							<br />{searchresults.LAST_POST_TIME}
-						</span>
+						<!-- IF not S_IS_BOT --><span class="left-box"><a href="{searchresults.U_LAST_POST}">{LAST_POST_IMG}</a></span><!-- ENDIF -->
+						<span class="left-box"><dfn>{L_LAST_POST}</dfn> {L_POST_BY_AUTHOR} {searchresults.LAST_POST_AUTHOR_FULL}<br />{searchresults.LAST_POST_TIME}</span>
 					</dd>
 				</dl>
 			</li>
@@ -123,7 +116,7 @@
 
 	<!-- IF not searchresults.S_IGNORE_POST -->
 		<ul class="searchresults">
-			<li><a href="{searchresults.U_VIEW_POST}" class="{S_CONTENT_FLOW_END}">{L_JUMP_TO_POST}</a></li>
+			<li ><a href="{searchresults.U_VIEW_POST}" class="{S_CONTENT_FLOW_END}">{L_JUMP_TO_POST}</a></li>
 		</ul>
 	<!-- ENDIF -->
 
@@ -146,7 +139,7 @@
 		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
 		<!-- IF S_SELECT_SORT_DAYS or S_SELECT_SORT_KEY -->
 			<label><!-- IF S_SHOW_TOPICS -->{L_DISPLAY_POSTS}<!-- ELSE -->{L_SORT_BY}</label><label><!-- ENDIF --> {S_SELECT_SORT_DAYS}<!-- IF S_SELECT_SORT_KEY --></label> <label>{S_SELECT_SORT_KEY}</label>
-			<label>{S_SELECT_SORT_DIR} <!-- ELSE --></label><!-- ENDIF --><input type="submit" name="sort" value="{L_GO}" class="button2" /></label>
+			<label>{S_SELECT_SORT_DIR}<!-- ENDIF --> <input type="submit" name="sort" value="{L_GO}" class="button2" /></label>
 		<!-- ENDIF -->
 	</fieldset>
 

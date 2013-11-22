@@ -1,5 +1,9 @@
-/* These style definitions are mainly IE specific tweaks required due to its poor CSS support.
+/* we_universal Style Sheet Tweaks
+
+These style definitions are mainly IE specific 
+tweaks required due to its poor CSS support.
 -------------------------------------------------*/
+
 * html table, * html select, * html input { font-size: 100%; }
 * html hr { margin: 0; }
 * html span.corners-top, * html span.corners-bottom { background-image: url("{T_THEME_PATH}/images/corners_left.gif"); }
@@ -20,8 +24,9 @@ html>body table.table1 { width: 100%; }	/* Reset 100% for opera */
 /* Form styles */
 html>body dd label input { vertical-align: text-bottom; }	/* Align checkboxes/radio buttons nicely */
 
-input.button1, input.button2 {
-	#padding: 1px 0;
+* html input.button1, * html input.button2 {
+	padding-bottom: 0;
+	margin-bottom: 1px;
 }
 
 /* Misc layout styles */
@@ -36,6 +41,7 @@ input.button1, input.button2 {
 	clear: both; 
 	visibility: hidden;
 }*/
+
 .clearfix, #tabs, #minitabs, fieldset dl, ul.topiclist dl, dl.polls {
 	height: 1%;
 	overflow: hidden;
@@ -61,6 +67,15 @@ dl.icon {
 	height: 35px;
 }
 
+* html li.row dl.icon dt {
+	height: 35px;
+	overflow: visible;
+}
+
+* html #search-box {
+	width: 25%;
+}
+
 /* Correctly clear floating for details on profile view */
 *:first-child+html dl.details dd {
 	margin-left: 30%;
@@ -74,18 +89,4 @@ dl.icon {
 
 * html .forumbg table.table1 {
 	margin: 0 -2px 0px -1px;
-}
-
-* html table.table1 tbody td {
-	height: 25px;
-}
-
-/* Reset main blocks width
----------------------------------------- */
-* html #block {
-	width: 960px;
-}
-
-* html #content {
-	width: 940px;
 }

@@ -1,9 +1,3 @@
-/* Content Styles
----------------------------------------- */
-h2 + .forabg {
-	margin-top: 10px;
-}
-
 ul.topiclist {
 	display: block;
 	list-style-type: none;
@@ -129,10 +123,22 @@ dl.icon dt {
 }
 
 dd.posts, dd.topics, dd.views {
-	width: 8%;
+	width: 9%;
 	text-align: center;
 	line-height: 2.2em;
 	font-size: 1.2em;
+}
+
+/* List in forum description */
+dl.icon dt ol,
+dl.icon dt ul {
+	list-style-position: inside;
+	margin-left: 1em;
+}
+
+dl.icon dt li {
+	display: list-item;
+	list-style-type: inherit;
 }
 
 dd.lastpost {
@@ -154,10 +160,6 @@ dd.lastpost span, ul.topiclist dd.searchby span, ul.topiclist dd.info span, ul.t
 	padding-left: 5px;
 }
 
-dd.lastpost .left {
-	margin-left: 3px;
-}
-
 dd.time {
 	width: auto;
 	line-height: 200%;
@@ -173,7 +175,7 @@ dd.extra {
 
 dd.mark {
 	float: right !important;
-	width: 9%;
+	width: 8%;
 	text-align: center;
 	line-height: 200%;
 	font-size: 1.2em;
@@ -214,6 +216,7 @@ ul.topiclist dd.searchextra {
 	height: 28px;
 	min-height: 28px;
 }
+
 div[class].topic-actions {
 	height: auto;
 }
@@ -223,7 +226,7 @@ div[class].topic-actions {
 .postbody {
 	padding: 0;
 	line-height: 1.48em;
-	color: #333333;
+	color: #333;
 	width: 77%;
 	float: right;
 	clear: both;
@@ -233,14 +236,9 @@ div[class].topic-actions {
 	font-size: 1.1em;
 }
 
-.postbody h3.first {
-	/* The first post on the page uses this */
-	font-size: 1.5em;
-}
-
 .postbody h3 {
 	/* Postbody requires a different h3 format - so change it here */
-	font-size: 1.45em;
+	font-size: 1.5em;
 	padding: 2px 0 0 0;
 	margin: 0 0 0.3em 0 !important;
 	text-transform: none;
@@ -255,7 +253,6 @@ div[class].topic-actions {
 }
 
 .postbody .content {
-	overflow: auto;
 	font-size: 1.3em;
 }
 
@@ -303,6 +300,7 @@ div[class].topic-actions {
 	font-family: "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
 	font-size: 1em;
 	color: #333333;
+	padding-bottom: 1px;
 }
 
 .content h2, .panel h2 {
@@ -311,12 +309,23 @@ div[class].topic-actions {
 	border-bottom: 1px solid #CCCCCC;
 	font-size: 1.6em;
 	margin-top: 0.5em;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.3em;
+	padding-bottom: 0.3em;
+}
+
+
+.content h2 {
+	margin-top: 0.5em;
 	padding-bottom: 0.5em;
 }
 
+.content pre {
+	font-size: 1.1em;
+}
+
 .panel h3 {
-	margin: 0.5em 0;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 }
 
 .panel p {
@@ -383,13 +392,20 @@ p.author {
 /* Post signature */
 .signature {
 	margin-top: 1.5em;
-	padding-top: 0.2em;
+	padding-top: 0.3em;
 	font-size: 1.1em;
-	border-top: 1px solid #CCCCCC;
+	border-top: 1px solid #ccc;
 	clear: left;
 	line-height: 140%;
 	overflow: hidden;
 	width: 100%;
+}
+
+.panel .signature {
+	border-top: none;
+	margin: 0;
+	padding-top: 0;
+	padding-bottom: 5px;
 }
 
 dd .signature {
@@ -415,7 +431,7 @@ dd .signature {
 	border: 1px solid #deb7b7;
 	width: auto;
 	margin: 10px 0;
-	padding: 5px 10px;
+	padding: 5px;
 	font-size: 1em;
 	clear: left;
 	line-height: 130%;
@@ -423,7 +439,6 @@ dd .signature {
 
 /* Jump to post link for now */
 ul.searchresults {
-	padding: 8px 0;
 	list-style: none;
 	text-align: right;
 	clear: both;
@@ -436,7 +451,7 @@ blockquote {
 	background: #ebebeb none 6px 8px no-repeat;
 	border: 1px solid #dbdbdb;
 	font-size: 0.95em;
-	margin: 0.5em 1px 10px 25px;
+	margin: 0.5em 1px 1.1em 25px;
 	overflow: hidden;
 	padding: 5px;
 }
@@ -476,8 +491,8 @@ blockquote + br, blockquote + br + br {
 
 /* Code block */
 dl.codebox {
-	margin-bottom: 10px; 
-	padding: 5px;
+	margin-bottom: 1.1em;
+	padding: 3px;
 	background-color: #FFFFFF;
 	border: 1px solid #d8d8d8;
 	font-size: 1em;
@@ -486,7 +501,7 @@ dl.codebox {
 dl.codebox dt {
 	text-transform: uppercase;
 	border-bottom: 1px solid #CCCCCC;
-	margin-bottom: 0;
+	margin-bottom: 3px;
 	font-size: 0.8em;
 	font-weight: bold;
 	display: block;
@@ -560,7 +575,8 @@ dl.codebox + br, dl.codebox + br + br {
 	clear: left;
 }
 
-.attachbox p.stats {
+.attachbox p.stats
+{
 	line-height: 110%;
 	color: #666666;
 	font-weight: normal;
@@ -575,6 +591,8 @@ dl.codebox + br, dl.codebox + br + br {
 }
 
 .attach-image img {
+	border: 1px solid #999999;
+/*	cursor: move; */
 	cursor: default;
 }
 
@@ -604,7 +622,7 @@ dl.file dt {
 dl.file dd {
 	color: #666666;
 	margin: 0;
-	padding: 0;
+	padding: 0;	
 }
 
 dl.thumbnail img {
@@ -617,11 +635,14 @@ dl.thumbnail dd {
 	color: #666666;
 	font-style: italic;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
 }
 
 .attachbox dl.thumbnail dd {
 	font-size: 100%;
+}
+
+dl.thumbnail dt a:hover {
+	background-color: #EEEEEE;
 }
 
 dl.thumbnail dt a:hover img {
@@ -721,15 +742,15 @@ fieldset.polls dd div {
 	/* Also see tweaks.css */
 	margin: 5px 0 10px 0;
 	min-height: 80px;
-	color: #666666;
-	border-right: 1px solid #FFFFFF;
+	color: #666;
+	border-right: 1px solid #fff;
 	width: 22%;
 	float: left;
 	display: inline;
 }
 
 .pm .postprofile {
-	border-right: 1px solid #DDDDDD;
+	border-right: 1px solid #ddd;
 }
 
 .postprofile dd, .postprofile dt {
@@ -743,7 +764,7 @@ fieldset.polls dd div {
 
 .avatar img {
 	border: none;
-	margin-bottom: 5px;
+	margin-bottom: 3px;
 }
 
 .online {

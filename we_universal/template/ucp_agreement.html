@@ -1,20 +1,45 @@
 <!-- INCLUDE overall_header.html -->
 
-
 <!-- IF S_SHOW_COPPA or S_REGISTRATION -->
+
+<!-- IF S_LANG_OPTIONS -->
+<script type="text/javascript">
+// <![CDATA[
+	/**
+	* Change language
+	*/
+	function change_language(lang_iso)
+	{
+		document.forms['register'].change_lang.value = lang_iso;
+		document.forms['register'].submit();
+	}
+
+// ]]>
+</script>
+
+	<form method="post" action="{S_UCP_ACTION}" id="register">
+		<p class="rightside">
+			<label for="lang">{L_LANGUAGE}:</label><select name="lang" id="lang" onchange="change_language(this.value); return false;" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select>
+			{S_HIDDEN_FIELDS}
+		</p>
+	</form>
+
+	<div class="clear"></div>
+
+<!-- ENDIF -->
 
 	<form method="post" action="{S_UCP_ACTION}" id="agreement">
 
-	<div class="panel bg2">
-		<div class="inner"><span class="corners-top bg2"><span></span></span>
+	<div class="panel">
+		<div class="inner"><span class="corners-top bg1"><span></span></span>
 		<div class="content">
-			<h2>{SITENAME} - {L_REGISTRATION}</h2>
+			<h2>{L_REGISTRATION}</h2>
 			<p><!-- IF S_SHOW_COPPA -->{L_COPPA_BIRTHDAY}<!-- ELSE -->{L_TERMS_OF_USE}<!-- ENDIF --></p>
 		</div>
 		<span class="corners-bottom"><span></span></span></div>
 	</div>
 
-	<div class="panel bg3">
+	<div class="panel bg2">
 		<div class="inner"><span class="corners-top"><span></span></span>
 		<fieldset class="submit-buttons">
 			<!-- IF S_SHOW_COPPA -->
@@ -33,9 +58,9 @@
 <!-- ELSEIF S_AGREEMENT -->
 
 	<div class="panel">
-		<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="inner"><span class="corners-top bg1"><span></span></span>
 		<div class="content">
-			<h2>{SITENAME} - {AGREEMENT_TITLE}</h2>
+			<h2>{AGREEMENT_TITLE}</h2>
 			<p>{AGREEMENT_TEXT}</p>
 			<hr class="dashed" />
 			<p><a href="{U_BACK}" class="button2">{L_BACK}</a></p>

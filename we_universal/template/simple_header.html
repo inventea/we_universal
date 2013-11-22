@@ -1,20 +1,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" xml:lang="{S_USER_LANG}" lang="{S_USER_LANG}">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}" xml:lang="{S_USER_LANG}">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
-	<title>{SITENAME} &#8226; <!-- IF S_IN_MCP -->{L_MCP} &#8226; <!-- ELSEIF S_IN_UCP -->{L_UCP} &#8226; <!-- ENDIF -->{PAGE_TITLE}</title>
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
-	<meta name="distribution" content="global" />
-	<meta name="robots" content="all" />
 	{META}
-	<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+	
+	<title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
+	
 	<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
+	<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
 	<link href="{T_THEME_PATH}/normal.css" rel="alternate stylesheet" type="text/css" title="A" />
 	<link href="{T_THEME_PATH}/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
 	<link href="{T_THEME_PATH}/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
 	<!-- IF S_CONTENT_DIRECTION eq 'rtl' --><link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" /><!-- ENDIF -->
+
+	<script type="text/javascript" src="{T_TEMPLATE_PATH}/styleswitcher.js"></script>
+	<script type="text/javascript" src="{T_TEMPLATE_PATH}/forum_fn.js"></script>
+
 	<script type="text/javascript">
 	// <![CDATA[
 
@@ -48,10 +52,9 @@
 
 	// ]]>
 	</script>
-	<script type="text/javascript" src="{T_TEMPLATE_PATH}/styleswitcher.js"></script>
-	<script type="text/javascript" src="{T_TEMPLATE_PATH}/forum_fn.js"></script>
+
 	<!-- DEFINE $POPUP = 1 -->
 </head>
 <body id="phpbb" class="{S_CONTENT_DIRECTION}">
 
-<div id="simple_wrapper">
+<div id="simple-wrapper">

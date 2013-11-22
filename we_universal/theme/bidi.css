@@ -1,4 +1,4 @@
-/* RTL definitions
+/* we_universal RTL definitions
 ---------------------------------------- */
 
 /**
@@ -225,6 +225,12 @@
 	text-align: left;
 }
 
+/* Links adjustment to correctly display an order of rtl/ltr mixed content */
+.rtl a {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
 .rtl a.top {
 	float: left;
 }
@@ -234,9 +240,33 @@
 	padding-right: 15px;
 }
 
+.rtl .skiplink {
+	/* invisible skip link, used for accessibility  */
+	position: relative;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	display: block;
+	left: 0;
+}
+
+.rtl a.feed-icon-forum {
+	float: left;
+}
+
 /**
 * content.css
 */
+.rtl ul.topiclist dfn {
+	/* Labels for post/view counts */
+	position: relative;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	display: block;
+	left: 0;
+}
+
 .rtl ul.topiclist dt {
 	float: right;
 }
@@ -347,11 +377,12 @@
 /* Quote block */
 .rtl blockquote {
 	margin: 0.5em 25px 0 1px;
+	background-position: 99% 8px;
 }
 
 .rtl blockquote blockquote {
 	/* Nested quotes */
-	margin: 0.5em 15px 0 1px;	
+	margin: 0.5em 15px 0 1px;
 }
 
 .rtl blockquote cite {
@@ -714,6 +745,10 @@
 	padding-right: 17px;
 	padding-left: 0;
 }
+
+/**
+* tweaks.css
+*/
 
 /** Reference: Bug #27155 */
 .rtl #wrap, .rtl .headerbar, .rtl #site-description, .rtl .navbar {

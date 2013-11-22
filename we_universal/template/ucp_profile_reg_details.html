@@ -3,6 +3,7 @@
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
 
 <h2>{L_TITLE}</h2>
+
 <div class="panel">
 	<div class="inner"><span class="corners-top"><span></span></span>
 
@@ -11,7 +12,7 @@
 	<!-- ENDIF -->
 
 	<fieldset>
-	<!-- IF ERROR --><div class="error">{ERROR}</div><!-- ENDIF -->
+	<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
 	<dl>
 		<dt><label <!-- IF S_CHANGE_USERNAME -->for="username"<!-- ENDIF -->>{L_USERNAME}:</label><br /><span>{L_USERNAME_EXPLAIN}</span></dt>
 		<dd><!-- IF S_CHANGE_USERNAME --><input type="text" name="username" id="username" value="{USERNAME}" class="inputbox" title="{L_USERNAME}" /><!-- ELSE --><strong>{USERNAME}</strong><!-- ENDIF --></dd>
@@ -54,7 +55,8 @@
 </div>
 
 <fieldset class="submit-buttons">
-	{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />&nbsp;
+	{S_HIDDEN_FIELDS}
+	<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />&nbsp;
 	<input type="reset" value="{L_RESET}" name="reset" class="button2" />
 	{S_FORM_TOKEN}
 </fieldset>

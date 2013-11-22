@@ -1,85 +1,68 @@
-/* Generic elements
----------------------------------------- */
 * {
 	margin: 0;
 	padding: 0;
 }
 
-html {
-	/* Always show a scrollbar for short pages - stops the jump when the scrollbar appears. non-IE browsers */
-	height: 100%;
-	margin-bottom: 1px;
-	font-size: 100%;
-}
-
 body {
 	background: #f9f9f9;
 	margin: 15px 0;
-	padding: 0;
-	font-size: 62.5%; /* Text-Sizing with ems: http://www.clagnut.com/blog/348/ */
-	font-family: Verdana, Helvetica, Arial, Sans-serif;
+	font: 62.5% Verdana, Helvetica, Arial, sans-serif;
 	color: #828282;
 }
 
 h1 {
 	/* Forum name */
-	font-family: "Trebuchet MS", Arial, Helvetica, Sans-serif;
-	margin-top: 15px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	margin-right: 200px;
-	font-size: 2em;
+	color: #FFFFFF;
+	margin-top: 15px;
 	font-weight: bold;
-	color: #fff;
+	font-size: 2em;
 }
 
 h2 {
 	/* Forum header titles */
-	margin-bottom: 5px;
-	font-size: 2.2em;
-	font-family: "Trebuchet MS", Arial, Helvetica, Sans-serif;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-weight: normal;
 	color: #3f3f3f;
-}
-
-.section-viewforum h2 {
-	margin-bottom: 0;
-}
-
-h2.solo {
-	margin-bottom: 1em;
+	font-size: 2.2em;
+	margin-bottom: 0.3em;
+	text-shadow: 1px 1px 3px #eee;
 }
 
 h3 {
 	/* Sub-headers (also used as post headers, but defined later) */
-	border-bottom: 1px solid #cccccc;
-	margin: 20px 0 3px 0;
-	padding-bottom: 2px;
-	text-transform: uppercase;
-	font-size: 1.1em;
-	font-family: Arial, Helvetica, Sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
+	text-transform: uppercase;
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 3px;
+	padding-bottom: 2px;
+	font-size: 1.1em;
 	color: #989898;
+	margin-top: 20px;
 }
 
 h4 {
 	/* Forum and topic list titles */
+	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, Sans-serif;
 	font-size: 1.3em;
-	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, Sans-Serif;
 }
 
 p {
-	margin-bottom: 1.5em;
-	font-size: 1.1em;
 	line-height: 1.3em;
+	font-size: 1.1em;
+	margin-bottom: 1.5em;
 }
 
 img {
-	border: none;
+	border-width: 0;
 }
 
 hr {
 	/* Also see tweaks.css */
-	border: 0 none #ffffff;
-	border-top: 1px solid #cccccc;
+	border: 0 none #FFFFFF;
+	border-top: 1px solid #CCCCCC;
 	height: 1px;
 	margin: 5px 0;
 	display: block;
@@ -87,7 +70,7 @@ hr {
 }
 
 hr.dashed {
-	border-top: 1px dashed #cccccc;
+	border-top: 1px dashed #CCCCCC;
 	margin: 10px 0;
 }
 
@@ -99,160 +82,149 @@ p.right {
 	text-align: right;
 }
 
-/* Main blocks
+/* Structure
 ---------------------------------------- */
 #wrapper {
-	width: 100%;
-	height: 100%;
-}
-
-#simple_wrapper {
-	padding: 0 10px;
-}
-
-#block {
 	background: #fff;
 	border: 2px solid #e7e7e7;
-	border-bottom: 0;
 	width: 980px;
-	height: 40px;
 	margin: auto;
 }
 
-#quick_search {
-	margin: 10px 20px 0 0;
-	float: right;
+#simple-wrapper {
+	padding: 2px 20px;
+}
+
+#bar {
+	height: 40px;
+	padding: 0 20px;
 }
 
 #header {
 	background: #292c2f;
 	width: 100%;
-	height: 190px;
+	left: 0;
+	position: absolute;
 }
 
-#billboard {
-	background: url("{T_THEME_PATH}/images/billboard.jpg") no-repeat;
+#dashboard {
+	background: url("{T_THEME_PATH}/images/dashboard.jpg") no-repeat;
 	width: 980px;
 	height: 190px;
 	margin: auto;
-	display: block;
 }
 
 #container {
-	background: #fff;
-	border-left: 2px solid #e7e7e7;
-	border-right: 2px solid #e7e7e7;
-	width: 980px;
-	margin: auto;
-	position: relative;
-}
-
-#content {
+	margin-top: 190px;
 	padding: 15px 20px;
 }
 
 #footer {
 	background: url("{T_THEME_PATH}/images/footer.png") repeat-x;
 	width: 100%;
-	height: 60px;
 	margin-top: -25px;
+	padding-top: 25px;
+	position: absolute;
+	z-index: -1;
 }
 
-#secondar_navigation {
-	background: #ffffff;
-	border: 2px solid #e7e7e7;
-	border-top: 0;
-	width: 980px;
-	height: 30px;
-	margin: auto;
-}
-
-/* Block above header image
+/* Bar
 ---------------------------------------- */
-#block ul {
-	margin: 14px 20px 0 20px;
+#bar p {
+	margin: 14px 0;
 	float: left;
-	list-style: none;
-}
-
-#block li {
-	display: inline;
-	font-size: 1.1em;
 	color: #aaa;
 }
 
-/* Site name and description
+#bar form {
+	margin: 9px 0;
+	float: right;
+}
+
+/* Quick search
 ---------------------------------------- */
-#site_description {
-	margin: 25px 0 0 55px;
-	position: absolute;
-}
-
-#site_description h1 {
-	font-size: 3.5em;
-	color: #ffffff;
-}
-
-#site_description p {
-	font-size: 1.2em;
-	color: #ffffff;
-}
-
-/* Breadcrumb
----------------------------------------- */
-#breadcrumb p {
-	margin-bottom: 10px;
-	
-}
-
-/* Quick search in header
----------------------------------------- */
-.quick_search_input {
-	background: url("{T_THEME_PATH}/images/quick_search_input.gif");
+#quick-search input {
 	border: 0;
+	float: left;
+}
+
+#quick-search input[type="text"] {
+	background: url("{T_THEME_PATH}/images/search_input.png") no-repeat;
 	width: 165px;
-	height: 13px;
 	padding: 4px 4px 4px 8px;
 	color: #c5c5c5;
 	cursor: text;
 }
 
-.quick_search_button {
-	background: url("{T_THEME_PATH}/images/quick_search_button.gif");
-	border: 0;
+#quick-search input[type="submit"] {
+	background: url("{T_THEME_PATH}/images/search_button.png") no-repeat;
 	width: 23px;
 	height: 21px;
-	margin-left: -4px;
-	padding: 0;
+	text-indent: -1000em;
 }
 
-/* Primary navigation
+/* Dashboard
 ---------------------------------------- */
-#billboard ul {
+#dashboard ul {
 	list-style: none;
 }
 
-#billboard li {
+#dashboard #navigation-top {
+	float: right;
+}
+
+#dashboard #navigation-bottom {
+	bottom: 0;
+	position: absolute;
+}
+
+#dashboard li {
 	display: inline;
 	font-size: 1.1em;
 }
 
-#billboard .left {
-	margin-top: 163px;
-	position: absolute;
-}
-
-#billboard li a {
-	background: url("{T_THEME_PATH}/images/primary_navigation.png");
+#dashboard li a {
+	background: url("{T_THEME_PATH}/images/primary_navigation.png") repeat-x;
 	padding: 7px 10px;
 	display: inline-block;
 	color: #eaeaea;
 }
 
-#billboard li a:hover {
-	background: url("{T_THEME_PATH}/images/primary_navigation.png") 0 100%;
+#dashboard li a:hover {
+	background: url("{T_THEME_PATH}/images/primary_navigation.png") repeat-x 0 100%;
 	text-decoration: none;
-	color: #eaeaea;
+}
+
+/* Name and description
+---------------------------------------- */
+#site-description {
+	margin-top: 30px;
+	margin-left: 55px;
+	position: absolute;
+}
+
+#site-description h1, #site-description p {
+	text-shadow: 1px 1px 3px #555;
+}
+
+#site-description h1 {
+	font-size: 3.5em;
+	color: #fff;
+}
+
+#site-description p {
+	font-size: 1.2em;
+	color: #fff;
+}
+
+/* Font size, topic, e-mail and print icons
+---------------------------------------- */
+.topic-icons {
+	list-style: none;
+}
+
+.topic-icons li {
+	display: inline-block;
 }
 
 /* Footer
@@ -261,33 +233,11 @@ p.right {
 	margin: 0;
 	font-size: 1em;
 	line-height: 1.4em;
-}
-
-/* Font size, topic, e-mail and print icons
----------------------------------------- */
-.topic_icons {
-	list-style: none;
-}
-
-.topic_icons li {
-	display: inline-block;
-}
-
-/* Useful classes
----------------------------------------- */
-.left {
-	float: left;
-	text-align: left;
-}
-
-.right {
-	float: right;
-	text-align: right;
-}
-
-.close_window {
-	margin: 10px 0;
 	text-align: center;
+}
+
+#copyright {
+	padding: 10px 0;
 }
 
 /* Round cornered boxes and backgrounds
@@ -297,7 +247,7 @@ p.right {
 	padding: 0 10px;
 }
 
-.forabg, .forabg {
+.forabg {
 	background: #b1b1b1 none repeat-x 0 0;
 	margin-bottom: 4px;
 	padding: 0 5px;
@@ -326,9 +276,9 @@ p.right {
 	color: #000000;
 }
 
-.bg1	{ background-color: #f1f1f1; }
-.bg2	{ background-color: #ececec; }
-.bg3	{ background-color: #e1e1e1; }
+.bg1	{ background-color: #f7f7f7;}
+.bg2	{ background-color: #f2f2f2; }
+.bg3	{ background-color: #ebebeb; }
 
 .rowbg {
 	margin: 5px 5px 2px 5px;
@@ -440,8 +390,8 @@ table.table1 {
 table.table1 thead th {
 	font-weight: normal;
 	text-transform: uppercase;
-	color: #FFFFFF;
-	line-height: 1.3em;
+	color: #fff;
+	line-height: 1.6em;
 	font-size: 1em;
 	padding: 0 0 4px 3px;
 }
@@ -465,9 +415,8 @@ table.table1 td {
 }
 
 table.table1 tbody td {
-	padding: 5px;
+	padding: 7px 5px;
 	border-top: 1px solid #FAFAFA;
-	height: 35px;
 }
 
 table.table1 tbody th {
@@ -485,7 +434,7 @@ table.table1 .joined	{ text-align: left; width: 19%; }
 table.table1 .active	{ text-align: left; width: 19%; }
 table.table1 .mark		{ text-align: center; width: 7%; }
 table.table1 .info		{ text-align: left; width: 25%; }
-table.table1 .info div	{ width: 100%; white-space: nowrap; overflow: hidden; }
+table.table1 .info div	{ width: 100%; white-space: normal; overflow: hidden; }
 table.table1 .autocol	{ line-height: 2em; white-space: nowrap; }
 table.table1 thead .autocol { padding-left: 1em; }
 
@@ -644,14 +593,9 @@ li.pagination {
 }
 
 .copyright {
-	padding: 10px;
+	padding: 5px;
 	text-align: center;
-	line-height: 1.4em;
 	color: #555555;
-}
-
-.copyright span {
-	font-style: italic;
 }
 
 .small {
@@ -667,14 +611,10 @@ li.pagination {
 }
 
 .error {
-	background: #f3dddd;
-	border: 1px solid #deb7b7;
-	padding: 5px 10px;
-	font-size: 11px;
-}
-
-div.error {
-	margin-bottom: 10px;
+	color: #bcbcbc;
+	font-weight: bold;
+	font-size: 11px !important;
+	padding: 5px 7px;
 }
 
 .reported {
@@ -692,6 +632,11 @@ div.rules {
 	line-height: 1.3em;
 	color: #bcbcbc;
 	font-size: 1.1em;
+}
+
+div.rules strong {
+	margin-bottom: -12px;
+	display: block;
 }
 
 div.rules ul, div.rules ol {

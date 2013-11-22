@@ -3,22 +3,19 @@
 <form id="confirm" action="{S_CONFIRM_ACTION}" method="post">
 
 <div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner"><span class="corners-top bg1"><span></span></span>
 
-	<div class="content">
+	
 		<h2>{MESSAGE_TITLE}</h2>
 		<!-- IF ADDITIONAL_MSG --><p>{ADDITIONAL_MSG}</p><!-- ENDIF -->
-
+		<p>{MESSAGE_TEXT}</p>
+		
 		<fieldset>
-		<dl class="fields2">
-			<dt><label>{L_SELECT_DESTINATION_FORUM}:</label></dt>
-			<dd><select name="to_forum_id">{S_FORUM_SELECT}</select></dd>
-			<!-- IF S_CAN_LEAVE_SHADOW --><dd><label for="move_leave_shadow"><input type="checkbox" name="move_leave_shadow" id="move_leave_shadow" />{L_LEAVE_SHADOW}</label></dd><!-- ENDIF -->
-		</dl>
-		<dl class="fields2">
-			<dt>&nbsp;</dt>
-			<dd><strong>{MESSAGE_TEXT}</strong></dd>
-		</dl>
+			<dl class="fields2">
+				<dt><label>{L_SELECT_DESTINATION_FORUM}:</label></dt>
+				<dd><select name="to_forum_id">{S_FORUM_SELECT}</select></dd>
+				<!-- IF S_CAN_LEAVE_SHADOW --><dd><label for="move_leave_shadow"><input type="checkbox" name="move_leave_shadow" id="move_leave_shadow" checked="checked" />{L_LEAVE_SHADOW}</label></dd><!-- ENDIF -->
+			</dl>
 		</fieldset>
 
 		<fieldset class="submit-buttons">
@@ -27,7 +24,6 @@
 			{S_FORM_TOKEN}
 		</fieldset>
 
-	</div>
 
 	<span class="corners-bottom"><span></span></span></div>
 </div>

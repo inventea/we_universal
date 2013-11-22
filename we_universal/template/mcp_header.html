@@ -2,6 +2,14 @@
 
 <h2>{L_MCP}</h2>
 
+<!-- IF U_MCP -->
+	<p class="linkmcp">
+		[ <a href="{U_MCP}">{L_MCP}</a><!-- IF U_MCP_FORUM --> | <a href="{U_MCP_FORUM}">{L_MODERATE_FORUM}</a><!-- ENDIF -->
+		<!-- IF U_MCP_TOPIC --> | <a href="{U_MCP_TOPIC}">{L_MODERATE_TOPIC}</a><!-- ENDIF -->
+		<!-- IF U_MCP_POST --> | <a href="{U_MCP_POST}">{L_MODERATE_POST}</a><!-- ENDIF --> ]
+	</p>
+<!-- ENDIF -->
+
 <div id="tabs">
 	<ul>
 		<!-- BEGIN l_block1 -->
@@ -37,7 +45,7 @@
 		<!-- IF MESSAGE -->
 		<div class="content">
 			<h2>{L_MESSAGE}</h2>
-			<div class="error">{MESSAGE}</div>
+			<p class="error">{MESSAGE}</p>
 			<p><!-- BEGIN return_links -->{return_links.MESSAGE_LINK}<br /><br /><!-- END return_links --></p>
 		</div>
 		<!-- ENDIF -->

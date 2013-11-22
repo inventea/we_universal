@@ -1,6 +1,8 @@
+
 <!-- BEGIN forumrow -->
 	<!-- IF (forumrow.S_IS_CAT and not forumrow.S_FIRST_ROW) or forumrow.S_NO_CAT  -->
 			</ul>
+
 			<span class="corners-bottom"><span></span></span></div>
 		</div>
 	<!-- ENDIF -->
@@ -39,14 +41,9 @@
 					<dd class="topics">{forumrow.TOPICS} <dfn>{L_TOPICS}</dfn></dd>
 					<dd class="posts">{forumrow.POSTS} <dfn>{L_POSTS}</dfn></dd>
 					<dd class="lastpost">
-						<!-- IF not S_IS_BOT -->
-						<span class="left"><a href="{forumrow.U_LAST_POST}">{LAST_POST_IMG}</a></span>
-						<!-- ENDIF -->
-						
-						<span class="left">
-							<!-- IF forumrow.LAST_POST_TIME --><dfn>{L_LAST_POST}</dfn> {forumrow.LAST_POSTER_FULL}
-							<br />{forumrow.LAST_POST_TIME}<!-- ELSE -->{L_NO_POSTS}<!-- ENDIF -->
-						</span>
+						<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG}</a><!-- ENDIF -->
+						<!-- IF not S_IS_BOT --><span class="left-box"><a href="{forumrow.U_LAST_POST}">{LAST_POST_IMG}</a></span><!-- ENDIF -->
+						<span class="left-box"><!-- IF forumrow.LAST_POST_TIME --><dfn>{L_LAST_POST}</dfn> {L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}<br />{forumrow.LAST_POST_TIME}<!-- ELSE -->{L_NO_POSTS}<!-- ENDIF --></span>
 					</dd>
 				<!-- ENDIF -->
 			</dl>
@@ -55,6 +52,7 @@
 
 	<!-- IF forumrow.S_LAST_ROW -->
 			</ul>
+
 			<span class="corners-bottom"><span></span></span></div>
 		</div>
 	<!-- ENDIF -->

@@ -1,3 +1,5 @@
+/* Lots still TODO here! */
+
 /* General markup styles */
 * {
 	padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-	font: 11pt Verdana, Arial, Helvetica, sans-serif;
+	font: 10pt Verdana, Arial, Helvetica, sans-serif;
 	color:#000000;
 }
 
@@ -15,9 +17,14 @@ a:active	{ color: #000000; text-decoration: none; }
 
 img, .noprint, #sub-header, #sub-footer, .navbar, .box1, .divider, .signature { display: none; }
 
+/* Display smilies (Bug #47265) */
+.content img {
+	display: inline;
+}
+
 /* Container for the main body */
-#wrapper{
-	margin: 0 1em;
+#wrapper {
+	margin: 1.5em;
 }
 
 p { font-size: 85%; }
@@ -97,7 +104,7 @@ html>body .postbody h1 a:link:after, html>body .postbody h2 a:link:after {
 .grip-show { display:none; }
 
 /* Quote */
-.postquote {
+.postquote, blockquote {
 	font-size: 85%;
 	margin: 1em 18% 1em 4%;
 	padding: 0.5em;
@@ -109,7 +116,16 @@ html>body .postbody h1 a:link:after, html>body .postbody h2 a:link:after {
 .postquote img { display: none; }
 .postquote span { display: block; }
 .postquote span .postquote { font-size: 100%; }
-.quote-by { font-weight: bold; }
+.quote-by, blockquote cite { 
+	color: black;
+	display : block;
+	font-weight: bold;
+}
+
+/* List */
+ol, ul {
+	margin-left: 15pt
+}
 
 /* Misc page elements */
 div.spacer { clear: both; }

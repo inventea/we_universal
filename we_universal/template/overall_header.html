@@ -1,26 +1,30 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" xml:lang="{S_USER_LANG}" lang="{S_USER_LANG}">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}" xml:lang="{S_USER_LANG}">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
-	<title>{SITENAME} &#8226; <!-- IF S_IN_MCP -->{L_MCP} &#8226; <!-- ELSEIF S_IN_UCP -->{L_UCP} &#8226; <!-- ENDIF -->{PAGE_TITLE}</title>
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
-	<meta name="distribution" content="global" />
-	<meta name="robots" content="all" />
 	{META}
 	
+	<title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
+	
+	<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
 	<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
-	<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" />
-	<link href="{T_THEME_PATH}/normal.css" rel="alternate stylesheet" type="text/css" title="A" />
+	<link href="{T_THEME_PATH}/normal.css" rel="stylesheet" type="text/css" title="A" />
 	<link href="{T_THEME_PATH}/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
 	<link href="{T_THEME_PATH}/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
 	<!-- IF S_CONTENT_DIRECTION eq 'rtl' --><link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" /><!-- ENDIF -->
 	
-	<script type="text/javascript" src="{T_TEMPLATE_PATH}/styleswitcher.js"></script>
-	<script type="text/javascript" src="{T_TEMPLATE_PATH}/forum_fn.js"></script>
-	<script type="text/javascript" src="{T_TEMPLATE_PATH}/jquery.js"></script>
-	<script type="text/javascript" src="{T_TEMPLATE_PATH}/textarearesizer.js"></script>
+	<!-- IF S_ENABLE_FEEDS -->
+		<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" /><!-- ENDIF -->
+		<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->
+		<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{U_FEED}?mode=forums" /><!-- ENDIF -->
+		<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{U_FEED}?mode=topics" /><!-- ENDIF -->
+		<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{U_FEED}?mode=topics_active" /><!-- ENDIF -->
+		<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}" /><!-- ENDIF -->
+		<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
+	<!-- ENDIF -->
 	
 	<script type="text/javascript">
 	// <![CDATA[
@@ -37,18 +41,22 @@
 			if ({S_NEW_PM})
 			{
 				var url = '{UA_POPUP_PM}';
-				window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=450');
+				window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
 			}
 		<!-- ENDIF -->
 
-		// Find a member
+		/**
+		* Find a member
+		*/
 		function find_username(url)
 		{
-			popup(url, 1000, 600, '_usersearch');
+			popup(url, 760, 570, '_usersearch');
 			return false;
 		}
 
-		// New function for handling multiple calls to window.onload and window.unload by pentapenguin
+		/**
+		* New function for handling multiple calls to window.onload and window.unload by pentapenguin
+		*/
 		window.onload = function()
 		{
 			for (var i = 0; i < onload_functions.length; i++)
@@ -64,42 +72,33 @@
 				eval(onunload_functions[i]);
 			}
 		}
-		
-		// Load jQuery TextAreaResizer
-		$(document).ready(function() {
-			$('textarea.resizable:not(.processed)').TextAreaResizer();
-			$('iframe.resizable:not(.processed)').TextAreaResizer();
-		});
+
 	// ]]>
 	</script>
+	
+	<script type="text/javascript" src="{T_TEMPLATE_PATH}/styleswitcher.js"></script>
+	<script type="text/javascript" src="{T_TEMPLATE_PATH}/forum_fn.js"></script>
 </head>
-<body class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
+<body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
 
 <div id="wrapper">
-	<div id="block">
-		<ul>
-			<!-- IF not S_USER_LOGGED_IN -->
-			<li>{CURRENT_TIME}</li>
-			<!-- ELSE -->
-			<li>{LAST_VISIT_DATE}</li>
-			<!-- ENDIF -->
-		</ul>
+
+	<div id="bar">
+		<p><!-- IF not S_USER_LOGGED_IN -->{CURRENT_TIME}<!-- ELSE -->{LAST_VISIT_DATE}<!-- ENDIF --></p>
 		
 		<!-- IF S_DISPLAY_SEARCH -->
-		<div id="quick_search">
-			<form action="{U_SEARCH}" method="post" id="search">
+			<form action="{U_SEARCH}" method="post" id="quick-search">
 				<fieldset>
-					<input type="text" name="keywords" id="keywords" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="quick_search_input" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
-					<input type="submit" title="{L_SEARCH}" class="quick_search_button" value="" />
+					<input type="text" name="keywords" id="keywords" maxlength="100" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
+					<input type="submit" value="{L_SEARCH}" />
 				</fieldset>
 			</form>
-		</div>
 		<!-- ENDIF -->
 	</div>
 	
 	<div id="header">
-		<div id="billboard">
-			<ul class="right">
+		<div id="dashboard">
+			<ul id="navigation-top">
 				<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
 				<li><a href="{U_SEARCH}" title="{L_SEARCH}">{L_SEARCH}</a></li>
 				<!-- IF not S_IS_BOT -->
@@ -109,47 +108,44 @@
 				<!-- ENDIF -->
 			</ul>
 			
-			<div id="site_description">
+			<div id="site-description">
 				<h1><a href="{U_INDEX}" title="{L_INDEX}">{SITENAME}</a></h1>
 				<p>{SITE_DESCRIPTION}</p>
 			</div>
 			
 			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-			<ul class="left">
+				<ul id="navigation-bottom">
 					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="u">{L_PROFILE}</a></li>
-					<!-- IF S_DISPLAY_PM --><li><a href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}">{PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
-					<li><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
+					<!-- IF S_DISPLAY_PM --><li><a href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}">{PRIVATE_MESSAGE_INFO}</a></li> <!-- ENDIF -->
+					<!-- IF S_DISPLAY_SEARCH --><li><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}">{L_SEARCH_SELF}</a></li> <!-- ENDIF -->
 					<!-- IF U_TEAM --><li><a href="{U_TEAM}" title="{L_THE_TEAM}">{L_THE_TEAM}</a></li> <!-- ENDIF -->
 					<!-- IF U_RESTORE_PERMISSIONS --><li><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
 					<!-- IF U_MCP --><li><a href="{U_MCP}" title="{L_MCP}">{L_MCP}</a></li><!-- ENDIF -->
 					<!-- IF U_ACP --> <li><a href="{U_ACP}" title="{L_ACP}">{L_ACP}</a></li><!-- ENDIF -->
-			</ul>
+				</ul>
 			<!-- ENDIF -->
 		</div>
 	</div>
-	
+
 	<div id="container">
-		<div id="content">
-				<div id="breadcrumb" class="left">
-					<p>{L_JUMP_TO}: <a href="{U_INDEX}" title="{SITENAME}" accesskey="h">{L_INDEX}</a> <!-- BEGIN navlinks --> &#187; <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks --></p>
-				</div>
-				
-				<ul class="topic_icons right">
-					<li><a href="#" onclick="fontsizeup(); return false;" onkeypress="fontsizeup(); return false;" class="fontsize" title="{L_CHANGE_FONT_SIZE}">{L_CHANGE_FONT_SIZE}</a></li>
-					<!-- IF S_WATCH_FORUM_LINK --><li><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}" <!-- IF S_WATCHING_FORUM -->class="unsubscribe"<!-- ELSE -->class="subscribe"<!-- ENDIF -->>{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
-					<!-- IF U_WATCH_TOPIC --><li><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}" <!-- IF S_WATCHING_TOPIC -->class="unsubscribe"<!-- ELSE -->class="subscribe"<!-- ENDIF -->>{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_BOOKMARK_TOPIC --><li><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"  <!-- IF S_BOOKMARKING_TOPIC -->class="unbookmark"<!-- ELSE -->class="bookmark"<!-- ENDIF -->>{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_BUMP_TOPIC --><li><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}" class="bump">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_EMAIL_TOPIC --><li><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}" class="sendemail">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_EMAIL_PM --><li><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class="sendemail">{L_EMAIL_PM}</a></li><!-- ENDIF -->
-					<!-- IF U_PRINT_TOPIC --><li><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p" class="print">{L_PRINT_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_PRINT_PM --><li><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p" class="print">{L_PRINT_PM}</a></li><!-- ENDIF -->
-				</ul>
-			
-			<div class="clear"></div>
-			
-			<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) --> 
-			<div id="message" class="rules">
+		<p id="breadcrumb" class="left-box">{L_JUMP_TO}: <a href="{U_INDEX}" title="{SITENAME}" accesskey="h">{L_INDEX}</a> <!-- BEGIN navlinks --> &raquo; <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks --></p>
+		
+		<ul class="topic-icons right-box">
+			<li><a href="#" onclick="fontsizeup(); return false;" onkeypress="return fontsizeup(event);" class="fontsize" title="{L_CHANGE_FONT_SIZE}">{L_CHANGE_FONT_SIZE}</a></li>
+			<!-- IF S_WATCH_FORUM_LINK --><li><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}" <!-- IF S_WATCHING_FORUM -->class="unsubscribe"<!-- ELSE -->class="subscribe"<!-- ENDIF -->>{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
+			<!-- IF U_WATCH_TOPIC --><li><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}" <!-- IF S_WATCHING_TOPIC -->class="unsubscribe"<!-- ELSE -->class="subscribe"<!-- ENDIF -->>{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
+			<!-- IF U_BOOKMARK_TOPIC --><li><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"  <!-- IF S_BOOKMARKING_TOPIC -->class="unbookmark"<!-- ELSE -->class="bookmark"<!-- ENDIF -->>{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
+			<!-- IF U_BUMP_TOPIC --><li><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}" class="bump">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
+			<!-- IF U_EMAIL_TOPIC --><li><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}" class="sendemail">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
+			<!-- IF U_EMAIL_PM --><li><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class="sendemail">{L_EMAIL_PM}</a></li><!-- ENDIF -->
+			<!-- IF U_PRINT_TOPIC --><li><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p" class="print">{L_PRINT_TOPIC}</a></li><!-- ENDIF -->
+			<!-- IF U_PRINT_PM --><li><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p" class="print">{L_PRINT_PM}</a></li><!-- ENDIF -->
+		</ul>
+		
+		<br class="clear" />
+		
+		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+			<div id="information" class="rules">
 				<strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
 			</div>
-			<!-- ENDIF -->
+		<!-- ENDIF -->
