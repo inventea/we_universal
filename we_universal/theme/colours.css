@@ -36,15 +36,6 @@ hr.dashed {
 
 /* Round cornered boxes and backgrounds
 ---------------------------------------- */
-.navbar {
-	background-color: #cadceb;
-}
-
-.forabg {
-	background-color: #878787;
-	background-image: url("{T_THEME_PATH}/images/bg_list.gif");
-}
-
 .panel {
 	background-color: #f1f1f1;
 	color: #666;
@@ -61,6 +52,12 @@ hr.dashed {
 .bg1	{ background-color: #f1f1f1; }
 .bg2	{ background-color: #ececec; }
 .bg3	{ background-color: #e1e1e1; }
+
+.forums .bg1	{ background-color: #fafcfe; }
+.forums .bg2	{ background-color: #f2f2f2; }
+
+.forums .bg1 .bg2	{ background-color: #f1f1f1; }
+.forums .bg2 .bg2	{ background-color: #e8e8e8; }
 
 .ucprowbg {
 	background-color: #DCDEE2;
@@ -187,7 +184,7 @@ dl.details dd {
 }
 
 .reported {
-	background-color: #F7ECEF;
+	background-color: #F7ECEF !important;
 }
 
 li.reported:hover {
@@ -287,11 +284,6 @@ a.left:hover, a.right:hover {
 --------------------------------------------------------------
 Colours and backgrounds for content.css
 -------------------------------------------------------------- */
-ul.forums {
-	background-color: #f8f8f8;
-	background-image: url("{T_THEME_PATH}/images/gradient.gif");
-}
-
 ul.topiclist li {
 	color: #666;
 }

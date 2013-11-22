@@ -22,43 +22,37 @@
 				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
 			</li>
 		</ul>
-		<ul class="topiclist">
-			<li class="header">
-				<dl>
-					<dt><!-- IF S_TOPICS -->{L_TOPIC}<!-- ELSE -->{L_POST}<!-- ENDIF --></dt>
-					<dd class="moderation"><span><!-- IF not S_TOPICS -->{L_TOPIC} &amp; <!-- ENDIF -->{L_FORUM}</span></dd>
-					<dd class="mark">{L_MARK}</dd>
-				</dl>
-			</li>
-			</ul>
-			<ul class="topiclist cplist">
-
-		<!-- BEGIN postrow -->
-
-		<!-- IF postrow.S_DELETED_TOPIC -->
-			<li><p class="notopics">{L_DELETED_TOPIC}</p></li>
-		<!-- ELSE -->
-
-		<li class="row<!-- IF postrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-			<dl>
-				<dt>
-					<a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.POST_SUBJECT}</a> <br />
-					<span>{L_POSTED} {L_POST_BY_AUTHOR} {postrow.POST_AUTHOR_FULL} &raquo; {postrow.POST_TIME}</span>
-				</dt>
-				<dd class="moderation">
-					<span>
-						<!-- IF S_TOPICS --><br /><!-- ELSE -->{L_TOPIC}: <a href="{postrow.U_TOPIC}">{postrow.TOPIC_TITLE}</a> <br /><!-- ENDIF -->
-						{L_FORUM}: <a href="{postrow.U_VIEWFORUM}">{postrow.FORUM_NAME}</a>
-					</span>
-				</dd>
-
-
-		 		<dd class="mark"><input type="checkbox" name="post_id_list[]" value="{postrow.POST_ID}" /></dd>
-			</dl>
-		</li>
-		<!-- ENDIF -->
-		<!-- END postrow -->
-		</ul>
+		
+		<div class="forums-wrapper">
+			<table class="forums">
+				<thead>
+					<th><!-- IF S_TOPICS -->{L_TOPIC}<!-- ELSE -->{L_POST}<!-- ENDIF --></th>
+					<th><!-- IF not S_TOPICS -->{L_TOPIC} &amp; <!-- ENDIF -->{L_FORUM}</th>
+					<th>{L_MARK}</th>
+				</thead>
+				<tbody>
+					<!-- BEGIN postrow -->
+						<!-- IF postrow.S_DELETED_TOPIC -->
+							<tr colspan="3" class="bg1">
+								<td><p class="notopics">{L_DELETED_TOPIC}</p></td>
+							</tr>
+						<!-- ELSE -->
+							<tr class="row<!-- IF postrow.S_ROW_COUNT is odd --> bg2<!-- ELSE --> bg1<!-- ENDIF -->">
+								<td class="topic bg2">
+									<h4><a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.POST_SUBJECT}</a></h4>
+									<p>{L_POSTED} {L_POST_BY_AUTHOR} {postrow.POST_AUTHOR_FULL} &raquo; {postrow.POST_TIME}</p>
+								</td>
+								<td>
+									<p><!-- IF not S_TOPICS -->{L_TOPIC}: <a href="{postrow.U_TOPIC}">{postrow.TOPIC_TITLE}</a><!-- ENDIF --></p>
+									<p>{L_FORUM}: <a href="{postrow.U_VIEWFORUM}">{postrow.FORUM_NAME}</a></p>
+								</td>
+								<td class="mark bg2"><input type="checkbox" name="post_id_list[]" value="{postrow.POST_ID}" /></td>
+							</tr>
+						<!-- ENDIF -->
+					<!-- END postrow -->
+				</tbody>
+			</table>
+		</div>
 
 		<fieldset class="display-options">
 			<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
@@ -86,8 +80,8 @@
 
 <!-- IF .postrow -->
 	<fieldset class="display-actions">
-		<input class="button2" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />&nbsp;
-		<input class="button1" type="submit" name="action[approve]" value="{L_APPROVE}" />
+		<input class="button1" type="submit" name="action[approve]" value="{L_APPROVE}" />&nbsp;
+		<input class="button2" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />
 		<div><a href="#" onclick="marklist('mcp', 'post_id_list', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('mcp', 'post_id_list', false); return false;">{L_UNMARK_ALL}</a></div>
 	</fieldset>
 <!-- ENDIF -->

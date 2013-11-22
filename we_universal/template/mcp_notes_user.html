@@ -61,34 +61,33 @@
 		</li>
 	</ul>
 
-	<table cellspacing="0" cellpadding="1" class="table1">
-	<thead>
-	<tr>
-		<th>{L_REPORT_BY}</th>
-		<th style="text-align: center">{L_IP}</th>
-		<th style="text-align: center">{L_TIME}</th>
-		<th>{L_ACTION_NOTE}</th>
-		<!-- IF S_CLEAR_ALLOWED --><th>{L_MARK}</th><!-- ENDIF -->
-	</tr>
-	</thead>
-	<tbody>
-	<!-- BEGIN usernotes -->
-	<!-- IF usernotes.S_ROW_COUNT is even --><tr class="bg1"><!-- ELSE --><tr class="bg2"><!-- ENDIF -->
-		<td>{usernotes.REPORT_BY}</td>
-		<td style="text-align: center">{usernotes.IP}</td>
-		<td style="text-align: center">{usernotes.REPORT_AT}</td>
-		<td>{usernotes.ACTION}</td>
-
-		<!-- IF S_CLEAR_ALLOWED --><td width="5%" align="center"><input type="checkbox" name="marknote[]" id="note-{usernotes.ID}" value="{usernotes.ID}" /></td><!-- ENDIF -->
-	</tr>
-	<!-- BEGINELSE -->
-	<tr>
-		<td class="bg1" colspan="<!-- IF S_CLEAR_ALLOWED -->5<!-- ELSE -->4<!-- ENDIF -->" align="center"><span class="gen">{L_NO_ENTRIES}</span></td>
-	</tr>
-	<!-- END usernames -->
-	</tbody>
-	</table>
-
+	<div class="forums-wrapper">
+		<table class="forums">
+			<thead>
+				<th>{L_REPORT_BY}</th>
+				<th>{L_IP}</th>
+				<th>{L_TIME}</th>
+				<th>{L_ACTION_NOTE}</th>
+				<!-- IF S_CLEAR_ALLOWED --><th class="mark">{L_MARK}</th><!-- ENDIF -->
+			</thead>
+			<tbody>
+				<!-- BEGIN usernotes -->
+					<tr class="<!-- IF usernotes.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+						<td class="bg2"><p>{usernotes.REPORT_BY}</p></td>
+						<td><p>{usernotes.IP}</p></td>
+						<td class="bg2"><p>{usernotes.REPORT_AT}</p></td>
+						<td class="topic"><p>{usernotes.ACTION}</p></td>
+						<!-- IF S_CLEAR_ALLOWED --><td class="bg2"><input type="checkbox" name="marknote[]" id="note-{usernotes.ID}" value="{usernotes.ID}" /></td><!-- ENDIF -->
+					</tr>
+				<!-- BEGINELSE -->
+					<tr>
+						<td class="bg1" colspan="<!-- IF S_CLEAR_ALLOWED -->5<!-- ELSE -->4<!-- ENDIF -->"><p>{L_NO_ENTRIES}</p></td>
+					</tr>
+				<!-- END usernames -->
+			</tbody>
+		</table>
+	</div>
+	
 	<hr />
 
 	<fieldset class="display-options">

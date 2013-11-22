@@ -24,44 +24,46 @@
 				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
 			</li>
 		</ul>
-		<ul class="topiclist">
-			<li class="header">
-				<dl>
-					<dt>{L_VIEW_DETAILS}</dt>
-					<dd class="moderation"><span>{L_REPORTER}<!-- IF not S_PM --> &amp; {L_FORUM}<!-- ENDIF --></span></dd>
-					<dd class="mark">{L_MARK}</dd>
-				</dl>
-			</li>
-		</ul>
-		<ul class="topiclist cplist">
-
-		<!-- BEGIN postrow -->
-			<li class="row<!-- IF postrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-				<dl>
+		
+		<div class="forums-wrapper">
+			<table class="forums">
+				<thead>
+					<th>{L_VIEW_DETAILS}</th>
+					<!-- IF S_PM --><th>{L_MESSAGE_TO}</th><!-- ENDIF -->
+					<th>{L_REPORTER}<!-- IF not S_PM --> &amp; {L_FORUM}<!-- ENDIF --></th>
 					<!-- IF S_PM -->
-					<dt>
-						<a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.PM_SUBJECT}</a> {postrow.ATTACH_ICON_IMG}<br />
-						<span>{L_MESSAGE_BY_AUTHOR} {postrow.PM_AUTHOR_FULL} &raquo; {postrow.PM_TIME}</span><br />
-						<span>{L_MESSAGE_TO} {postrow.RECIPIENTS}</span>
-					</dt>
-					<dd class="moderation">
-						<span>{postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}</span>
-					</dd>
+						<th>{L_TIME}</th>
 					<!-- ELSE -->
-					<dt>
-						<a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.POST_SUBJECT}</a> {postrow.ATTACH_ICON_IMG}<br />
-						<span>{L_POSTED} {L_POST_BY_AUTHOR} {postrow.POST_AUTHOR_FULL} &raquo; {postrow.POST_TIME}</span>
-					</dt>
-					<dd class="moderation">
-						<span>{postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}<br />
-						{L_FORUM}: <a href="{postrow.U_VIEWFORUM}">{postrow.FORUM_NAME}</a></span>
-					</dd>
+						<th>{L_MARK}</th>
 					<!-- ENDIF -->
-					<dd class="mark"><input type="checkbox" name="report_id_list[]" value="{postrow.REPORT_ID}" /></dd>
-				</dl>
-			</li>
-		<!-- END postrow -->
-		</ul>
+				</thead>
+				<tbody>
+					<!-- BEGIN postrow -->
+						<tr class="row<!-- IF postrow.S_ROW_COUNT is odd --> bg2<!-- ELSE --> bg1<!-- ENDIF -->">
+							<!-- IF S_PM -->
+								<td class="topic">
+									<h4>{postrow.ATTACH_ICON_IMG} <a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.PM_SUBJECT}</a></h4>
+									<p>{L_MESSAGE_BY_AUTHOR} {postrow.PM_AUTHOR_FULL} &raquo; {postrow.PM_TIME}</p>
+								</td>
+								<td class="bg2"><p>{postrow.RECIPIENTS}</p></td>
+								<td><p>{postrow.REPORTER_FULL}</p></td>
+								<td class="bg2"><p>{postrow.REPORT_TIME}</p></td>
+							<!-- ELSE -->
+								<td class="topic bg2">
+									<h4>{postrow.ATTACH_ICON_IMG} <a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.POST_SUBJECT}</a></h4>
+									<p>{L_POSTED} {L_POST_BY_AUTHOR} {postrow.POST_AUTHOR_FULL} &raquo; {postrow.POST_TIME}</p>
+								</td>
+								<td>
+									<p>{postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}</p>
+									<p>{L_FORUM}: <a href="{postrow.U_VIEWFORUM}">{postrow.FORUM_NAME}</a></p>
+								</td>
+								<td class="mark bg2"><input type="checkbox" name="report_id_list[]" value="{postrow.REPORT_ID}" /></td>
+							<!-- ENDIF -->
+						</tr>
+					<!-- END postrow -->
+				</tbody>
+			</table>
+		</div>
 
 		<fieldset class="display-options">
 			<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->

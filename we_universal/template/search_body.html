@@ -93,31 +93,26 @@
 </form>
 
 <!-- IF .recentsearch -->
-<div class="forabg">
-	<div class="inner"><span class="corners-top"><span></span></span>
-
-	<table class="table1" cellspacing="0" cellpadding="1">
-	<thead>
-	<tr>
-		<th colspan="2" class="name">{L_RECENT_SEARCHES}</th>
-	</tr>
-	</thead>
-	<tbody>
-	<!-- BEGIN recentsearch -->
-		<tr class="<!-- IF recentsearch.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
-			<td><a href="{recentsearch.U_KEYWORDS}">{recentsearch.KEYWORDS}</a></td>
-			<td class="active"><span>{recentsearch.TIME}</span></td>
-		</tr>
-	<!-- BEGINELSE -->
-		<tr class="bg1">
-			<td colspan="2">{L_NO_RECENT_SEARCHES}</td>
-		</tr>
-	<!-- END recentsearch -->
-	</tbody>
-	</table>
-
-	<span class="corners-bottom"><span></span></span></div>
-</div>
+	<div class="forums-wrapper">
+		<table class="forums">
+			<thead>
+				<th colspan="2">{L_RECENT_SEARCHES}</th>
+			</thead>
+			<tbody>
+				<!-- BEGIN recentsearch -->
+					<tr class="<!-- IF recentsearch.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+						<td><p><a href="{recentsearch.U_KEYWORDS}">{recentsearch.KEYWORDS}</a></p></td>
+						<td class="last-post bg2"><p>{recentsearch.TIME}</p></td>
+					</tr>
+				<!-- BEGINELSE -->
+					<tr class="bg1">
+						<td colspan="2">{L_NO_RECENT_SEARCHES}</td>
+					</tr>
+				<!-- END recentsearch -->
+			</tbody>
+		</table>
+	</div>
 <!-- ENDIF -->
+
 
 <!-- INCLUDE overall_footer.html -->

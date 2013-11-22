@@ -1,13 +1,7 @@
 <!-- INCLUDE overall_header.html -->
 
 <h2><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a></h2>
-
-<!-- IF FORUM_DESC or MODERATORS or U_MCP -->
-<div>
-	<!-- IF FORUM_DESC --><p>{FORUM_DESC}</p><!-- ENDIF -->
-	<!-- IF MODERATORS --><p><strong><!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->:</strong> {MODERATORS}</p><!-- ENDIF -->
-</div>
-<!-- ENDIF -->
+<!-- IF MODERATORS --><p><strong><!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->:</strong> {MODERATORS}</p><!-- ENDIF -->
 
 <!-- IF S_FORUM_RULES -->
 	<div class="rules">
@@ -21,11 +15,12 @@
 <!-- ENDIF -->
 
 <!-- IF S_HAS_SUBFORUM -->
-<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
-<ul class="linklist">
-	<li class="rightside"><a href="{U_MARK_FORUMS}">{L_MARK_FORUMS_READ}</a></li>
-</ul>
-<!-- ENDIF -->
+	<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
+		<ul class="linklist">
+			<li class="rightside"><a href="{U_MARK_FORUMS}">{L_MARK_FORUMS_READ}</a></li>
+		</ul>
+	<!-- ENDIF -->
+	
 	<!-- INCLUDE forumlist_body.html -->
 <!-- ENDIF -->
 
@@ -109,57 +104,56 @@
 <!-- ENDIF -->
 
 <!-- BEGIN topicrow -->
-
 	<!-- IF not topicrow.S_TOPIC_TYPE_SWITCH and not topicrow.S_FIRST_ROW -->
-		</ul>
-		<span class="corners-bottom"><span></span></span></div>
-	</div>
+				</tbody>
+			</table>
+		</div>
 	<!-- ENDIF -->
 
 	<!-- IF topicrow.S_FIRST_ROW or not topicrow.S_TOPIC_TYPE_SWITCH -->
-		<div class="forabg<!-- IF topicrow.S_TOPIC_TYPE_SWITCH --> announcement<!-- ENDIF -->">
-		<div class="inner"><span class="corners-top"><span></span></span>
-		<ul class="topiclist">
-			<li class="header">
-				<dl class="icon">
-					<dt><!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and topicrow.S_TOPIC_TYPE gt 1 -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF --></dt>
-					<dd class="posts">{L_REPLIES}</dd>
-					<dd class="views">{L_VIEWS}</dd>
-					<dd class="lastpost"><span>{L_LAST_POST}</span></dd>
-				</dl>
-			</li>
-		</ul>
-		<ul class="topiclist topics">
+		<div class="forums-wrapper">
+			<table class="forums">
+				<thead>
+					<th colspan="2"><!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and topicrow.S_TOPIC_TYPE gt 1 -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF --></th>
+					<th class="statistics">{L_STATISTICS}</th>
+					<th class="last-post">{L_LAST_POST}</th>
+				</thead>
+				<tbody>
 	<!-- ENDIF -->
 
-		<li class="row<!-- IF topicrow.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> announce<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> sticky<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
-			<dl class="icon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;">
-				<dt<!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --> style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF --> title="{topicrow.TOPIC_FOLDER_IMG_ALT}"><!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF --><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a><br />
-					<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
-					<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
-				</dt>
-				<dd class="posts">{topicrow.REPLIES} <dfn>{L_REPLIES}</dfn></dd>
-				<dd class="views">{topicrow.VIEWS} <dfn>{L_VIEWS}</dfn></dd>
-				<dd class="lastpost">
-					<!-- IF not S_IS_BOT --><span class="left-box"><a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a></span><!-- ENDIF -->
-					<span class="left-box"><dfn>{L_LAST_POST}</dfn> {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}<br />{topicrow.LAST_POST_TIME}</span>
-				</dd>
-			</dl>
-		</li>
+	<tr class="<!-- IF topicrow.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+		<td class="icon bg2<!-- IF topicrow.S_POST_ANNOUNCE --> announce<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> sticky<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ENDIF -->" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC});" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+			<!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}" alt="" title="" /><!-- ENDIF -->
+		</td>
+		<td class="topic">
+			<h4><!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG}<!-- ENDIF --> <a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a></h4>
+			<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
+			<p>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</p>
+		</td>
+		<td class="bg2">
+			<p>{L_REPLIES}: <strong>{topicrow.REPLIES}</strong></p>
+			<p>{L_VIEWS}: <strong>{topicrow.VIEWS}</strong></p>
+		</td>
+		<td>
+			<p>{topicrow.LAST_POST_TIME}</p>
+			<p>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL} <!-- IF not S_IS_BOT --><a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a><!-- ENDIF --></p>
+		</td>
+	</tr>
 
 	<!-- IF topicrow.S_LAST_ROW -->
-			</ul>
-		<span class="corners-bottom"><span></span></span></div>
-	</div>
+				</tbody>
+			</table>
+		</div>
 	<!-- ENDIF -->
-
 <!-- BEGINELSE -->
 	<!-- IF S_IS_POSTABLE -->
-	<div class="panel">
-		<div class="inner"><span class="corners-top"><span></span></span>
-		<strong>{L_NO_TOPICS}</strong>
-		<span class="corners-bottom"><span></span></span></div>
-	</div>
+		<div class="panel">
+			<div class="inner"><span class="corners-top"><span></span></span>
+				
+			<strong>{L_NO_TOPICS}</strong>
+			
+			<span class="corners-bottom"><span></span></span></div>
+		</div>
 	<!-- ENDIF -->
 <!-- END topicrow -->
 

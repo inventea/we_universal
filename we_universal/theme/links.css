@@ -40,7 +40,7 @@ a:active			{ color: #d2d2d2; text-decoration: none; }
 /* Links for forum/topic lists */
 a.forumtitle {
 	font-family: "Trebuchet MS", Helvetica, Arial, Sans-serif;
-	font-size: 1.2em;
+	font-size: 14px;
 	font-weight: bold;
 	color: #898989;
 	text-decoration: none;
@@ -59,7 +59,7 @@ a.forumtitle:active {
 
 a.topictitle {
 	font-family: "Trebuchet MS", Helvetica, Arial, Sans-serif;
-	font-size: 1.2em;
+	font-size: 14px;
 	font-weight: bold;
 	color: #898989;
 	text-decoration: none;

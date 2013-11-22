@@ -6,7 +6,7 @@
 body {
 	background: #f9f9f9;
 	margin: 15px 0;
-	font: 62.5% Verdana, Helvetica, Arial, sans-serif;
+	font: 62.5% Verdana, Arial, Helvetica, sans-serif;
 	color: #828282;
 }
 
@@ -25,7 +25,7 @@ h2 {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-weight: normal;
 	color: #3f3f3f;
-	font-size: 2.2em;
+	font-size: 22px;
 	margin-bottom: 0.3em;
 	text-shadow: 1px 1px 3px #eee;
 }
@@ -38,7 +38,7 @@ h3 {
 	border-bottom: 1px solid #CCCCCC;
 	margin-bottom: 3px;
 	padding-bottom: 2px;
-	font-size: 1.1em;
+	font-size: 11px;
 	color: #989898;
 	margin-top: 20px;
 }
@@ -46,7 +46,7 @@ h3 {
 h4 {
 	/* Forum and topic list titles */
 	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, Sans-serif;
-	font-size: 1.3em;
+	font-size: 14px;
 }
 
 p {
@@ -98,6 +98,7 @@ p.right {
 #bar {
 	height: 40px;
 	padding: 0 20px;
+	font-family: Tahoma, Helvetica, Arial, sans-serif;
 }
 
 #header {
@@ -117,6 +118,7 @@ p.right {
 #container {
 	margin-top: 190px;
 	padding: 15px 20px;
+	font-family: Tahoma, Helvetica, Arial, sans-serif;
 }
 
 #footer {
@@ -199,12 +201,13 @@ p.right {
 ---------------------------------------- */
 #site-description {
 	margin-top: 30px;
-	margin-left: 55px;
+	margin-left: 50px;
 	position: absolute;
+	white-space: nowrap;
 }
 
 #site-description h1, #site-description p {
-	text-shadow: 1px 1px 3px #555;
+	text-shadow: 1px 3px 5px #333;
 }
 
 #site-description h1 {
@@ -632,11 +635,6 @@ div.rules {
 	line-height: 1.3em;
 	color: #bcbcbc;
 	font-size: 1.1em;
-}
-
-div.rules strong {
-	margin-bottom: -12px;
-	display: block;
 }
 
 div.rules ul, div.rules ol {
