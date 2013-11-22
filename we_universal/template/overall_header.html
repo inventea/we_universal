@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}" xml:lang="{S_USER_LANG}">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="{S_USER_LANG}" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+{META}
+<title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
+
+<script type="text/javascript">
+// <![CDATA[
+	var jump_page = '{LA_JUMP_PAGE}:';
+	var on_page = '{ON_PAGE}';
+	var per_page = '{PER_PAGE}';
+	var base_url = '{A_BASE_URL}';
+	var style_cookie = 'phpBBstyle';
+	var style_cookie_settings = '{A_COOKIE_SETTINGS}';
+	var onload_functions = new Array();
+	var onunload_functions = new Array();
+
+	<!-- IF S_USER_PM_POPUP -->
+		if ({S_NEW_PM})
+		{
+			var url = '{UA_POPUP_PM}';
+			window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=450');
+		}
+	<!-- ENDIF -->
+
+	/**
+	* Find a member
+	*/
+	function find_username(url)
+	{
+		popup(url, 760, 570, '_usersearch');
+		return false;
+	}
+
+	/**
+	* New function for handling multiple calls to window.onload and window.unload by pentapenguin
+	*/
+	window.onload = function()
+	{
+		for (var i = 0; i < onload_functions.length; i++)
+		{
+			eval(onload_functions[i]);
+		}
+	}
+
+	window.onunload = function()
+	{
+		for (var i = 0; i < onunload_functions.length; i++)
+		{
+			eval(onunload_functions[i]);
+		}
+	}
+// ]]>
+</script>
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/styleswitcher.js"></script>
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/forum_fn.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/textarearesizer.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+	$(document).ready(function() {
+		$('textarea.resizable:not(.processed)').TextAreaResizer();
+		$('iframe.resizable:not(.processed)').TextAreaResizer();
+	});
+// ]]>
+</script>
+
+<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
+<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+<link href="{T_THEME_PATH}/normal.css" rel="stylesheet" type="text/css" title="A" />
+<link href="{T_THEME_PATH}/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
+<link href="{T_THEME_PATH}/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
+<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- ENDIF -->
+
+</head>
+<body class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
+
+<div id="wrapper">
+
+	<div id="block">
+		<ul class="left">
+			<!-- IF not S_USER_LOGGED_IN -->
+			<li>{CURRENT_TIME}</li>
+			<!-- ELSE -->
+			<li>{LAST_VISIT_DATE}</li>
+			<!-- ENDIF -->
+		</ul>
+		
+		<!-- IF S_DISPLAY_SEARCH -->
+		<div id="quick_search">
+			<form action="{U_SEARCH}" method="post" id="search">
+			<fieldset>
+				<input type="text" name="keywords" id="keywords" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="quick_search_input" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
+				<input type="submit" title="{L_SEARCH}" class="quick_search_button" value="" />
+			</fieldset>
+			</form>
+		</div>
+		<!-- ENDIF -->
+	</div>
+	
+	<div id="header">
+		<div id="illustration">
+			<ul class="right">
+				<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
+				<li><a href="{U_SEARCH}" title="{L_SEARCH}">{L_SEARCH}</a></li>
+				<!-- IF not S_IS_BOT -->
+					<!-- IF S_DISPLAY_MEMBERLIST --><li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
+					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED --><li><a href="{U_REGISTER}">{L_REGISTER}</a></li><!-- ENDIF -->
+					<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l">{L_LOGIN_LOGOUT}</a></li>
+				<!-- ENDIF -->
+			</ul>
+			
+			<div id="site_description">
+				<h1><a href="{U_INDEX}" title="{L_INDEX}">{SITENAME}</a></h1>
+				<p>{SITE_DESCRIPTION}</p>
+			</div>
+			
+			<ul class="left">
+				<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="u">{L_PROFILE}</a></li>
+					<!-- IF S_DISPLAY_PM --><li><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
+					<li><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
+					<!-- IF U_RESTORE_PERMISSIONS --><li><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
+					<!-- IF U_MCP --><li><a href="{U_MCP}" title="{L_MCP}">{L_MCP}</a></li><!-- ENDIF -->
+					<!-- IF U_ACP --> <li><a href="{U_ACP}" title="{L_ACP}">{L_ACP}</a></li><!-- ENDIF -->
+				<!-- ENDIF -->
+			</ul>
+		</div>
+	</div>
+	
+	<div id="container">
+		<div id="content">
+		
+			<div id="breadcrumb">
+				<p>{L_JUMP_TO}: <a href="{U_INDEX}" title="{SITENAME}" accesskey="h">{L_INDEX}</a> <!-- BEGIN navlinks --> &#187; <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks --></p>
+			</div>
+			
+			 <!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) --> 
+			<div id="message" class="rules">
+				<div class="inner"><span class="corners-top"><span></span></span>
+					<strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
+				<span class="corners-bottom"><span></span></span></div>
+			</div>
+			<!-- ENDIF -->

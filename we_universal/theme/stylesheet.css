@@ -1,0 +1,18 @@
+/* 
+ * phpBB 3.0.x Cascading Style Sheets
+ * ------------------------------------------------------------
+ * Style name:			we_universal
+ * Based on style:		prosilver
+ * Style version:		1.0
+ * Author:				Inventia
+ * ------------------------------------------------------------
+ */
+
+@import url("common.css");
+@import url("links.css");
+@import url("content.css");
+@import url("buttons.css");
+@import url("cp.css");
+@import url("forms.css");
+@import url("tweaks.css");
+@import url("colours.css");
