@@ -15,6 +15,10 @@ input {
 	font-family: Verdana, Helvetica, Arial, sans-serif;
 }
 
+input:focus {
+	outline: none;
+}
+
 select {
 	font-family: Verdana, Helvetica, Arial, sans-serif;
 	font-weight: normal;

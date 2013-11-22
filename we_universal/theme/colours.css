@@ -207,9 +207,9 @@ div.rules a, p.rules a {
 --------------------------------------------------------------
 Colours and backgrounds for links.css
 -------------------------------------------------------------- */
-a:link		{ color: #444; }
-a:visited	{ color: #444; }
-a:hover		{ color: #c20031; }
+a:link				{ color: #444; }
+a:visited			{ color: #444; }
+a:hover, a:focus	{ color: #c20031; }
 
 /* Links for forum/topic lists */
 a.forumtitle, a.topictitle {

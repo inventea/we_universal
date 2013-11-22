@@ -190,7 +190,7 @@ p.right {
 	color: #eaeaea;
 }
 
-#dashboard li a:hover {
+#dashboard li a:hover, #dashboard li a:focus {
 	background: url("{T_THEME_PATH}/images/primary_navigation.png") repeat-x 0 100%;
 	text-decoration: none;
 }
