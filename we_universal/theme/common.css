@@ -16,28 +16,28 @@ body {
 	background: #f9f9f9;
 	margin: 15px 0;
 	padding: 0;
-	font-family: Verdana, Helvetica, Arial, Sans-serif;
 	font-size: 62.5%; /* Text-Sizing with ems: http://www.clagnut.com/blog/348/ */
+	font-family: Verdana, Helvetica, Arial, Sans-serif;
 	color: #828282;
 }
 
 h1 {
 	/* Forum name */
 	font-family: "Trebuchet MS", Arial, Helvetica, Sans-serif;
-	margin-right: 200px;
-	color: #FFFFFF;
 	margin-top: 15px;
-	font-weight: bold;
+	margin-right: 200px;
 	font-size: 2em;
+	font-weight: bold;
+	color: #fff;
 }
 
 h2 {
 	/* Forum header titles */
+	margin-bottom: 5px;
+	font-size: 2.2em;
 	font-family: "Trebuchet MS", Arial, Helvetica, Sans-serif;
 	font-weight: normal;
 	color: #3f3f3f;
-	font-size: 2.2em;
-	margin-bottom: 5px;
 }
 
 .section-viewforum h2 {
@@ -54,22 +54,22 @@ h3 {
 	margin: 20px 0 3px 0;
 	padding-bottom: 2px;
 	text-transform: uppercase;
+	font-size: 1.1em;
 	font-family: Arial, Helvetica, Sans-serif;
 	font-weight: bold;
-	font-size: 1em;
 	color: #989898;
 }
 
 h4 {
 	/* Forum and topic list titles */
-	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, Sans-Serif;
 	font-size: 1.3em;
+	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, Sans-Serif;
 }
 
 p {
 	margin-bottom: 1.5em;
-	line-height: 1.3em;
 	font-size: 1.1em;
+	line-height: 1.3em;
 }
 
 img {
@@ -111,7 +111,7 @@ p.right {
 }
 
 #block {
-	background: #ffffff;
+	background: #fff;
 	border: 2px solid #e7e7e7;
 	border-bottom: 0;
 	width: 980px;
@@ -130,30 +130,25 @@ p.right {
 	height: 190px;
 }
 
-#illustration {
-	background: url("{T_THEME_PATH}/images/illustration.jpg") no-repeat;
+#billboard {
+	background: url("{T_THEME_PATH}/images/billboard.jpg") no-repeat;
 	width: 980px;
 	height: 190px;
-	margin: 0 auto;
-	clear: both;
+	margin: auto;
+	display: block;
 }
 
 #container {
-	background: #ffffff;
+	background: #fff;
 	border-left: 2px solid #e7e7e7;
 	border-right: 2px solid #e7e7e7;
 	width: 980px;
 	margin: auto;
+	position: relative;
 }
 
 #content {
 	padding: 15px 20px;
-	clear: both;
-	position: relative;
-}
-
-#breadcrumb p {
-	margin-bottom: 10px;
 }
 
 #footer {
@@ -166,10 +161,10 @@ p.right {
 #secondar_navigation {
 	background: #ffffff;
 	border: 2px solid #e7e7e7;
-	border-top: none;
+	border-top: 0;
 	width: 980px;
 	height: 30px;
-	margin: 0 auto 0 auto;
+	margin: auto;
 }
 
 /* Block above header image
@@ -198,27 +193,25 @@ p.right {
 	color: #ffffff;
 }
 
-#site_description h1 a {
-	color: #ffffff;
-}
-
-#site_description h1 a:hover {
-	text-decoration: underline;
-}
-
 #site_description p {
 	font-size: 1.2em;
 	color: #ffffff;
+}
+
+/* Breadcrumb
+---------------------------------------- */
+#breadcrumb p {
+	margin-bottom: 10px;
+	
 }
 
 /* Quick search in header
 ---------------------------------------- */
 .quick_search_input {
 	background: url("{T_THEME_PATH}/images/quick_search_input.gif");
-	border: none;
+	border: 0;
 	width: 165px;
 	height: 13px;
-	margin: -1px 0 0 0;
 	padding: 4px 4px 4px 8px;
 	color: #c5c5c5;
 	cursor: text;
@@ -226,40 +219,48 @@ p.right {
 
 .quick_search_button {
 	background: url("{T_THEME_PATH}/images/quick_search_button.gif");
-	border: none;
+	border: 0;
 	width: 23px;
 	height: 21px;
-	margin: -1px 0 0 -4px;
+	margin-left: -4px;
 	padding: 0;
 }
 
 /* Primary navigation
 ---------------------------------------- */
-#illustration ul {
+#billboard ul {
 	list-style: none;
 }
 
-#illustration li {
+#billboard li {
 	display: inline;
 	font-size: 1.1em;
 }
 
-#illustration .left {
+#billboard .left {
 	margin-top: 163px;
 	position: absolute;
 }
 
-#illustration li a {
+#billboard li a {
 	background: url("{T_THEME_PATH}/images/primary_navigation.png");
 	padding: 7px 10px;
 	display: inline-block;
 	color: #eaeaea;
 }
 
-#illustration li a:hover {
+#billboard li a:hover {
 	background: url("{T_THEME_PATH}/images/primary_navigation.png") 0 100%;
 	text-decoration: none;
 	color: #eaeaea;
+}
+
+/* Footer
+---------------------------------------- */
+#footer p {
+	margin: 0;
+	font-size: 1em;
+	line-height: 1.4em;
 }
 
 /* Font size, topic, e-mail and print icons
@@ -284,9 +285,6 @@ p.right {
 	text-align: right;
 }
 
-.strong { font-weight: bold; }
-.italic { font-style: italic; }
-
 .close_window {
 	margin: 10px 0;
 	text-align: center;
@@ -299,7 +297,7 @@ p.right {
 	padding: 0 10px;
 }
 
-.forabg, .forumbg {
+.forabg, .forabg {
 	background: #b1b1b1 none repeat-x 0 0;
 	margin-bottom: 4px;
 	padding: 0 5px;
@@ -652,6 +650,10 @@ li.pagination {
 	color: #555555;
 }
 
+.copyright span {
+	font-style: italic;
+}
+
 .small {
 	font-size: 0.9em !important;
 }
@@ -668,7 +670,7 @@ li.pagination {
 	background: #f3dddd;
 	border: 1px solid #deb7b7;
 	padding: 5px 10px;
-	font-size: 1em;
+	font-size: 11px;
 }
 
 div.error {
@@ -692,7 +694,7 @@ div.rules {
 	font-size: 1.1em;
 }
 
-div.rules ul {
+div.rules ul, div.rules ol {
 	margin-left: 20px;
 }
 

@@ -21,7 +21,7 @@ select {
 	cursor: pointer;
 	vertical-align: middle;
 	border: 1px solid #666666;
-	padding: 1px;
+	padding: 1px 0 1px 3px;
 	background-color: #FAFAFA;
 }
 
@@ -269,17 +269,16 @@ fieldset.submit-buttons input {
 	margin: 3px;
 }
 
-/* Resizable textarea */
+/* Resizable text field */
 .grippie {
-	background: #eeeeee url("{T_THEME_PATH}/images/grippie.gif") no-repeat scroll center;
+	background: #eeeeee url("{T_THEME_PATH}/images/grippie.gif") no-repeat center;
 	border-color: #c2c2c2;
 	border-style: solid;
 	border-width: 0 1px 1px 1px;
-	width: 100%;
 	height: 9px;
-	cursor: s-resize;
-	overflow: hidden;
 	padding: 0 2px;
+	overflow: hidden;
+	cursor: s-resize;
 }
 
 .resizable-textarea textarea {
@@ -295,7 +294,7 @@ fieldset.submit-buttons input {
 	background-color: #FFFFFF;
 	border: 1px solid #c0c0c0;
 	color: #333333;
-	padding: 2px;
+	padding: 3px;
 	cursor: text;
 }
 

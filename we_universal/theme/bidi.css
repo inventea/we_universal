@@ -714,3 +714,8 @@
 	padding-right: 17px;
 	padding-left: 0;
 }
+
+/** Reference: Bug #27155 */
+.rtl #wrap, .rtl .headerbar, .rtl #site-description, .rtl .navbar {
+	position: relative;
+}

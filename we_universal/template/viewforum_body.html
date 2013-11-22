@@ -1,10 +1,7 @@
 <!-- INCLUDE overall_header.html -->
 
 <h2><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a></h2>
-
-<!-- IF FORUM_DESC or U_MCP -->
-	<p><!-- IF FORUM_DESC --><span>{FORUM_DESC}</span><!-- ENDIF --></p>
-<!-- ENDIF -->
+<!-- IF FORUM_DESC --><p>{FORUM_DESC}</p><!-- ENDIF -->
 
 <!-- IF S_FORUM_RULES -->
 	<div class="rules">
@@ -67,7 +64,7 @@
 		<span class="corners-bottom"><span></span></span></div>
 	</div>
 
-	<!-- IF not S_USER_LOGGED_IN -->
+	<!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
 
 		<form action="{S_LOGIN_ACTION}" method="post">
 

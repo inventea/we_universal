@@ -72,6 +72,20 @@ dl.icon {
 	float: none;
 }
 
-table.table1 tbody td {
-	#height: 25px;
+* html .forumbg table.table1 {
+	margin: 0 -2px 0px -1px;
+}
+
+* html table.table1 tbody td {
+	height: 25px;
+}
+
+/* Reset main blocks width
+---------------------------------------- */
+* html #block {
+	width: 960px;
+}
+
+* html #content {
+	width: 940px;
 }
