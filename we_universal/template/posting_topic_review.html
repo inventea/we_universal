@@ -24,7 +24,7 @@
 				<!-- IF topic_review_row.POSTER_QUOTE and topic_review_row.DECODED_MESSAGE -->
 				<ul class="profile-icons">
 					<!-- IF topic_review_row.U_MCP_DETAILS --><li class="info-icon"><a href="{topic_review_row.U_MCP_DETAILS}"><span>{L_POST_DETAILS}</span></a></li><!-- ENDIF -->
-					<li class="quote-icon"><a href="#postingbox" onclick="addquote({topic_review_row.POST_ID}, '{topic_review_row.POSTER_QUOTE}');" title="{L_QUOTE} {topic_review_row.POST_AUTHOR}"><span>{L_QUOTE} {topic_review_row.POST_AUTHOR}</span></a></li>
+					<li class="quote-icon"><a href="#postingbox" onclick="addquote({topic_review_row.POST_ID}, '{topic_review_row.POSTER_QUOTE}', '{LA_WROTE}');" title="{L_QUOTE} {topic_review_row.POST_AUTHOR}"><span>{L_QUOTE} {topic_review_row.POST_AUTHOR}</span></a></li>
 				</ul>
 				<!-- ENDIF -->
 				<h3><a href="#pr{topic_review_row.POST_ID}">{topic_review_row.POST_SUBJECT}</a></h3>

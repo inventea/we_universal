@@ -26,9 +26,11 @@
 		<div class="forums-wrapper">
 			<table class="forums">
 				<thead>
-					<th><!-- IF S_TOPICS -->{L_TOPIC}<!-- ELSE -->{L_POST}<!-- ENDIF --></th>
-					<th><!-- IF not S_TOPICS -->{L_TOPIC} &amp; <!-- ENDIF -->{L_FORUM}</th>
-					<th>{L_MARK}</th>
+					<tr>
+						<th><!-- IF S_TOPICS -->{L_TOPIC}<!-- ELSE -->{L_POST}<!-- ENDIF --></th>
+						<th><!-- IF not S_TOPICS -->{L_TOPIC} &amp; <!-- ENDIF -->{L_FORUM}</th>
+						<th>{L_MARK}</th>
+					</tr>
 				</thead>
 				<tbody>
 					<!-- BEGIN postrow -->

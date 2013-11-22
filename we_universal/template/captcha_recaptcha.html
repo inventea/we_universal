@@ -10,12 +10,13 @@
 
 <!-- IF S_RECAPTCHA_AVAILABLE -->
 	<dl>
-	<dt><label>{L_CONFIRM_CODE}</label>:<br /><span>{L_RECAPTCHA_EXPLAIN}</span></dt>
+	<dt><label>{L_CONFIRM_CODE}:</label><br /><span>{L_RECAPTCHA_EXPLAIN}</span></dt>
 	<dd>
 		<script type="text/javascript">
 		// <![CDATA[
 		var RecaptchaOptions = {
 			lang : '{LA_RECAPTCHA_LANG}',
+			theme : 'clean',
 			tabindex : <!-- IF $CAPTCHA_TAB_INDEX -->{$CAPTCHA_TAB_INDEX}<!-- ELSE -->10<!-- ENDIF -->
 		};
 		// ]]>

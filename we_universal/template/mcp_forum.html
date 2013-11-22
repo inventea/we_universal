@@ -23,15 +23,17 @@
 		<div class="forums-wrapper">
 			<table class="forums">
 				<thead>
-					<th colspan="2">{L_TOPICS}</th>
-					<th>{L_REPLIES}</th>
-					<th class="last-post">{L_LAST_POST}</th>
-					<!-- IF not S_MERGE_SELECT --><th class="mark">{L_MARK}</th><!-- ENDIF -->
+					<tr>
+						<th colspan="2">{L_TOPICS}</th>
+						<th>{L_REPLIES}</th>
+						<th class="last-post">{L_LAST_POST}</th>
+						<!-- IF not S_MERGE_SELECT --><th class="mark">{L_MARK}</th><!-- ENDIF -->
+					</tr>
 				</thead>
 				<tbody>
 					<!-- BEGIN topicrow -->
-						<tr class="row<!-- IF topicrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-							<td class="icon bg2<!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ENDIF -->" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC});" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+						<tr class="row<!-- IF topicrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF --> <!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
+							<td class="icon bg2" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC});" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
 								<!-- IF topicrow.TOPIC_ICON_IMG --><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}" alt="" title="" /><!-- ENDIF -->
 							</td>
 							<td class="topic">

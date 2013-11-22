@@ -49,27 +49,33 @@
 		<div class="forums-wrapper">
 			<table class="forums">
 				<thead>
-					<th colspan="2">{L_MESSAGE}</th>
-					<th class="mark">{L_MARK}</th>
+					<tr>
+						<th colspan="2">{L_MESSAGE}</th>
+						<th class="mark">{L_MARK}</th>
+					</tr>
 				</thead>
 				<tbody>
 					<!-- BEGIN messagerow -->
-						<tr class="row<!-- IF messagerow.S_ROW_COUNT is odd --> bg2<!-- ELSE --> bg1<!-- ENDIF --><!-- IF messagerow.PM_CLASS --> {messagerow.PM_CLASS}<!-- ENDIF -->">
-							<td class="icon bg2" style="background-image: url({messagerow.FOLDER_IMG_SRC});" title="{messagerow.TOPIC_FOLDER_IMG_ALT}">
+						<tr class="row<!-- IF messagerow.S_ROW_COUNT is odd --> bg2<!-- ELSE --> bg1<!-- ENDIF --><!-- IF messagerow.S_PM_REPORTED --> reported<!-- ENDIF -->">
+							<td class="icon bg2" style="background-image: url({messagerow.FOLDER_IMG_SRC});" title="{messagerow.TOPIC_FOLDER_IMG_ALT};">
+								<!-- IF messagerow.PM_CLASS --><div class="pm_border {messagerow.PM_CLASS}"></div><!-- ENDIF -->
 								<!-- IF messagerow.PM_ICON_URL and S_PM_ICONS --><img src="{messagerow.PM_ICON_URL}" alt="" title="" /><!-- ENDIF -->
 							</td>
 							<td class="topic">
-								<!-- IF messagerow.S_PM_DELETED -->
-									<h4><a href="{messagerow.U_REMOVE_PM}" class="topictitle">{L_DELETE_MESSAGE}</a></h4>
-									<p>	<span class="error">{L_MESSAGE_REMOVED_FROM_OUTBOX}</span></p>
-								<!-- ELSE -->
-									<h4><a href="{messagerow.U_VIEW_PM}" class="topictitle">{messagerow.SUBJECT}</a></h4>
-								<!-- ENDIF -->
+								<h4>
+									{messagerow.ATTACH_ICON_IMG}
+									
+									<!-- IF messagerow.S_PM_DELETED -->
+										<a href="{messagerow.U_REMOVE_PM}" class="topictitle">{L_DELETE_MESSAGE}</a>
+									<!-- ELSE -->
+										<a href="{messagerow.U_VIEW_PM}" class="topictitle">{messagerow.SUBJECT}</a>
+									<!-- ENDIF -->
+									
+									<!-- IF messagerow.S_PM_REPORTED --><a href="{messagerow.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF -->
+								</h4>
 								
-								<!-- IF messagerow.S_AUTHOR_DELETED -->
-									<br /><em class="small">{L_PM_FROM_REMOVED_AUTHOR}</em>
-								<!-- ENDIF -->
-								
+								<!-- IF messagerow.S_PM_DELETED --><p><span class="error">{L_MESSAGE_REMOVED_FROM_OUTBOX}</span></p><!-- ENDIF -->
+								<!-- IF messagerow.S_AUTHOR_DELETED --><br /><em class="small">{L_PM_FROM_REMOVED_AUTHOR}</em><!-- ENDIF -->
 								<p><!-- IF S_SHOW_RECIPIENTS -->{L_MESSAGE_TO} {messagerow.RECIPIENTS}<!-- ELSE -->{L_MESSAGE_BY_AUTHOR} {messagerow.MESSAGE_AUTHOR_FULL} &raquo; {messagerow.SENT_TIME}<!-- ENDIF --></p>
 							</td>
 							<td class="bg2"><input type="checkbox" name="marked_msg_id[]" value="{messagerow.MESSAGE_ID}" /></td>							

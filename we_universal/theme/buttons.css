@@ -28,7 +28,9 @@
 }
 
 .last-post-img {
-	margin: 3px 8px 0 5px;
+	margin-top: 3px;
+	margin-left: 5px;
+	float: left;
 }
 
 /* Hide <a> text and hide off-state image when rolling over (prevents flicker in IE) */
@@ -52,6 +54,17 @@
 .buttons div.pmreply-icon	{ width: {IMG_BUTTON_PM_REPLY_WIDTH}px; height: {IMG_BUTTON_PM_REPLY_HEIGHT}px; }
 .buttons div.newpm-icon		{ width: {IMG_BUTTON_PM_NEW_WIDTH}px; height: {IMG_BUTTON_PM_NEW_HEIGHT}px; }
 .buttons div.forwardpm-icon	{ width: {IMG_BUTTON_PM_FORWARD_WIDTH}px; height: {IMG_BUTTON_PM_FORWARD_HEIGHT}px; }
+
+/* Font size, topic, e-mail and print icons
+---------------------------------------- */
+.topic-icons {
+	list-style: none;
+}
+
+.topic-icons li {
+	margin-left: 5px;
+	float: left;
+}
 
 /* Sub-header (navigation bar)
 --------------------------------------------- */
@@ -116,10 +129,10 @@ ul.profile-icons li a:hover { background: none; }
 .aim-icon, .aim-icon a			{ background: none top left no-repeat; }
 .yahoo-icon, .yahoo-icon a		{ background: none top left no-repeat; }
 .web-icon, .web-icon a			{ background: none top left no-repeat; }
-.msnm-icon, .msnm-icon a			{ background: none top left no-repeat; }
+.msnm-icon, .msnm-icon a		{ background: none top left no-repeat; }
 .icq-icon, .icq-icon a			{ background: none top left no-repeat; }
-.jabber-icon, .jabber-icon a		{ background: none top left no-repeat; }
-.pm-icon, .pm-icon a				{ background: none top left no-repeat; }
+.jabber-icon, .jabber-icon a	{ background: none top left no-repeat; }
+.pm-icon, .pm-icon a			{ background: none top left no-repeat; }
 .quote-icon, .quote-icon a		{ background: none top left no-repeat; }
 
 /* Moderator icons */

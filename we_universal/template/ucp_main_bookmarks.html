@@ -16,9 +16,11 @@
 			<div class="forums-wrapper">
 				<table class="forums">
 					<thead>
-						<th colspan="2">{L_BOOKMARKS}</th>
-						<th class="last-post">{L_LAST_POST}</th>
-						<th class="mark">{L_MARK}</th>
+						<tr>
+							<th colspan="2">{L_BOOKMARKS}</th>
+							<th class="last-post">{L_LAST_POST}</th>
+							<th class="mark">{L_MARK}</th>
+						</tr>
 					</thead>
 					<tbody>
 						<!-- BEGIN topicrow -->
@@ -36,9 +38,11 @@
 										<p>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</p>
 									</td>
 									<td class="topic bg2">
-										<a href="{topicrow.U_LAST_POST}" class="left-box last-post-img">{LAST_POST_IMG}</a>
-										<p>{topicrow.LAST_POST_TIME}</p>
-										<p>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}</p>
+										<a href="{topicrow.U_LAST_POST}" class="last-post-img">{LAST_POST_IMG}</a>
+										<div class="lastpost-details">
+											<p>{topicrow.LAST_POST_TIME}</p>
+											<p>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}</p>
+										</div>
 									</td>
 									<td><input type="checkbox" name="t[{topicrow.TOPIC_ID}]" id="t{topicrow.TOPIC_ID}" /></td>
 								<!-- ENDIF -->

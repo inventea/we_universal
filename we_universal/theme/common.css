@@ -3,6 +3,11 @@
 	padding: 0;
 }
 
+html {
+	/* Always show a scrollbar for short pages - stops the jump when the scrollbar appears. non-IE browsers */
+   height: 101%;
+}
+
 body {
 	background: #f9f9f9;
 	margin: 15px 0;
@@ -130,7 +135,7 @@ p.right {
 	z-index: -1;
 }
 
-/* Bar
+/* Top bar
 ---------------------------------------- */
 #bar p {
 	margin: 14px 0;
@@ -138,19 +143,17 @@ p.right {
 	color: #aaa;
 }
 
-#bar form {
+#quick-search {
 	margin: 9px 0;
 	float: right;
 }
 
-/* Quick search
----------------------------------------- */
 #quick-search input {
 	border: 0;
 	float: left;
 }
 
-#quick-search input[type="text"] {
+#quick-search #keywords {
 	background: url("{T_THEME_PATH}/images/search_input.png") no-repeat;
 	width: 165px;
 	padding: 4px 4px 4px 8px;
@@ -158,7 +161,7 @@ p.right {
 	cursor: text;
 }
 
-#quick-search input[type="submit"] {
+#quick-search #search {
 	background: url("{T_THEME_PATH}/images/search_button.png") no-repeat;
 	width: 23px;
 	height: 21px;
@@ -220,22 +223,12 @@ p.right {
 	color: #fff;
 }
 
-/* Font size, topic, e-mail and print icons
----------------------------------------- */
-.topic-icons {
-	list-style: none;
-}
-
-.topic-icons li {
-	display: inline-block;
-}
-
 /* Footer
 ---------------------------------------- */
-#footer p {
+#copyright p {
 	margin: 0;
-	font-size: 1em;
-	line-height: 1.4em;
+	font-size: 10px;
+	line-height: 14px;
 	text-align: center;
 }
 
@@ -615,6 +608,7 @@ li.pagination {
 
 .error {
 	color: #bcbcbc;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	font-size: 11px !important;
 	padding: 5px 7px;
@@ -630,15 +624,15 @@ li.reported:hover {
 
 div.rules {
 	background-color: #ececec;
-	padding: 10px 15px;
-	margin: 10px 0;
+	padding: 8px 10px;
+	margin-bottom: 10px;
 	line-height: 1.3em;
+	font-size: 11px;
 	color: #bcbcbc;
-	font-size: 1.1em;
 }
 
 .rules-header {
-	margin-bottom: 5px;
+	margin-bottom: 4px;
 	display: block;
 }
 

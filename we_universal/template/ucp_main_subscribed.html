@@ -13,27 +13,29 @@
 		<div class="forums-wrapper">
 			<table class="forums">
 				<thead>
-					<th colspan="2">{L_WATCHED_FORUMS}</th>
-					<th class="last-post">{L_LAST_POST}</th>
-					<th class="mark">{L_MARK}</th>
+					<tr>
+						<th colspan="2">{L_WATCHED_FORUMS}</th>
+						<th class="last-post">{L_LAST_POST}</th>
+						<th class="mark">{L_MARK}</th>
+					</tr>
 				</thead>
 				<tbody>
 					<!-- BEGIN forumrow -->
 						<tr class="<!-- IF forumrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
 							<td class="icon bg2" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC});"></td>
 							<td class="forum">
-								<h4><a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a></h4>
+								<h4><a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a> <!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG}</a><!-- ENDIF --></h4>
 								<p>{forumrow.FORUM_DESC}</p>
-								
-								<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG}</a><!-- ENDIF -->
 							</td>
 							<td class="forum bg2">
 								<!-- IF forumrow.LAST_POST_TIME -->
-									<a href="{forumrow.U_LAST_POST}" class="left-box last-post-img">{LAST_POST_IMG}</a>
-									<p>{forumrow.LAST_POST_TIME}</p>
-									<p>{L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}</p>
+									<a href="{forumrow.U_LAST_POST}" class="last-post-img">{LAST_POST_IMG}</a>
+									<div class="lastpost-details">
+										<p>{forumrow.LAST_POST_TIME}</p>
+										<p>{L_POST_BY_AUTHOR} {forumrow.LAST_POST_AUTHOR_FULL}</p>
+									</div>
 								<!-- ELSE -->
-								<p style="text-align: center;">{L_NO_POSTS}</p>
+									<p style="text-align: center;">{L_NO_POSTS}</p>
 								<!-- ENDIF -->
 							</td>
 							<td><input type="checkbox" name="f[{forumrow.FORUM_ID}]" id="f{forumrow.FORUM_ID}" /></td>
@@ -50,9 +52,11 @@
 		<div class="forums-wrapper">
 			<table class="forums">
 				<thead>
-					<th colspan="2">{L_WATCHED_TOPICS}</th>
-					<th class="last-post">{L_LAST_POST}</th>
-					<th class="mark">{L_MARK}</th>
+					<tr>
+						<th colspan="2">{L_WATCHED_TOPICS}</th>
+						<th class="last-post">{L_LAST_POST}</th>
+						<th class="mark">{L_MARK}</th>
+					</tr>
 				</thead>
 				<tbody>
 					<!-- BEGIN topicrow -->
@@ -66,9 +70,11 @@
 								<p>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</p>
 							</td>
 							<td class="topic bg2">
-								<a href="{topicrow.U_LAST_POST}" class="left-box last-post-img">{LAST_POST_IMG}</a>
-								<p>{topicrow.LAST_POST_TIME}</p>
-								<p>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}</p>
+								<a href="{topicrow.U_LAST_POST}" class="last-post-img">{LAST_POST_IMG}</a>
+								<div class="lastpost-details">
+									<p>{topicrow.LAST_POST_TIME}</p>
+									<p>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}</p>
+								</div>
 							</td>
 							<td><input type="checkbox" name="t[{topicrow.TOPIC_ID}]" id="t{topicrow.TOPIC_ID}" /></td>
 						</tr>

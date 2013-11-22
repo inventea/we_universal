@@ -187,6 +187,10 @@ dl.details dd {
 	background-color: #F7ECEF !important;
 }
 
+.reported .bg2 {
+	background-color: #f4e1e6 !important;
+}
+
 li.reported:hover {
 	background-color: #f2dfe1 !important;
 }
@@ -194,10 +198,6 @@ li.reported:hover {
 p.rules {
 	background-color: #ECD5D8;
 	background-image: none;
-}
-
-div.rules a, p.rules a {
-	color: #bc2a4d;
 }
 
 /*  	
@@ -469,7 +469,7 @@ dl.thumbnail dt a:hover img {
 
 /* Post poll styles
 ----------------------------------------*/
-ieldset.polls dl {
+fieldset.polls dl {
 	border-top-color: #dcdcdc;
 	color: #666666;
 }
@@ -829,24 +829,24 @@ dl.mini dt {
 }
 
 /* PM marking colours */
-.pmlist li.pm_message_reported_colour, .pm_message_reported_colour {
+.pmlist .pm_message_reported_colour, .pm_message_reported_colour {
 	border-left-color: #BC2A4D;
 	border-right-color: #BC2A4D;
 }
 
-.pmlist li.pm_marked_colour, .pm_marked_colour {
+.pmlist .pm_marked_colour, .pm_marked_colour {
 	border-color: #FF6600;
 }
 
-.pmlist li.pm_replied_colour, .pm_replied_colour {
+.pmlist .pm_replied_colour, .pm_replied_colour {
 	border-color: #A9B8C2;
 }
 
-.pmlist li.pm_friend_colour, .pm_friend_colour {
+.pmlist .pm_friend_colour, .pm_friend_colour {
 	border-color: #5D8FBD;
 }
 
-.pmlist li.pm_foe_colour, .pm_foe_colour {
+.pmlist .pm_foe_colour, .pm_foe_colour {
 	border-color: #000000;
 }
 

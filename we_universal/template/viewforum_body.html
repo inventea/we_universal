@@ -29,7 +29,7 @@
 
 	<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
 		<div class="buttons">
-			<div class="<!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->post-icon<!-- ENDIF -->"><a href="{U_POST_NEW_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_FORUM_LOCKED}<!-- ELSE -->{L_POST_TOPIC}<!-- ENDIF -->"><span></span><!-- IF S_IS_LOCKED -->{L_FORUM_LOCKED}<!-- ELSE -->{L_POST_TOPIC}<!-- ENDIF --></a></div>
+			<div class="<!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->post-icon<!-- ENDIF -->" title="<!-- IF S_IS_LOCKED -->{L_FORUM_LOCKED}<!-- ELSE -->{L_POST_TOPIC}<!-- ENDIF -->"><a href="{U_POST_NEW_TOPIC}"><span></span><!-- IF S_IS_LOCKED -->{L_FORUM_LOCKED}<!-- ELSE -->{L_POST_TOPIC}<!-- ENDIF --></a></div>
 		</div>
 	<!-- ENDIF -->
 
@@ -112,21 +112,25 @@
 
 	<!-- IF topicrow.S_FIRST_ROW or not topicrow.S_TOPIC_TYPE_SWITCH -->
 		<div class="forums-wrapper">
-			<table class="forums">
+			<table class="forums <!-- IF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) --> announcement<!-- ENDIF -->">
 				<thead>
-					<th colspan="2"><!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and topicrow.S_TOPIC_TYPE gt 1 -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF --></th>
-					<th class="statistics">{L_STATISTICS}</th>
-					<th class="last-post">{L_LAST_POST}</th>
+					<tr>
+						<th colspan="2"><!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF --></th>
+						<th class="statistics">{L_STATISTICS}</th>
+						<th class="last-post">{L_LAST_POST}</th>
+					</tr>
 				</thead>
 				<tbody>
 	<!-- ENDIF -->
 
-	<tr class="<!-- IF topicrow.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
-		<td class="icon bg2<!-- IF topicrow.S_POST_ANNOUNCE --> announce<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> sticky<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ENDIF -->" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC});" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
-			<!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}" alt="" title="" /><!-- ENDIF -->
-		</td>
+	<tr class="<!-- IF topicrow.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF topicrow.S_POST_GLOBAL --> global-announce<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> announce<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> sticky<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
+		<td class="icon bg2" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC});" title="{topicrow.TOPIC_FOLDER_IMG_ALT}"><!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}" alt="" title="" /><!-- ENDIF --></td>
 		<td class="topic">
-			<h4><!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG}<!-- ENDIF --> <a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a></h4>
+			<h4>
+				<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG}<!-- ENDIF --> <a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a>
+				<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a> <!-- ENDIF -->
+				<!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF -->
+			</h4>
 			<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
 			<p>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</p>
 		</td>
@@ -135,9 +139,11 @@
 			<p>{L_VIEWS}: <strong>{topicrow.VIEWS}</strong></p>
 		</td>
 		<td class="topic">
-			<!-- IF not S_IS_BOT --><a href="{topicrow.U_LAST_POST}" class="left-box last-post-img">{LAST_POST_IMG}</a><!-- ENDIF -->
-			<p>{topicrow.LAST_POST_TIME}</p>
-			<p>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}</p>
+			<!-- IF not S_IS_BOT --><a href="{topicrow.U_LAST_POST}" class="last-post-img">{LAST_POST_IMG}</a><!-- ENDIF -->
+			<div class="lastpost-details">
+				<p>{topicrow.LAST_POST_TIME}</p>
+				<p>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}</p>
+			</div>
 		</td>
 	</tr>
 

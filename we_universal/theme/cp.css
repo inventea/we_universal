@@ -392,39 +392,36 @@ ol.def-rules li {
 }
 
 /* PM marking colours */
-.pmlist li.bg1 {
-	border-left: solid 1px transparent;
-	border-width: 0 1px;
+.pm_border {
+	height: 50px;
+	margin: -8px;
+	float: left;
+	position: relative;
 }
 
-.pmlist li.bg2 {
-	border-left: solid 1px transparent;
-	border-width: 0 1px;
-}
-
-.pmlist li.pm_message_reported_colour, .pm_message_reported_colour {
+.pmlist .pm_message_reported_colour, .pm_message_reported_colour {
 	border-left-color: #bcbcbc;
 	border-right-color: #bcbcbc;
 }
 
-.pmlist li.pm_marked_colour, .pm_marked_colour {
+.pmlist .pm_marked_colour, .pm_marked_colour {
 	border-left: solid 1px #ffffff;
-	border-width: 0 1px;
+	border-width: 0 2px;
 }
 
-.pmlist li.pm_replied_colour, .pm_replied_colour {
+.pmlist .pm_replied_colour, .pm_replied_colour {
 	border-left: solid 1px #c2c2c2;
-	border-width: 0 1px;
+	border-width: 0 2px;
 }
 
-.pmlist li.pm_friend_colour, .pm_friend_colour {
+.pmlist .pm_friend_colour, .pm_friend_colour {
 	border-left: solid 1px #bdbdbd;
-	border-width: 0 1px;
+	border-width: 0 2px;
 }
 
-.pmlist li.pm_foe_colour, .pm_foe_colour {
+.pmlist .pm_foe_colour, .pm_foe_colour {
 	border-left: solid 1px #000000;
-	border-width: 0 1px;
+	border-width: 0 2px;
 }
 
 .pm-legend {

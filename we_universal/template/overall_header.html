@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}" xml:lang="{S_USER_LANG}">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
@@ -61,7 +62,7 @@
 		*/
 		function find_username(url)
 		{
-			popup(url, 760, 570, '_usersearch');
+			popup(url, 960, 570, '_usersearch');
 			return false;
 		}
 
@@ -101,7 +102,7 @@
 			<form action="{U_SEARCH}" method="post" id="quick-search">
 				<fieldset>
 					<input type="text" name="keywords" id="keywords" maxlength="100" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
-					<input type="submit" value="{L_SEARCH}" />
+					<input type="submit" id="search" value="{L_SEARCH}" />
 				</fieldset>
 			</form>
 		<!-- ENDIF -->
@@ -111,10 +112,10 @@
 		<div id="dashboard">
 			<ul id="navigation-top">
 				<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
-				<li><a href="{U_SEARCH}" title="{L_SEARCH}">{L_SEARCH}</a></li>
+				<!-- IF S_DISPLAY_SEARCH --><li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a></li> <!-- ENDIF -->
 				<!-- IF not S_IS_BOT -->
 					<!-- IF S_DISPLAY_MEMBERLIST --><li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
-					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED --><li><a href="{U_REGISTER}" title="{L_REGISTER}">{L_REGISTER}</a></li><!-- ENDIF -->
+					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li><a href="{U_REGISTER}" title="{L_REGISTER}">{L_REGISTER}</a></li><!-- ENDIF -->
 					<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l">{L_LOGIN_LOGOUT}</a></li>
 				<!-- ENDIF -->
 			</ul>

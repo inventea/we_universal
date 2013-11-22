@@ -15,6 +15,7 @@ table.table1 {
 	voice-family: inherit;
 	width: 100%;
 }
+
 html>body table.table1 { width: 100%; }	/* Reset 100% for opera */
 
 * html ul.topiclist li { position: relative; }
@@ -75,6 +76,10 @@ dl.icon {
 	width: 25%;
 }
 
+* html .pm_border {
+	margin-left: -4px;
+}
+
 /* Correctly clear floating for details on profile view */
 *:first-child+html dl.details dd {
 	margin-left: 30%;
@@ -88,4 +93,29 @@ dl.icon {
 
 * html .forumbg table.table1 {
 	margin: 0 -2px 0px -1px;
+}
+
+/* Works like text-indent in normal browsers */
+*:first-child+html {} #quick-search #search {
+	line-height: 50px;
+	overflow: hidden;
+}
+
+/* Profile icons on memberlist */
+*:first-child+html {} .forums .profile-icons li {
+	display: inline;
+}
+
+/* Header fixes for IE6 */
+* html #header {
+	position: static;
+}
+
+* html #container {
+	margin-top: 0;
+}
+
+* html #navigation-bottom {
+	position: static;
+	margin-top: 163px;
 }

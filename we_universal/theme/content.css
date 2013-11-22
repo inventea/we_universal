@@ -141,57 +141,6 @@ dl.icon dt li {
 	list-style-type: inherit;
 }
 
-dd.lastpost {
-	width: 25%;
-	font-size: 1.1em;
-}
-
-dd.redirect {
-	font-size: 1.1em;
-	line-height: 2.5em;
-}
-
-dd.moderation {
-	font-size: 1.1em;
-}
-
-dd.lastpost span, ul.topiclist dd.searchby span, ul.topiclist dd.info span, ul.topiclist dd.time span, dd.redirect span, dd.moderation span {
-	display: block;
-	padding-left: 5px;
-}
-
-dd.time {
-	width: auto;
-	line-height: 200%;
-	font-size: 1.1em;
-}
-
-dd.extra {
-	width: 12%;
-	line-height: 200%;
-	text-align: center;
-	font-size: 1.1em;
-}
-
-dd.mark {
-	float: right !important;
-	width: 8%;
-	text-align: center;
-	line-height: 200%;
-	font-size: 1.2em;
-}
-
-dd.info {
-	width: 30%;
-}
-
-dd.option {
-	width: 15%;
-	line-height: 200%;
-	text-align: center;
-	font-size: 1.1em;
-}
-
 dd.searchby {
 	width: 47%;
 	font-size: 1.1em;
@@ -207,6 +156,10 @@ ul.topiclist dd.searchextra {
 	clear: both;
 	width: 98%;
 	overflow: hidden;
+}
+
+.lastpost-details {
+	margin-left: 38px;
 }
 
 /* Container for post/reply buttons and pagination */
@@ -289,6 +242,18 @@ div[class].topic-actions {
 
 .post-ignore .postbody {
 	display: none;
+}
+
+/* MCP Post details
+----------------------------------------*/
+#post_details {
+	/* This will only work in IE7+, plus the others */
+	overflow: auto;
+	max-height: 300px;
+}
+
+#expand {
+	clear: both;
 }
 
 /* Content container styles
@@ -820,11 +785,8 @@ dl.pmlist dd {
 	color: #fff;
 }
 
-.forums tr + tr {
-	border-top: 1px solid #fff;
-}
-
 .forums td {
+	border-top: 1px solid #fff;
 	padding: 8px;
 }
 
@@ -849,16 +811,17 @@ dl.pmlist dd {
 }
 
 .forums .statistics 	{ width: 130px; }
-.forums .last-post 		{ width: 210px; }
+.forums .last-post 		{ width: 205px; }
 .forums .posts 			{ width: 80px; }
 .forums .location 		{ width: 17%; }
 .forums .group 			{ width: 30%; }
 .forums .forum-location { width: 27%; }
-.forums .ip				{ width: 12%; }
+.forums .ip				{ width: 13%; }
 .forums .mark 			{ width: 70px; }
 .forums .input			{ width: 25px; }
-.forums .profile, .forums .joined, .forums .active {
-	width: 170px;
+.forums .profile		{ width: 155px; }
+.forums .joined, .forums .active {
+	width: 165px;
 }
 
 .forums .profile-icons {

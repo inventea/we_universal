@@ -1,5 +1,11 @@
 <!-- INCLUDE overall_header.html -->
 
+<script type="text/javascript">
+// <![CDATA[
+	onload_functions.push('document.getElementById("keywords").focus();');
+// ]]>
+</script>
+
 <h2>{L_SEARCH}</h2>
 
 <form method="get" action="{S_SEARCH_ACTION}">
@@ -96,7 +102,9 @@
 	<div class="forums-wrapper">
 		<table class="forums">
 			<thead>
-				<th colspan="2">{L_RECENT_SEARCHES}</th>
+				<tr>
+					<th colspan="2">{L_RECENT_SEARCHES}</th>
+				</tr>
 			</thead>
 			<tbody>
 				<!-- BEGIN recentsearch -->

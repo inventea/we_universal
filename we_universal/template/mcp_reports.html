@@ -28,14 +28,16 @@
 		<div class="forums-wrapper">
 			<table class="forums">
 				<thead>
-					<th>{L_VIEW_DETAILS}</th>
-					<!-- IF S_PM --><th>{L_MESSAGE_TO}</th><!-- ENDIF -->
-					<th>{L_REPORTER}<!-- IF not S_PM --> &amp; {L_FORUM}<!-- ENDIF --></th>
-					<!-- IF S_PM -->
-						<th>{L_TIME}</th>
-					<!-- ELSE -->
-						<th>{L_MARK}</th>
-					<!-- ENDIF -->
+					<tr>
+						<th>{L_VIEW_DETAILS}</th>
+						<!-- IF S_PM --><th>{L_MESSAGE_TO}</th><!-- ENDIF -->
+						<th>{L_REPORTER}<!-- IF not S_PM --> &amp; {L_FORUM}<!-- ENDIF --></th>
+						<!-- IF S_PM -->
+							<th>{L_TIME}</th>
+						<!-- ELSE -->
+							<th>{L_MARK}</th>
+						<!-- ENDIF -->
+					</tr>
 				</thead>
 				<tbody>
 					<!-- BEGIN postrow -->
@@ -55,7 +57,7 @@
 								</td>
 								<td>
 									<p>{postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}</p>
-									<p>{L_FORUM}: <a href="{postrow.U_VIEWFORUM}">{postrow.FORUM_NAME}</a></p>
+									<p><!-- IF postrow.U_VIEWFORUM -->{L_FORUM}: <a href="{postrow.U_VIEWFORUM}">{postrow.FORUM_NAME}</a><!-- ELSE -->{postrow.FORUM_NAME}<!-- ENDIF --></p>
 								</td>
 								<td class="mark bg2"><input type="checkbox" name="report_id_list[]" value="{postrow.REPORT_ID}" /></td>
 							<!-- ENDIF -->
