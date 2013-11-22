@@ -401,7 +401,7 @@ p.author {
 	width: 100%;
 }
 
-.panel .signature {
+#viewprofile .signature {
 	border-top: none;
 	margin: 0;
 	padding-top: 0;
@@ -485,7 +485,7 @@ blockquote.uncited {
 	padding-top: 25px;
 }
 
-blockquote + br, blockquote + br + br {
+blockquote + br {
 	display: none;
 }
 
@@ -525,7 +525,7 @@ dl.codebox code {
 	margin: 2px 0;
 }
 
-dl.codebox + br, dl.codebox + br + br {
+dl.codebox + br {
 	display: none;
 }
 
@@ -849,7 +849,7 @@ dl.pmlist dd {
 }
 
 .forums .statistics 	{ width: 130px; }
-.forums .last-post 		{ width: 23%; }
+.forums .last-post 		{ width: 210px; }
 .forums .posts 			{ width: 80px; }
 .forums .location 		{ width: 17%; }
 .forums .group 			{ width: 30%; }

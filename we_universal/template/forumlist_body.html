@@ -37,12 +37,13 @@
 					<p>{L_TOPICS}: <strong>{forumrow.TOPICS}</strong></p>
 					<p>{L_POSTS}: <strong>{forumrow.POSTS}</strong></p>
 				</td>
-				<td>
+				<td class="forum">
 					<!-- IF forumrow.LAST_POST_TIME -->
+						<!-- IF not S_IS_BOT --><a href="{forumrow.U_LAST_POST}" class="left-box last-post-img">{LAST_POST_IMG}</a><!-- ENDIF -->
 						<p>{forumrow.LAST_POST_TIME}</p>
-						<p>{L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL} <!-- IF not S_IS_BOT --><a href="{forumrow.U_LAST_POST}">{LAST_POST_IMG}</a><!-- ENDIF --></p>
+						<p>{L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}</p>
 					<!-- ELSE -->
-						<p>{L_NO_POSTS}</p>
+						<p style="text-align: center;">{L_NO_POSTS}</p>
 					<!-- ENDIF -->
 				</td>
 			<!-- ENDIF -->

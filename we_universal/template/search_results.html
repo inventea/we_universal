@@ -50,7 +50,7 @@
 					<!-- IF searchresults.TOPIC_ICON_IMG --><img src="{T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}" alt="" title="" /><!-- ENDIF -->
 				</td>
 				<td class="topic">
-					<h4><!-- IF searchresults.ATTACH_ICON_IMG -->{searchresults.ATTACH_ICON_IMG}<!-- ENDIF --> <a href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a></h4>
+					<h4><!-- IF searchresults.ATTACH_ICON_IMG -->{searchresults.ATTACH_ICON_IMG}<!-- ENDIF --> <a href="{searchresults.U_VIEW_TOPIC}" class="topictitle">{searchresults.TOPIC_TITLE}</a></h4>
 					<!-- IF searchresults.PAGINATION --><strong class="pagination"><span>{searchresults.PAGINATION}</span></strong><!-- ENDIF -->
 					<p>{L_POST_BY_AUTHOR} {searchresults.TOPIC_AUTHOR_FULL} &raquo; {searchresults.FIRST_POST_TIME}</p>
 				</td>
@@ -58,9 +58,10 @@
 					<p>{L_REPLIES}: <strong>{searchresults.TOPIC_REPLIES}</strong></p>
 					<p>{L_VIEWS}: <strong>{searchresults.TOPIC_VIEWS}</strong></p>
 				</td>
-				<td>
+				<td class="topic">
+					<!-- IF not S_IS_BOT --><a href="{searchresults.U_LAST_POST}" class="left-box last-post-img">{LAST_POST_IMG}</a><!-- ENDIF -->
 					<p>{searchresults.LAST_POST_TIME}</p>
-					<p>{L_POST_BY_AUTHOR} {searchresults.LAST_POST_AUTHOR_FULL} <!-- IF not S_IS_BOT --><a href="{searchresults.U_LAST_POST}">{LAST_POST_IMG}</a><!-- ENDIF --></p>
+					<p>{L_POST_BY_AUTHOR} {searchresults.LAST_POST_AUTHOR_FULL}</p>
 				</td>
 			</tr>
 		<!-- END searchresults -->
@@ -107,7 +108,7 @@
 
 	<!-- IF not searchresults.S_IGNORE_POST -->
 		<ul class="searchresults">
-			<li ><a href="{searchresults.U_VIEW_POST}" class="{S_CONTENT_FLOW_END}">{L_JUMP_TO_POST}</a></li>
+			<li><p style="margin-bottom: 2px;"><a href="{searchresults.U_VIEW_POST}" class="{S_CONTENT_FLOW_END}">{L_JUMP_TO_POST}</a></p></li>
 		</ul>
 	<!-- ENDIF -->
 

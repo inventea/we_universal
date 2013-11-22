@@ -35,9 +35,10 @@
 										<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
 										<p>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</p>
 									</td>
-									<td class="bg2">
+									<td class="topic bg2">
+										<a href="{topicrow.U_LAST_POST}" class="left-box last-post-img">{LAST_POST_IMG}</a>
 										<p>{topicrow.LAST_POST_TIME}</p>
-										<p>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL} <a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a></p>
+										<p>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}</p>
 									</td>
 									<td><input type="checkbox" name="t[{topicrow.TOPIC_ID}]" id="t{topicrow.TOPIC_ID}" /></td>
 								<!-- ENDIF -->

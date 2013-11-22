@@ -134,9 +134,10 @@
 			<p>{L_REPLIES}: <strong>{topicrow.REPLIES}</strong></p>
 			<p>{L_VIEWS}: <strong>{topicrow.VIEWS}</strong></p>
 		</td>
-		<td>
+		<td class="topic">
+			<!-- IF not S_IS_BOT --><a href="{topicrow.U_LAST_POST}" class="left-box last-post-img">{LAST_POST_IMG}</a><!-- ENDIF -->
 			<p>{topicrow.LAST_POST_TIME}</p>
-			<p>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL} <!-- IF not S_IS_BOT --><a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a><!-- ENDIF --></p>
+			<p>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}</p>
 		</td>
 	</tr>
 

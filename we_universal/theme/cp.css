@@ -393,13 +393,13 @@ ol.def-rules li {
 
 /* PM marking colours */
 .pmlist li.bg1 {
-	border: solid 3px transparent;
-	border-width: 0 3px;
+	border-left: solid 1px transparent;
+	border-width: 0 1px;
 }
 
 .pmlist li.bg2 {
-	border: solid 3px transparent;
-	border-width: 0 3px;
+	border-left: solid 1px transparent;
+	border-width: 0 1px;
 }
 
 .pmlist li.pm_message_reported_colour, .pm_message_reported_colour {
@@ -408,23 +408,23 @@ ol.def-rules li {
 }
 
 .pmlist li.pm_marked_colour, .pm_marked_colour {
-	border: solid 3px #ffffff;
-	border-width: 0 3px;
+	border-left: solid 1px #ffffff;
+	border-width: 0 1px;
 }
 
 .pmlist li.pm_replied_colour, .pm_replied_colour {
-	border: solid 3px #c2c2c2;
-	border-width: 0 3px;	
+	border-left: solid 1px #c2c2c2;
+	border-width: 0 1px;
 }
 
 .pmlist li.pm_friend_colour, .pm_friend_colour {
-	border: solid 3px #bdbdbd;
-	border-width: 0 3px;
+	border-left: solid 1px #bdbdbd;
+	border-width: 0 1px;
 }
 
 .pmlist li.pm_foe_colour, .pm_foe_colour {
-	border: solid 3px #000000;
-	border-width: 0 3px;
+	border-left: solid 1px #000000;
+	border-width: 0 1px;
 }
 
 .pm-legend {

@@ -27,6 +27,10 @@
 	overflow: hidden;
 }
 
+.last-post-img {
+	margin: 3px 8px 0 5px;
+}
+
 /* Hide <a> text and hide off-state image when rolling over (prevents flicker in IE) */
 /*.buttons div span		{ display: none; }*/
 /*.buttons div a:hover	{ background-image: none; }*/
@@ -145,4 +149,3 @@ ul.profile-icons li.warn-icon	{ width: {IMG_ICON_USER_WARN_WIDTH}px; height: {IM
 ul.profile-icons li.edit-icon	{ margin: 0 0 0 3px; }
 ul.profile-icons li.quote-icon	{ margin: 0 0 0 10px; }
 ul.profile-icons li.info-icon, ul.profile-icons li.report-icon	{ margin: 0 3px 0 0; }
-
