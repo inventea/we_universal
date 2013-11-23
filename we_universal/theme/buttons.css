@@ -25,11 +25,7 @@
 	background-position: 0 0;
 	position: relative;
 	overflow: hidden;
-}
-
-.last-post-img {
-	margin: 3px 8px 0 5px;
-	float: left;
+	font-size: 10px;
 }
 
 /* Hide <a> text and hide off-state image when rolling over (prevents flicker in IE) */
@@ -53,6 +49,12 @@
 .buttons div.pmreply-icon	{ width: {IMG_BUTTON_PM_REPLY_WIDTH}px; height: {IMG_BUTTON_PM_REPLY_HEIGHT}px; }
 .buttons div.newpm-icon		{ width: {IMG_BUTTON_PM_NEW_WIDTH}px; height: {IMG_BUTTON_PM_NEW_HEIGHT}px; }
 .buttons div.forwardpm-icon	{ width: {IMG_BUTTON_PM_FORWARD_WIDTH}px; height: {IMG_BUTTON_PM_FORWARD_HEIGHT}px; }
+
+/* Icon in "Last post" table row */
+.last-post-img {
+	margin: 3px 8px 0 5px;
+	float: left;
+}
 
 /* Font size, topic, e-mail and print icons
 ---------------------------------------- */

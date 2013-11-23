@@ -245,48 +245,52 @@
 				<!-- IF POST_IPADDR -->{POST_IPADDR} ({POST_IP})<!-- ELSE -->{POST_IP}<!-- IF U_LOOKUP_IP --> (<a href="{U_LOOKUP_IP}">{L_LOOKUP_IP}</a>)<!-- ENDIF --><!-- ENDIF -->
 			<!-- ENDIF --></p>
 
-			<table class="table1" cellspacing="1">
-			<thead>
-			<tr>
-				<th class="name">{L_OTHER_USERS}</th>
-				<th class="posts">{L_POSTS}</th>
-			</tr>
-			</thead>
-			<tbody>
-			<!-- BEGIN userrow -->
-			<tr class="<!-- IF userrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
-				<td><!-- IF userrow.U_PROFILE --><a href="{userrow.U_PROFILE}">{userrow.USERNAME}</a><!-- ELSE -->{userrow.USERNAME}<!-- ENDIF --></td>
-				<td class="posts"><a href="{userrow.U_SEARCHPOSTS}" title="{L_SEARCH_POSTS_BY} {userrow.USERNAME}">{userrow.NUM_POSTS}</a></td>
-			</tr>
-			<!-- BEGINELSE -->
-				<tr>
-					<td colspan="2">{L_NO_MATCHES_FOUND}</td>
-				</tr>
-			<!-- END userrow -->
-			</tbody>
-			</table>
-
-			<table class="table1" cellspacing="1">
-			<thead>
-			<tr>
-				<th class="name">{L_IPS_POSTED_FROM}</th>
-				<th class="posts">{L_POSTS}</th>
-			</tr>
-			</thead>
-			<tbody>
-			<!-- BEGIN iprow -->
-			<tr class="<!-- IF iprow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
-				<td><!-- IF iprow.HOSTNAME --><a href="{iprow.U_WHOIS}">{iprow.HOSTNAME}</a> ({iprow.IP})<!-- ELSE --><a href="{iprow.U_WHOIS}">{iprow.IP}</a> (<a href="{iprow.U_LOOKUP_IP}">{L_LOOKUP_IP}</a>)<!-- ENDIF --></td>
-				<td class="posts">{iprow.NUM_POSTS}</td>
-			</tr>
-			<!-- BEGINELSE -->
-				<tr>
-					<td colspan="2">{L_NO_MATCHES_FOUND}</td>
-				</tr>
-			<!-- END iprow -->
-			</tbody>
-			</table>
-
+			<div class="forums-wrapper">
+				<table class="forums">
+					<thead>
+						<tr>
+							<th class="name">{L_OTHER_USERS}</th>
+							<th class="statistics">{L_POSTS}</th>
+						</tr>
+					</thead>
+					<tbody>
+					<!-- BEGIN userrow -->
+						<tr class="<!-- IF userrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+							<td class="topic"><p><!-- IF userrow.U_PROFILE --><a href="{userrow.U_PROFILE}">{userrow.USERNAME}</a><!-- ELSE -->{userrow.USERNAME}<!-- ENDIF --></p></td>
+							<td class="bg2"><p><a href="{userrow.U_SEARCHPOSTS}" title="{L_SEARCH_POSTS_BY} {userrow.USERNAME}">{userrow.NUM_POSTS}</a></p></td>
+						</tr>
+					<!-- BEGINELSE -->
+						<tr class="bg1">
+							<td colspan="2"><p>{L_NO_MATCHES_FOUND}</p></td>
+						</tr>
+					<!-- END userrow -->
+					</tbody>
+				</table>
+			</div>
+			
+			<div class="forums-wrapper">
+				<table class="forums">
+					<thead>
+						<tr>
+							<th class="name">{L_IPS_POSTED_FROM}</th>
+							<th class="statistics">{L_POSTS}</th>
+						</tr>
+					</thead>
+					<tbody>
+					<!-- BEGIN iprow -->
+						<tr class="<!-- IF iprow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+							<td class="topic"><p><!-- IF iprow.HOSTNAME --><a href="{iprow.U_WHOIS}">{iprow.HOSTNAME}</a> ({iprow.IP})<!-- ELSE --><a href="{iprow.U_WHOIS}">{iprow.IP}</a> (<a href="{iprow.U_LOOKUP_IP}">{L_LOOKUP_IP}</a>)<!-- ENDIF --></p></td>
+							<td class="bg2"><p>{iprow.NUM_POSTS}</p></td>
+						</tr>
+					<!-- BEGINELSE -->
+						<tr class="bg1">
+							<td colspan="2"><p>{L_NO_MATCHES_FOUND}</p></td>
+						</tr>
+					<!-- END iprow -->
+					</tbody>
+				</table>
+			</div>
+			
 			<p><a href="{U_LOOKUP_ALL}#ip">{L_LOOKUP_ALL}</a></p>
 
 			<span class="corners-bottom"><span></span></span></div>

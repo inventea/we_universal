@@ -88,14 +88,20 @@ html>body dd label input { vertical-align: text-bottom; }	/* Align checkboxes/ra
 	float: none;
 }
 
-* html .forumbg table.table1 {
-	margin: 0 -2px 0px -1px;
-}
-
 /* Works like text-indent in normal browsers */
 #quick-search #search {
 	line-height: 50px;
 	overflow: hidden;
+}
+
+/* #minitabs fix for IE */
+.tabs-container {
+	zoom: 1;
+}
+
+#minitabs {
+	white-space: nowrap;
+	*min-width: 50%;
 }
 
 /* Profile icons on memberlist */

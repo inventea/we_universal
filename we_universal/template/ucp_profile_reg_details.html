@@ -46,7 +46,7 @@
 
 	<fieldset>
 	<dl>
-		<dt><label for="cur_password">{L_CURRENT_PASSWORD}:</label><br /><span>{L_CURRENT_PASSWORD_EXPLAIN}</span></dt>
+		<dt><label for="cur_password">{L_CURRENT_PASSWORD}:</label><br /><span><!-- IF S_CHANGE_PASSWORD -->{L_CURRENT_CHANGE_PASSWORD_EXPLAIN}<!-- ELSE -->{L_CURRENT_PASSWORD_EXPLAIN}<!-- ENDIF --></span></dt>
 		<dd><input type="password" name="cur_password" id="cur_password" maxlength="255" value="{CUR_PASSWORD}" class="inputbox" title="{L_CURRENT_PASSWORD}" /></dd>
 	</dl>
 	</fieldset>

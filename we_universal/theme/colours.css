@@ -315,32 +315,6 @@ ul.topiclist dd {
 	background-image: url("{IMG_SUBFORUM_UNREAD_SRC}");
 }
 
-li.row {
-	border-top-color:  #fff;
-	border-bottom-color: #c1c1c1;
-}
-
-li.row strong {
-	color: #000000;
-}
-
-li.row:hover {
-	background-color: #f6f4d3;
-}
-
-li.row:hover dd {
-	border-left-color: #ccc;
-}
-
-.rtl li.row:hover dd {
-	border-right-color: #ccc;
-	border-left-color: transparent;
-}
-
-li.header dt, li.header dd {
-	color: #FFFFFF;
-}
-
 /* Forum list column styles */
 ul.topiclist dd.searchextra {
 	color: #333333;
@@ -810,11 +784,6 @@ dl.mini dt {
 /* PM Message history */
 .current {
 	color: #000000 !important;
-}
-
-/* PM panel adjustments */
-#cp-main .pm-message-nav {
-	border-bottom-color: #ccc;
 }
 
 /* PM marking colours */
