@@ -3,14 +3,15 @@
 <h2>{PAGE_TITLE}</h2>
 
 <form method="post" action="{S_PROFILE_ACTION}" id="viewprofile">
-	<div class="panel bg1 <!-- IF S_ONLINE -->online<!-- ENDIF -->">
+	<div class="panel bg1>">
 		<div class="inner"><span class="corners-top"><span></span></span>
 
 		<!-- IF AVATAR_IMG -->
-			<dl class="left-box" style="margin: 5px 0;">
+			<dl class="left-box author" style="margin: 5px 0;">
 				<dt class="avatar">{AVATAR_IMG}</dt>
-				<!-- IF RANK_TITLE --><dd style="text-align: center; font-size: 11px;">{RANK_TITLE}</dd><!-- ENDIF -->
-				<!-- IF RANK_IMG --><dd style="text-align: center;">{RANK_IMG}</dd><!-- ENDIF -->
+				<!-- IF RANK_TITLE --><dd>{RANK_TITLE}</dd><!-- ENDIF -->
+				<!-- IF RANK_IMG --><dd>{RANK_IMG}</dd><!-- ENDIF -->
+				<!-- IF ONLINE_IMG --><div class="online">{ONLINE_IMG}</div><!-- ENDIF -->
 			</dl>
 		<!-- ENDIF -->
 

@@ -2,13 +2,13 @@
 
 <script type="text/javascript">
 // <![CDATA[
-	onload_functions.push('document.getElementById("{USERNAME_CREDENTIAL}").focus();');
+	onload_functions.push('document.getElementById("<!-- IF S_ADMIN_AUTH -->{PASSWORD_CREDENTIAL}<!-- ELSE -->{USERNAME_CREDENTIAL}<!-- ENDIF -->").focus();');
 // ]]>
 </script>
 
 <form action="{S_LOGIN_ACTION}" method="post" id="login">
 <div class="panel">
-	<div class="inner"><span class="corners-top bg1"><span></span></span>
+	<div class="inner"><span class="corners-top"><span></span></span>
 
 	<div class="content">
 		<h2><!-- IF LOGIN_EXPLAIN -->{LOGIN_EXPLAIN}<!-- ELSE -->{L_LOGIN}<!-- ENDIF --></h2>
@@ -53,7 +53,7 @@
 
 <!-- IF not S_ADMIN_AUTH and S_REGISTER_ENABLED -->
 	<div class="panel">
-		<div class="inner"><span class="corners-top bg1"><span></span></span>
+		<div class="inner"><span class="corners-top"><span></span></span>
 
 		<div class="content">
 			<h2>{L_REGISTER}</h2>

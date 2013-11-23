@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}" xml:lang="{S_USER_LANG}">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
-	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
@@ -49,12 +48,9 @@
 		var onload_functions = new Array();
 		var onunload_functions = new Array();
 
-		<!-- IF S_USER_PM_POPUP -->
-			if ({S_NEW_PM})
-			{
-				var url = '{UA_POPUP_PM}';
-				window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
-			}
+		<!-- IF S_USER_PM_POPUP and S_NEW_PM -->
+			var url = '{UA_POPUP_PM}';
+			window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
 		<!-- ENDIF -->
 
 		/**
@@ -88,8 +84,7 @@
 	// ]]>
 	</script>
 	
-	<script type="text/javascript" src="{T_TEMPLATE_PATH}/styleswitcher.js"></script>
-	<script type="text/javascript" src="{T_TEMPLATE_PATH}/forum_fn.js"></script>
+	<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
 </head>
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
 
@@ -99,7 +94,7 @@
 		<p><!-- IF not S_USER_LOGGED_IN -->{CURRENT_TIME}<!-- ELSE -->{LAST_VISIT_DATE}<!-- ENDIF --></p>
 		
 		<!-- IF S_DISPLAY_SEARCH -->
-			<form action="{U_SEARCH}" method="post" id="quick-search">
+			<form action="{U_SEARCH}" method="get" id="quick-search">
 				<fieldset>
 					<input type="text" name="keywords" id="keywords" maxlength="100" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
 					<input type="submit" id="search" value="{L_SEARCH}" />
@@ -113,8 +108,9 @@
 			<ul id="navigation-top">
 				<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
 				<!-- IF S_DISPLAY_SEARCH --><li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a></li> <!-- ENDIF -->
+				<!-- IF U_TEAM --><li><a href="{U_TEAM}" title="{L_THE_TEAM}">{L_THE_TEAM}</a></li> <!-- ENDIF -->
 				<!-- IF not S_IS_BOT -->
-					<!-- IF S_DISPLAY_MEMBERLIST --><li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
+					<!-- IF S_DISPLAY_MEMBERLIST --><li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li> <!-- ENDIF -->
 					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li><a href="{U_REGISTER}" title="{L_REGISTER}">{L_REGISTER}</a></li><!-- ENDIF -->
 					<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l">{L_LOGIN_LOGOUT}</a></li>
 				<!-- ENDIF -->
@@ -125,34 +121,34 @@
 				<p>{SITE_DESCRIPTION}</p>
 			</div>
 			
+			<ul id="navigation-bottom">
 			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-				<ul id="navigation-bottom">
-					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="u">{L_PROFILE}</a></li>
-					<!-- IF S_DISPLAY_PM --><li><a href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}">{PRIVATE_MESSAGE_INFO}</a></li> <!-- ENDIF -->
-					<!-- IF S_DISPLAY_SEARCH --><li><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}">{L_SEARCH_SELF}</a></li> <!-- ENDIF -->
-					<!-- IF U_TEAM --><li><a href="{U_TEAM}" title="{L_THE_TEAM}">{L_THE_TEAM}</a></li> <!-- ENDIF -->
-					<!-- IF U_RESTORE_PERMISSIONS --><li><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
-					<!-- IF U_MCP --><li><a href="{U_MCP}" title="{L_MCP}">{L_MCP}</a></li><!-- ENDIF -->
-					<!-- IF U_ACP --> <li><a href="{U_ACP}" title="{L_ACP}">{L_ACP}</a></li><!-- ENDIF -->
-				</ul>
+				<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="u">{L_PROFILE}</a></li>
+				<!-- IF S_DISPLAY_PM --><li><a href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}">{PRIVATE_MESSAGE_INFO}</a></li> <!-- ENDIF -->
+				<!-- IF S_DISPLAY_SEARCH --><li><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}">{L_SEARCH_SELF}</a></li> <!-- ENDIF -->
+				<!-- IF U_RESTORE_PERMISSIONS --><li><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
+				<!-- IF U_MCP --><li><a href="{U_MCP}" title="{L_MCP}">{L_MCP}</a></li><!-- ENDIF -->
+				<!-- IF U_ACP --> <li><a href="{U_ACP}" title="{L_ACP}">{L_ACP}</a></li><!-- ENDIF -->
 			<!-- ENDIF -->
+			</ul>
 		</div>
 	</div>
 
 	<div id="container">
 		<p id="breadcrumb" class="left-box">{L_JUMP_TO}: <a href="{U_INDEX}" title="{SITENAME}" accesskey="h">{L_INDEX}</a> <!-- BEGIN navlinks --> &raquo; <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks --></p>
 		
-		<ul class="topic-icons right-box">
-			<li><a href="#" onclick="fontsizeup(); return false;" onkeypress="return fontsizeup(event);" class="fontsize" title="{L_CHANGE_FONT_SIZE}">{L_CHANGE_FONT_SIZE}</a></li>
-			<!-- IF S_WATCH_FORUM_LINK --><li><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}" <!-- IF S_WATCHING_FORUM -->class="unsubscribe"<!-- ELSE -->class="subscribe"<!-- ENDIF -->>{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
-			<!-- IF U_WATCH_TOPIC --><li><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}" <!-- IF S_WATCHING_TOPIC -->class="unsubscribe"<!-- ELSE -->class="subscribe"<!-- ENDIF -->>{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
-			<!-- IF U_BOOKMARK_TOPIC --><li><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}" class="bookmark">{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
-			<!-- IF U_BUMP_TOPIC --><li><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}" class="bump">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
-			<!-- IF U_EMAIL_TOPIC --><li><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}" class="sendemail">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
-			<!-- IF U_EMAIL_PM --><li><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class="sendemail">{L_EMAIL_PM}</a></li><!-- ENDIF -->
-			<!-- IF U_PRINT_TOPIC --><li><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p" class="print">{L_PRINT_TOPIC}</a></li><!-- ENDIF -->
-			<!-- IF U_PRINT_PM --><li><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p" class="print">{L_PRINT_PM}</a></li><!-- ENDIF -->
-		</ul>
+		<!-- IF S_WATCH_FORUM_LINK or U_WATCH_TOPIC or U_BOOKMARK_TOPIC or U_BUMP_TOPIC or U_EMAIL_TOPIC or U_EMAIL_PM or U_PRINT_TOPIC or U_PRINT_PM -->
+			<ul class="topic-icons right-box">
+				<!-- IF S_WATCH_FORUM_LINK --><li><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}" <!-- IF S_WATCHING_FORUM -->class="unsubscribe"<!-- ELSE -->class="subscribe"<!-- ENDIF -->>{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
+				<!-- IF U_WATCH_TOPIC --><li><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}" <!-- IF S_WATCHING_TOPIC -->class="unsubscribe"<!-- ELSE -->class="subscribe"<!-- ENDIF -->>{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
+				<!-- IF U_BOOKMARK_TOPIC --><li><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}" class="bookmark">{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
+				<!-- IF U_BUMP_TOPIC --><li><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}" class="bump">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
+				<!-- IF U_EMAIL_TOPIC --><li><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}" class="sendemail">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
+				<!-- IF U_EMAIL_PM --><li><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class="sendemail">{L_EMAIL_PM}</a></li><!-- ENDIF -->
+				<!-- IF U_PRINT_TOPIC --><li><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p" class="print">{L_PRINT_TOPIC}</a></li><!-- ENDIF -->
+				<!-- IF U_PRINT_PM --><li><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p" class="print">{L_PRINT_PM}</a></li><!-- ENDIF -->
+			</ul>
+		<!-- ENDIF -->
 		
 		<br class="clear" />
 		

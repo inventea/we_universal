@@ -318,7 +318,7 @@ ul.cplist {
 .cp-mini {
 	background-color: #f9f9f9;
 	padding: 0 5px;
-	margin: 10px 15px 10px 5px;
+	margin: 10px 10px 10px 0;
 }
 
 .cp-mini span.corners-top, .cp-mini span.corners-bottom {
@@ -351,8 +351,6 @@ dl.mini dd {
 /* PM panel adjustments */
 .pm-panel-header {
 	margin: 0; 
-	padding-bottom: 10px; 
-	border-bottom: 1px dashed #A4B3BF;
 }
 
 .reply-all {

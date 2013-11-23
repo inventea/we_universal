@@ -31,7 +31,7 @@ h2 {
 	font-weight: normal;
 	color: #3f3f3f;
 	font-size: 22px;
-	margin-bottom: 0.3em;
+	margin-bottom: 10px;
 	text-shadow: 1px 1px 3px #eee;
 }
 
@@ -56,7 +56,7 @@ h4 {
 
 p {
 	line-height: 1.3em;
-	font-size: 1.1em;
+	font-size: 11px;
 	margin-bottom: 1.5em;
 }
 
@@ -89,10 +89,13 @@ p.right {
 
 /* Structure
 ---------------------------------------- */
+#wrapper, #dashboard {
+	width: 980px;
+}
+
 #wrapper {
 	background: #fff;
 	border: 2px solid #e7e7e7;
-	width: 980px;
 	margin: auto;
 }
 
@@ -114,8 +117,7 @@ p.right {
 }
 
 #dashboard {
-	background: url("{T_THEME_PATH}/images/dashboard.jpg") no-repeat;
-	width: 980px;
+	background: url("{T_THEME_PATH}/images/dashboard.jpg") center no-repeat;
 	height: 190px;
 	margin: auto;
 }
@@ -185,7 +187,7 @@ p.right {
 
 #dashboard li {
 	display: inline;
-	font-size: 1.1em;
+	font-size: 11px;
 }
 
 #dashboard li a {
@@ -203,7 +205,7 @@ p.right {
 /* Name and description
 ---------------------------------------- */
 #site-description {
-	margin-top: 30px;
+	margin-top: 35px;
 	margin-left: 50px;
 	position: absolute;
 	white-space: nowrap;
@@ -214,12 +216,12 @@ p.right {
 }
 
 #site-description h1 {
-	font-size: 3.5em;
+	font-size: 35px;
 	color: #fff;
 }
 
 #site-description p {
-	font-size: 1.2em;
+	font-size: 12px;
 	color: #fff;
 }
 
@@ -258,14 +260,8 @@ p.right {
 }
 
 .post {
-	padding: 0 10px;
-	margin-bottom: 4px;
 	background-repeat: no-repeat;
 	background-position: 100% 0;
-}
-
-.post:target .content {
-	color: #000000;
 }
 
 .post:target h3 a {
@@ -341,7 +337,7 @@ ul.linklist li {
 	float: left;
 	width: auto;
 	margin-right: 5px;
-	font-size: 1.1em;
+	font-size: 11px;
 	line-height: 2.2em;
 }
 
@@ -482,7 +478,7 @@ table.info tbody th {
 
 dl.details {
 	/*font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;*/
-	font-size: 1.1em;
+	font-size: 11px;
 }
 
 dl.details dt {
@@ -644,7 +640,9 @@ p.rules {
 	background-color: #f3dddd;
 	border: 1px solid #deb7b7;
 	background-image: none;
-	padding: 5px 10px;
+	padding: 5px 8px;
+	margin-top: 8px;
+	margin-bottom: 6px;
 }
 
 p.rules img {

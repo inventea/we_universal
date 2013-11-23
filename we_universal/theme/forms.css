@@ -2,8 +2,8 @@
 ----------------------------------------*/
 fieldset {
 	border-width: 0;
-	font-family: Verdana, Helvetica, Arial, sans-serif;
-	font-size: 1.1em;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 11px;
 }
 
 input {
@@ -181,7 +181,7 @@ fieldset.quick-login label {
 /* Display options on viewtopic/viewforum pages  */
 fieldset.display-options {
 	text-align: center;
-	margin: 3px 0 5px 0;
+	margin: 10px 0;
 }
 
 fieldset.display-options label {
@@ -239,7 +239,7 @@ fieldset.quickmod {
 fieldset.submit-buttons {
 	text-align: center;
 	vertical-align: middle;
-	margin: 5px 0;
+	margin: 10px 0 5px 0;
 }
 
 fieldset.submit-buttons input {
@@ -267,7 +267,10 @@ fieldset.submit-buttons input {
 
 #message-box textarea {
 	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
-	width: 100%;
+	width: 450px;
+	height: 270px;
+	min-width: 100%;
+	max-width: 100%;
 	font-size: 1.2em;
 	color: #333333;
 }

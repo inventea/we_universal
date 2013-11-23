@@ -28,8 +28,7 @@
 }
 
 .last-post-img {
-	margin-top: 3px;
-	margin-left: 5px;
+	margin: 3px 8px 0 5px;
 	float: left;
 }
 
@@ -68,7 +67,7 @@
 
 /* Sub-header (navigation bar)
 --------------------------------------------- */
-a.print, a.sendemail, a.fontsize, a.subscribe, a.unsubscribe, a.bookmark, a.bump {
+a.print, a.sendemail, a.subscribe, a.unsubscribe, a.bookmark, a.bump {
 	display: block;
 	overflow: hidden;
 	height: 16px;
@@ -79,18 +78,12 @@ a.print, a.sendemail, a.fontsize, a.subscribe, a.unsubscribe, a.bookmark, a.bump
 
 a.print, a.sendemail, a.subscribe, a.unsubscribe, a.bookmark, a.bump {
 	background-image: none;
-	width: 23px;
-}
-
-a.fontsize {
-	background-image: none;
 	width: 21px;
 }
 
 /* Poster profile icons
 ----------------------------------------*/
 ul.profile-icons {
-	padding-top: 10px;
 	list-style: none;
 }
 
@@ -113,11 +106,18 @@ ul.profile-icons li a {
 ul.profile-icons li span { display:none; }
 ul.profile-icons li a:hover { background: none; }
 
+/* Positioning of user profile icons */
+.postprofile ul.profile-icons {
+	margin-top: 12px;
+	display: inline-block;
+	list-style: none;
+}
+
 /* Positioning of moderator icons */
 .postbody ul.profile-icons {
 	float: right;
 	width: auto;
-	padding: 0;
+	padding-top: 4px;
 }
 
 .postbody ul.profile-icons li {

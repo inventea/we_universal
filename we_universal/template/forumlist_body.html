@@ -10,7 +10,7 @@
 			<table class="forums">
 				<thead>
 					<tr>
-						<th colspan="2"><!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF --></th>
+						<th colspan="3"><!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF --></th>
 						<th class="statistics">{L_STATISTICS}</th>
 						<th class="last-post">{L_LAST_POST}</th>
 					</tr>
@@ -19,11 +19,10 @@
 	<!-- ENDIF -->
 
 	<!-- IF not forumrow.S_IS_CAT -->
-		<tr class="<!-- IF forumrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
-			<td class="icon bg2" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC});">
-			    <!-- IF forumrow.FORUM_IMAGE -->{forumrow.FORUM_IMAGE}<!-- ENDIF -->
-			</td>
-			<td class="forum">
+		<tr class="row <!-- IF forumrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+			<td class="icon bg2" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC});" title="{forumrow.FORUM_FOLDER_IMG_ALT}"></td>
+			<!-- IF forumrow.FORUM_IMAGE --><td class="forum-image">{forumrow.FORUM_IMAGE}</td><!-- ENDIF -->
+			<td class="forum" <!-- IF not forumrow.FORUM_IMAGE -->colspan="2"<!-- ENDIF -->>
 				<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED --><!--<a class="feed-icon-forum" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}"><img src="{T_THEME_PATH}/images/feed.gif" alt="{L_FEED} - {forumrow.FORUM_NAME}" /></a>--><!-- ENDIF -->
 				<h4><a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a> <!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG}</a><!-- ENDIF --></h4>
 				<p>{forumrow.FORUM_DESC}</p>

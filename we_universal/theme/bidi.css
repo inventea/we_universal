@@ -465,10 +465,6 @@
 	margin-right: 8px;
 }
 
-.rtl .online {
-	background-position: 0 0;
-}
-
 .rtl dl.pmlist dd {
 	margin-right: 61% !important;
 	margin-left: 0 !important;
@@ -491,7 +487,7 @@
 
 /* Sub-header (navigation bar)
 --------------------------------------------- */
-.rtl a.print, .rtl a.sendemail, .rtl a.fontsize {
+.rtl a.print, .rtl a.sendemail {
 	text-align: right;
 }
 
