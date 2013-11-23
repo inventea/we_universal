@@ -96,13 +96,17 @@ dl.icon {
 }
 
 /* Works like text-indent in normal browsers */
-*:first-child+html {} #quick-search #search {
+#quick-search #search {
 	line-height: 50px;
 	overflow: hidden;
 }
 
 /* Profile icons on memberlist */
-*:first-child+html {} .forums .profile-icons li {
+*:first-child+html .forums .profile-icons li {
+	display: inline;
+}
+
+* html .forums .profile-icons li {
 	display: inline;
 }
 
@@ -115,7 +119,7 @@ dl.icon {
 	margin-top: 0;
 }
 
-* html #navigation-bottom {
+* html #dashboard #navigation-bottom {
 	position: static;
 	margin-top: 163px;
 }
