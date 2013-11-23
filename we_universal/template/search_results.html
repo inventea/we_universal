@@ -61,7 +61,7 @@
 					<p>{L_VIEWS}: <strong>{searchresults.TOPIC_VIEWS}</strong></p>
 				</td>
 				<td class="topic">
-					<!-- IF not S_IS_BOT --><a href="{searchresults.U_LAST_POST}" class="last-post-img">{LAST_POST_IMG}</a><!-- ENDIF -->
+					<!-- IF not S_IS_BOT --><a href="<!-- IF searchresults.S_UNREAD_TOPIC -->{searchresults.U_NEWEST_POST}<!-- ELSE -->{searchresults.U_LAST_POST}<!-- ENDIF -->" class="last-post-img">{LAST_POST_IMG}</a><!-- ENDIF -->
 					<div class="lastpost-details">
 						<p>{searchresults.LAST_POST_TIME}</p>
 						<p>{L_POST_BY_AUTHOR} {searchresults.LAST_POST_AUTHOR_FULL}</p>

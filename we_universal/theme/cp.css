@@ -1,4 +1,4 @@
-/* we_universal Control Panel Styles
+/* Control Panel Styles
 ---------------------------------------- */
 
 
@@ -355,7 +355,8 @@ dl.mini dd {
 
 .reply-all {
 	display: block; 
-	padding-top: 4px; 
+	padding-top: 7px; 
+	padding-bottom: 8px; 
 	clear: both;
 	float: left;
 }

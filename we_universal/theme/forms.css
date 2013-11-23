@@ -1,4 +1,4 @@
-/* General form styles
+/* Form Styles
 ----------------------------------------*/
 fieldset {
 	border-width: 0;
@@ -27,6 +27,7 @@ select {
 	border: 1px solid #666666;
 	padding: 1px;
 	background-color: #FAFAFA;
+	font-size: 1em;
 }
 
 option {

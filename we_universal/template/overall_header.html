@@ -44,12 +44,12 @@
 		var style_cookie_settings = '{A_COOKIE_SETTINGS}';
 		var onload_functions = new Array();
 		var onunload_functions = new Array();
-
+	
 		<!-- IF S_USER_PM_POPUP and S_NEW_PM -->
 			var url = '{UA_POPUP_PM}';
 			window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
 		<!-- ENDIF -->
-
+	
 		/**
 		* Find a member
 		*/
@@ -58,7 +58,7 @@
 			popup(url, 960, 570, '_usersearch');
 			return false;
 		}
-
+	
 		/**
 		* New function for handling multiple calls to window.onload and window.unload by pentapenguin
 		*/
@@ -68,16 +68,15 @@
 			{
 				eval(onload_functions[i]);
 			}
-		}
-
+		};
+	
 		window.onunload = function()
 		{
 			for (var i = 0; i < onunload_functions.length; i++)
 			{
 				eval(onunload_functions[i]);
 			}
-		}
-
+		};
 	// ]]>
 	</script>
 	
