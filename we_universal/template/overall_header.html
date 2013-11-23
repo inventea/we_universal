@@ -11,9 +11,6 @@
 	
 	<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
 	<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
-	<link href="{T_THEME_PATH}/normal.css" rel="stylesheet" type="text/css" title="A" />
-	<link href="{T_THEME_PATH}/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
-	<link href="{T_THEME_PATH}/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
 	<!-- IF S_CONTENT_DIRECTION eq 'rtl' --><link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" /><!-- ENDIF -->
 	
 	<!-- IF S_ENABLE_FEEDS -->
@@ -126,9 +123,9 @@
 				<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="u">{L_PROFILE}</a></li>
 				<!-- IF S_DISPLAY_PM --><li><a href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}">{PRIVATE_MESSAGE_INFO}</a></li> <!-- ENDIF -->
 				<!-- IF S_DISPLAY_SEARCH --><li><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}">{L_SEARCH_SELF}</a></li> <!-- ENDIF -->
-				<!-- IF U_RESTORE_PERMISSIONS --><li><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
 				<!-- IF U_MCP --><li><a href="{U_MCP}" title="{L_MCP}">{L_MCP}</a></li><!-- ENDIF -->
 				<!-- IF U_ACP --> <li><a href="{U_ACP}" title="{L_ACP}">{L_ACP}</a></li><!-- ENDIF -->
+				<!-- IF U_RESTORE_PERMISSIONS --><li><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
 			<!-- ENDIF -->
 			</ul>
 		</div>

@@ -1,17 +1,3 @@
-.forums-wrapper .row a.subforum {
-	background-image: none;
-	background-position: 0 50%;
-	background-repeat: no-repeat;
-	position: relative;
-	white-space: nowrap;
-	padding: 0 0 0 11px;
-}
-
-.forum-image {
-	width: 50px;
-	padding-right: 0 !important;
-}
-
 /* List in forum description */
 dl.icon dt ol,
 dl.icon dt ul {
@@ -138,7 +124,7 @@ div[class].topic-actions {
 	height: auto;
 }
 
-#topicreview .post, #preview {
+#topicreview .post, #preview, #review {
 	height: auto;
 	margin-bottom: 4px;
 	padding: 0 10px;
@@ -364,10 +350,6 @@ blockquote.uncited {
 	padding-top: 25px;
 }
 
-blockquote + br {
-	display: none;
-}
-
 /* Code block */
 dl.codebox {
 	margin: 18px 0;
@@ -402,10 +384,6 @@ dl.codebox code {
 	line-height: 15px;
 	color: #8b8b8b;
 	margin: 3px;
-}
-
-dl.codebox + br {
-	display: none;
 }
 
 .syntaxbg		{ color: #FFFFFF; }
@@ -733,10 +711,16 @@ ul.forums-wrapper li {
 	width: 40px;
 }
 
-/* Topic alternative icons */
-.forums .icon img {
-	margin-top: 16px;
-	margin-right: 18px;
+.forums-wrapper .row a.subforum {
+	background-image: none;
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	padding: 0 0 0 11px;
+}
+
+.forum-image {
+	width: 50px;
+	padding-right: 0 !important;
 }
 
 .forums .statistics 	{ width: 130px; }
@@ -748,7 +732,7 @@ ul.forums-wrapper li {
 .forums .ip				{ width: 13%; }
 .forums .mark 			{ width: 70px; }
 .forums .input			{ width: 25px; }
-.forums .profile			{ width: 16%; }
+.forums .profile		{ width: 16%; }
 .forums .joined, .forums .active {
 	width: 18%;
 }

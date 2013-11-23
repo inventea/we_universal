@@ -247,15 +247,15 @@ a.forumtitle:hover, a.topictitle:hover {
 
 /* Profile links */
 .postprofile a:link, .postprofile a:visited, .postprofile dt.author a {
-	color: #105289;
+	color: #444;
 }
 
 .postprofile a:hover, .postprofile dt.author a:hover {
-	color: #D31141;
+	color: #c20031;
 }
 
 .postprofile a:active {
-	color: #105289;
+	color: #c20031;
 }
 
 /* Profile searchresults */	
@@ -264,7 +264,7 @@ a.forumtitle:hover, a.topictitle:hover {
 }
 
 .search .postprofile a:hover {
-	color: #D31141;
+	color: #c20031;
 }
 
 /* Back to top of page */
