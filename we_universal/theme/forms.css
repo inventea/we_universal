@@ -1,22 +1,21 @@
 /* Form Styles
+---------------------------------------- */
+
+/* General form styles
 ----------------------------------------*/
 fieldset {
 	border-width: 0;
-	font-family: Tahoma, Arial, Helvetica, sans-serif;
-	font-size: 11px;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 1.1em;
 }
 
 input {
 	font-weight: normal;
 	cursor: pointer;
 	vertical-align: middle;
-	padding: 2px 4px;
+	padding: 0 3px;
 	font-size: 1em;
 	font-family: Verdana, Helvetica, Arial, sans-serif;
-}
-
-input:focus {
-	outline: none;
 }
 
 select {
@@ -104,10 +103,6 @@ fieldset.fields1 #recaptcha_widget_div div {
 }
 
 /* Specific layout 2 */
-fieldset.fields2 {
-	margin-top: 5px;
-}
-
 fieldset.fields2 dt {
 	width: 15em;
 	border-right-width: 0;
@@ -182,7 +177,7 @@ fieldset.quick-login label {
 /* Display options on viewtopic/viewforum pages  */
 fieldset.display-options {
 	text-align: center;
-	margin: 10px 0;
+	margin: 3px 0 5px 0;
 }
 
 fieldset.display-options label {
@@ -240,7 +235,7 @@ fieldset.quickmod {
 fieldset.submit-buttons {
 	text-align: center;
 	vertical-align: middle;
-	margin: 10px 0 5px 0;
+	margin: 5px 0;
 }
 
 fieldset.submit-buttons input {
@@ -292,8 +287,17 @@ fieldset.submit-buttons input {
 	background-color: #FFFFFF;
 	border: 1px solid #c0c0c0;
 	color: #333333;
-	padding: 3px;
+	padding: 2px;
 	cursor: text;
+}
+
+.inputbox:hover {
+	border: 1px solid #eaeaea;
+}
+
+.inputbox:focus {
+	border: 1px solid #eaeaea;
+	color: #4b4b4b;
 }
 
 input.inputbox	{ width: 85%; }
@@ -317,7 +321,8 @@ input.button1, input.button2 {
 
 a.button1, input.button1, input.button3, a.button2, input.button2 {
 	width: auto !important;
-	padding: 2px 5px;
+	padding-top: 1px;
+	padding-bottom: 1px;
 	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
 	color: #000;
 	background: #FAFAFA none repeat-x top left;
@@ -325,7 +330,7 @@ a.button1, input.button1, input.button3, a.button2, input.button2 {
 
 a.button1, input.button1 {
 	font-weight: bold;
-	border: 1px solid #666;
+	border: 1px solid #666666;
 }
 
 input.button3 {
@@ -339,14 +344,14 @@ input.button3 {
 
 /* Alternative button */
 a.button2, input.button2, input.button3 {
-	border: 1px solid #666;
+	border: 1px solid #666666;
 }
 
 /* <a> button in the style of the form buttons */
 a.button1, a.button1:link, a.button1:visited, a.button1:active, a.button2, a.button2:link, a.button2:visited, a.button2:active {
 	text-decoration: none;
 	color: #000000;
-	padding: 3px 10px;
+	padding: 2px 8px;
 	line-height: 250%;
 	vertical-align: text-bottom;
 	background-position: 0 1px;
@@ -366,16 +371,19 @@ input.disabled {
 
 /* Topic and forum Search */
 .search-box {
-	margin-top: 2px;
+	margin-top: 3px;
 	margin-left: 5px;
 	float: left;
+}
+
+.search-box input {
 }
 
 input.search {
 	background-image: none;
 	background-repeat: no-repeat;
 	background-position: left 1px;
-	padding-left: 18px;
+	padding-left: 17px;
 }
 
 .full { width: 95%; }
@@ -383,4 +391,3 @@ input.search {
 .narrow { width: 25%;}
 .tiny { width: 10%;}
 
-#recaptcha_table { background: #fff; }

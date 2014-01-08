@@ -1,4 +1,5 @@
-/* 
+/* Style Sheet Tweaks
+
 These style definitions are mainly IE specific 
 tweaks required due to its poor CSS support.
 -------------------------------------------------*/
@@ -15,7 +16,6 @@ table.table1 {
 	voice-family: inherit;
 	width: 100%;
 }
-
 html>body table.table1 { width: 100%; }	/* Reset 100% for opera */
 
 * html ul.topiclist li { position: relative; }
@@ -53,14 +53,6 @@ html>body dd label input { vertical-align: text-bottom; }	/* Align checkboxes/ra
 	overflow: hidden;
 }
 
-* html .content {
-	width: 98%;
-}
-
-* html .attach-image {
-	width: 680px;
-}
-
 /* navbar fix */
 * html .clearfix, * html .navbar, ul.linklist {
 	height: 4%;
@@ -69,12 +61,19 @@ html>body dd label input { vertical-align: text-bottom; }	/* Align checkboxes/ra
 
 /* Simple fix so forum and topic lists always have a min-height set, even in IE6
 	From http://www.dustindiaz.com/min-height-fast-hack */
-* html #search-box {
-	width: 25%;
+dl.icon {
+	min-height: 35px;
+	height: auto !important;
+	height: 35px;
 }
 
-* html .pm_border {
-	margin-left: -4px;
+* html li.row dl.icon dt {
+	height: 35px;
+	overflow: visible;
+}
+
+* html #search-box {
+	width: 25%;
 }
 
 /* Correctly clear floating for details on profile view */
@@ -88,10 +87,13 @@ html>body dd label input { vertical-align: text-bottom; }	/* Align checkboxes/ra
 	float: none;
 }
 
-/* Works like text-indent in normal browsers */
-#quick-search #search {
-	line-height: 50px;
-	overflow: hidden;
+/* Headerbar height fix for IE7 and below */
+* html #site-description p {
+	margin-bottom: 1.0em;
+}
+
+*:first-child+html #site-description p {
+	margin-bottom: 1.0em;
 }
 
 /* #minitabs fix for IE */
@@ -102,27 +104,4 @@ html>body dd label input { vertical-align: text-bottom; }	/* Align checkboxes/ra
 #minitabs {
 	white-space: nowrap;
 	*min-width: 50%;
-}
-
-/* Profile icons on memberlist */
-*:first-child+html .forums .profile-icons li {
-	display: inline;
-}
-
-* html .forums .profile-icons li {
-	display: inline;
-}
-
-/* Header fixes for IE6 */
-* html #header {
-	position: static;
-}
-
-* html #container {
-	margin-top: 0;
-}
-
-* html #dashboard #navigation-bottom {
-	position: static;
-	margin-top: 163px;
 }

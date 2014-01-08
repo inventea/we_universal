@@ -25,7 +25,6 @@
 	background-position: 0 0;
 	position: relative;
 	overflow: hidden;
-	font-size: 10px;
 }
 
 /* Hide <a> text and hide off-state image when rolling over (prevents flicker in IE) */
@@ -50,42 +49,52 @@
 .buttons div.newpm-icon		{ width: {IMG_BUTTON_PM_NEW_WIDTH}px; height: {IMG_BUTTON_PM_NEW_HEIGHT}px; }
 .buttons div.forwardpm-icon	{ width: {IMG_BUTTON_PM_FORWARD_WIDTH}px; height: {IMG_BUTTON_PM_FORWARD_HEIGHT}px; }
 
-/* Icon in "Last post" table row */
-.last-post-img {
-	margin: 3px 8px 0 5px;
-	float: left;
-}
-
-/* Font size, topic, e-mail and print icons
----------------------------------------- */
-.topic-icons {
-	list-style: none;
-}
-
-.topic-icons li {
-	margin-left: 5px;
-	float: left;
-}
-
 /* Sub-header (navigation bar)
 --------------------------------------------- */
-a.print, a.sendemail, a.subscribe, a.unsubscribe, a.bookmark, a.bump {
+a.print, a.sendemail, a.fontsize {
 	display: block;
 	overflow: hidden;
-	height: 16px;
+	height: 18px;
 	text-indent: -5000px;
 	text-align: left;
 	background-repeat: no-repeat;
 }
 
-a.print, a.sendemail, a.subscribe, a.unsubscribe, a.bookmark, a.bump {
+a.print {
 	background-image: none;
-	width: 21px;
+	width: 22px;
+}
+
+a.sendemail {
+	background-image: none;
+	width: 22px;
+}
+
+a.fontsize {
+	background-image: none;
+	background-position: 0 -1px;
+	width: 29px;
+}
+
+a.fontsize:hover {
+	background-position: 0 -20px;
+	text-decoration: none;
+}
+
+/* Icon images
+---------------------------------------- */
+.sitehome, .icon-faq, .icon-members, .icon-home, .icon-ucp, .icon-register, .icon-logout,
+.icon-bookmark, .icon-bump, .icon-subscribe, .icon-unsubscribe, .icon-pages, .icon-search {
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	background-image: none;
+	padding: 1px 0 0 17px;
 }
 
 /* Poster profile icons
 ----------------------------------------*/
 ul.profile-icons {
+	padding-top: 10px;
 	list-style: none;
 }
 
@@ -108,18 +117,11 @@ ul.profile-icons li a {
 ul.profile-icons li span { display:none; }
 ul.profile-icons li a:hover { background: none; }
 
-/* Positioning of user profile icons */
-.postprofile ul.profile-icons {
-	margin-top: 12px;
-	display: inline-block;
-	list-style: none;
-}
-
 /* Positioning of moderator icons */
 .postbody ul.profile-icons {
 	float: right;
 	width: auto;
-	padding-top: 4px;
+	padding: 0;
 }
 
 .postbody ul.profile-icons li {
@@ -131,10 +133,10 @@ ul.profile-icons li a:hover { background: none; }
 .aim-icon, .aim-icon a			{ background: none top left no-repeat; }
 .yahoo-icon, .yahoo-icon a		{ background: none top left no-repeat; }
 .web-icon, .web-icon a			{ background: none top left no-repeat; }
-.msnm-icon, .msnm-icon a		{ background: none top left no-repeat; }
+.msnm-icon, .msnm-icon a			{ background: none top left no-repeat; }
 .icq-icon, .icq-icon a			{ background: none top left no-repeat; }
-.jabber-icon, .jabber-icon a	{ background: none top left no-repeat; }
-.pm-icon, .pm-icon a			{ background: none top left no-repeat; }
+.jabber-icon, .jabber-icon a		{ background: none top left no-repeat; }
+.pm-icon, .pm-icon a				{ background: none top left no-repeat; }
 .quote-icon, .quote-icon a		{ background: none top left no-repeat; }
 
 /* Moderator icons */
@@ -164,3 +166,4 @@ ul.profile-icons li.warn-icon	{ width: {IMG_ICON_USER_WARN_WIDTH}px; height: {IM
 ul.profile-icons li.edit-icon	{ margin: 0 0 0 3px; }
 ul.profile-icons li.quote-icon	{ margin: 0 0 0 10px; }
 ul.profile-icons li.info-icon, ul.profile-icons li.report-icon	{ margin: 0 3px 0 0; }
+

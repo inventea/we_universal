@@ -207,16 +207,16 @@ ul.cplist {
 }
 
 #minitabs li {
+	display: block;
 	float: right;
+	padding: 0 10px 4px 10px;
 	font-size: 1em;
 	font-weight: bold;
 	background-color: #f2f2f2;
-	margin-left: 3px;
+	margin-left: 2px;
 }
 
 #minitabs a {
-	padding: 5px 10px;
-	display: block;
 }
 
 #minitabs a:hover {
@@ -334,7 +334,7 @@ ul.cplist {
 .cp-mini {
 	background-color: #f9f9f9;
 	padding: 0 5px;
-	margin: 10px 10px 10px 0;
+	margin: 10px 15px 10px 5px;
 }
 
 .cp-mini span.corners-top, .cp-mini span.corners-bottom {
@@ -365,30 +365,17 @@ dl.mini dd {
 }
 
 /* PM panel adjustments */
-.pm-panel-header {
-	margin: 0; 
+.reply-all a.left {
+	background-position: 3px 60%;
+}
+
+.reply-all a.left:hover {
+	background-position: 0px 60%;
 }
 
 .reply-all {
-	display: block; 
-	padding-top: 7px; 
-	padding-bottom: 8px; 
-	clear: both;
-	float: left;
-}
-
-.pm-panel-message {
-	padding-top: 10px;
-}
-
-.pm-return-to {
-	padding-top: 23px;
-}
-
-#cp-main .pm-message-nav {
-	margin: 0; 
-	padding: 2px 10px 5px 10px; 
-	border-bottom: 1px dashed #A4B3BF;
+	font-size: 11px;
+	padding-top: 5px;
 }
 
 /* PM Message history */
@@ -407,43 +394,47 @@ ol.def-rules li {
 }
 
 /* PM marking colours */
-.pm_border {
-	height: 50px;
-	margin: -8px;
-	float: left;
-	position: relative;
+.pmlist li.bg1 {
+	padding: 0 3px;
 }
 
-.pmlist .pm_message_reported_colour, .pm_message_reported_colour {
+.pmlist li.bg2 {
+	padding: 0 3px;
+}
+
+.pmlist li.pm_message_reported_colour, .pm_message_reported_colour {
 	border-left-color: #bcbcbc;
 	border-right-color: #bcbcbc;
 }
 
-.pmlist .pm_marked_colour, .pm_marked_colour {
-	border-left: solid 1px #ffffff;
-	border-width: 0 2px;
+.pmlist li.pm_marked_colour, .pm_marked_colour {
+	padding: 0;
+	border: solid 3px #ffffff;
+	border-width: 0 3px;
 }
 
-.pmlist .pm_replied_colour, .pm_replied_colour {
-	border-left: solid 1px #c2c2c2;
-	border-width: 0 2px;
+.pmlist li.pm_replied_colour, .pm_replied_colour {
+	padding: 0;
+	border: solid 3px #c2c2c2;
+	border-width: 0 3px;
 }
 
-.pmlist .pm_friend_colour, .pm_friend_colour {
-	border-left: solid 1px #bdbdbd;
-	border-width: 0 2px;
+.pmlist li.pm_friend_colour, .pm_friend_colour {
+	padding: 0;
+	border: solid 3px #bdbdbd;
+	border-width: 0 3px;
 }
 
-.pmlist .pm_foe_colour, .pm_foe_colour {
-	border-left: solid 1px #000000;
-	border-width: 0 2px;
+.pmlist li.pm_foe_colour, .pm_foe_colour {
+	padding: 0;
+	border: solid 3px #000000;
+	border-width: 0 3px;
 }
 
 .pm-legend {
 	border-left-width: 10px;
 	border-left-style: solid;
 	border-right-width: 0;
-	margin-top: 5px;
 	margin-bottom: 3px;
 	padding-left: 3px;
 }
