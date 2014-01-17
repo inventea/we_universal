@@ -14,17 +14,26 @@ body {
 }
 
 h1 {
+	margin-top: 0;
 	margin-bottom: 5px;
 	font-family: Helvetica, Arial, Verdana, sans-serif;
 	font-size: 36px;
+}
+
+@media (max-width: 768px) {
+	html,
+	body {
+		padding: 0;
+		background: #fff;
+	}
 }
 
 /**
  * Structure
  *
  * Main structure including wrapper, header, content and footer. Forum width
- * can be static (eg. width: 970px;) or fluid (default) to better support
- * varius devices.
+ * can be fixed (eg. width: 970px;) or fluid (default) to better support
+ * various devices.
  */
 .inventia-wrapper,
 .inventia-dashboard {
@@ -44,7 +53,7 @@ h1 {
 
 .inventia-statusbar {
 	position: relative;
-	overflow: hidden;
+	min-height: 46px;
 	border-bottom: 0;
 	color: #aaa;
 }
@@ -56,7 +65,7 @@ h1 {
 
 .inventia-dashboard {
 	position: relative;
-	background: url("{T_THEME_PATH}/images/dashboard.jpg") no-repeat;
+	background: url("{T_THEME_PATH}/images/dashboard.jpg") center center no-repeat;
 	background-size: cover;
 }
 
@@ -64,8 +73,16 @@ h1 {
 	border-top: 0;
 }
 
+@media (max-width: 768px) {
+	.inventia-wrapper,
+	.inventia-dashboard {
+		width: 100%;
+		border: 0;
+	}
+}
+
 /**
- * Quick search
+ * Current time/last visit and quick search
  */
 .inventia-quick-search {
 	position: absolute;
@@ -95,7 +112,7 @@ h1 {
 	color: #aaa;
 	font-family: Tahoma, Helvetica, Arial, sans-serif;
 	font-size: 12px;
-	transition: all 0.4s;
+	transition: width 0.4s;
 }
 
 .inventia-quick-search-input:focus {
@@ -103,11 +120,36 @@ h1 {
 	cursor: text;
 }
 
+@media (max-width: 768px) {
+	.inventia-time {
+		display: none;
+	}
+
+	.inventia-quick-search {
+		right: auto;
+		left: 20px;
+	}
+
+	.inventia-quick-search-icon {
+		right: auto;
+		left: 10px;
+	}
+
+	.inventia-quick-search-input {
+		width: 120px;
+		padding: 5px 10px 5px 28px;
+	}
+
+	.inventia-quick-search-input:focus {
+		width: 120px;
+	}
+}
+
 /**
  * Forum name and description
  */
 .inventia-sitename {
-	padding: 52px 50px 95px;
+	padding: 62px 50px 90px;
 	color: #fff;
 	font-size: 14px;
 }
@@ -116,11 +158,18 @@ h1 {
 	color: #fff;
 }
 
+@media (max-width: 768px) {
+	.inventia-sitename {
+		padding: 40px 25px;
+	}
+}
+
 /**
  * Primary navigation
  *
  * Main menu located in header. Consists of two navigation lines: forum related
- * links on top and user related links on bottom.
+ * links on top and user related links on bottom. Displayed only on devices
+ * with larger screen resolutions (at least 768px width).
  */
 .inventia-forum-menu,
 .inventia-user-menu {
@@ -144,20 +193,124 @@ h1 {
 	float: left;
 }
 
+/* Space between menu items */
 .inventia-menu-item + .inventia-menu-item {
-	margin-left: 4px; /* Space between menu items */
+	margin-left: 4px;
 }
 
-.inventia-menu-item a {
+.inventia-menu-item > a {
 	display: block;
 	padding: 8px 10px;
 	background: rgba(0, 0, 0, 0.5);
 	color: #eee;
 }
 
-.inventia-menu-item a:focus,
-.inventia-menu-item a:hover,
-.inventia-menu-item a:active {
+.inventia-menu-item > a:focus,
+.inventia-menu-item > a:hover,
+.inventia-menu-item > a:active {
 	background: rgba(0, 0, 0, 0.9);
 	text-decoration: none;
+}
+
+/**
+ * Secondary menu
+ *
+ * Alternative dropdown menu displayed only on devices with small screen
+ * resolutions (768px width or less).
+ */
+.inventia-mobile-menu {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.inventia-forum-menu,
+	.inventia-user-menu {
+		display: none;
+	}
+	
+	.inventia-mobile-menu {
+		display: block;
+	}
+	
+	/* Remove unnecessary padding in Firefox */
+	.inventia-menu-toggle::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
+
+	.inventia-menu-toggle {
+		position: absolute;
+		top: 8px;
+		right: 20px;
+		padding: 3px 4px;
+		outline: 0;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		background: #eee;
+		font-size: 21px;
+		color: #46474a;
+	}
+
+	.inventia-menu-toggle:hover,
+	.inventia-menu-toggle:active {
+		outline: 0;
+		cursor: pointer;
+	}
+	
+	/* Remove padding from Font Awesome icon */
+	.inventia-menu-toggle > .fa {
+		display: block;
+		padding: 0;
+	}
+	
+	/* Triangle above dropdown menu */
+	.inventia-dropdown-menu::before {
+		content: "";
+		display: block;
+		position: absolute;
+		right: 10px;
+		width: 0;
+		height: 0;
+		margin-top: -12px;
+		border-style: solid;
+		border-width: 0 14px 12px 14px;
+		border-color: transparent transparent #292c2f transparent;
+	}
+
+	.inventia-dropdown-menu {
+		position: absolute;
+		z-index: 1;
+		top: 54px;
+		right: 10px;
+		display: none;
+		-webkit-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+		-moz-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+		box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+		list-style: none;
+		background: #292c2f;
+	}
+	
+	.inventia-dropdown-menu-item {
+		min-width: 190px;
+	}
+
+	.inventia-dropdown-menu-item a {
+		display: block;
+		padding: 12px 15px;
+		border-bottom: 1px solid #46474a;
+		color: #eee;
+	}
+	
+	.inventia-dropdown-menu-item a:focus,
+	.inventia-dropdown-menu-item a:hover {
+		background: #343639;
+		text-decoration: none;
+	}
+
+	.inventia-dropdown-menu-item .fa {
+		min-width: 16px;
+		margin-right: 6px;
+		text-align: center;
+		font-size: 14px;
+	}
 }
