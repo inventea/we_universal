@@ -36,16 +36,17 @@ h1 {
  * various devices.
  */
 .inventia-wrapper,
-.inventia-dashboard {
+.inventia-dashboard,
+.inventia-footer {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	width: 95%;
 	max-width: 1170px;
 	margin: auto;
 }
 
 .inventia-wrapper {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 	padding: 15px 20px;
 	border: 2px solid #e7e7e7;
 	background: #fff;
@@ -70,12 +71,31 @@ h1 {
 }
 
 .inventia-content {
+	position: relative;
 	border-top: 0;
+}
+
+.inventia-footer-wrapper {
+	display: block;
+	box-shadow: inset 0 20px 30px -20px #d5d5d5;
+	width: 100%;
+	margin-top: -25px;
+	border-top: 1px solid #e2e2e2;
+}
+
+.inventia-footer {
+	overflow: hidden;
+	margin: 42px auto;
+	padding: 0 22px;
+	color: #959595;
+	line-height: 18px;
+	font-size: 12px;
 }
 
 @media (max-width: 768px) {
 	.inventia-wrapper,
-	.inventia-dashboard {
+	.inventia-dashboard,
+	.inventia-footer {
 		width: 100%;
 		border: 0;
 	}
@@ -112,7 +132,7 @@ h1 {
 	color: #aaa;
 	font-family: Tahoma, Helvetica, Arial, sans-serif;
 	font-size: 12px;
-	transition: width 0.4s;
+	transition: width 0.3s;
 }
 
 .inventia-quick-search-input:focus {
@@ -247,8 +267,8 @@ h1 {
 		border: 1px solid #ccc;
 		border-radius: 3px;
 		background: #eee;
-		font-size: 21px;
 		color: #46474a;
+		font-size: 21px;
 	}
 
 	.inventia-menu-toggle:hover,
@@ -283,8 +303,6 @@ h1 {
 		top: 54px;
 		right: 10px;
 		display: none;
-		-webkit-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
-		-moz-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
 		box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
 		list-style: none;
 		background: #292c2f;
@@ -312,5 +330,57 @@ h1 {
 		margin-right: 6px;
 		text-align: center;
 		font-size: 14px;
+	}
+}
+
+/**
+ * Footer
+ */
+.inventia-footer a {
+	color: #595959;
+}
+
+.inventia-footer a:focus,
+.inventia-footer a:hover,
+.inventia-footer a:active {
+	color: #d31141;
+}
+
+.inventia-footer-menu {
+	float: right;
+	list-style: none;
+}
+
+.inventia-footer-menu-item::before {
+	content: "/";
+	display: block;
+	float: left;
+	margin: 0 10px;
+	color: #cacaca;
+	font-size: 14px;
+}
+
+/* Don't display first separator */
+.inventia-footer-menu-item:first-child::before {
+	display: none;
+}
+
+.inventia-footer-menu-item {
+	display: block;
+	float: left;
+}
+
+.inventia-credits {
+	float: left;
+}
+
+@media (max-width: 768px) {
+	.inventia-footer-menu,
+	.inventia-credits {
+		float: none;
+	}
+	
+	.inventia-footer-menu {
+		margin-bottom: 36px;
 	}
 }

@@ -18,18 +18,25 @@
 
 		<span class="corners-bottom"><span></span></span></div>
 	</div>
+</div>
+</div>
 
-	<div class="copyright">{CREDIT_LINE}
-		<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
-		<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
-		<!-- IF U_ACP --><br /><strong><a href="{U_ACP}">{L_ACP}</a></strong><!-- ENDIF -->
+<div class="inventia-footer-wrapper">
+	<div class="inventia-footer">
+		<ul class="inventia-footer-menu">
+			<li class="inventia-footer-menu-item"><a href="{U_INDEX}" title="{L_INDEX}">{L_INDEX}</a></li>
+			<!-- IF not S_IS_BOT --><li class="inventia-footer-menu-item"><a href="{U_DELETE_COOKIES}" title="{L_DELETE_COOKIES}">{L_DELETE_COOKIES}</a></li><!-- ENDIF -->
+			<li class="inventia-footer-menu-item">{S_TIMEZONE}</li>
+		</ul>
+		
+		<footer class="inventia-credits">
+			{CREDIT_LINE}<br />
+			Style we_universal created by <a href="http://inventia.io" title="Premium phpBB styles, HTML5 &amp; CSS3 templates">Inventia</a>.
+			<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
+			<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
+		</footer>
 	</div>
-</div>
 
-</div>
-
-<div>
-	<a id="bottom" name="bottom" accesskey="z"></a>
 	<!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
 </div>
 
