@@ -336,6 +336,11 @@ a:active {
 	.inventia-dropdown-menu-item {
 		min-width: 190px;
 	}
+	
+	/* Remove bottom border from last menu item */
+	.inventia-dropdown-menu-item:last-child a {
+		border: 0;
+	}
 
 	.inventia-dropdown-menu-item a {
 		display: block;
@@ -343,7 +348,7 @@ a:active {
 		border-bottom: 1px solid #46474a;
 		color: #eee;
 	}
-	
+
 	.inventia-dropdown-menu-item a:focus,
 	.inventia-dropdown-menu-item a:hover {
 		background: #343639;
@@ -443,7 +448,8 @@ a:active {
 /**
  * Forums
  *
- * Overwrite default categories and forums layout.
+ * Overwrite default categories and forums layout. Define zebra background
+ * colours for even/odd rows and cells.
  */
 .forabg,
 .forumbg {
@@ -476,6 +482,7 @@ li.row:hover {
 	background: none;
 }
 
+/* Different background for even rows */
 li.row:nth-child(even) {
 	background: #f2f2f2;
 }
@@ -505,6 +512,7 @@ ul.topiclist dd {
 	font-size: 12px;
 }
 
+/* Different background in odd columns */
 ul.topiclist li.row dt:nth-child(odd),
 ul.topiclist li.row dd:nth-child(odd) {
 	background-color: #f1f1f1;
@@ -554,7 +562,7 @@ ul.topiclist li.row a.subforum.unread {
 	background-image: url("{IMG_SUBFORUM_UNREAD_SRC}");
 }
 
-/* Specified colums width */
+/* Specific colums width */
 ul.topiclist li.row dt {
 	width: 55px;
 	padding: 0;
@@ -594,6 +602,7 @@ th a:hover {
 	text-align: center;
 }
 
+/* Remove image rounded corners to use border-radius later */
 span.corners-top,
 span.corners-bottom,
 span.corners-top span,
@@ -605,4 +614,8 @@ span.corners-bottom span {
 ul.linklist {
 	margin-bottom: 2px;
 	font-size: 12px;
+}
+
+.panel {
+	overflow: hidden;
 }
