@@ -578,6 +578,12 @@ dd.lastpost {
 	width: 21%;
 }
 
+dd.redirect {
+	width: 21%;
+	width: calc(21% + 120px + 14px);
+	text-align: center;
+}
+
 /* Forums layout related links */
 #search-box a:hover,
 .navbg a:hover,
@@ -590,7 +596,8 @@ th a:hover {
 @media (max-width: 768px) {
 	ul.topiclist dd.topics,
 	ul.topiclist dd.posts,
-	ul.topiclist dd.lastpost {
+	ul.topiclist dd.lastpost,
+	ul.topiclist dd.redirect {
 		display: none;
 	}
 }
