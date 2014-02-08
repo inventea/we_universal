@@ -1,4 +1,3 @@
-
 <!-- BEGIN forumrow -->
 	<!-- IF (forumrow.S_IS_CAT and not forumrow.S_FIRST_ROW) or forumrow.S_NO_CAT  -->
 			</ul>
@@ -14,8 +13,7 @@
 				<li class="header">
 					<dl class="icon">
 						<dt><!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF --></dt>
-						<dd class="topics">{L_TOPICS}</dd>
-						<dd class="posts">{L_POSTS}</dd>
+						<dd class="topics">{L_STATISTICS}</dd>
 						<dd class="lastpost"><span>{L_LAST_POST}</span></dd>
 					</dl>
 				</li>
@@ -25,8 +23,9 @@
 
 	<!-- IF not forumrow.S_IS_CAT -->
 		<li class="row">
-			<dl class="icon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC}); background-repeat: no-repeat;">
-				<dt title="{forumrow.FORUM_FOLDER_IMG_ALT}">
+			<dl title="{forumrow.FORUM_FOLDER_IMG_ALT}">
+				<dt class="icon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></dt>
+				<dd>
 				<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED --><!-- <a class="feed-icon-forum" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}"><img src="{T_THEME_PATH}/images/feed.gif" alt="{L_FEED} - {forumrow.FORUM_NAME}" /></a> --><!-- ENDIF -->
 
 					<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
@@ -36,16 +35,15 @@
 						<br /><strong>{forumrow.L_MODERATOR_STR}:</strong> {forumrow.MODERATORS}
 					<!-- ENDIF -->
 					<!-- IF forumrow.SUBFORUMS and forumrow.S_LIST_SUBFORUMS --><br /><strong>{forumrow.L_SUBFORUM_STR}</strong> {forumrow.SUBFORUMS}<!-- ENDIF -->
-				</dt>
+				</dd>
 				<!-- IF forumrow.CLICKS -->
 					<dd class="redirect"><span>{L_REDIRECTS}: {forumrow.CLICKS}</span></dd>
 				<!-- ELSEIF not forumrow.S_IS_LINK -->
-					<dd class="topics">{forumrow.TOPICS} <dfn>{L_TOPICS}</dfn></dd>
-					<dd class="posts">{forumrow.POSTS} <dfn>{L_POSTS}</dfn></dd>
+					<dd class="topics">{L_TOPICS}: <strong>{forumrow.TOPICS}</strong><br />{L_POSTS}: <strong>{forumrow.POSTS}</strong></dd>
 					<dd class="lastpost"><span>
 						<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG}</a><!-- ENDIF -->
 						<!-- IF forumrow.LAST_POST_TIME --><dfn>{L_LAST_POST}</dfn> {L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}
-						<!-- IF not S_IS_BOT --><a href="{forumrow.U_LAST_POST}">{LAST_POST_IMG}</a> <!-- ENDIF --><br />{forumrow.LAST_POST_TIME}<!-- ELSE -->{L_NO_POSTS}<br />&nbsp;<!-- ENDIF --></span>
+						<!-- IF not S_IS_BOT --><a href="{forumrow.U_LAST_POST}">{LAST_POST_IMG}</a> <!-- ENDIF --><br />{forumrow.LAST_POST_TIME}<!-- ELSE --><span class="inventia-no-items">{L_NO_POSTS}</a><!-- ENDIF --></span>
 					</dd>
 				<!-- ENDIF -->
 			</dl>
