@@ -567,7 +567,7 @@ dd.posts {
 }
 
 dd.lastpost {
-	width: 220px;
+	width: 21%;
 }
 
 /* Forums layout related links */
@@ -577,6 +577,14 @@ dd.lastpost {
 .forabg .header a:hover,
 th a:hover {
 	color: #fff;
+}
+
+@media (max-width: 768px) {
+	ul.topiclist dd.topics,
+	ul.topiclist dd.posts,
+	ul.topiclist dd.lastpost {
+		display: none;
+	}
 }
 
 /**
