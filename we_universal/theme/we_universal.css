@@ -446,10 +446,10 @@ a:active {
 }
 
 /**
- * Forums
+ * Forums and tables
  *
- * Overwrite default categories and forums layout. Define zebra background
- * colours for even/odd rows and cells.
+ * Overwrite default categories/forums layout and common tables settings.
+ * Define zebra background colours for even/odd rows and cells.
  */
 .forabg,
 .forumbg {
@@ -462,7 +462,8 @@ a:active {
 }
 
 ul.forums,
-ul.topics {
+ul.topics,
+table.table1 tbody {
 	background: #fafcfe;
 }
 
@@ -471,19 +472,24 @@ ul.topiclist li {
 	color: #666;
 }
 
-li.row {
+li.row,
+table.table1 tbody tr {
+	border: 0;
 	border-top: 1px solid #fff;
-	border-bottom: 0;
 }
 
 ul.topics .bg1,
 ul.topics .bg2,
-li.row:hover {
+li.row:hover,
+table.table1 tr.bg1,
+table.table1 tr.bg2,
+table.table1 tbody tr:hover {
 	background: none;
 }
 
 /* Different background for even rows */
-li.row:nth-child(even) {
+li.row:nth-child(even),
+table.table1 tbody tr:nth-child(even) {
 	background: #f2f2f2;
 }
 
@@ -502,9 +508,8 @@ ul.topiclist li.row dl {
 
 /* Cell  */
 ul.topiclist dt,
-ul.topiclist dd {
-	display: table-cell;
-	float: none;
+ul.topiclist dd,
+table.table1 tbody td {
 	padding: 7px;
 	border: 0;
 	vertical-align: middle;
@@ -512,14 +517,22 @@ ul.topiclist dd {
 	font-size: 12px;
 }
 
+ul.topiclist dt,
+ul.topiclist dd {
+	display: table-cell;
+	float: none;
+}
+
 /* Different background in odd columns */
 ul.topiclist li.row dt:nth-child(odd),
-ul.topiclist li.row dd:nth-child(odd) {
+ul.topiclist li.row dd:nth-child(odd),
+table.table1 tbody td:nth-child(even) {
 	background-color: #f1f1f1;
 }
 
 ul.topiclist li.row:nth-child(even) dt:nth-child(odd),
-ul.topiclist li.row:nth-child(even) dd:nth-child(odd) {
+ul.topiclist li.row:nth-child(even) dd:nth-child(odd),
+table.table1 tbody tr:nth-child(even) td:nth-child(even) {
 	background-color: #e9e9e9;
 }
 
@@ -534,9 +547,11 @@ dd.moderation span {
 
 /* Category header */
 ul.topiclist li.header dt,
-ul.topiclist li.header dd {
+ul.topiclist li.header dd,
+table.table1 thead th {
 	padding: 10px 7px;
 	text-align: center;
+	line-height: 16px;
 	font-weight: normal;
 }
 
@@ -600,6 +615,23 @@ th a:hover {
 	ul.topiclist dd.redirect {
 		display: none;
 	}
+}
+
+/**
+ * Tables
+ *
+ * Overwrite specific tables settings.
+ */
+.forumbg-table > .inner {
+	margin: 0;
+}
+
+table.table1 {
+	border-collapse: collapse;
+}
+
+table.table1 td {
+	color: #666;
 }
 
 /**
