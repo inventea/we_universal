@@ -494,6 +494,11 @@ table.table1 tbody tr:nth-child(even) {
 	background: #f2f2f2;
 }
 
+li.reported,
+li.reported:hover {
+	background: #f7ecef !important;
+}
+
 li.row strong {
 	color: inherit;
 	font-weight: bold;
@@ -535,6 +540,11 @@ ul.topiclist li.row:nth-child(even) dt:nth-child(odd),
 ul.topiclist li.row:nth-child(even) dd:nth-child(odd),
 table.table1 tbody tr:nth-child(even) td:nth-child(even) {
 	background-color: #e9e9e9;
+}
+
+ul.topiclist li.reported dt:nth-child(odd),
+ul.topiclist li.reported dd:nth-child(odd) {
+	background-color: #f4e1e6 !important;
 }
 
 dd.lastpost span,
