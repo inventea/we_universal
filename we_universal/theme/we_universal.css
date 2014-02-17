@@ -22,6 +22,7 @@ h1 {
 }
 
 h3 {
+	margin-top: 24px;
 	margin-bottom: 8px;
 	padding-bottom: 5px;
 	color: #444;
@@ -653,6 +654,11 @@ span.corners-bottom span {
 ul.linklist {
 	margin-bottom: 2px;
 	font-size: 12px;
+}
+
+/* Space between last category and quick login */
+.headerspace {
+	margin-top: 30px;
 }
 
 .panel {
