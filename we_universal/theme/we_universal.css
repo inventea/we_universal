@@ -21,6 +21,11 @@ h1 {
 	font-size: 36px;
 }
 
+h2 {
+	margin-bottom: 10px;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+}
+
 h3 {
 	margin-top: 24px;
 	margin-bottom: 8px;
@@ -141,6 +146,7 @@ a:active {
 	top: 6px;
 	right: 10px;
 	color: #c5c5c5;
+	font-size: 13px;
 }
 
 .inventia-quick-search-input {
@@ -646,6 +652,90 @@ table.table1 td {
 }
 
 /**
+ * Panels
+ */
+.panel {
+	overflow: hidden;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 7px;
+	background-color: #f1f1f1;
+}
+
+.bg1 {
+	background-color: #ececec;
+}
+
+.bg2 {
+	background-color: #f4f4f4;
+}
+
+.bg3 {
+	background-color: #ececec;
+}
+
+.content,
+dl.faq dt {
+	color: #444;
+}
+
+/* Base font in panels */
+fieldset,
+dl.faq,
+.content dl.faq {
+	line-height: 16px;
+	font-family: Tahoma, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+}
+
+/* Headers in panels */
+.panel h2,
+.panel h3,
+.content h2 {
+	margin-bottom: 10px;
+	padding-bottom: 8px;
+	color: #3f3f3f;
+	text-transform: none;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+h2.solo {
+	margin-bottom: 10px;
+}
+
+/**
+ * FAQ
+ */
+dl.faq {
+	margin-top: 7px;
+	margin-bottom: 16px;
+}
+
+dl.faq:last-child {
+	margin-bottom: 7px;
+}
+
+@media (max-width: 768px) {
+	.column1,
+	.column2 {
+		float: none;
+		width: 100%;
+	}
+
+	.column1 dl.faq:last-child {
+		margin-bottom: 16px;
+	}
+}
+
+/**
+ * Forms
+ */
+fieldset {
+	margin-bottom: 10px;
+}
+
+/**
  * Miscellaneous
  */
 .inventia-no-items {
@@ -671,6 +761,7 @@ ul.linklist {
 	margin-top: 30px;
 }
 
-.panel {
-	overflow: hidden;
+.top2 {
+	display: inline-block;
+	margin-top: 8px;
 }
