@@ -4,7 +4,7 @@
 html,
 body {
 	background: #f9f9f9;
-	color: #666;
+	color: #555;
 }
 
 body {
@@ -30,7 +30,7 @@ h3 {
 	margin-top: 24px;
 	margin-bottom: 8px;
 	padding-bottom: 5px;
-	color: #444;
+	color: #3f3f3f;
 	font-size: 14px;
 }
 
@@ -42,12 +42,13 @@ p {
 
 a:link,
 a:visited {
-	color :#444;
+	color :#3f3f3f;
 }
 
 a:focus,
 a:hover,
 a:active {
+	text-decoration: underline;
 	color: #d31141;
 }
 
@@ -87,7 +88,7 @@ a:active {
 	position: relative;
 	min-height: 46px;
 	border-bottom: 0;
-	color: #aaa;
+	color: #999;
 }
 
 .inventia-header {
@@ -161,7 +162,7 @@ a:active {
 	outline: 0;
 	border: 0;
 	border-radius: 30px;
-	color: #aaa;
+	color: #999;
 	font-family: Tahoma, Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	transition: width 0.3s;
@@ -476,7 +477,7 @@ table.table1 tbody {
 
 /* Row (single forum) */
 ul.topiclist li {
-	color: #666;
+	color: #555;
 }
 
 li.row,
@@ -648,7 +649,7 @@ table.table1 {
 }
 
 table.table1 td {
-	color: #666;
+	color: #555;
 }
 
 /**
@@ -674,9 +675,8 @@ table.table1 td {
 	background-color: #ececec;
 }
 
-.content,
-dl.faq dt {
-	color: #444;
+.content {
+	color: #555;
 }
 
 /* Base font in panels */
@@ -714,6 +714,10 @@ dl.faq {
 
 dl.faq:last-child {
 	margin-bottom: 7px;
+}
+
+dl.faq dt {
+	color: #3f3f3f;
 }
 
 @media (max-width: 768px) {
