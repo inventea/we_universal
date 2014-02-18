@@ -661,6 +661,7 @@ table.table1 td {
 	padding-bottom: 5px;
 	border-radius: 7px;
 	background-color: #f1f1f1;
+	color: #555;
 }
 
 .bg1 {
@@ -682,7 +683,9 @@ table.table1 td {
 /* Base font in panels */
 fieldset,
 dl.faq,
-.content dl.faq {
+.content dl.faq,
+.content p,
+.panel p {
 	line-height: 16px;
 	font-family: Tahoma, Helvetica, Arial, sans-serif;
 	font-size: 12px;
@@ -737,6 +740,11 @@ dl.faq dt {
  */
 fieldset {
 	margin-bottom: 10px;
+}
+
+label,
+dd label {
+	color: #555;
 }
 
 /**
