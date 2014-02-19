@@ -742,6 +742,36 @@ dl.faq dt {
 }
 
 /**
+ * Posts and private messages
+ */
+.postbody {
+	float: right;
+}
+
+.postprofile {
+	float: left;
+	border: 0;
+	border-right: 1px solid #fff;
+}
+
+.pm .postprofile {
+	border: 0;
+	border-right: 1px solid #ddd;
+}
+
+.online {
+	margin-top: 0;
+}
+
+.online dt {
+	margin-top: 5px;
+}
+
+.attachbox {
+	clear: right;
+}
+
+/**
  * Forms
  */
 fieldset {
