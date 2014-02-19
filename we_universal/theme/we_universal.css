@@ -691,6 +691,12 @@ dl.faq,
 	font-size: 12px;
 }
 
+dl.faq,
+.content dl.faq,
+.content p {
+	line-height: 18px;
+}
+
 /* Headers in panels */
 .panel h2,
 .panel h3,
@@ -763,8 +769,9 @@ span.corners-bottom span {
 	background: none;
 }
 
-ul.linklist {
-	margin-bottom: 2px;
+ul.linklist li {
+	margin-bottom: 8px;
+	line-height: 18px;
 	font-size: 12px;
 }
 
