@@ -602,7 +602,7 @@ ul.topiclist li.row a.subforum.unread {
 	background-image: url("{IMG_SUBFORUM_UNREAD_SRC}");
 }
 
-/* Specific colums width */
+/* Specific colums settings */
 ul.topiclist li.row dt {
 	width: 55px;
 	padding: 0;
@@ -616,6 +616,11 @@ dd.posts {
 
 dd.lastpost {
 	width: 21%;
+}
+
+/* Last post author and date icons */
+dd.lastpost .fa {
+	color: #6b6b6b;
 }
 
 dd.redirect {
