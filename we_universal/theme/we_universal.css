@@ -353,7 +353,7 @@ a:active {
 
 	.inventia-dropdown-menu-item a {
 		display: block;
-		padding: 12px 15px;
+		padding: 12px 15px 12px 14px;
 		border-bottom: 1px solid #46474a;
 		color: #eee;
 	}
@@ -365,9 +365,7 @@ a:active {
 	}
 
 	.inventia-dropdown-menu-item .fa {
-		min-width: 16px;
-		margin-right: 6px;
-		text-align: center;
+		margin-right: 5px;
 		font-size: 14px;
 	}
 }

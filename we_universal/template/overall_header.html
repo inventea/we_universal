@@ -90,24 +90,24 @@
 		<button class="inventia-menu-toggle" title="{L_EXPAND_VIEW}/{L_COLLAPSE_VIEW}"><i class="fa fa-bars"></i></button>
 
 		<ul class="inventia-dropdown-menu">
-			<li class="inventia-dropdown-menu-item"><a href="{U_INDEX}" title="{L_INDEX}"><i class="fa fa-home"></i> {L_INDEX}</a></li>
-			<li class="inventia-dropdown-menu-item"><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-info-circle"></i> {L_FAQ}</a></li>
-			<!-- IF S_DISPLAY_SEARCH --><li class="inventia-dropdown-menu-item"><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><i class="fa fa-search"></i> {L_SEARCH}</a></li><!-- ENDIF -->
-			<!-- IF U_TEAM --><li class="inventia-dropdown-menu-item"><a href="{U_TEAM}" title="{L_THE_TEAM}"><i class="fa fa-users"></i> {L_THE_TEAM}</a></li><!-- ENDIF -->
-			<!-- IF not S_IS_BOT and S_DISPLAY_MEMBERLIST --><li class="inventia-dropdown-menu-item"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="fa fa-users"></i> {L_MEMBERLIST}</a></li><!-- ENDIF -->
+			<li class="inventia-dropdown-menu-item"><a href="{U_INDEX}" title="{L_INDEX}"><i class="fa fa-home fa-fw"></i> {L_INDEX}</a></li>
+			<li class="inventia-dropdown-menu-item"><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-info-circle fa-fw"></i> {L_FAQ}</a></li>
+			<!-- IF S_DISPLAY_SEARCH --><li class="inventia-dropdown-menu-item"><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><i class="fa fa-search fa-fw"></i> {L_SEARCH}</a></li><!-- ENDIF -->
+			<!-- IF U_TEAM --><li class="inventia-dropdown-menu-item"><a href="{U_TEAM}" title="{L_THE_TEAM}"><i class="fa fa-users fa-fw"></i> {L_THE_TEAM}</a></li><!-- ENDIF -->
+			<!-- IF not S_IS_BOT and S_DISPLAY_MEMBERLIST --><li class="inventia-dropdown-menu-item"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="fa fa-users fa-fw"></i> {L_MEMBERLIST}</a></li><!-- ENDIF -->
 
 			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-				<li class="inventia-dropdown-menu-item"><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-user"></i> {L_PROFILE}</a></li>
-				<!-- IF S_DISPLAY_PM --><li class="inventia-dropdown-menu-item"><a href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}"><i class="fa fa-envelope"></i> {PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
-				<!-- IF S_DISPLAY_SEARCH --><li class="inventia-dropdown-menu-item"><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}"><i class="fa fa-comments"></i> {L_SEARCH_SELF}</a></li><!-- ENDIF -->
-				<!-- IF U_RESTORE_PERMISSIONS --><li class="inventia-dropdown-menu-item"><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
-				<!-- IF U_MCP --><li class="inventia-dropdown-menu-item"><a href="{U_MCP}" title="{L_MCP}"><i class="fa fa-tachometer"></i> {L_MCP}</a></li><!-- ENDIF -->
-				<!-- IF U_ACP --><li class="inventia-dropdown-menu-item"><a href="{U_ACP}" title="{L_ACP}"><i class="fa fa-cog"></i> {L_ACP}</a></li><!-- ENDIF -->
+				<li class="inventia-dropdown-menu-item"><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-user fa-fw"></i> {L_PROFILE}</a></li>
+				<!-- IF S_DISPLAY_PM --><li class="inventia-dropdown-menu-item"><a href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}"><i class="fa fa-envelope fa-fw"></i> {PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
+				<!-- IF S_DISPLAY_SEARCH --><li class="inventia-dropdown-menu-item"><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}"><i class="fa fa-comments fa-fw"></i> {L_SEARCH_SELF}</a></li><!-- ENDIF -->
+				<!-- IF U_RESTORE_PERMISSIONS --><li class="inventia-dropdown-menu-item"><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}"><i class="fa fa-retweet fa-fw"></i> {L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
+				<!-- IF U_MCP --><li class="inventia-dropdown-menu-item"><a href="{U_MCP}" title="{L_MCP}"><i class="fa fa-tachometer fa-fw"></i> {L_MCP}</a></li><!-- ENDIF -->
+				<!-- IF U_ACP --><li class="inventia-dropdown-menu-item"><a href="{U_ACP}" title="{L_ACP}"><i class="fa fa-cog fa-fw"></i> {L_ACP}</a></li><!-- ENDIF -->
 			<!-- ENDIF -->
 			
 			<!-- IF not S_IS_BOT -->
-				<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li class="inventia-dropdown-menu-item"><a href="{U_REGISTER}" title="{L_REGISTER}"><i class="fa fa-check-circle"></i> {L_REGISTER}</a></li><!-- ENDIF -->
-				<li class="inventia-dropdown-menu-item"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-power-off"></i> {L_LOGIN_LOGOUT}</a></li>
+				<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li class="inventia-dropdown-menu-item"><a href="{U_REGISTER}" title="{L_REGISTER}"><i class="fa fa-check-circle fa-fw"></i> {L_REGISTER}</a></li><!-- ENDIF -->
+				<li class="inventia-dropdown-menu-item"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-power-off fa-fw"></i> {L_LOGIN_LOGOUT}</a></li>
 			<!-- ENDIF -->
 		</ul>
 	</nav>
