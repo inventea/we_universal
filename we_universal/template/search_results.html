@@ -64,8 +64,8 @@
 					</dd>
 					<dd class="posts">{L_REPLIES}: <strong>{searchresults.TOPIC_REPLIES}</strong><br />{L_VIEWS}: <strong>{searchresults.TOPIC_VIEWS}</strong></dd>
 					<dd class="lastpost"><span>
-						{L_POST_BY_AUTHOR} {searchresults.LAST_POST_AUTHOR_FULL}
-						<!-- IF not S_IS_BOT --><a href="{searchresults.U_LAST_POST}">{LAST_POST_IMG}</a> <!-- ENDIF --><br />{searchresults.LAST_POST_TIME}<br /> </span>
+						<i class="fa fa-user fa-fw"></i> {L_POST_BY_AUTHOR} {searchresults.LAST_POST_AUTHOR_FULL}
+						<!-- IF not S_IS_BOT --><a href="{searchresults.U_LAST_POST}">{LAST_POST_IMG}</a> <!-- ENDIF --><br /><i class="fa fa-clock-o fa-fw"></i> {searchresults.LAST_POST_TIME}<br /> </span>
 					</dd>
 				</dl>
 			</li>
