@@ -328,9 +328,9 @@ a:active {
 	/* Triangle above dropdown menu */
 	.inventia-dropdown-menu::before {
 		content: "";
-		display: block;
 		position: absolute;
 		right: 10px;
+		display: block;
 		width: 0;
 		height: 0;
 		margin-top: -12px;
@@ -342,10 +342,10 @@ a:active {
 	.inventia-dropdown-menu {
 		position: absolute;
 		z-index: 1;
-		top: 54px;
-		right: 10px;
+		top: 55px;
+		right: 6px;
 		display: none;
-		box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+		box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.5);
 		list-style: none;
 		background: #292c2f;
 	}
@@ -586,12 +586,12 @@ ul.topiclist li.header dt {
 
 /* Subforums list on index */
 ul.topiclist li.row a.subforum {
+	position: relative;
+	padding: 0 0 0 12px;
 	background-image: none;
 	background-position: 0 50%;
 	background-repeat: no-repeat;
-	position: relative;
 	white-space: nowrap;
-	padding: 0 0 0 12px;
 }
 
 ul.topiclist li.row a.subforum.read {
@@ -633,15 +633,6 @@ dd.redirect {
 	width: 21%;
 	width: calc(21% + 120px + 14px);
 	text-align: center;
-}
-
-/* Forums layout related links */
-#search-box a:hover,
-.navbg a:hover,
-.forumbg .header a:hover,
-.forabg .header a:hover,
-th a:hover {
-	color: #fff;
 }
 
 @media (max-width: 768px) {
@@ -791,6 +782,8 @@ dl.faq dt {
 
 /**
  * Buttons
+ *
+ * Overwrite old graphic buttons with new CSS one using Font Awesome icons.
  */
 .topic-actions {
 	margin-bottom: 14px;
@@ -815,7 +808,8 @@ dl.faq dt {
 }
 
 .buttons div a:focus,
-.buttons div a:hover {
+.buttons div a:hover,
+.buttons div a:active {
 	border-color: #91203c;
 	background: #bc2a4d;
 	color: #fff;
@@ -884,10 +878,32 @@ span.corners-bottom span {
 	background: none;
 }
 
+/* Small links near forums */
 ul.linklist li {
 	margin-bottom: 8px;
 	line-height: 18px;
 	font-size: 12px;
+}
+
+/* Forums layout related links */
+#search-box a:hover,
+#search-box a:active,
+.navbg a:hover,
+.navbg a:active,
+.forumbg .header a:hover,
+.forumbg .header a:active,
+.forabg .header a:hover,
+.forabg .header a:active,
+th a:hover,
+th a:active {
+	color: #fff;
+}
+
+a.forumtitle:hover,
+a.forumtitle:active,
+a.topictitle:hover,
+a.topictitle:active {
+	color: #bc2a4d;
 }
 
 /* Space between last category and quick login */
