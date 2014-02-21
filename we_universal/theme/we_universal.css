@@ -171,6 +171,7 @@ a:active {
 	border: 0;
 	border-radius: 30px;
 	color: #999;
+	line-height: normal;
 	font-family: Tahoma, Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	transition: width 0.3s;
@@ -857,9 +858,100 @@ fieldset {
 	margin-bottom: 10px;
 }
 
+fieldset dd {
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+
+/* Labels */
 label,
 dd label {
+	display: inline-block;
+	vertical-align: middle;
 	color: #555;
+}
+
+dt label {
+	line-height: 28px;
+}
+
+dd label {
+	margin-top: 5px;
+}
+
+/* Inputs */
+input,
+select,
+#message-box textarea {
+	background: #fff;
+	line-height: 18px;
+	font-family: Tahoma, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+}
+
+select,
+.inputbox {
+	box-shadow: inset 0 7px 5px -6px #e1e1e1;
+	min-height: 18px; /* For IE */
+	padding: 4px 6px;
+	color: #555;
+}
+
+select,
+select:hover,
+.inputbox,
+.inputbox:hover {
+	border-color: #ccc;
+}
+
+select:focus,
+.inputbox:focus {
+	box-shadow: 0 0 5px #c2c2c2;
+	outline: 0;
+	border-color: #b1b1b1;
+	color: #555;
+}
+
+/* Buttons */
+a.button1,
+a.button2,
+input.button1,
+input.button2,
+input.button3 {
+	height: 28px;
+	padding: 0 6px;
+	border-color: #ccc;
+	border-bottom-width: 2px;
+	background: #e9e9e9;
+	color: #555;
+	font-family: Tahoma, Helvetica, Arial, sans-serif;
+}
+
+a.button1:hover,
+a.button1:active,
+a.button2:hover,
+a.button2:active,
+input.button1:hover,
+input.button1:active,
+input.button2:hover,
+input.button2:active,
+input.button3:hover,
+input.button3:active {
+	outline: 0;
+	border-color: #bc2a4d;
+	border-bottom: 2px solid #91203c;
+	background: #bc2a4d;
+	color: #fff;
+}
+
+/* Remove unnecessary padding in Firefox */
+a.button1::-moz-focus-inner,
+input.button1::-moz-focus-inner,
+input.button3::-moz-focus-inner,
+a.button2::-moz-focus-inner,
+input.button2::-moz-focus-inner {
+	padding: 0;
+	border: 0;
 }
 
 /**
