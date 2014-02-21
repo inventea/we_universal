@@ -384,7 +384,7 @@ a:active {
 .inventia-breadcrumbs {
 	display: block;
 	overflow: hidden;
-	margin-bottom: 18px;
+	margin-bottom: 24px;
 	list-style: none;
 	line-height: 18px;
 }
@@ -607,6 +607,12 @@ ul.topiclist li.row dt {
 	width: 55px;
 	padding: 0;
 	background-position: center center;
+	text-align: center;
+}
+
+ul.topiclist li.row dt img {
+	margin-top: 20px;
+	margin-right: -20px; 
 }
 
 dd.topics,
