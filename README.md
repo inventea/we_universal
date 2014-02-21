@@ -14,5 +14,5 @@ namespace and grouped in separate `we_universal.css` file.
 Assets
 ------
 
-* [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
-* [Zepto.js](http://zeptojs.com) (lightweight jQuery alternative)
+* [Font Awesome](http://fortawesome.github.io/Font-Awesome/) 4.0.3
+* [Zepto.js](http://zeptojs.com) 1.1.3 (lightweight jQuery alternative)
