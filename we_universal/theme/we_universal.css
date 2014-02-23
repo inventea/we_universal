@@ -36,7 +36,7 @@ h3 {
 
 p {
 	margin-bottom: 16px;
-	line-height: 16px;
+	line-height: 18px;
 	font-size: 12px;
 }
 
@@ -477,6 +477,11 @@ a:active {
 	background: #4c4c4c;
 }
 
+/* Space between last category and quick login/statistics */
+.forabg:last-of-type {
+	margin-bottom: 30px;
+}
+
 ul.forums,
 ul.topics,
 table.table1 tbody {
@@ -534,7 +539,7 @@ table.table1 tbody td {
 	padding: 7px;
 	border: 0;
 	vertical-align: middle;
-	line-height: 16px;
+	line-height: 18px;
 	font-size: 12px;
 }
 
@@ -575,9 +580,9 @@ dd.moderation span {
 ul.topiclist li.header dt,
 ul.topiclist li.header dd,
 table.table1 thead th {
-	padding: 10px 7px;
+	padding: 9px 7px;
 	text-align: center;
-	line-height: 16px;
+	line-height: 18px;
 	font-weight: normal;
 }
 
@@ -695,15 +700,9 @@ dl.faq,
 .content dl.faq,
 .content p,
 .panel p {
-	line-height: 16px;
+	line-height: 18px;
 	font-family: Tahoma, Helvetica, Arial, sans-serif;
 	font-size: 12px;
-}
-
-dl.faq,
-.content dl.faq,
-.content p {
-	line-height: 18px;
 }
 
 /* Headers in panels */
@@ -995,11 +994,6 @@ a.forumtitle:active,
 a.topictitle:hover,
 a.topictitle:active {
 	color: #bc2a4d;
-}
-
-/* Space between last category and quick login */
-.headerspace {
-	margin-top: 30px;
 }
 
 .top2 {
