@@ -330,7 +330,18 @@ a:active {
 		display: block;
 		padding: 0;
 	}
-	
+
+	.inventia-dropdown-menu {
+		position: absolute;
+		z-index: 1;
+		top: 55px;
+		right: 6px;
+		display: none;
+		box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.5);
+		list-style: none;
+		background: #292c2f;
+	}
+
 	/* Triangle above dropdown menu */
 	.inventia-dropdown-menu::before {
 		content: "";
@@ -343,17 +354,6 @@ a:active {
 		border-style: solid;
 		border-width: 0 14px 12px 14px;
 		border-color: transparent transparent #292c2f transparent;
-	}
-
-	.inventia-dropdown-menu {
-		position: absolute;
-		z-index: 1;
-		top: 55px;
-		right: 6px;
-		display: none;
-		box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.5);
-		list-style: none;
-		background: #292c2f;
 	}
 	
 	.inventia-dropdown-menu-item {
@@ -395,23 +395,23 @@ a:active {
 	line-height: 18px;
 }
 
+.inventia-breadcrumbs-item {
+	display: block;
+	float: left;
+}
+
 .inventia-breadcrumbs-item::before {
 	content: "/";
 	display: block;
-	float: left;
+	float: right;
 	margin: 0 10px;
 	color: #cacaca;
 	font-size: 14px;
 }
 
 /* Don't display first separator */
-.inventia-breadcrumbs-item:first-child::before {
+.inventia-breadcrumbs-item:last-child::before {
 	display: none;
-}
-
-.inventia-breadcrumbs-item {
-	display: block;
-	float: left;
 }
 
 /**
@@ -432,23 +432,23 @@ a:active {
 	list-style: none;
 }
 
+.inventia-footer-menu-item {
+	display: block;
+	float: left;
+}
+
 .inventia-footer-menu-item::before {
 	content: "/";
 	display: block;
-	float: left;
+	float: right;
 	margin: 0 10px;
 	color: #cacaca;
 	font-size: 14px;
 }
 
 /* Don't display first separator */
-.inventia-footer-menu-item:first-child::before {
+.inventia-footer-menu-item:last-child::before {
 	display: none;
-}
-
-.inventia-footer-menu-item {
-	display: block;
-	float: left;
 }
 
 .inventia-credits {
@@ -810,7 +810,8 @@ dl.faq dt {
 	width: 22%;
 	margin: 0;
 	border: 0;
-	border-radius: 7px 0 0 7px;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
 	color: #525252;
 	vertical-align: top;
 }
@@ -840,7 +841,8 @@ ul.profile-icons {
 
 /* Post message */
 .post .postbody {
-	border-radius: 0 7px 7px 0;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
 }
 
 .post.bg1 .postbody::before {
@@ -1071,20 +1073,20 @@ p.author {
 	text-decoration: none;
 }
 
-.buttons div span::before {
-	display: block;
-	margin-top: 1px;
-	margin-right: 7px;
-	font-family: FontAwesome;
-	font-size: 14px;
-}
-
 .buttons div span {
 	position: static;
 	float: left;
 	width: auto;
 	height: auto;
 	background: none;
+}
+
+.buttons div span::before {
+	display: block;
+	margin-top: 1px;
+	margin-right: 7px;
+	font-family: FontAwesome;
+	font-size: 14px;
 }
 
 .forwardpm-icon span::before {
