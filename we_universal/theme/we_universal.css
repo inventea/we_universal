@@ -138,7 +138,7 @@ a:active {
 	}
 
 	.inventia-dashboard {
-		min-height: inherit;
+		min-height: initial;
 	}
 
 	.inventia-footer {
@@ -807,6 +807,7 @@ dl.faq dt {
 /* User profile */
 .postprofile,
 .pm .postprofile {
+	min-height: initial;
 	width: 22%;
 	margin: 0;
 	border: 0;
@@ -822,8 +823,7 @@ dl.faq dt {
 	line-height: 18px;
 }
 
-.postprofile dt,
-.inventia-rank {
+.postprofile dt {
 	text-align: center;
 }
 
@@ -833,6 +833,7 @@ dl.faq dt {
 
 .inventia-avatar {
 	display: block;
+	margin-bottom: 18px;
 }
 
 ul.profile-icons {
@@ -864,7 +865,7 @@ ul.profile-icons {
 	display: block;
 	width: 0;
 	height: 0;
-	margin-top: 5px;
+	margin-top: 7px;
 	margin-left: -34px;
 	border-style: solid;
 	border-width: 14px 16px 14px 0;
@@ -1035,6 +1036,73 @@ p.author {
 
 .quote-icon a::before {
 	content: "\f10d";
+}
+
+@media (max-width: 768px) {
+	.post .inner {
+		display: block;
+	}
+
+	.postprofile,
+	.post .postbody {
+		display: block;
+		overflow: hidden;
+		width: auto;
+	}
+
+	/* User profile */
+	.postprofile,
+	.pm .postprofile {
+		border-top-right-radius: 7px;
+		border-bottom-left-radius: 0;
+	}
+
+	.postprofile dt {
+		display: table;
+		text-align: left;
+	}
+
+	.postprofile dd {
+		display: none;
+	}
+
+	.inventia-avatar {
+		margin-right: 18px;
+		margin-bottom: 0;
+		line-height: 0;
+	}
+
+	.inventia-avatar img {
+		width: auto;
+		height: 70px;
+	}
+
+	.inventia-post-author {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	/* Post message */
+	.post .postbody {
+		border-top-right-radius: 0;
+		border-bottom-left-radius: 7px;
+	}
+	
+	.post.bg1 .postbody::before {
+		border-color: transparent transparent #fafcfe transparent;
+	}
+
+	.post.bg2 .postbody::before {
+		border-color: transparent transparent #f2f2f2 transparent;
+	}
+
+	/* Post message left triangle */
+	.post .postbody::before {
+		right: 25px;
+		margin-top: -34px;
+		margin-left: 0;
+		border-width: 0 14px 16px 14px;
+	}
 }
 
 /**
@@ -1266,7 +1334,7 @@ a.top {
 	height: auto;
 	background: none;
 	color: #b5b5b5;
-	text-indent: inherit;
+	text-indent: initial;
 	letter-spacing: normal;
 	font-size: 14px;
 }
