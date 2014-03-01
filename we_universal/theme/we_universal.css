@@ -1005,61 +1005,20 @@ p.author {
 	font-size: 14px;
 }
 
-.pm-icon a::before {
-	content: "\f086";
-}
-
-.email-icon a::before {
-	content: "\f0e0";
-}
-
-.web-icon a::before {
-	content: "\f0ac";
-}
-
-.msnm-icon a::before {
-	content: "\f17a";
-}
-
-.icq-icon a::before {
-	content: "\f069";
-}
-
-.yahoo-icon a::before {
-	content: "\f0e7";
-}
-
-.aim-icon a::before {
-	content: "\f183";
-}
-
-.jabber-icon a::before {
-	content: "\f0eb";
-}
-
-.edit-icon a::before {
-	content: "\f040";
-}
-
-.delete-icon a::before {
-	content: "\f00d";
-}
-
-.report-icon a::before {
-	content: "\f071";
-}
-
-.warn-icon a::before {
-	content: "\f056";
-}
-
-.info-icon a::before {
-	content: "\f129";
-}
-
-.quote-icon a::before {
-	content: "\f10d";
-}
+.pm-icon a::before 		{ content: "\f086"; }
+.email-icon a::before 	{ content: "\f0e0"; }
+.web-icon a::before 	{ content: "\f0ac"; }
+.msnm-icon a::before 	{ content: "\f17a"; }
+.icq-icon a::before 	{ content: "\f069"; }
+.yahoo-icon a::before 	{ content: "\f0e7"; }
+.aim-icon a::before 	{ content: "\f183"; }
+.jabber-icon a::before 	{ content: "\f0eb"; }
+.edit-icon a::before 	{ content: "\f040"; }
+.delete-icon a::before 	{ content: "\f00d"; }
+.report-icon a::before 	{ content: "\f071"; }
+.warn-icon a::before 	{ content: "\f056"; }
+.info-icon a::before 	{ content: "\f129"; }
+.quote-icon a::before 	{ content: "\f10d"; }
 
 @media (max-width: 768px) {
 	.post .inner {
@@ -1186,23 +1145,12 @@ p.author {
 	font-size: 14px;
 }
 
-.forwardpm-icon span::before {
-	content: "\f064";
-}
-
-.locked-icon span::before {
-	content: "\f023";
-}
-
-.pmreply-icon span::before,
-.reply-icon span::before {
-	content: "\f112";
-}
-
-.newpm-icon span::before, 
-.post-icon span::before {
-	content: "\f055";
-}
+.forwardpm-icon span::before 	{ content: "\f064"; }
+.locked-icon span::before 		{ content: "\f023"; }
+.pmreply-icon span::before 		{ content: "\f112"; }
+.reply-icon span::before 		{ content: "\f112"; }
+.newpm-icon span::before 		{ content: "\f055"; }
+.post-icon span::before 		{ content: "\f055"; }
 
 /**
  * Forms
