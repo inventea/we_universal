@@ -806,9 +806,10 @@ dl.faq dt {
 
 /* User profile */
 .postprofile,
-.pm .postprofile {
+.pm .postprofile,
+.search .postprofile {
 	min-height: initial;
-	width: 22%;
+	width: 23%;
 	margin: 0;
 	border: 0;
 	border-top-left-radius: 7px;
@@ -841,6 +842,11 @@ ul.profile-icons {
 }
 
 /* Post message */
+.post .postbody,
+.search .postbody {
+	width: auto;
+}
+
 .post .postbody {
 	border-top-right-radius: 7px;
 	border-bottom-right-radius: 7px;
@@ -905,9 +911,21 @@ p.author {
 	font-size: 12px;
 }
 
-/* Post related features */
-.attachbox {
-	clear: right;
+/* Post related links */
+.postprofile a:link,
+.postprofile a:visited,
+.search .postprofile a {
+	color: #3f3f3f;
+}
+
+.postprofile a:focus,
+.postprofile a:hover,
+.postprofile a:active,
+.search .postprofile a:focus,
+.search .postprofile a:hover,
+.search .postprofile a:active {
+	color: #bc2a4d;
+	text-decoration: underline;
 }
 
 .back2top {
@@ -915,6 +933,11 @@ p.author {
 	right: 18px;
 	bottom: 16px;
 	height: auto;
+}
+
+/* Post related features */
+.attachbox {
+	clear: right;
 }
 
 /* Profile and post buttons */
@@ -1044,6 +1067,7 @@ p.author {
 	}
 
 	.postprofile,
+	.search .postprofile,
 	.post .postbody {
 		display: block;
 		overflow: hidden;
@@ -1052,7 +1076,8 @@ p.author {
 
 	/* User profile */
 	.postprofile,
-	.pm .postprofile {
+	.pm .postprofile,
+	.search .postprofile {
 		border-top-right-radius: 7px;
 		border-bottom-left-radius: 0;
 	}
@@ -1062,7 +1087,7 @@ p.author {
 		text-align: left;
 	}
 
-	.postprofile dd {
+	.section-viewtopic .postprofile dd {
 		display: none;
 	}
 
@@ -1094,6 +1119,10 @@ p.author {
 
 	.post.bg2 .postbody::before {
 		border-color: transparent transparent #f2f2f2 transparent;
+	}
+
+	.post.reported .postbody::before {
+		border-color: transparent transparent #f7ecef transparent;
 	}
 
 	/* Post message left triangle */
@@ -1339,8 +1368,8 @@ a.top {
 	font-size: 14px;
 }
 
+a.top:focus,
 a.top:hover,
-a.top:focus
 a.top:active {
 	color: #959595;
 }

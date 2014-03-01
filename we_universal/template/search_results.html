@@ -93,15 +93,7 @@
 			{searchresults.L_IGNORE_POST}
 		</div>
 	<!-- ELSE -->
-		<div class="postbody">
-			<h3><a href="{searchresults.U_VIEW_POST}">{searchresults.POST_SUBJECT}</a></h3>
-			<div class="content">{searchresults.MESSAGE}</div>
-		</div>
-
 		<dl class="postprofile">
-			<dt class="author">{L_POST_BY_AUTHOR} {searchresults.POST_AUTHOR_FULL}</dt>
-			<dd>{searchresults.POST_DATE}</dd>
-			<dd>&nbsp;</dd>
 			<!-- IF searchresults.FORUM_TITLE -->
 				<dd>{L_FORUM}: <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a></dd>
 				<dd>{L_TOPIC}: <a href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a></dd>
@@ -111,12 +103,19 @@
 			<dd>{L_REPLIES}: <strong>{searchresults.TOPIC_REPLIES}</strong></dd>
 			<dd>{L_VIEWS}: <strong>{searchresults.TOPIC_VIEWS}</strong></dd>
 		</dl>
-	<!-- ENDIF -->
 
-	<!-- IF not searchresults.S_IGNORE_POST -->
-		<ul class="searchresults">
-			<li ><a href="{searchresults.U_VIEW_POST}" class="{S_CONTENT_FLOW_END}">{L_JUMP_TO_POST}</a></li>
-		</ul>
+		<div class="postbody">
+			<h3><a href="{searchresults.U_VIEW_POST}">{searchresults.POST_SUBJECT}</a></h3>
+			<p class="author">{L_POST_BY_AUTHOR} <strong>{searchresults.POST_AUTHOR_FULL}</strong> &raquo; {searchresults.POST_DATE}</p>
+			
+			<div class="content">{searchresults.MESSAGE}</div>
+
+			<!-- IF not searchresults.S_IGNORE_POST -->
+				<ul class="searchresults back2top">
+					<li><a href="{searchresults.U_VIEW_POST}" class="{S_CONTENT_FLOW_END}">{L_JUMP_TO_POST}</a></li>
+				</ul>
+			<!-- ENDIF -->
+		</div>
 	<!-- ENDIF -->
 
 			<span class="corners-bottom"><span></span></span></div>
