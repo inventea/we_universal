@@ -1239,6 +1239,15 @@ select:focus,
 	color: #525252;
 }
 
+input.inputbox[type="file"] {
+	box-shadow: none;
+	height: auto;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
 /* Input width */
 input.inputbox {
 	width: 80%;
