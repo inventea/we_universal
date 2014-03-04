@@ -1010,7 +1010,7 @@ p.author {
 	font-size: 14px;
 }
 
-.pm-icon a::before 		{ content: "\f086"; }
+.pm-icon a::before 		{ content: "\f007"; }
 .email-icon a::before 	{ content: "\f0e0"; }
 .web-icon a::before 	{ content: "\f0ac"; }
 .msnm-icon a::before 	{ content: "\f17a"; }
