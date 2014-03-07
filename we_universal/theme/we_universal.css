@@ -132,21 +132,28 @@ a:active {
 		width: 100%;
 		border: 0;
 	}
+	
+	.inventia-wrapper {
+		padding: 15px 15px 6px;
+	}
 
 	.inventia-statusbar {
 		height: 46px;
 	}
 
-	.inventia-wrapper {
-		padding: 15px;
-	}
-
 	.inventia-dashboard {
 		min-height: initial;
 	}
+	
+	.inventia-footer-wrapper {
+		box-shadow: none;
+		margin: 0;
+		border: 0;
+	}
 
 	.inventia-footer {
-		padding: 0 15px;
+		margin: 0;
+		padding: 0 15px 15px;
 	}
 }
 
@@ -463,11 +470,13 @@ a:active {
 @media (max-width: 768px) {
 	.inventia-footer-menu,
 	.inventia-credits {
+		overflow: hidden;
+		display: block;
 		float: none;
 	}
-	
+
 	.inventia-footer-menu {
-		margin-bottom: 36px;
+		margin-bottom: 18px;
 	}
 }
 
