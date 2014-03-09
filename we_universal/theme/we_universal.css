@@ -686,6 +686,16 @@ table.table1 td {
 	color: #525252;
 }
 
+/* Recent searches tables */
+.section-search .forumbg-table {
+	margin-top: 15px;
+}
+
+.section-search .forumbg-table thead th,
+.section-search .forumbg-table .active {
+	text-align: center;
+}
+
 /**
  * Panels
  */
@@ -791,7 +801,7 @@ dl.faq dt {
 }
 
 .post.bg1 .postbody {
-	background-color: #fafcfe;
+	background-color: #f8f8f8;
 }
 
 .post.bg2 .postprofile {
@@ -867,7 +877,7 @@ ul.profile-icons {
 }
 
 .post.bg1 .postbody::before {
-	border-color: transparent #fafcfe transparent transparent;
+	border-color: transparent #f8f8f8 transparent transparent;
 }
 
 .post.bg2 .postbody::before {
@@ -1087,7 +1097,7 @@ p.author {
 	}
 	
 	.post.bg1 .postbody::before {
-		border-color: transparent transparent #fafcfe transparent;
+		border-color: transparent transparent #f8f8f8 transparent;
 	}
 
 	.post.bg2 .postbody::before {
@@ -1463,6 +1473,10 @@ input.search {
 	background: none;
 }
 
+.section-search #keywords {
+	margin-bottom: 5px;
+}
+
 @media (max-width: 768px) {
 	fieldset dt,
 	fieldset.fields2 dt {
@@ -1598,6 +1612,12 @@ ul.linklist li {
 	font-size: 12px;
 }
 
+/* Fix margins in member filtering panel */
+.panel ul.linklist li {
+	margin-bottom: 0;
+	padding: 5px 0;
+}
+
 /* Forums layout related links */
 #search-box a:hover,
 #search-box a:active,
@@ -1636,6 +1656,9 @@ a.top:active {
 }
 
 a.top2 {
-	display: inline-block;
-	margin-top: 8px;
+	display: none;
+}
+
+hr.dashed {
+	border-top: 1px dotted #c2c2c2;
 }
