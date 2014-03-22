@@ -22,8 +22,8 @@
 <script src="{T_TEMPLATE_PATH}/assets/zepto/zepto.min.js"></script>
 
 <script>
-$('.inventia-menu-toggle').click(function(e) {
-	$('.inventia-dropdown-menu').toggle()
+$('.inventia-toggle').click(function(e) {
+	$(this).next('.inventia-dropdown-menu').toggle()
 	e.stopPropagation();
 });
 

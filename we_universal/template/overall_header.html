@@ -87,9 +87,9 @@
 	<span class="inventia-time"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></span>
 	
 	<nav class="inventia-mobile-menu">
-		<button class="inventia-menu-toggle" title="{L_EXPAND_VIEW}/{L_COLLAPSE_VIEW}"><i class="fa fa-bars"></i></button>
+		<button class="inventia-toggle inventia-mobile-menu-toggle" title="{L_EXPAND_VIEW}/{L_COLLAPSE_VIEW}"><i class="fa fa-bars"></i></button>
 
-		<ul class="inventia-dropdown-menu">
+		<ul class="inventia-dropdown-menu inventia-mobile-dropdown-menu">
 			<li class="inventia-dropdown-menu-item"><a href="{U_INDEX}" title="{L_INDEX}"><i class="fa fa-home fa-fw"></i> {L_INDEX}</a></li>
 			<li class="inventia-dropdown-menu-item"><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-info-circle fa-fw"></i> {L_FAQ}</a></li>
 			<!-- IF S_DISPLAY_SEARCH --><li class="inventia-dropdown-menu-item"><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><i class="fa fa-search fa-fw"></i> {L_SEARCH}</a></li><!-- ENDIF -->
@@ -160,13 +160,35 @@
 </header>
 
 <div class="inventia-wrapper inventia-content">
-	<ul class="inventia-breadcrumbs">
-		<li class="inventia-breadcrumbs-item"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
-		
-		<!-- BEGIN navlinks -->
-			<li class="inventia-breadcrumbs-item"><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
-		<!-- END navlinks -->
-	</ul>
+	<div class="inventia-breadcrumbs-container">
+		<ul class="inventia-breadcrumbs">
+			<li class="inventia-breadcrumbs-item"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
+			
+			<!-- BEGIN navlinks -->
+				<li class="inventia-breadcrumbs-item"><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
+			<!-- END navlinks -->
+		</ul>
+
+		<!-- IF S_WATCH_FORUM_LINK or U_WATCH_TOPIC or U_BOOKMARK_TOPIC or U_BUMP_TOPIC or U_EMAIL_TOPIC or U_EMAIL_PM or U_PRINT_TOPIC or U_PRINT_PM -->
+			<div class="inventia-actions-menu">
+				<button class="inventia-toggle inventia-actions-menu-toggle" title="{L_EXPAND_VIEW}/{L_COLLAPSE_VIEW}"><i class="fa fa-cog"></i></button>
+
+				<ul class="inventia-dropdown-menu inventia-actions-dropdown-menu">
+					<!-- IF not S_IS_BOT -->
+						<!-- IF S_WATCH_FORUM_LINK --><li class="inventia-dropdown-menu-item"><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}"><i class="fa fa-star fa-fw"></i> {S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
+						<!-- IF U_WATCH_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i class="fa fa-star fa-fw"></i> {L_WATCH_TOPIC}</a></li><!-- ENDIF -->
+						<!-- IF U_BOOKMARK_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="fa fa-bookmark fa-fw"></i> {L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
+						<!-- IF U_BUMP_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><i class="fa fa-gavel fa-fw"></i> {L_BUMP_TOPIC}</a></li><!-- ENDIF -->
+					<!-- ENDIF -->
+
+					<!-- IF U_EMAIL_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}"><i class="fa fa-envelope fa-fw"></i> {L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_EMAIL_PM --><li class="inventia-dropdown-menu-item"><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}"><i class="fa fa-envelope fa-fw"> {L_EMAIL_PM}</a></li><!-- ENDIF -->
+					<!-- IF U_PRINT_TOPIC --><li class="inventia-dropdown-menu-item"><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p"><i class="fa fa-print fa-fw"></i> {L_PRINT_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_PRINT_PM --><li class="inventia-dropdown-menu-item"><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p"><i class="fa fa-print fa-fw"></i> {L_PRINT_PM}</a></li><!-- ENDIF -->
+				</ul>
+			</div>
+		<!-- ENDIF -->
+	</div>
 
 	<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
 		<div id="information" class="rules">

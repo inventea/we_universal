@@ -22,6 +22,7 @@ h1 {
 }
 
 h2 {
+	margin-top: 0;
 	margin-bottom: 10px;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -294,9 +295,97 @@ a:active {
 /**
  * Secondary menu
  *
- * Alternative dropdown menu displayed only on devices with small screen
- * resolutions (768px width or less).
+ * Dropdown menu activated after button click. Secondary mobile navigation
+ * is displayed only on devices with small screen resolutions (768px width
+ * or less).
  */
+.inventia-toggle {
+	padding: 4px 6px 2px;
+	outline: 0;
+	border: 0;
+	border-bottom: 3px solid #ccc;
+	border-radius: 5px;
+	background: #e9e9e9;
+	color: #414141;
+}
+
+/* Remove unnecessary padding in Firefox */
+.inventia-toggle::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+.inventia-toggle:hover,
+.inventia-toggle:active {
+	outline: 0;
+	cursor: pointer;
+}
+
+.inventia-dropdown-menu {
+	position: absolute;
+	z-index: 1;
+	display: none;
+	box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+	list-style: none;
+	background: #292c2f;
+}
+
+/* Triangle above dropdown menu */
+.inventia-dropdown-menu::before {
+	content: "";
+	position: absolute;
+	right: 10px;
+	display: block;
+	width: 0;
+	height: 0;
+	margin-top: -12px;
+	border-style: solid;
+	border-width: 0 14px 12px 14px;
+	border-color: transparent transparent #292c2f transparent;
+}
+
+.inventia-dropdown-menu-item {
+	min-width: 190px;
+}
+
+/* Remove bottom border from last menu item */
+.inventia-dropdown-menu-item:last-child a {
+	border: 0;
+}
+
+.inventia-dropdown-menu-item a {
+	display: block;
+	padding: 12px 15px 12px 14px;
+	border-bottom: 1px solid #46474a;
+	color: #eee;
+}
+
+.inventia-dropdown-menu-item a:focus,
+.inventia-dropdown-menu-item a:hover {
+	background: #343639;
+	text-decoration: none;
+}
+
+.inventia-dropdown-menu-item .fa {
+	margin-right: 5px;
+	font-size: 14px;
+}
+
+/* Forum and topic actions dropdown menu */
+.inventia-actions-menu {
+	float: right;
+}
+
+.inventia-actions-menu-toggle {
+	font-size: 14px;
+}
+
+.inventia-actions-dropdown-menu  {
+	top: 57px;
+	right: 8px;
+}
+
+/* Don't display mobile menu on large screens */
 .inventia-mobile-menu {
 	display: none;
 }
@@ -311,97 +400,43 @@ a:active {
 		display: block;
 	}
 	
-	/* Remove unnecessary padding in Firefox */
-	.inventia-menu-toggle::-moz-focus-inner {
-		padding: 0;
-		border: 0;
-	}
-
-	.inventia-menu-toggle {
+	.inventia-mobile-menu-toggle {
 		position: absolute;
 		top: 8px;
 		right: 15px;
-		padding: 4px 6px 2px;
-		outline: 0;
-		border: 0;
-		border-bottom: 3px solid #ccc;
-		border-radius: 5px;
-		background: #e9e9e9;
-		color: #414141;
 		font-size: 21px;
 	}
 
-	.inventia-menu-toggle:hover,
-	.inventia-menu-toggle:active {
-		outline: 0;
-		cursor: pointer;
-	}
-	
 	/* Remove padding from Font Awesome icon */
-	.inventia-menu-toggle > .fa {
+	.inventia-mobile-menu-toggle > .fa {
 		display: block;
 		padding: 0;
 	}
 
-	.inventia-dropdown-menu {
-		position: absolute;
-		z-index: 1;
+	.inventia-mobile-dropdown-menu {
+		z-index: 3;
 		top: 55px;
 		right: 6px;
-		display: none;
-		box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.5);
-		list-style: none;
-		background: #292c2f;
-	}
-
-	/* Triangle above dropdown menu */
-	.inventia-dropdown-menu::before {
-		content: "";
-		position: absolute;
-		right: 10px;
-		display: block;
-		width: 0;
-		height: 0;
-		margin-top: -12px;
-		border-style: solid;
-		border-width: 0 14px 12px 14px;
-		border-color: transparent transparent #292c2f transparent;
 	}
 	
-	.inventia-dropdown-menu-item {
-		min-width: 190px;
-	}
-	
-	/* Remove bottom border from last menu item */
-	.inventia-dropdown-menu-item:last-child a {
-		border: 0;
-	}
-
-	.inventia-dropdown-menu-item a {
-		display: block;
-		padding: 12px 15px 12px 14px;
-		border-bottom: 1px solid #46474a;
-		color: #eee;
-	}
-
-	.inventia-dropdown-menu-item a:focus,
-	.inventia-dropdown-menu-item a:hover {
-		background: #343639;
-		text-decoration: none;
-	}
-
-	.inventia-dropdown-menu-item .fa {
-		margin-right: 5px;
-		font-size: 14px;
+	/* Forum and topic actions dropdown menu */
+	.inventia-actions-dropdown-menu {
+		right: 3px;
 	}
 }
 
 /**
  * Breadcrumbs
  */
+.inventia-breadcrumbs-container {
+	overflow: hidden;
+}
+
 .inventia-breadcrumbs {
 	display: block;
 	overflow: hidden;
+	float: left;
+	margin-top: 3px;
 	margin-bottom: 24px;
 	list-style: none;
 	line-height: 18px;
