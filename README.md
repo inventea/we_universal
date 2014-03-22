@@ -14,5 +14,6 @@ namespace and grouped in separate `we_universal.css` file.
 Assets
 ------
 
+* Header photo from [picjumbo](http://picjumbo.com)
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) 4.0.3
 * [Zepto.js](http://zeptojs.com) 1.1.3 (lightweight jQuery alternative)
