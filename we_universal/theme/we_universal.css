@@ -646,20 +646,22 @@ ul.topiclist li.header dt {
 
 /* Subforums list on index */
 ul.topiclist li.row a.subforum {
-	position: relative;
-	padding: 0 0 0 12px;
-	background-image: none;
-	background-position: 0 50%;
-	background-repeat: no-repeat;
+	padding: 0;
+	background: none;
 	white-space: nowrap;
 }
 
-ul.topiclist li.row a.subforum.read {
-	background-image: url("{IMG_SUBFORUM_READ_SRC}");
+ul.topiclist li.row a.subforum::before {
+	content: "\f07b";
+	display: inline-block;
+	margin-right: 4px;
+	padding-left: 1px;
+	color: #6b6b6b;
+	font-family: FontAwesome;
 }
 
-ul.topiclist li.row a.subforum.unread {
-	background-image: url("{IMG_SUBFORUM_UNREAD_SRC}");
+ul.topiclist li.row a.subforum.unread::before {
+	color: #bc2a4d;
 }
 
 /* Specific colums settings */
