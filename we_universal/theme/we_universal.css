@@ -1173,7 +1173,8 @@ p.author {
  * User control panel (UCP)
  */
 #tabs + .panel,
-.section-ucp #postform > .panel {
+#attach-panel,
+#poll-panel {
 	border-top-left-radius: 0;
 }
 
