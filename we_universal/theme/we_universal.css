@@ -1276,12 +1276,43 @@ p.author {
 }
 
 /**
+ * Search results
+ */
+.section-search .topic-actions {
+	margin-bottom: 12px;
+}
+
+.section-search .search-box {
+	margin-left: 0;
+}
+
+/* Search these results input */
+.section-search #add_keywords {
+	width: auto;
+}
+
+.section-search .postprofile {
+	color: #414141;
+}
+
+.section-search .postprofile strong {
+	color: #525252;
+}
+
+/* Search found matches */
+.section-search hr + .linklist {
+	margin-top: 14px;
+	padding-top: 1px;
+}
+
+/**
  * Buttons
  *
  * Overwrite old graphic buttons with new CSS one using Font Awesome icons.
  */
 .topic-actions {
-	margin-bottom: 14px;
+	overflow: hidden;
+	margin-bottom: 1px;
 	line-height: 18px;
 	font-size: 12px;
 }
@@ -1363,7 +1394,7 @@ fieldset.fields2 dd {
 }
 
 fieldset.display-options {
-	margin-top: 0;
+	margin-top: 15px;
 	margin-bottom: 15px;
 }
 
@@ -1644,7 +1675,8 @@ div.rules {
 .pagination span a:active,
 .row .pagination span a:focus,
 .row .pagination span a:hover,
-.row .pagination span a:active {
+.row .pagination span a:active,
+li.pagination span a:hover {
 	border-color: #bc2a4d;
 	background: #bc2a4d;
 	color: #fff;
@@ -1718,6 +1750,39 @@ a.top:active {
 
 a.top2 {
 	display: none;
+}
+
+a.left,
+a.left:active,
+a.left:visited,
+a.right,
+a.right:active,
+a.right:visited {
+	padding: 0;
+	background: none;
+}
+
+a.left:hover,
+a.right:hover {
+	text-decoration: underline;
+	color: #bc2a4d;
+}
+
+a.left::before,
+a.right::after {
+	display: inline-block;
+	color: #959595;
+	font-family: FontAwesome;
+}
+
+a.left::before {
+	content: "\f060";
+	margin-right: 6px;
+}
+
+a.right::after {
+	content: "\f061";
+	margin-left: 6px;
 }
 
 hr.dashed {
