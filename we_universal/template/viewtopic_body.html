@@ -116,6 +116,10 @@
 		<!-- IF not postrow.S_IGNORE_POST -->
 			<dl class="postprofile<!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> online<!-- ENDIF -->" id="profile{postrow.POST_ID}">
 				<dt>
+					<!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST -->
+						<div class="inventia-online"><i class="fa fa-power-off"></i> {L_ONLINE}</div>
+					<!-- ENDIF -->
+
 					<!-- IF postrow.POSTER_AVATAR -->
 						<!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}" class="inventia-avatar">{postrow.POSTER_AVATAR}</a><!-- ELSE -->{postrow.POSTER_AVATAR}<!-- ENDIF -->
 					<!-- ENDIF -->

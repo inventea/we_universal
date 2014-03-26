@@ -857,6 +857,17 @@ dl.faq dt {
 	background-color: #f7ecef;
 }
 
+.inventia-online {
+	display: inline-block;
+	margin-bottom: 18px;
+	padding: 3px 8px 1px;
+	border-bottom: 3px solid #0c9076;
+	border-radius: 5px;
+	background: #0ead8e;
+	color: #fff;
+	text-transform: uppercase;
+}
+
 .postprofile,
 .post .postbody {
 	display: table-cell;
@@ -1126,6 +1137,10 @@ p.author {
 		display: none;
 	}
 
+	.inventia-online {
+		display: none;
+	}
+
 	.inventia-avatar {
 		margin-right: 18px;
 		margin-bottom: 0;
@@ -1302,7 +1317,28 @@ p.author {
 /* Search found matches */
 .section-search hr + .linklist {
 	margin-top: 14px;
-	padding-top: 1px;
+	padding-top: 2px;
+}
+
+/**
+ * Memberlist
+ */
+#search_memberlist {
+	margin-bottom: 28px;
+}
+
+#search_memberlist .panel {
+	padding-top: 8px;
+}
+
+/* Fix margins in member filtering panel */
+.panel ul.linklist li {
+	margin-bottom: 0;
+	padding: 5px 0;
+}
+
+.section-memberlist .panel ul.linklist li strong {
+	font-size: 12px !important;
 }
 
 /**
@@ -1703,12 +1739,6 @@ ul.linklist li {
 	margin-bottom: 8px;
 	line-height: 18px;
 	font-size: 12px;
-}
-
-/* Fix margins in member filtering panel */
-.panel ul.linklist li {
-	margin-bottom: 0;
-	padding: 5px 0;
 }
 
 /* Forums layout related links */
