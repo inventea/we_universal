@@ -1118,9 +1118,9 @@ p.author {
 	width: 28px;
 	padding-top: 5px;
 	padding-bottom: 3px;
-	border-bottom: 3px solid #ccc;
+	border-bottom: 3px solid #c5c5c5;
 	border-radius: 5px;
-	background: #e9e9e9;
+	background: #dfdfdf;
 	color: #6b6b6b;
 	text-transform: uppercase;
 	text-align: center;
@@ -1744,9 +1744,9 @@ input.button2,
 input.button3 {
 	height: 28px;
 	padding: 0 6px;
-	border-color: #ccc;
+	border-color: #c5c5c5;
 	border-bottom-width: 2px;
-	background: #e9e9e9;
+	background: #dfdfdf;
 	color: #525252;
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
 }
@@ -1807,9 +1807,44 @@ input.search {
 	margin-bottom: 10px;
 }
 
+/* Posting editor page */
+.section-posting fieldset.fields1 dt,
+.section-posting fieldset.fields2 dt {
+	width: 20%;
+}
+
+.section-posting fieldset.fields1 dd,
+.section-posting  fieldset.fields2 dd {
+	margin-left: 22%;
+}
+
+.section-posting #subject {
+	width: 50% !important;
+}
+
+#format-buttons {
+	margin-bottom: 6px;
+}
+
+#smiley-box {
+	width: 19%;
+}
+
+#options-panel,
+#attach-panel,
+#poll-panel {
+	padding-top: 12px;
+}
+
+.pmlist #username_list {
+	height: 78px;
+}
+
 @media (max-width: 768px) {
 	fieldset dt,
-	fieldset.fields2 dt {
+	fieldset.fields2 dt,
+	.section-posting fieldset.fields1 dt,
+	.section-posting fieldset.fields2 dt {
 		float: none;
 		width: auto;
 	}
@@ -1823,7 +1858,9 @@ input.search {
 	/* Reduce input left margin */
 	fieldset dd,
 	fieldset.fields1 dd,
-	fieldset.fields2 dd {
+	fieldset.fields2 dd,
+	.section-posting fieldset.fields1 dd,
+	.section-posting  fieldset.fields2 dd {
 		margin-left: 0;
 	}
 
