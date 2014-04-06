@@ -41,6 +41,11 @@ p {
 	font-size: 12px;
 }
 
+hr {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
 a:link,
 a:visited {
 	color :#3f3f3f;
@@ -1445,11 +1450,13 @@ ul.cplist {
 	background: transparent !important;
 }
 
-.section-ucp ul.topiclist .bg1 {
+.section-ucp ul.topiclist .bg1,
+.section-mcp ul.topiclist .bg1 {
 	background-color: #f2f2f2;
 }
 
-.section-ucp ul.topiclist .bg2 {
+.section-ucp ul.topiclist .bg2,
+.section-mcp ul.topiclist .bg2 {
 	background-color: #fafcfe;
 }
 
@@ -1526,6 +1533,10 @@ dd.mark {
 .panel ul.linklist li {
 	margin-bottom: 0;
 	padding: 5px 0;
+}
+
+.section-memberlist .panel + .forumbg {
+	margin-top: 7px;
 }
 
 .section-memberlist .panel ul.linklist li strong {
