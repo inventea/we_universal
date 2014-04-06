@@ -522,7 +522,8 @@ a:active {
  * Define zebra background colours for even/odd rows and cells.
  */
 .forabg,
-.forumbg {
+.forumbg,
+#cp-main table.table1 {
 	margin-bottom: 15px;
 	padding: 0;
 	border-bottom: 3px solid #cacaca;
@@ -547,10 +548,15 @@ ul.topiclist li {
 	color: #525252;
 }
 
-li.row,
 table.table1 tbody tr {
 	border: 0;
+}
+
+li.row,
+#cp-main .panel li.row,
+table.table1 tbody tr {
 	border-top: 1px solid #fff;
+	border-bottom: 0;
 }
 
 ul.topics .bg1,
@@ -604,16 +610,38 @@ ul.topiclist dd {
 }
 
 /* Different background in odd columns */
-ul.topiclist li.row dt:nth-child(odd),
-ul.topiclist li.row dd:nth-child(odd),
+ul.topiclist li.row dt:nth-child(even),
+ul.topiclist li.row dd:nth-child(even),
+.forabg ul.topiclist li.row dt:nth-child(odd),
+.forabg ul.topiclist li.row dd:nth-child(odd),
+.forumbg ul.topiclist li.row dt:nth-child(odd),
+.forumbg ul.topiclist li.row dd:nth-child(odd),
 table.table1 tbody td:nth-child(even) {
 	background-color: #f1f1f1;
 }
 
-ul.topiclist li.row:nth-child(even) dt:nth-child(odd),
-ul.topiclist li.row:nth-child(even) dd:nth-child(odd),
+.forabg ul.topiclist li.row dt:nth-child(even),
+.forabg ul.topiclist li.row dd:nth-child(even),
+.forumbg ul.topiclist li.row dt:nth-child(even),
+.forumbg ul.topiclist li.row dd:nth-child(even) {
+	background-color: #fafcfe;
+}
+
+ul.topiclist li.row:nth-child(even) dt:nth-child(even),
+ul.topiclist li.row:nth-child(even) dd:nth-child(even),
+.forabg ul.topiclist li.row:nth-child(even) dt:nth-child(odd),
+.forabg ul.topiclist li.row:nth-child(even) dd:nth-child(odd),
+.forumbg ul.topiclist li.row:nth-child(even) dt:nth-child(odd),
+.forumbg ul.topiclist li.row:nth-child(even) dd:nth-child(odd),
 table.table1 tbody tr:nth-child(even) td:nth-child(even) {
 	background-color: #e9e9e9;
+}
+
+.forabg ul.topiclist li.row:nth-child(even) dt:nth-child(even),
+.forabg ul.topiclist li.row:nth-child(even) dd:nth-child(even),
+.forumbg ul.topiclist li.row:nth-child(even) dt:nth-child(even),
+.forumbg ul.topiclist li.row:nth-child(even) dd:nth-child(even) {
+	background-color: #f2f2f2;
 }
 
 ul.topiclist li.reported dt:nth-child(odd),
@@ -633,14 +661,16 @@ dd.moderation span {
 /* Category header */
 ul.topiclist li.header dt,
 ul.topiclist li.header dd,
-table.table1 thead th {
+table.table1 thead th,
+#cp-main table.table1 thead th {
 	padding: 9px 7px;
 	text-align: center;
 	line-height: 18px;
 	font-weight: normal;
 }
 
-ul.topiclist li.header dt {
+.forabg ul.topiclist li.header dt,
+.forumbg ul.topiclist li.header dt {
 	width: auto;
 }
 
@@ -673,7 +703,8 @@ ul.topiclist.topics li.row dt {
 	text-align: center;
 }
 
-ul.topiclist li.row dt img {
+/* Topic icon */
+.forumbg ul.topiclist li.row dt img {
 	margin-top: 20px;
 	margin-right: -20px; 
 }
@@ -731,6 +762,12 @@ table.table1 td {
 .section-search .forumbg-table thead th,
 .section-search .forumbg-table .active {
 	text-align: center;
+}
+
+#cp-main table.table1 thead th {
+	border-bottom: 0;
+	color: #fff;
+	text-align: left;
 }
 
 /**
@@ -955,6 +992,7 @@ ul.profile-icons {
 	padding: 0;
 	line-height: 21px;
 	font-size: 16px;
+	font-weight: bold;
 }
 
 p.author {
@@ -983,6 +1021,19 @@ p.author {
 	font-size: 12px;
 }
 
+/* Private message */
+#cp-main .post {
+	border-radius: 7px;
+}
+
+#cp-main .post .postbody::before {
+	display: none;
+}
+
+#cp-main .postbody p {
+	font-size: 12px;
+}
+
 /* Post message preview (posting.php) */
 #preview .postbody {
 	border-radius: 7px;
@@ -996,6 +1047,11 @@ p.author {
 	margin-bottom: 9px !important;
 	padding-bottom: 9px;
 	border-bottom: 1px dotted #c2c2c2;
+}
+
+/* Topic review */
+#topicreview .postbody {
+	border-radius: 7px;
 }
 
 /* Post related links */
@@ -1092,7 +1148,7 @@ p.author {
 	font-size: 14px;
 }
 
-.pm-icon a::before 		{ content: "\f007"; }
+.pm-icon a::before 		{ content: "\f075"; }
 .email-icon a::before 	{ content: "\f0e0"; }
 .web-icon a::before 	{ content: "\f0ac"; }
 .msnm-icon a::before 	{ content: "\f17a"; }
@@ -1114,6 +1170,7 @@ p.author {
 
 	.postprofile,
 	.search .postprofile,
+	.pm .postprofile,
 	.post .postbody {
 		display: block;
 		overflow: hidden;
@@ -1133,7 +1190,8 @@ p.author {
 		text-align: left;
 	}
 
-	.section-viewtopic .postprofile dd {
+	.section-viewtopic .postprofile dd,
+	.section-ucp .postprofile dd {
 		display: none;
 	}
 
@@ -1185,7 +1243,7 @@ p.author {
 }
 
 /**
- * User control panel (UCP)
+ * User Control Panel and Moderator Control Panel
  */
 #tabs + .panel,
 #attach-panel,
@@ -1277,8 +1335,41 @@ p.author {
 	line-height: 18px;
 }
 
+dl.mini dt {
+	color: #3f3f3f;
+}
+
+.pm-legend:first-of-type {
+	margin-top: 8px;
+}
+
+.pm-legend {
+	margin-bottom: 5px;
+	padding-top: 0 !important;
+	line-height: 22px;
+}
+
+/* Remove rounded corners images */
+#cp-main span.corners-top,
+#cp-menu span.corners-top,
+#cp-main span.corners-top span,
+#cp-menu span.corners-top span,
+#cp-main span.corners-bottom,
+#cp-menu span.corners-bottom,
+#cp-main span.corners-bottom span,
+#cp-menu span.corners-bottom span {
+	background: none;
+}
+
 /* Inside panels */
+#cp-main h3,
+#cp-main hr,
+#cp-menu hr {
+	border-color: #ccc;
+}
+
 #cp-main .panel {
+	clear: both;
 	padding-top: 8px;
 }
 
@@ -1288,6 +1379,106 @@ p.author {
 
 #cp-main fieldset.submit-buttons {
 	margin-top: 10px;
+}
+
+#cp-main fieldset.display-actions {
+	margin-top: 10px;
+	padding-right: 0;
+}
+
+#cp-main fieldset.display-actions div {
+	margin-top: 4px;
+}
+
+#cp-main fieldset.display-actions .left-box {
+	margin-top: 0;
+}
+
+#cp-main fieldset.forum-selection {
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+
+#cp-main .pagination {
+	margin-bottom: 4px;
+}
+
+dl.details dt {
+	color: #414141;
+}
+
+dl.details dd {
+	color: #525252;
+}
+
+ul.cplist {
+	margin-bottom: 15px;
+	border-top: 0;
+	border-bottom: 3px solid #cacaca;
+}
+
+/* Forum/topic lists */
+#cp-main .panel li.header dd,
+#cp-main .panel li.header dt,
+#cp-main .panel li.header a {
+	color: #fff;
+}
+
+.section-ucp ul.topiclist li.header,
+.section-mcp ul.topiclist li.header {
+	display: block;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background: #4c4c4c;
+}
+
+.section-ucp ul.topiclist dl.icon {
+	background-position: 14px 50%;
+}
+
+.section-ucp ul.topiclist dl.icon dt {
+	width: 100%;
+	padding-left: 55px;
+}
+
+.section-ucp ul.topiclist li.row dt {
+	background: transparent !important;
+}
+
+.section-ucp ul.topiclist .bg1 {
+	background-color: #f2f2f2;
+}
+
+.section-ucp ul.topiclist .bg2 {
+	background-color: #fafcfe;
+}
+
+.section-ucp ul.topiclist + h3 {
+	margin-top: 30px;
+}
+
+dd.mark {
+	width: 60px;
+	float: none !important;
+}
+
+/* Private messages list */
+#cp-main .buttons {
+	margin-bottom: 8px;
+}
+
+#cp-main ul.linklist .pagination {
+	margin-top: 5px;
+}
+
+#viewfolder ul.topiclist,
+#cp-main ul.linklist + p {
+	clear: both;
+}
+
+#viewfolder ul.topiclist li.header dt {
+	width: 100%;
+	padding-left: 55px;
 }
 
 /**
