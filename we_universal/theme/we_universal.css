@@ -1009,7 +1009,8 @@ p.author {
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
 }
 
-.postbody .content {
+.postbody .content,
+.post:target .content {
 	color: #414141;
 	line-height: 21px;
 	font-size: 14px;
@@ -1086,6 +1087,101 @@ p.author {
 /* Post related features */
 .attachbox {
 	clear: right;
+	padding: 7px;
+	border: 1px solid #ccc;
+}
+
+.attachbox dt,
+dl.file {
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+dl.file {
+	line-height: 18px;
+}
+
+.attachbox dt {
+	padding-bottom: 3px;
+	line-height: 14px;
+	font-weight: bold;
+}
+
+.attachbox dd {
+	padding-top: 6px;
+	border-color: #ccc;
+}
+
+.attach-image {
+	max-width: 830px;
+}
+
+dl.codebox {
+	padding: 3px 5px;
+	border-color: #ccc;
+}
+
+dl.codebox dt {
+	padding-bottom: 3px;
+	font-size: 12px;
+}
+
+dl.codebox code {
+	font-size: 12px;
+	line-height: 16px;
+	font-family: Consolas, Monaco, "Lucida Console", monospace;
+}
+
+blockquote,
+blockquote.uncited {
+	padding: 7px;
+}
+
+blockquote {
+	border-color: #ddd;
+	border-left: 3px solid #ddd;
+	background: #fbfbfb;
+	font-size: 14px;
+}
+
+blockquote blockquote {
+	background: #f1f1f1;
+}
+
+blockquote blockquote blockquote {
+	border-color: #d5d5d5;
+	background: #e9e9e9;
+}
+
+/* Quote icon before "XYZ wrote:" */
+blockquote::before {
+	content: "\f10d";
+	display: block;
+	margin-top: 1px;
+	font-family: FontAwesome;
+	font-size: 16px;
+}
+
+blockquote cite {
+	margin-top: -22px;
+	margin-left: 21px;
+	font-size: 14px;
+}
+
+a.postlink {
+	border-bottom: 1px dotted #6b6b6b;
+	color: #6b6b6b;
+}
+
+a.postlink:visited {
+	color: #959595;
+}
+
+a.postlink:active,
+a.postlink:focus,
+a.postlink:hover {
+	border-color: #bc2a4d;
+	background: none;
+	color: #bc2a4d;
 }
 
 /* Profile and post buttons */
@@ -1894,10 +1990,21 @@ input.search {
  * Alerts
  */
 div.rules {
-	padding: 12px 10px;
+	padding: 7px;
+	border: 1px solid #ebccd1;
 	border-left: 3px solid #ebccd1;
 	background-color: #f2dede;
+	line-height: 18px;
+	font-size: 12px;
 }
+
+/*.notice {
+	padding: 10px 8px;
+	border: 1px solid #ccc;
+	border-left: 3px solid #ccc;
+	background: #fafafa;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+}*/
 
 /**
  * Pagination
