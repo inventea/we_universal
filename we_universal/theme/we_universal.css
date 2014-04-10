@@ -1428,6 +1428,31 @@ a.postlink:hover {
 	color: #bc2a4d;
 }
 
+/* MCP mini tabs */
+#minitabs li {
+	padding: 0;
+}
+
+#minitabs li a {
+	display: block;
+	padding: 8px;
+	background: #ccc;
+	color: #525252;
+}
+
+#minitabs li a:focus,
+#minitabs li a:hover {
+	background: #b5b5b5;
+	color: #bc2a4d;
+}
+
+#minitabs .activetab a,
+#minitabs .activetab a:focus,
+#minitabs .activetab a:hover {
+	background: #f9f9f9;
+	color: #bc2a4d !important;
+}
+
 /* Friends list */
 .cp-mini {
 	margin: 10px 10px 0 0;
@@ -1534,11 +1559,13 @@ ul.cplist {
 	background: #4c4c4c;
 }
 
-.section-ucp ul.topiclist dl.icon {
+.section-ucp ul.topiclist dl.icon,
+.section-mcp ul.topiclist dl.icon {
 	background-position: 14px 50%;
 }
 
-.section-ucp ul.topiclist dl.icon dt {
+.section-ucp ul.topiclist dl.icon dt,
+.section-mcp ul.topiclist dl.icon dt {
 	width: 100%;
 	padding-left: 55px;
 }
