@@ -1146,13 +1146,13 @@ fieldset.polls dd div {
 	border: 1px solid #ccc;
 }
 
+.inline-attachment {
+	margin: 15px 0;
+}
+
 .attachbox dt,
 dl.file {
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
-}
-
-dl.file {
-	line-height: 18px;
 }
 
 .attachbox dt {
@@ -1166,11 +1166,27 @@ dl.file {
 	border-color: #ccc;
 }
 
-.attach-image {
-	max-width: 830px;
+dl.file {
+	line-height: 18px;
+}
+
+dl.file dd {
+	color: #525252;
+	font-size: 12px;
+}
+
+dl.file .attach-image + dd {
+	margin-top: 4px;
+}
+
+.attach-image img {
+	max-width: 100%;
+	border: 0;
 }
 
 dl.codebox {
+	margin-top: 15px;
+	margin-bottom: 15px;
 	padding: 3px 5px;
 	border-color: #ccc;
 }
@@ -1192,6 +1208,8 @@ blockquote.uncited {
 }
 
 blockquote {
+	margin-top: 15px;
+	margin-bottom: 15px;
 	border-color: #ddd;
 	background: #fbfbfb;
 	font-size: 14px;
@@ -1315,6 +1333,11 @@ a.postlink:hover {
 .warn-icon a::before 	{ content: "\f056"; }
 .info-icon a::before 	{ content: "\f129"; }
 .quote-icon a::before 	{ content: "\f10d"; }
+
+/* Who is online */
+.inventia-quickmod + h3 {
+	clear: both;
+}
 
 @media (max-width: 768px) {
 	.post .inner {
