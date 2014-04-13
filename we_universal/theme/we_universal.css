@@ -650,8 +650,10 @@ table.table1 tbody tr:nth-child(even) td:nth-child(even) {
 	background-color: #f2f2f2;
 }
 
-ul.topiclist li.reported dt:nth-child(odd),
-ul.topiclist li.reported dd:nth-child(odd) {
+.forumbg ul.topiclist li.reported dt:nth-child(odd),
+.forumbg ul.topiclist li.reported dd:nth-child(odd),
+ul.topiclist li.reported dt:nth-child(even),
+ul.topiclist li.reported dd:nth-child(even) {
 	background-color: #f4e1e6 !important;
 }
 
@@ -1064,6 +1066,7 @@ p.author {
 }
 
 #postform .postbody {
+	padding-bottom: 18px;
 	border-radius: 7px;
 }
 
@@ -1091,6 +1094,15 @@ p.author {
 	margin: 0 !important;
 	padding: 0;
 	border: 0;
+}
+
+#topicreview .content {
+	background: inherit;
+}
+
+#topicreview .postbody .right-box {
+	margin-right: 5px;
+	line-height: 28px;
 }
 
 /* Post related links */
@@ -1609,10 +1621,6 @@ dl.mini dt {
 	margin-bottom: 8px;
 }
 
-#cp-main .pagination {
-	margin-bottom: 4px;
-}
-
 dl.details dt {
 	color: #414141;
 }
@@ -2118,6 +2126,7 @@ div.rules {
 }
 
 .notice {
+	margin-bottom: 15px;
 	padding: 7px;
 	border: 1px solid #ddd;
 	background: #fbfbfb;
