@@ -2125,6 +2125,12 @@ div.rules {
 	font-size: 12px;
 }
 
+/* Disabled board information */
+#information {
+	margin-top: 0;
+	margin-bottom: 24px;
+}
+
 .notice {
 	margin-bottom: 15px;
 	padding: 7px;
