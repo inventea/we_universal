@@ -1204,6 +1204,17 @@ dl.file .attach-image + dd {
 	border: 0;
 }
 
+dl.thumbnail img {
+	padding: 0;
+	border: 0;
+}
+
+dl.thumbnail dt a:hover,
+dl.thumbnail dt a:hover img {
+	border: 0;
+	background: inherit;
+}
+
 dl.codebox {
 	margin-top: 15px;
 	margin-bottom: 15px;
