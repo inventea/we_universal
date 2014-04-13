@@ -919,6 +919,11 @@ dl.faq dt {
 	padding: 18px;
 }
 
+/* Bottom padding is a place for back to top button */
+.post .postbody {
+	padding-bottom: 36px;
+}
+
 /* User profile */
 .postprofile,
 .pm .postprofile,
@@ -999,6 +1004,10 @@ ul.profile-icons {
 	line-height: 21px;
 	font-size: 16px;
 	font-weight: bold;
+}
+
+.postbody h3 img {
+	vertical-align: middle;
 }
 
 p.author {
@@ -1102,11 +1111,10 @@ p.author {
 }
 
 .back2top {
+	position: absolute;
+	right: 18px;
+	bottom: 16px;
 	height: auto;
-}
-
-.back2top a.top {
-	margin-bottom: -2px;
 }
 
 /* Polls */
@@ -1180,7 +1188,7 @@ dl.file .attach-image + dd {
 }
 
 .attach-image img {
-	max-width: 100%;
+	width: 100%;
 	border: 0;
 }
 
@@ -1734,11 +1742,13 @@ dd.mark {
 	padding: 5px 0;
 }
 
-.section-memberlist .panel + .forumbg {
+.section-memberlist .panel + .forumbg,
+#simple-wrap .panel + .forumbg {
 	margin-top: 7px;
 }
 
-.section-memberlist .panel ul.linklist li strong {
+.section-memberlist .panel ul.linklist li strong,
+#simple-wrap .panel ul.linklist li strong {
 	font-size: 12px !important;
 }
 
