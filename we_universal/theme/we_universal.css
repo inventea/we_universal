@@ -1716,6 +1716,7 @@ dd.mark {
 
 #cp-main ul.linklist .pagination {
 	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 #viewfolder ul.topiclist,
@@ -2253,6 +2254,11 @@ li.pagination span a:hover {
 	border-color: #bc2a4d;
 	background: #bc2a4d;
 	color: #fff;
+}
+
+/* Bottom pagination on memberlist */
+.section-memberlist hr + ul.linklist .pagination {
+	margin-top: 5px;
 }
 
 /**
