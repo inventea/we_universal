@@ -1063,7 +1063,8 @@ p.author {
 	border-bottom: 0;
 }
 
-#postform .postbody {
+#postform .postbody,
+#topicreview .postbody {
 	padding-bottom: 18px;
 	border-radius: 7px;
 }
@@ -1828,7 +1829,7 @@ dd.mark {
 }
 
 hr + .topic-actions {
-	margin-top: 7px;
+	margin-top: 8px;
 }
 
 .buttons div {
@@ -2172,14 +2173,22 @@ input.search {
 /**
  * Alerts
  */
+div.rules,
+p.rules {
+	border: 1px solid #ebccd1;
+	background-color: #f2dede;
+	padding: 6px 9px;
+}
+
 div.rules {
 	margin-top: 10px;
 	margin-bottom: 15px;
-	padding: 6px 9px;
-	border: 1px solid #ebccd1;
-	background-color: #f2dede;
 	line-height: 18px;
 	font-size: 12px;
+}
+
+p.rules img {
+	padding-top: 0;
 }
 
 /* Disabled board information */
