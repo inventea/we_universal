@@ -1279,6 +1279,19 @@ a.postlink:hover {
 	color: #bc2a4d;
 }
 
+.signature a,
+.signature a:active,
+.signature a:focus,
+.signature a:hover {
+	text-decoration: none;
+}
+
+.signature a:active,
+.signature a:focus,
+.signature a:hover {
+	border-bottom: 1px dotted #bc2a4d;
+}
+
 /* Profile and post buttons */
 .postprofile ul.profile-icons li,
 .postprofile ul.profile-icons li a,
