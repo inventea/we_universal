@@ -1021,10 +1021,15 @@ p.author {
 
 .postbody .content,
 .post:target .content {
+	overflow: auto;
 	color: #414141;
 	line-height: 21px;
 	font-size: 14px;
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+.section-viewtopic .postbody .content {
+	max-width: 832px;
 }
 
 .post .signature {
@@ -1035,6 +1040,11 @@ p.author {
 	color: #525252;
 	line-height: 18px;
 	font-size: 12px;
+}
+
+.postbody .content img,
+.signature img {
+	max-width: 100%;
 }
 
 /* Private message */
@@ -1054,6 +1064,9 @@ p.author {
 #postform .content {
 	padding: 10px 18px;
 	border-radius: 7px;
+}
+
+.section-posting #postform .content {
 	background: #f1f1f1;
 }
 
@@ -1157,6 +1170,7 @@ fieldset.polls dd div {
 /* Post related features */
 .attachbox {
 	clear: right;
+	max-width: 832px;
 	padding: 7px;
 	border: 1px solid #ccc;
 }
@@ -1195,7 +1209,7 @@ dl.file .attach-image + dd {
 }
 
 .attach-image img {
-	width: 100%;
+	max-width: 100%;
 	border: 0;
 }
 
