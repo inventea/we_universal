@@ -10,6 +10,21 @@ Based on prosilver and built using template inheritance that simplifies
 customising and updating. All new CSS classes are prefixed with `inventia-`
 namespace and grouped in separate `we_universal.css` file.
 
+Before reporting an issue please visit our
+[documentation](http://inventia.io/en/projects/we_universal/documentation) and
+[FAQ](http://inventia.io/en/projects/we_universal/faq) which covers common
+problems and questions.
+
+
+Installation
+------------
+
+Copy `we_universal/` directory (it should directly contain `imageset/`,
+`template/`, `theme/` and `style.cfg`) to `styles/` directory from your phpBB
+installation. Next go to *Administration Control Panel*, open *STYLES* tab and
+click *Install* on the list of uninstalled styles. In the next step check
+*Make default style* option and click *Submit*.
+
 
 Assets
 ------
