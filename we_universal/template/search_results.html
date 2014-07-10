@@ -17,12 +17,10 @@
 
 	<!-- IF SEARCH_MATCHES -->
 		<div class="search-box">
-			<form method="post" id="forum-search" action="{S_SEARCHBOX_ACTION}">
-			<fieldset>
-				<input class="inputbox search tiny" type="text" name="add_keywords" id="add_keywords" size="20" value="{L_SEARCH_IN_RESULTS}" onclick="if (this.value == '{L_SEARCH_IN_RESULTS}') this.value = '';" onblur="if (this.value == '') this.value = '{L_SEARCH_IN_RESULTS}';" />
+			<!-- IF SEARCH_IN_RESULTS -->
+				<input type="text" name="add_keywords" id="add_keywords" placeholder="{L_SEARCH_IN_RESULTS}" value="" class="inputbox narrow" />
 				<input class="button2" type="submit" name="submit" value="{L_SEARCH}" />
-			</fieldset>
-			</form>
+			<!-- ENDIF -->
 		</div>
 	<!-- ENDIF -->
 
@@ -35,45 +33,47 @@
 <!-- ENDIF -->
 
 <!-- IF S_SHOW_TOPICS -->
+
 	<!-- IF .searchresults -->
-		<div class="forums-wrapper">
-			<table class="forums">
-				<thead>
-					<tr>
-						<th colspan="2">{L_TOPICS}</th>
-						<th class="statistics">{L_STATISTICS}</th>
-						<th class="last-post">{L_LAST_POST}</th>
-					</tr>
-				</thead>
-				<tbody>
+	<div class="forumbg">
+
+		<div class="inner"><span class="corners-top"><span></span></span>
+		<ul class="topiclist">
+			<li class="header">
+				<dl class="icon">
+					<dt>{L_TOPICS}</dt>
+					<dd class="posts">{L_STATISTICS}</dd>
+					<dd class="lastpost"><span>{L_LAST_POST}</span></dd>
+				</dl>
+			</li>
+		</ul>
+		<ul class="topiclist topics">
 
 		<!-- BEGIN searchresults -->
-			<tr class="row <!-- IF searchresults.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> announce<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> sticky<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
-				<td class="icon bg2" style="background-image: url({searchresults.TOPIC_FOLDER_IMG_SRC});" title="{searchresults.TOPIC_FOLDER_IMG_ALT}">
-					<!-- IF searchresults.TOPIC_ICON_IMG --><img src="{T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}" alt="" title="" /><!-- ENDIF -->
-				</td>
-				<td class="topic">
-					<h4><!-- IF searchresults.ATTACH_ICON_IMG -->{searchresults.ATTACH_ICON_IMG}<!-- ENDIF --> <a href="{searchresults.U_VIEW_TOPIC}" class="topictitle">{searchresults.TOPIC_TITLE}</a></h4>
-					<!-- IF searchresults.PAGINATION --><strong class="pagination"><span>{searchresults.PAGINATION}</span></strong><!-- ENDIF -->
-					<p>{L_POST_BY_AUTHOR} {searchresults.TOPIC_AUTHOR_FULL} &raquo; {searchresults.FIRST_POST_TIME}</p>
-				</td>
-				<td class="bg2">
-					<p>{L_REPLIES}: <strong>{searchresults.TOPIC_REPLIES}</strong></p>
-					<p>{L_VIEWS}: <strong>{searchresults.TOPIC_VIEWS}</strong></p>
-				</td>
-				<td class="topic">
-					<!-- IF not S_IS_BOT --><a href="<!-- IF searchresults.S_UNREAD_TOPIC -->{searchresults.U_NEWEST_POST}<!-- ELSE -->{searchresults.U_LAST_POST}<!-- ENDIF -->" class="last-post-img">{LAST_POST_IMG}</a><!-- ENDIF -->
-					<div class="lastpost-details">
-						<p>{searchresults.LAST_POST_TIME}</p>
-						<p>{L_POST_BY_AUTHOR} {searchresults.LAST_POST_AUTHOR_FULL}</p>
-					</div>
-				</td>
-			</tr>
+			<li class="row<!-- IF searchresults.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
+				<dl>
+					<dt class="icon" style="background-image: url({searchresults.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;"><!-- IF searchresults.TOPIC_ICON_IMG --><img src="{T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}" alt="" title="" /><!-- ENDIF --></dt>
+					<dd>
+						<!-- IF searchresults.S_UNREAD_TOPIC --><a href="{searchresults.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF -->
+						<a href="{searchresults.U_VIEW_TOPIC}" class="topictitle">{searchresults.TOPIC_TITLE}</a>
+						<!-- IF searchresults.S_TOPIC_UNAPPROVED or searchresults.S_POSTS_UNAPPROVED --><a href="{searchresults.U_MCP_QUEUE}">{searchresults.UNAPPROVED_IMG}</a> <!-- ENDIF -->
+						<!-- IF searchresults.S_TOPIC_REPORTED --><a href="{searchresults.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF --><br />
+						<!-- IF searchresults.PAGINATION --><strong class="pagination"><span>{searchresults.PAGINATION}</span></strong><!-- ENDIF -->
+						{searchresults.ATTACH_ICON_IMG} {L_POST_BY_AUTHOR} {searchresults.TOPIC_AUTHOR_FULL} &raquo; {searchresults.FIRST_POST_TIME}
+						<!-- IF not searchresults.S_TOPIC_GLOBAL -->{L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a><!-- ELSE --> ({L_GLOBAL})<!-- ENDIF -->
+					</dd>
+					<dd class="posts">{L_REPLIES}: <strong>{searchresults.TOPIC_REPLIES}</strong><br />{L_VIEWS}: <strong>{searchresults.TOPIC_VIEWS}</strong></dd>
+					<dd class="lastpost"><span>
+						<i class="fa fa-user fa-fw"></i> {L_POST_BY_AUTHOR} {searchresults.LAST_POST_AUTHOR_FULL}
+						<!-- IF not S_IS_BOT --><a href="{searchresults.U_LAST_POST}">{LAST_POST_IMG}</a> <!-- ENDIF --><br /><i class="fa fa-clock-o fa-fw"></i> {searchresults.LAST_POST_TIME}<br /> </span>
+					</dd>
+				</dl>
+			</li>
 		<!-- END searchresults -->
-		
-			</tbody>
-			</table>
-		</div>
+		</ul>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
 	<!-- ELSE -->
 		<div class="panel">
 			<div class="inner"><span class="corners-top"><span></span></span>
@@ -81,55 +81,44 @@
 			<span class="corners-bottom"><span></span></span></div>
 		</div>
 	<!-- ENDIF -->
+
 <!-- ELSE -->
-<div id="message">
-	<ul class="forums-wrapper">
-		<li class="author-column">{L_AUTHOR}</li>
-		<li class="message-column">{L_MESSAGE}</li>
-	</ul>
+
 	<!-- BEGIN searchresults -->
-		<div class="post-wrapper <!-- IF searchresults.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF searchresults.S_POST_REPORTED --> reported<!-- ENDIF -->">
-			<!-- IF searchresults.S_IGNORE_POST -->
-				<p class="error" style="margin: 10px;">{searchresults.L_IGNORE_POST}</p>
+		<div class="search post <!-- IF searchresults.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF searchresults.S_POST_REPORTED --> reported<!-- ENDIF -->">
+			<div class="inner"><span class="corners-top"><span></span></span>
+
+	<!-- IF searchresults.S_IGNORE_POST -->
+		<div class="postbody">
+			{searchresults.L_IGNORE_POST}
+		</div>
+	<!-- ELSE -->
+		<dl class="postprofile">
+			<!-- IF searchresults.FORUM_TITLE -->
+				<dd>{L_FORUM}: <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a></dd>
+				<dd>{L_TOPIC}: <a href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a></dd>
 			<!-- ELSE -->
-				<div class="search post">
-					<div class="author-column postprofile">
-						<div class="post-header">
-							<strong>{searchresults.POST_AUTHOR_FULL}</strong>
-						</div>
-						
-						<div class="profile-wrapper">
-							<ul class="profile-details">
-								<!-- IF searchresults.FORUM_TITLE -->
-									<li><strong>{L_FORUM}:</strong> <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a></li>
-									<li><strong>{L_TOPIC}:</strong> <a href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a></li>
-								<!-- ELSE -->
-									<li><strong>{L_GLOBAL}:</strong> <a href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a></li>
-								<!-- ENDIF -->
-								<li><strong>{L_REPLIES}:</strong> {searchresults.TOPIC_REPLIES}</li>
-								<li><strong>{L_VIEWS}:</strong> {searchresults.TOPIC_VIEWS}</li>
-							</ul>
-						</div>
-					</div>
-					
-					<div class="message-column postbody">
-							<div class="post-header">
-								<h4><a href="{searchresults.U_VIEW_POST}">{searchresults.POST_SUBJECT}</a></h4>
-							</div>
-							
-							<div class="content-wrapper">
-								<p class="author"><img src="{T_IMAGESET_PATH}/icon_post_target.gif" alt="" title="" />{searchresults.POST_DATE}</p>
-								<div class="content">{searchresults.MESSAGE}</div>
-							</div>		
-					</div>
-				</div>
-				
-				<!-- IF not searchresults.S_IGNORE_POST -->
-					<div class="post-footer">
-						<p class="searchresults"><a href="{searchresults.U_VIEW_POST}" class="{S_CONTENT_FLOW_END}">{L_JUMP_TO_POST}</a></p>
-					</div>
-				<!-- ENDIF -->
+				<dd>{L_GLOBAL}: <a href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a></dd>
 			<!-- ENDIF -->
+			<dd>{L_REPLIES}: <strong>{searchresults.TOPIC_REPLIES}</strong></dd>
+			<dd>{L_VIEWS}: <strong>{searchresults.TOPIC_VIEWS}</strong></dd>
+		</dl>
+
+		<div class="postbody">
+			<h3><a href="{searchresults.U_VIEW_POST}">{searchresults.POST_SUBJECT}</a></h3>
+			<p class="author">{L_POST_BY_AUTHOR} <strong>{searchresults.POST_AUTHOR_FULL}</strong> &raquo; {searchresults.POST_DATE}</p>
+			
+			<div class="content">{searchresults.MESSAGE}</div>
+
+			<!-- IF not searchresults.S_IGNORE_POST -->
+				<ul class="searchresults back2top">
+					<li><a href="{searchresults.U_VIEW_POST}" class="{S_CONTENT_FLOW_END}">{L_JUMP_TO_POST}</a></li>
+				</ul>
+			<!-- ENDIF -->
+		</div>
+	<!-- ENDIF -->
+
+			<span class="corners-bottom"><span></span></span></div>
 		</div>
 	<!-- BEGINELSE -->
 		<div class="panel">
@@ -138,7 +127,6 @@
 			<span class="corners-bottom"><span></span></span></div>
 		</div>
 	<!-- END searchresults -->
-</div>
 <!-- ENDIF -->
 
 <!-- IF PAGINATION or .searchresults or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS -->

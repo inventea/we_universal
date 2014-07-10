@@ -1,3 +1,16 @@
+2.3.0
+-----
+
+- Built from scratch on prosilver from phpBB 3.0.12
+- Template inheritance
+- Fluid and responsive layout
+- Redesigned header and forums layout
+- Replaced image buttons with CSS and font icons
+- CSS code in new `we_universal.css` file
+- Custom CSS classes prefixed with `inventia-`
+- Improved modifications support
+
+
 2.2.6
 -----
 

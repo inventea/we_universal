@@ -1,31 +1,36 @@
-	</div>
 </div>
 
-<div id="footer">
-
-	<!--
-		We request you retain the full copyright notice below including the link to www.phpbb.com.
-		This not only gives respect to the large amount of time given freely by the developers
-		but also helps build interest, traffic and use of phpBB3. If you (honestly) cannot retain
-		the full copyright we ask you at least leave in place the "Powered by phpBB" line, with
-		"phpBB" linked to www.phpbb.com. If you refuse to include even this then support on our
-		forums may be affected.
-
-		The phpBB Group : 2006
-	//-->
-	
-	<div id="copyright">
-		<p>{CREDIT_LINE}</p>
-		<p>Style <em>we_universal</em> created by <a href="http://inventia.io" title="Premium phpBB styles. HTML5 & CSS3 templates.">Inventia</a>.</p>
-		<!-- IF TRANSLATION_INFO --><p>{TRANSLATION_INFO}</p><!-- ENDIF -->
-		<!-- IF DEBUG_OUTPUT --><p>{DEBUG_OUTPUT}</p><!-- ENDIF -->
+<div class="inventia-footer-wrapper">
+	<div class="inventia-footer">
+		<ul class="inventia-footer-menu">
+			<li class="inventia-footer-menu-item"><a href="{U_INDEX}" title="{L_INDEX}">{L_INDEX}</a></li>
+			<!-- IF not S_IS_BOT --><li class="inventia-footer-menu-item"><a href="{U_DELETE_COOKIES}" title="{L_DELETE_COOKIES}">{L_DELETE_COOKIES}</a></li><!-- ENDIF -->
+			<li class="inventia-footer-menu-item">{S_TIMEZONE}</li>
+		</ul>
+		
+		<footer class="inventia-credits">
+			{CREDIT_LINE}<br />
+			Style we_universal created by <a href="http://inventea.com" title="Premium phpBB styles, HTML5 &amp; CSS3 templates">Inventea</a>.
+			<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
+			<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
+		</footer>
 	</div>
-</div>
 
-<div>
-	<a id="bottom" name="bottom" accesskey="z"></a>
 	<!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
 </div>
+
+<script src="{T_TEMPLATE_PATH}/assets/zepto/zepto.min.js"></script>
+
+<script>
+$('.inventia-toggle').click(function(e) {
+	$(this).next('.inventia-dropdown-menu').toggle()
+	e.stopPropagation();
+});
+
+$(document).click(function() {
+	$('.inventia-dropdown-menu').hide();
+});
+</script>
 
 </body>
 </html>
