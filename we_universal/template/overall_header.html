@@ -25,6 +25,13 @@
 		Modified by:      Inventea ( http://inventea.com/ )
 	-->
 
+	<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
+	<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+
+	<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+		<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<!-- ENDIF -->
+
 	<script type="text/javascript">
 	// <![CDATA[
 		var jump_page = '{LA_JUMP_PAGE}:';
@@ -68,18 +75,10 @@
 				eval(onunload_functions[i]);
 			}
 		};
-
 	// ]]>
 	</script>
 
 	<script src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
-
-	<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
-	<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
-
-	<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
-		<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
-	<!-- ENDIF -->
 </head>
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
 
