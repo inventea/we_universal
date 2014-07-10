@@ -22,5 +22,5 @@ Assets
 ------
 
 - Header photo from picjumbo (http://picjumbo.com)
-- Font Awesome 4.0.3 icons (http://fortawesome.github.io/Font-Awesome/)
-- Zepto.js 1.1.3 library (http://zeptojs.com)
+- Font Awesome 4.1.0 icons (http://fortawesome.github.io/Font-Awesome/)
+- Zepto.js 1.1.4 library (http://zeptojs.com)
