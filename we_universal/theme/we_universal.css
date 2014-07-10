@@ -1066,7 +1066,8 @@ p.author {
 	border-radius: 7px;
 }
 
-.section-posting #postform .content {
+/* Poll preview background */
+.section-posting #preview .content {
 	background: #f1f1f1;
 }
 
