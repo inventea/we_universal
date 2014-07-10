@@ -1,4 +1,4 @@
-![we_universal](http://inventia.io/images/we_universal.png)
+![we_universal](http://inventea.com/images/we_universal.png)
 
 
 we_universal
@@ -14,8 +14,8 @@ customising and updating. All new CSS classes are prefixed with `inventia-`
 namespace and grouped in separate `we_universal.css` file.
 
 Before reporting an issue please visit our
-[documentation](http://inventia.io/en/projects/we_universal/documentation) and
-[FAQ](http://inventia.io/en/projects/we_universal/faq) which covers common
+[documentation](http://inventea.com/en/projects/we_universal/documentation) and
+[FAQ](http://inventea.com/en/projects/we_universal/faq) which covers common
 problems and questions.
 
 

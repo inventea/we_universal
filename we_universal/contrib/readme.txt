@@ -14,8 +14,8 @@ namespace and grouped in separate we_universal.css file.
 FAQ and Documentation
 ---------------------
 
-http://inventia.io/en/projects/we_universal/faq
-http://inventia.io/en/projects/we_universal/documentation
+http://inventea.com/en/projects/we_universal/faq
+http://inventea.com/en/projects/we_universal/documentation
 
 
 Assets
