@@ -12,6 +12,7 @@ body {
 	padding: 15px 0;
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
 	font-size: 12px;
+	word-wrap: normal;
 }
 
 h1 {
@@ -61,7 +62,7 @@ a:active {
 @media (max-width: 768px) {
 	html,
 	body {
-		padding: 0;
+		padding: 0 !important;
 		background: #fff;
 	}
 }
@@ -73,9 +74,9 @@ a:active {
  * can be fixed (eg. width: 970px;) or fluid (default) to better support
  * various devices.
  */
-.inventia-wrapper,
-.inventia-dashboard,
-.inventia-footer {
+.inventea-wrapper,
+.inventea-dashboard,
+.inventea-footer {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -84,37 +85,37 @@ a:active {
 	margin: auto;
 }
 
-.inventia-wrapper {
+.inventea-wrapper {
 	padding: 15px 20px;
 	border: 2px solid #e7e7e7;
 	background: #fff;
 }
 
-.inventia-statusbar {
+.inventea-statusbar {
 	position: relative;
 	height: 48px;
 	border-bottom: 0;
 	color: #959595;
 }
 
-.inventia-header {
+.inventea-header {
 	width: 100%;
 	background: #292c2f;
 }
 
-.inventia-dashboard {
+.inventea-dashboard {
 	position: relative;
 	min-height: 230px;
-	background: url("{T_THEME_PATH}/images/dashboard.jpg") center center no-repeat;
+	background: url("./images/dashboard.jpg") center center no-repeat;
 	background-size: cover;
 }
 
-.inventia-content {
+.inventea-content {
 	position: relative;
 	border-top: 0;
 }
 
-.inventia-footer-wrapper {
+.inventea-footer-wrapper {
 	display: block;
 	box-shadow: inset 0 20px 30px -20px #d5d5d5;
 	width: 100%;
@@ -122,7 +123,7 @@ a:active {
 	border-top: 1px solid #e2e2e2;
 }
 
-.inventia-footer {
+.inventea-footer {
 	overflow: hidden;
 	margin: 42px auto;
 	padding: 0 22px;
@@ -132,32 +133,32 @@ a:active {
 }
 
 @media (max-width: 768px) {
-	.inventia-wrapper,
-	.inventia-dashboard,
-	.inventia-footer {
+	.inventea-wrapper,
+	.inventea-dashboard,
+	.inventea-footer {
 		width: 100%;
 		border: 0;
 	}
 	
-	.inventia-wrapper {
+	.inventea-wrapper {
 		padding: 15px 15px 6px;
 	}
 
-	.inventia-statusbar {
+	.inventea-statusbar {
 		height: 46px;
 	}
 
-	.inventia-dashboard {
+	.inventea-dashboard {
 		min-height: inherit;
 	}
 	
-	.inventia-footer-wrapper {
+	.inventea-footer-wrapper {
 		box-shadow: none;
 		margin: 0;
 		border: 0;
 	}
 
-	.inventia-footer {
+	.inventea-footer {
 		margin: 0;
 		padding: 0 15px 15px;
 	}
@@ -166,13 +167,13 @@ a:active {
 /**
  * Current time/last visit and quick search
  */
-.inventia-quick-search {
+.inventea-quick-search {
 	position: absolute;
 	top: 10px;
 	right: 20px;
 }
 
-.inventia-quick-search-icon {
+.inventea-quick-search-icon {
 	position: absolute;
 	top: 6px;
 	right: 10px;
@@ -180,16 +181,14 @@ a:active {
 	font-size: 13px;
 }
 
-.inventia-quick-search-input {
+.inventea-quick-search-input {
 	display: block;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 	box-shadow: inset 0 1px 3px #ccc;
-	width: 100px;
+	width: 70px;
 	height: 26px;
 	margin: 0;
-	padding: 5px 28px 5px 10px;
+	padding-right: 28px;
+	padding-left: 10px;
 	outline: 0;
 	border: 0;
 	border-radius: 30px;
@@ -200,51 +199,52 @@ a:active {
 	transition: width 0.3s;
 }
 
-.inventia-quick-search-input:focus {
-	width: 180px;
+.inventea-quick-search-input:focus {
+	width: 170px;
 	cursor: text;
 }
 
 @media (max-width: 768px) {
-	.inventia-time {
+	.inventea-time {
 		display: none;
 	}
 
-	.inventia-quick-search {
+	.inventea-quick-search {
 		right: auto;
 		left: 15px;
 	}
 
-	.inventia-quick-search-icon {
+	.inventea-quick-search-icon {
 		right: auto;
 		left: 10px;
 	}
 
-	.inventia-quick-search-input {
-		width: 120px;
-		padding: 5px 10px 5px 28px;
+	.inventea-quick-search-input {
+		width: 90px;
+		padding-right: 10px;
+		padding-left: 28px;
 	}
 
-	.inventia-quick-search-input:focus {
-		width: 120px;
+	.inventea-quick-search-input:focus {
+		width: 90px;
 	}
 }
 
 /**
  * Forum name and description
  */
-.inventia-sitename {
+.inventea-sitename {
 	padding: 70px 50px 92px;
 	color: #fff;
 	font-size: 14px;
 }
 
-.inventia-sitename a {
+.inventea-sitename a {
 	color: #fff;
 }
 
 @media (max-width: 768px) {
-	.inventia-sitename {
+	.inventea-sitename {
 		padding: 40px 25px;
 	}
 }
@@ -256,43 +256,43 @@ a:active {
  * links on top and user related links on bottom. Displayed only on devices
  * with larger screen resolutions (at least 768px width).
  */
-.inventia-forum-menu,
-.inventia-user-menu {
+.inventea-forum-menu,
+.inventea-user-menu {
 	position: absolute;
 }
 
-.inventia-forum-menu {
+.inventea-forum-menu {
 	right: 0;
 }
 
-.inventia-user-menu {
+.inventea-user-menu {
 	bottom: 0;
 }
 
-.inventia-menu {
+.inventea-menu {
 	display: block;
 	list-style: none;
 }
 
-.inventia-menu-item {
+.inventea-menu-item {
 	float: left;
 }
 
 /* Space between menu items */
-.inventia-menu-item + .inventia-menu-item {
+.inventea-menu-item + .inventea-menu-item {
 	margin-left: 4px;
 }
 
-.inventia-menu-item > a {
+.inventea-menu-item > a {
 	display: block;
 	padding: 8px 10px;
 	background: rgba(0, 0, 0, 0.5);
 	color: #eee;
 }
 
-.inventia-menu-item > a:focus,
-.inventia-menu-item > a:hover,
-.inventia-menu-item > a:active {
+.inventea-menu-item > a:focus,
+.inventea-menu-item > a:hover,
+.inventea-menu-item > a:active {
 	background: rgba(0, 0, 0, 0.9);
 	text-decoration: none;
 }
@@ -304,7 +304,7 @@ a:active {
  * is displayed only on devices with small screen resolutions (768px width
  * or less).
  */
-.inventia-toggle {
+.inventea-toggle {
 	padding: 4px 6px 2px;
 	outline: 0;
 	border: 0;
@@ -315,18 +315,18 @@ a:active {
 }
 
 /* Remove unnecessary padding in Firefox */
-.inventia-toggle::-moz-focus-inner {
+.inventea-toggle::-moz-focus-inner {
 	padding: 0;
 	border: 0;
 }
 
-.inventia-toggle:hover,
-.inventia-toggle:active {
+.inventea-toggle:hover,
+.inventea-toggle:active {
 	outline: 0;
 	cursor: pointer;
 }
 
-.inventia-dropdown-menu {
+.inventea-dropdown-menu {
 	position: absolute;
 	z-index: 1;
 	display: none;
@@ -336,7 +336,7 @@ a:active {
 }
 
 /* Triangle above dropdown menu */
-.inventia-dropdown-menu::before {
+.inventea-dropdown-menu::before {
 	content: "";
 	position: absolute;
 	right: 10px;
@@ -349,83 +349,83 @@ a:active {
 	border-color: transparent transparent #292c2f transparent;
 }
 
-.inventia-dropdown-menu-item {
+.inventea-dropdown-menu-item {
 	min-width: 190px;
 }
 
 /* Remove bottom border from last menu item */
-.inventia-dropdown-menu-item:last-child a {
+.inventea-dropdown-menu-item:last-child a {
 	border: 0;
 }
 
-.inventia-dropdown-menu-item a {
+.inventea-dropdown-menu-item a {
 	display: block;
 	padding: 12px 15px 12px 14px;
 	border-bottom: 1px solid #46474a;
 	color: #eee;
 }
 
-.inventia-dropdown-menu-item a:focus,
-.inventia-dropdown-menu-item a:hover {
+.inventea-dropdown-menu-item a:focus,
+.inventea-dropdown-menu-item a:hover {
 	background: #343639;
 	text-decoration: none;
 }
 
-.inventia-dropdown-menu-item .fa {
+.inventea-dropdown-menu-item .fa {
 	margin-right: 5px;
 	font-size: 14px;
 }
 
 /* Forum and topic actions dropdown menu */
-.inventia-actions-menu {
+.inventea-actions-menu {
 	float: right;
 }
 
-.inventia-actions-menu-toggle {
+.inventea-actions-menu-toggle {
 	font-size: 14px;
 }
 
-.inventia-actions-dropdown-menu  {
+.inventea-actions-dropdown-menu  {
 	top: 57px;
 	right: 8px;
 }
 
 /* Don't display mobile menu on large screens */
-.inventia-mobile-menu {
+.inventea-mobile-menu {
 	display: none;
 }
 
 @media (max-width: 768px) {
-	.inventia-forum-menu,
-	.inventia-user-menu {
+	.inventea-forum-menu,
+	.inventea-user-menu {
 		display: none;
 	}
 	
-	.inventia-mobile-menu {
+	.inventea-mobile-menu {
 		display: block;
 	}
 	
-	.inventia-mobile-menu-toggle {
+	.inventea-mobile-menu-toggle {
 		position: absolute;
-		top: 8px;
-		right: 15px;
+		top: 6px;
+		right: 13px;
 		font-size: 21px;
 	}
 
 	/* Remove padding from Font Awesome icon */
-	.inventia-mobile-menu-toggle > .fa {
+	.inventea-mobile-menu-toggle > .fa {
 		display: block;
 		padding: 0;
 	}
 
-	.inventia-mobile-dropdown-menu {
+	.inventea-mobile-dropdown-menu {
 		z-index: 3;
 		top: 55px;
 		right: 6px;
 	}
 	
 	/* Forum and topic actions dropdown menu */
-	.inventia-actions-dropdown-menu {
+	.inventea-actions-dropdown-menu {
 		right: 3px;
 	}
 }
@@ -433,11 +433,11 @@ a:active {
 /**
  * Breadcrumbs
  */
-.inventia-breadcrumbs-container {
+.inventea-breadcrumbs-container {
 	overflow: hidden;
 }
 
-.inventia-breadcrumbs {
+.inventea-breadcrumbs {
 	display: block;
 	overflow: hidden;
 	float: left;
@@ -447,12 +447,12 @@ a:active {
 	line-height: 18px;
 }
 
-.inventia-breadcrumbs-item {
+.inventea-breadcrumbs-item {
 	display: block;
 	float: left;
 }
 
-.inventia-breadcrumbs-item::before {
+.inventea-breadcrumbs-item::before {
 	content: "/";
 	display: block;
 	float: right;
@@ -462,34 +462,34 @@ a:active {
 }
 
 /* Don't display first separator */
-.inventia-breadcrumbs-item:last-child::before {
+.inventea-breadcrumbs-item:last-child::before {
 	display: none;
 }
 
 /**
  * Footer
  */
-.inventia-footer a {
+.inventea-footer a {
 	color: #525252;
 }
 
-.inventia-footer a:focus,
-.inventia-footer a:hover,
-.inventia-footer a:active {
+.inventea-footer a:focus,
+.inventea-footer a:hover,
+.inventea-footer a:active {
 	color: #bc2a4d;
 }
 
-.inventia-footer-menu {
+.inventea-footer-menu {
 	float: right;
 	list-style: none;
 }
 
-.inventia-footer-menu-item {
+.inventea-footer-menu-item {
 	display: block;
 	float: left;
 }
 
-.inventia-footer-menu-item::before {
+.inventea-footer-menu-item::before {
 	content: "/";
 	display: block;
 	float: right;
@@ -499,23 +499,23 @@ a:active {
 }
 
 /* Don't display first separator */
-.inventia-footer-menu-item:last-child::before {
+.inventea-footer-menu-item:last-child::before {
 	display: none;
 }
 
-.inventia-credits {
+.inventea-credits {
 	float: left;
 }
 
 @media (max-width: 768px) {
-	.inventia-footer-menu,
-	.inventia-credits {
+	.inventea-footer-menu,
+	.inventea-credits {
 		overflow: hidden;
 		display: block;
 		float: none;
 	}
 
-	.inventia-footer-menu {
+	.inventea-footer-menu {
 		margin-bottom: 18px;
 	}
 }
@@ -532,6 +532,7 @@ a:active {
 	margin-bottom: 15px;
 	padding: 0;
 	border-bottom: 3px solid #cacaca;
+	border-radius: 0;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	background: #4c4c4c;
@@ -682,6 +683,12 @@ table.table1 thead th,
 	width: auto;
 }
 
+li.header dt .list-inner,
+li.header dl.icon dt .list-inner {
+	margin: 0;
+	padding: 0;
+}
+
 /* Subforums list on index */
 ul.topiclist li.row a.subforum {
 	padding: 0;
@@ -708,6 +715,7 @@ ul.topiclist.topics li.row dt {
 	width: 55px;
 	padding: 0;
 	background-position: center center;
+	background-repeat: no-repeat;
 	text-align: center;
 }
 
@@ -719,11 +727,11 @@ ul.topiclist.topics li.row dt {
 
 dd.topics,
 dd.posts {
-	width: 120px;
+	width: 140px;
 }
 
 dd.lastpost {
-	width: 220px;
+	width: 250px;
 }
 
 /* Last post author and date icons */
@@ -900,7 +908,7 @@ dl.faq dt {
 	background-color: #f7ecef;
 }
 
-.inventia-online {
+.inventea-online {
 	display: inline-block;
 	margin-bottom: 18px;
 	padding: 3px 8px 1px;
@@ -952,7 +960,7 @@ dl.faq dt {
 	color: #414141;
 }
 
-.inventia-avatar {
+.inventea-avatar {
 	display: block;
 	margin-bottom: 14px;
 }
@@ -1389,7 +1397,7 @@ a.postlink:hover {
 .quote-icon a::before 	{ content: "\f10d"; }
 
 /* Who is online */
-.inventia-quickmod + h3 {
+.inventea-quickmod + h3 {
 	clear: both;
 }
 
@@ -1425,22 +1433,22 @@ a.postlink:hover {
 		display: none;
 	}
 
-	.inventia-online {
+	.inventea-online {
 		display: none;
 	}
 
-	.inventia-avatar {
+	.inventea-avatar {
 		margin-right: 18px;
 		margin-bottom: 0;
 		line-height: 0;
 	}
 
-	.inventia-avatar img {
+	.inventea-avatar img {
 		width: auto;
 		height: 70px;
 	}
 
-	.inventia-post-author {
+	.inventea-post-author {
 		display: table-cell;
 		vertical-align: middle;
 	}
@@ -1807,7 +1815,7 @@ dd.mark {
 	width: auto;
 }
 
-#viewprofile .inventia-profile {
+#viewprofile .inventea-profile {
 	padding-top: 12px;
 	padding-bottom: 12px;
 	line-height: 18px;
@@ -1821,7 +1829,7 @@ dd.mark {
 }
 
 @media (max-width: 768px) {
-	#viewprofile .inventia-avatar {
+	#viewprofile .inventea-avatar {
 		margin-right: 0;
 		margin-bottom: 14px;
 	}
@@ -2288,7 +2296,7 @@ li.pagination span a:hover {
 /**
  * Miscellaneous
  */
-.inventia-no-items {
+.inventea-no-items {
 	text-align: center;
 }
 
