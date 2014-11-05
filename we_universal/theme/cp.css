@@ -96,12 +96,6 @@ ul.cplist {
 	margin-bottom: 0px;
 }
 
-.tabs-container:after {
-	clear: both;
-	content: '';
-	display: block;
-}
-
 /* CP tabs shared
 ----------------------------------------*/
 #tabs, #minitabs {
@@ -115,14 +109,8 @@ ul.cplist {
 	position: relative;
 }
 
-#tabs > ul:after, #minitabs > ul:after {
-	clear: both;
-	content: '';
-	display: block;
-}
-
 #tabs .tab, #minitabs .tab {
-	display: inline-block;
+	display: block;
 	float: left;
 	font-size: 1em;
 	font-weight: bold;
@@ -138,7 +126,7 @@ ul.cplist {
 	cursor: pointer;
 }
 
-/* CP tabbed menu 
+/* CP tabbed menu
 ----------------------------------------*/
 #tabs {
 	margin: 20px 0 0 7px;
@@ -321,7 +309,7 @@ ol.def-rules li {
 	border-right-color: transparent;
 }
 
-.pmlist li.pm_marked_colour, .pm_marked_colour, 
+.pmlist li.pm_marked_colour, .pm_marked_colour,
 .pmlist li.pm_replied_colour, .pm_replied_colour,
 .pmlist li.pm_friend_colour, .pm_friend_colour,
 .pmlist li.pm_foe_colour, .pm_foe_colour {
@@ -354,7 +342,7 @@ ol.def-rules li {
 @media only screen and (max-width: 900px), only screen and (max-device-width: 900px)
 {
 	.nojs #tabs a span, .nojs #minitabs a span {
-		max-width: 40px; 
+		max-width: 40px;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		letter-spacing: -.5px;
@@ -366,8 +354,8 @@ ol.def-rules li {
 		margin: 0;
 	}
 
-	#navigation { 
-		padding: 0; 
+	#navigation {
+		padding: 0;
 		margin: 0 auto;
 		max-width: 320px;
 	}

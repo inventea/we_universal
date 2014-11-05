@@ -4,7 +4,7 @@
 	Based on style:		prosilver (the default phpBB 3.1.x style)
 	Original author:	Tom Beddard ( http://www.subblue.com/ )
 	Modified by:		phpBB Limited ( https://www.phpbb.com/ )
-	Modified by:		Inventea ( http://inventea.com/ )
+	Modified by:		INVENTEA ( http://inventea.com/ )
     --------------------------------------------------------------
 */
 
@@ -16,5 +16,3 @@
 @import url("forms.css");
 @import url("colours.css");
 @import url("imageset.css");
-@import url("font-awesome.min.css");
-@import url("we_universal.css");

@@ -68,7 +68,7 @@ fieldset dl {
 }
 
 fieldset dt {
-	float: left;	
+	float: left;
 	width: 40%;
 	text-align: left;
 	display: block;
@@ -127,6 +127,10 @@ dd input, dd textarea {
 
 dd select {
 	width: auto;
+}
+
+dd select[multiple] {
+	width: 100%;
 }
 
 dd textarea {
@@ -199,24 +203,6 @@ fieldset.forum-selection {
 fieldset.forum-selection2 {
 	margin: 13px 0 3px 0;
 	float: right;
-}
-
-/* Jumpbox */
-fieldset.jumpbox {
-	text-align: right;
-	margin-top: 15px;
-	min-height: 2.5em;
-}
-
-fieldset.jumpbox select {
-	max-width: 50%;
-}
-
-fieldset.quickmod {
-	width: 50%;
-	float: right;
-	text-align: right;
-	height: 2.5em;
 }
 
 /* Submit button fieldset */
@@ -294,6 +280,10 @@ textarea.inputbox {
 	width: auto !important;
 }
 
+input[type="number"] {
+	-moz-padding-end: inherit;
+}
+
 input[type="search"] {
 	-webkit-appearance: textfield;
 	-webkit-box-sizing: content-box;
@@ -301,6 +291,10 @@ input[type="search"] {
 
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-results-button, input[type="search"]::-webkit-search-results-decoration {
 	display: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+	cursor: pointer;
 }
 
 /* Form button styles
@@ -331,8 +325,8 @@ input.button3 {
 	font-variant: small-caps;
 }
 
-input[type="button"], input[type="submit"], input[type="reset"], input[type="checkbox"], input[type="radio"] { 
-	cursor: pointer; 
+input[type="button"], input[type="submit"], input[type="reset"], input[type="checkbox"], input[type="radio"] {
+	cursor: pointer;
 }
 
 /* Alternative button */
@@ -366,12 +360,62 @@ input.button1:focus, input.button2:focus, input.button3:focus {
 
 /* Topic and forum Search */
 .search-box {
-	margin-top: 3px;
-	margin-left: 5px;
 	float: left;
 }
 
-.search-box input {
+.search-box .inputbox {
+	background-image: none;
+	border-right-width: 0;
+	border-radius: 4px 0 0 4px;
+	float: left;
+	height: 24px;
+	padding: 3px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.search-box button {
+	float: left;
+}
+
+.search-box button.search-icon {
+	border-radius: 0;
+	font-size: 0;
+	height: 24px;
+	margin: 0;
+	padding: 3px 5px;
+}
+
+.search-box a.button {
+	border-left-width: 0;
+	border-radius: 0 4px 4px 0;
+	font-size: 0;
+	margin: 0;
+	padding: 2px 5px 2px 3px;
+}
+
+/* Search box (header)
+--------------------------------------------- */
+.search-header {
+	border-radius: 4px;
+	display: block;
+	float: right;
+	margin-right: 5px;
+	margin-top: 30px;
+}
+
+.search-header .inputbox { border: 0; }
+
+.search-header button {
+	border-top: 0;
+	border-bottom: 0;
+}
+
+.search-header a.button {
+	border: 0;
+	border-left: 1px;
+	padding: 3px 5px 3px 4px;
 }
 
 input.search {
@@ -385,4 +429,3 @@ input.search {
 .medium { width: 50%;}
 .narrow { width: 25%;}
 .tiny { width: 10%;}
-

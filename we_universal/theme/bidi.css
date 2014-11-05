@@ -2,7 +2,7 @@
 ---------------------------------------- */
 
 /**
-* common.css 
+* common.css
 */
 .rtl h1 {
 	margin-right: 0;
@@ -25,24 +25,8 @@
 	padding: 10px 10px 0 13px;
 }
 
-/* Search box
+/* Site Description
 --------------------------------------------- */
-.rtl #search-box {
-	float: left;
-	text-align: left;
-	margin-right: 0;
-	margin-left: 5px;
-}
-
-.rtl #search-box li {
-	text-align: left;
-}
-
-.rtl #search-box img {
-	margin-right: 0;
-	margin-left: 3px;
-}
-
 .rtl #site-description {
 	float: right;
 }
@@ -59,20 +43,20 @@
 
 /* Horizontal lists
 ----------------------------------------*/
-.rtl ul.linklist li {
+.rtl ul.linklist > li {
 	float: right;
 	margin-right: 0;
-	margin-left: 5px;
+	margin-left: 7px;
 }
 
-.rtl ul.linklist li.rightside, .rtl p.rightside {
+.rtl ul.linklist > li.rightside, .rtl p.rightside, .rtl a.rightside {
 	float: left;
-	margin-right: 5px;
+	margin-right: 7px;
 	margin-left: 0;
 	text-align: left;
 }
 
-.rtl ul.leftside li, .rtl ul.rightside li {
+.rtl ul.leftside > li, .rtl ul.rightside > li {
 	float: left;
 }
 
@@ -92,9 +76,14 @@
 
 /* Bulletin icons for list items
 ----------------------------------------*/
-.rtl ul.linklist.bulletin li:before {
+.rtl ul.linklist.bulletin > li:before {
 	padding-left: 4px;
 	padding-right: 0;
+}
+
+.rtl ul.linklist li.responsive-menu a.responsive-menu-link:before {
+	left: auto;
+	right: 0;
 }
 
 /* Dropdown menu
@@ -107,9 +96,22 @@
 	text-align: right;
 }
 
+.rtl .dropdown-contents > li {
+	padding-left: 15px;
+	padding-right: 0;
+}
+
+.rtl .dropdown-nonscroll > li {
+	padding-left: 0;
+}
+
 .rtl .dropdown li li {
 	padding-left: 0;
-	padding-right: 10px;
+	padding-right: 18px;
+}
+
+.rtl .dropdown-extended .header {
+	text-align: right;
 }
 
 .rtl .dropdown-extended .header .header_settings {
@@ -180,7 +182,7 @@
 
 /* Misc layout styles
 ---------------------------------------- */
-/* column[1-2] styles are containers for two column layouts 
+/* column[1-2] styles are containers for two column layouts
    Also see tweaks.css */
 .rtl .column1 {
 	float: right;
@@ -276,12 +278,15 @@
 	text-align: left;
 }
 
-.rtl .forabg {
-	width: 99%;	/* fix for IE6 */
+.rtl #quick-links {
+	margin-left: 7px;
+	margin-right: 0;
 }
 
-.rtl .forumbg {
-	width: 99%;	/* fix for IE6 */
+.rtl .header-avatar span:after {
+	float: left;
+	padding-left: 0;
+	padding-right: 2px;
 }
 
 .rtl .member-search {
@@ -303,7 +308,7 @@
 	unicode-bidi: embed;
 }
 
-ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
+li.breadcrumbs span:first-child > a {
 	padding-left: 0;
 	padding-right: 19px;
 }
@@ -320,12 +325,8 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 
 .rtl .skiplink {
 	/* invisible skip link, used for accessibility  */
-	position: relative;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	display: block;
 	left: 0;
+	right: -999px;
 }
 
 .rtl a.feed-icon-forum {
@@ -424,7 +425,7 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 }
 
 .rtl dl.icon dt .list-inner {
-	padding-left: 0;
+	padding-left: 5px;
 	padding-right: 45px;					/* Space for folder icon */
 }
 
@@ -436,7 +437,7 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 	margin-right: 2px;
 }
 
-.rtl dd.lastpost span, .rtl ul.topiclist dd.info span, .rtl ul.topiclist dd.time span, .rtl dd.redirect span, .rtl dd.moderation span {
+.rtl dd.lastpost > span, .rtl ul.topiclist dd.info > span, .rtl ul.topiclist dd.time > span, .rtl dd.redirect > span, .rtl dd.moderation > span {
 	padding-left: 0;
 	padding-right: 5px;
 }
@@ -445,6 +446,11 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 ----------------------------------------*/
 .rtl .postbody, .rtl .postbody h3 {
 	float: right;
+}
+
+.rtl .has-profile .postbody h3 {
+	margin-right: 0;
+	margin-left: 180px;
 }
 
 .rtl p.post-notice {
@@ -574,6 +580,10 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 	margin-right: 8px;
 }
 
+.rtl .postprofile .avatar {
+	float: right;
+}
+
 .rtl .online {
 	background-position: 0 0;
 }
@@ -589,8 +599,8 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 /* Rollover buttons
    Based on: http://wellstyled.com/css-nopreload-rollovers.html
 ----------------------------------------*/
-.rtl .icon-button.dropdown-select {
-	padding-left: 26px;
+.rtl .dropdown-select {
+	padding-left: 24px;
 	padding-right: 8px;
 }
 
@@ -600,7 +610,12 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 	margin-right: 2px;
 }
 
-.dropdown-select:after {
+.rtl .dropdown-select.icon-button:before {
+	margin-left: 4px;
+	margin-right: 0;
+}
+
+.rtl .dropdown-select:after {
 	border-left: 0;
 	border-right-style: solid;
 	border-right-width: 1px;
@@ -612,21 +627,31 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 	float: right;
 }
 
+.rtl .buttons .button, .rtl .dropdown-select {
+	margin-left: 5px;
+	margin-right: 0;
+}
+
 /* Icon images
 ---------------------------------------- */
 .rtl .small-icon {
 	background-position: 100% 50%;
-	padding: 0 19px 0 0;
 }
 
-.rtl ul.linklist li.small-icon {
-	padding-right: 0;
+.rtl .small-icon > a {
+	padding-left: 0;
+	padding-right: 19px;
 }
 
 /* Post control buttons
 --------------------------------------------- */
 .rtl .post-buttons {
 	float: left;
+}
+
+.rtl .has-profile .post-buttons {
+	left: 0;
+	right: auto;
 }
 
 .rtl .post-buttons li {
@@ -903,16 +928,6 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 	float: left;
 }
 
-/* Jumpbox */
-.rtl fieldset.jumpbox {
-	text-align: left;
-}
-
-.rtl fieldset.quickmod {
-	float: left;
-	text-align: left;
-}
-
 /* Posting page styles
 ----------------------------------------*/
 
@@ -921,14 +936,38 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 	float: left;
 }
 
-/* Form button styles
+/* Search box
 ---------------------------------------- */
 
 /* Topic and forum Search */
 .rtl .search-box {
-	margin-right: 5px;
-	margin-left: 0;
 	float: right;
+}
+
+.rtl .search-box .inputbox {
+	border-left-width: 0;
+	border-right-width: 1px;
+	border-radius: 0 4px 4px 0;
+	float: right;
+	padding: 3px;
+}
+
+.rtl .search-box .button {
+	float: right;
+}
+
+.rtl .search-box a.button {
+	border-left-width: 1px;
+	border-right-width: 0;
+	border-radius: 4px 0 0 4px;
+	padding-left: 5px;
+	padding-right: 3px;
+}
+
+.rtl .search-header {
+	float: left;
+	margin-right: 0;
+	margin-left: 5px;
 }
 
 .rtl input.search {
@@ -940,6 +979,10 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 /**
 * tweaks.css
 */
+
+
+/* Form button styles
+---------------------------------------- */
 
 /** Reference: Bug #27155 */
 .rtl #wrap, .rtl .headerbar, .rtl #site-description, .rtl .navbar {
@@ -1005,10 +1048,10 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 
 	/* Forums and topics lists
 	----------------------------------------*/
-	.rtl ul.topiclist.forums dt, .rtl ul.topiclist.topics dt {
+	.rtl ul.topiclist.forums dt {
 		margin-left: -250px;
 	}
-	.rtl ul.topiclist.forums dt .list-inner, .rtl ul.topiclist.topics dt .list-inner {
+	.rtl ul.topiclist.forums dt .list-inner {
 		margin-left: 250px;
 	}
 
@@ -1020,11 +1063,11 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 
 	@media only screen and (max-width: 550px), only screen and (max-device-width: 550px)
 	{
-		.rtl ul.topiclist.forums dt, .rtl ul.topiclist.topics dt {
+		.rtl ul.topiclist.forums dt {
 			margin-left: 0;
 		}
 
-		.rtl ul.topiclist.forums dt .list-inner, .rtl ul.topiclist.topics dt .list-inner {
+		.rtl ul.topiclist.forums dt .list-inner {
 			margin-left: 0;
 		}
 	}
@@ -1047,7 +1090,7 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 	{
 		.rtl dl.details dt, .rtl dl.details dd {
 			float: none;
-			text-align: right;	
+			text-align: right;
 		}
 
 		.rtl dl.details dd {
@@ -1066,9 +1109,32 @@ ul.linklist li.small-icon > a, ul.linklist li.breadcrumbs span:first-child > a {
 		border-width: 0 0 1px 0;
 	}
 
+	.rtl .postprofile dt, .rtl .postprofile dd.profile-rank, .rtl .search .postprofile dd {
+		margin: 0;
+	}
+
 	.rtl .postprofile .avatar {
-		float: right;
 		margin-left: 5px;
 		margin-right: 0;
+	}
+
+	.rtl .has-profile .post-buttons {
+		left: 20px;
+	}
+
+	/* Forms
+	----------------------------------------*/
+	.rtl fieldset dt, .rtl fieldset.fields1 dt, .rtl fieldset.fields2 dt {
+		float: none;
+	}
+
+	.rtl fieldset dd, .rtl fieldset.fields1 dd, .rtl fieldset.fields2 dd {
+		margin-right: 20px;
+	}
+
+	@media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
+		.captcha-panel dd.captcha {
+			margin-right: 0;
+		}
 	}
 }

@@ -210,7 +210,7 @@ dd.time {
 	line-height: 200%;
 }
 
-dd.lastpost span, ul.topiclist dd.info span, ul.topiclist dd.time span, dd.redirect span, dd.moderation span {
+dd.lastpost > span, ul.topiclist dd.info > span, ul.topiclist dd.time > span, dd.redirect > span, dd.moderation > span {
 	display: block;
 	padding-left: 5px;
 }
@@ -233,6 +233,7 @@ dd.option {
 	line-height: 1.48em;
 	width: 76%;
 	float: left;
+	position: relative;
 }
 
 .postbody .ignore {
@@ -249,7 +250,8 @@ dd.option {
 	float: left;
 	font-size: 1.5em;
 	padding: 2px 0 0 0;
-	margin: 0 0 0.3em 0 !important;
+	margin-top: 0 !important;
+	margin-bottom: 0.3em !important;
 	text-transform: none;
 	border: none;
 	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
@@ -259,6 +261,12 @@ dd.option {
 .postbody h3 img {
 	/* Also see tweaks.css */
 	vertical-align: bottom;
+}
+
+.has-profile .postbody h3 {
+	/* If there is a post-profile, we position the post-buttons differently */
+	float: none !important;
+	margin-right: 180px;
 }
 
 .postbody .content {
@@ -349,10 +357,6 @@ dd.option {
 	font-size: 1.2em;
 	margin-bottom: 1em;
 	line-height: 1.4em;
-}
-
-span.corners-top, span.corners-bottom {
-    display: none;
 }
 
 dl.faq {
@@ -462,7 +466,7 @@ blockquote {
 blockquote blockquote {
 	/* Nested quotes */
 	font-size: 1em;
-	margin: 0.5em 1px 0 15px;	
+	margin: 0.5em 1px 0 15px;
 }
 
 blockquote cite {
@@ -519,7 +523,7 @@ blockquote .codebox {
 ----------------------------------------*/
 .attachbox {
 	float: left;
-	width: auto; 
+	width: auto;
 	max-width: 100%;
 	margin: 5px 5px 5px 0;
 	padding: 6px;
@@ -596,7 +600,7 @@ dl.file dt {
 
 dl.file dd {
 	margin: 0;
-	padding: 0;	
+	padding: 0;
 }
 
 dl.thumbnail img {
@@ -714,15 +718,26 @@ fieldset.polls dd div {
 	margin-bottom: 10px;
 }
 
+/* Post-profile avatars */
+.postprofile .has-avatar .avatar-container {
+	margin-bottom: 3px;
+	overflow: hidden;
+}
+
 .postprofile .avatar {
 	display: block;
-	border: none;
-	margin-bottom: 3px;
+	float: left;
+	max-width: 100%;
 }
 
 .postprofile .avatar img {
-	max-width: 90%;
+	display: block;
 	height: auto !important;
+	max-width: 100%;
+}
+
+.postprofile .profile-posts a {
+	font-weight: normal;
 }
 
 dd.profile-warnings {
@@ -754,6 +769,11 @@ dd.profile-contact {
 /* Poster profile used by search*/
 .search .postprofile {
 	width: 30%;
+}
+
+/* Profile used on view-profile */
+.profile-avatar img {
+	max-width: 100%;
 }
 
 /* pm list in compose message if mass pm is enabled */

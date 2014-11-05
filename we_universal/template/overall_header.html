@@ -3,8 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width" />
-<meta name="keywords" content="" />
-<meta name="description" content="" />
 {META}
 <title><!-- IF UNREAD_NOTIFICATIONS_COUNT -->({UNREAD_NOTIFICATIONS_COUNT}) <!-- ENDIF --><!-- IF not S_VIEWTOPIC and not S_VIEWFORUM -->{SITENAME} - <!-- ENDIF --><!-- IF S_IN_MCP -->{L_MCP} - <!-- ELSEIF S_IN_UCP -->{L_UCP} - <!-- ENDIF -->{PAGE_TITLE}<!-- IF S_VIEWTOPIC or S_VIEWFORUM --> - {SITENAME}<!-- ENDIF --></title>
 
@@ -23,10 +21,10 @@
 <!-- ENDIF -->
 
 <!--
-	phpBB style name: we_universal
+	phpBB style name: prosilver
 	Based on style:   prosilver (this is the default phpBB3 style)
 	Original author:  Tom Beddard ( http://www.subBlue.com/ )
-	Modified by:      Inveneted ( http://inventea.com/ )
+	Modified by:
 -->
 
 <link href="{T_THEME_PATH}/print.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" type="text/css" media="print" title="printonly" />
@@ -43,7 +41,7 @@
 	<link href="{T_THEME_PATH}/plupload.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" type="text/css" media="screen, projection" />
 <!-- ENDIF -->
 
-<!--[if lte IE 8]>
+<!--[if lte IE 9]>
 	<link href="{T_THEME_PATH}/tweaks.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" type="text/css" media="screen, projection" />
 <![endif]-->
 
@@ -51,109 +49,55 @@
 
 {$STYLESHEETS}
 
+<!-- EVENT overall_header_stylesheets_after -->
+
 </head>
 <body id="phpbb" class="nojs notouch section-{SCRIPT_NAME} {S_CONTENT_DIRECTION} {BODY_CLASS}">
 
 <!-- EVENT overall_header_body_before -->
 
-<div id="wrapper" class="inventea-wrapper inventea-statusbar">
-	<span class="inventea-time"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></span>
-	
-	<nav class="inventea-mobile-menu">
-		<button class="inventea-toggle inventea-mobile-menu-toggle" title="{L_EXPAND_VIEW}/{L_COLLAPSE_VIEW}"><i class="fa fa-bars"></i></button>
+<div id="wrap">
+	<a id="top" class="anchor" accesskey="t"></a>
+	<div id="page-header">
+		<div class="headerbar">
+			<div class="inner">
 
-		<ul class="inventea-dropdown-menu inventea-mobile-dropdown-menu">
-			<!-- IF U_SITE_HOME --><li class="inventea-dropdown-menu-item"><a href="{U_SITE_HOME}" class="{L_SITE_HOME}"><i class="fa fa-home fa-fw"></i> {L_SITE_HOME}</a></li><!-- ENDIF -->
-			<li class="inventea-dropdown-menu-item"><a href="{U_INDEX}" title="{L_INDEX}"><i class="fa <!-- IF U_SITE_HOME -->fa-folder<!-- ELSE -->fa-home<!-- ENDIF --> fa-fw"></i> {L_INDEX}</a></li>
-			<li class="inventea-dropdown-menu-item"><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-info-circle fa-fw"></i> {L_FAQ}</a></li>
-			<!-- IF S_DISPLAY_SEARCH --><li class="inventea-dropdown-menu-item"><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><i class="fa fa-search fa-fw"></i> {L_SEARCH}</a></li><!-- ENDIF -->
-			<!-- IF U_TEAM --><li class="inventea-dropdown-menu-item"><a href="{U_TEAM}" title="{L_THE_TEAM}"><i class="fa fa-users fa-fw"></i> {L_THE_TEAM}</a></li><!-- ENDIF -->
-			<!-- IF not S_IS_BOT and S_DISPLAY_MEMBERLIST --><li class="inventea-dropdown-menu-item"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="fa fa-users fa-fw"></i> {L_MEMBERLIST}</a></li><!-- ENDIF -->
-			
-			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-				<!-- IF S_NOTIFICATIONS_DISPLAY --><li class="inventea-dropdown-menu-item"><a href="{U_VIEW_ALL_NOTIFICATIONS}" title="{L_NOTIFICATIONS}"><i class="fa fa-bell fa-fw"></i> <span>{L_NOTIFICATIONS} (</span><strong>{NOTIFICATIONS_COUNT}</strong><span>)</span></a></li><!-- ENDIF -->
-				<!-- IF S_DISPLAY_PM --><li class="inventea-dropdown-menu-item"><a href="{U_PRIVATEMSGS}" title="{L_PRIVATE_MESSAGES}"><i class="fa fa-envelope fa-fw"></i> <span>{L_PRIVATE_MESSAGES} (</span><strong>{PRIVATE_MESSAGE_COUNT}</strong><span>)</span></a></li><!-- ENDIF -->
-				<li class="inventea-dropdown-menu-item"><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-user fa-fw"></i> {L_PROFILE}</a></li>
-				<!-- IF S_DISPLAY_SEARCH --><li class="inventea-dropdown-menu-item"><a href="{U_SEARCH_SELF}" title="{L_SEARCH_SELF}"><i class="fa fa-comments fa-fw"></i> {L_SEARCH_SELF}</a></li><!-- ENDIF -->
-				<!-- IF U_RESTORE_PERMISSIONS --><li class="inventea-dropdown-menu-item"><a href="{U_RESTORE_PERMISSIONS}" title="{L_RESTORE_PERMISSIONS}"><i class="fa fa-retweet fa-fw"></i> {L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
-				<!-- IF U_MCP --><li class="inventea-dropdown-menu-item"><a href="{U_MCP}" title="{L_MCP}"><i class="fa fa-tachometer fa-fw"></i> {L_MCP_SHORT}</a></li><!-- ENDIF -->
-				<!-- IF U_ACP --><li class="inventea-dropdown-menu-item"><a href="{U_ACP}" title="{L_ACP}"><i class="fa fa-cog fa-fw"></i> {L_ACP_SHORT}</a></li><!-- ENDIF -->
-			<!-- ENDIF -->
-			
-			<!-- IF not S_IS_BOT -->
-				<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li class="inventea-dropdown-menu-item"><a href="{U_REGISTER}" title="{L_REGISTER}"><i class="fa fa-sign-in fa-fw"></i> {L_REGISTER}</a></li><!-- ENDIF -->
-				<li class="inventea-dropdown-menu-item"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-sign-out fa-fw"></i> {L_LOGIN_LOGOUT}</a></li>
-			<!-- ENDIF -->
-		</ul>
-	</nav>
-		
-	<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
-		<form action="{U_SEARCH}" method="get" id="search" class="inventea-quick-search">
-			<fieldset>
-				<input type="search" name="keywords" id="keywords" class="inventea-quick-search-input" maxlength="128" title="{L_SEARCH_KEYWORDS}" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
-				<i class="fa fa-search inventea-quick-search-icon"></i>
-				{S_SEARCH_HIDDEN_FIELDS}
-			</fieldset>
-		</form>
-	<!-- ENDIF -->
-</div>
-
-<header class="inventea-header">
-	<div class="inventea-dashboard">
-		<!-- INCLUDE navbar_header.html -->
-
-		<div class="inventea-sitename">
-			<h1><a href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->">{SITENAME}</a></h1>
-			<span>{SITE_DESCRIPTION}</span>
-		</div>
-	</div>
-</header>
-
-<!-- EVENT overall_header_page_body_before -->
-
-<div class="inventea-wrapper inventea-content">
-	<div class="inventea-breadcrumbs-container">
-		<ul class="inventea-breadcrumbs">
-			<!-- DEFINE $MICRODATA = ' itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""' -->
-			<!-- IF U_SITE_HOME --><li class="inventea-breadcrumbs-item"><a href="{U_SITE_HOME}"{$MICRODATA} data-navbar-reference="home">{L_SITE_HOME}</a></li><!-- ENDIF -->
-			<li class="inventea-breadcrumbs-item"><a href="{U_INDEX}" accesskey="h"{$MICRODATA} data-navbar-reference="index">{L_INDEX}</a></li>
-			
-			<!-- BEGIN navlinks -->
-				<!-- EVENT overall_header_navlink_prepend -->
-				<li class="inventea-breadcrumbs-item"><a href="{navlinks.U_VIEW_FORUM}"{$MICRODATA}<!-- IF navlinks.MICRODATA --> {navlinks.MICRODATA}<!-- ENDIF -->>{navlinks.FORUM_NAME}</a></li>
-				<!-- EVENT overall_header_navlink_append -->
-			<!-- END navlinks -->
-
-			<!-- EVENT overall_header_breadcrumb_append -->
-		</ul>
-
-		<!-- IF S_WATCH_FORUM_LINK or U_WATCH_TOPIC or U_BOOKMARK_TOPIC or U_BUMP_TOPIC or U_EMAIL_TOPIC or U_EMAIL_PM or U_PRINT_TOPIC or U_PRINT_PM -->
-			<div class="inventea-actions-menu">
-				<button class="inventea-toggle inventea-actions-menu-toggle" title="{L_EXPAND_VIEW}/{L_COLLAPSE_VIEW}"><i class="fa fa-cog"></i></button>
-
-				<ul class="inventea-dropdown-menu inventea-actions-dropdown-menu">
-					<!-- IF not S_IS_BOT -->
-						<!-- IF S_WATCH_FORUM_LINK --><li class="inventea-dropdown-menu-item"><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}"><i class="fa fa-star fa-fw"></i> {S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
-						<!-- IF U_WATCH_TOPIC --><li class="inventea-dropdown-menu-item"><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i class="fa fa-star fa-fw"></i> {L_WATCH_TOPIC}</a></li><!-- ENDIF -->
-						<!-- IF U_BOOKMARK_TOPIC --><li class="inventea-dropdown-menu-item"><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="fa fa-bookmark fa-fw"></i> {L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
-						<!-- IF U_BUMP_TOPIC --><li class="inventea-dropdown-menu-item"><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><i class="fa fa-gavel fa-fw"></i> {L_BUMP_TOPIC}</a></li><!-- ENDIF -->
-					<!-- ENDIF -->
-
-					<!-- IF U_EMAIL_TOPIC --><li class="inventea-dropdown-menu-item"><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}"><i class="fa fa-envelope fa-fw"></i> {L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_EMAIL_PM --><li class="inventea-dropdown-menu-item"><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}"><i class="fa fa-envelope fa-fw"> {L_EMAIL_PM}</a></li><!-- ENDIF -->
-					<!-- IF U_PRINT_TOPIC --><li class="inventea-dropdown-menu-item"><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p"><i class="fa fa-print fa-fw"></i> {L_PRINT_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_PRINT_PM --><li class="inventea-dropdown-menu-item"><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p"><i class="fa fa-print fa-fw"></i> {L_PRINT_PM}</a></li><!-- ENDIF -->
-				</ul>
+			<div id="site-description">
+				<a id="logo" class="logo" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->">{SITE_LOGO_IMG}</a>
+				<h1>{SITENAME}</h1>
+				<p>{SITE_DESCRIPTION}</p>
+				<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
 			</div>
-		<!-- ENDIF -->
+
+			<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+			<div id="search-box" class="search-box search-header">
+				<form action="{U_SEARCH}" method="get" id="search">
+				<fieldset>
+					<input name="keywords" id="keywords" type="search" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search tiny" size="20" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
+					<button class="button icon-button search-icon" type="submit" title="{L_SEARCH}">{L_SEARCH}</button>
+					<a href="{U_SEARCH}" class="button icon-button search-adv-icon" title="{L_SEARCH_ADV}">{L_SEARCH_ADV}</a>
+					{S_SEARCH_HIDDEN_FIELDS}
+				</fieldset>
+				</form>
+			</div>
+			<!-- ENDIF -->
+
+			</div>
+		</div>
+
+		<!-- INCLUDE navbar_header.html -->
 	</div>
 
-	<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+	<!-- EVENT overall_header_page_body_before -->
+
+	<a id="start_here" class="anchor"></a>
+	<div id="page-body">
+		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
 		<div id="information" class="rules">
 			<div class="inner">
 				<strong>{L_INFORMATION}{L_COLON}</strong> {L_BOARD_DISABLED}
 			</div>
 		</div>
-	<!-- ENDIF -->
+		<!-- ENDIF -->
 
-	<!-- EVENT overall_header_content_before -->
+		<!-- EVENT overall_header_content_before -->

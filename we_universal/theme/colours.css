@@ -5,7 +5,7 @@ Colours and backgrounds for common.css
 
 html, body {
 	color: #536482;
-	background-color: #FFFFFF;
+	background-color: #F5F7FA;
 }
 
 h1 {
@@ -29,20 +29,24 @@ hr {
 /* Search box
 --------------------------------------------- */
 
-#search-box {
-	color: #FFFFFF;
+.search-box .inputbox,
+.search-box .inputbox:hover,
+.search-box .inputbox:focus,
+.search-box .button:hover {
+	border-color: #C7C3BF;
 }
 
-#search-box #keywords {
-	background-color: #FFF;
-}
-
-#search-box input {
-	border-color: #0075B0;
+.search-header {
+	box-shadow: 0 0 10px #0075B0;
 }
 
 /* Round cornered boxes and backgrounds
 ---------------------------------------- */
+#wrap {
+	background-color: #FFF;
+	border-color: #E6E9ED;
+}
+
 .headerbar {
 	background-color: #12A3EB;
 	background-image: url("./images/bg_header.gif");
@@ -106,7 +110,7 @@ table.zebra-list tr:nth-child(even) td, ul.zebra-list li:nth-child(even) {
 ----------------------------------------*/
 
 ul.navlinks {
-	border-bottom-color: #FFFFFF;
+	border-top-color: #FFFFFF;
 }
 
 /* Table styles
@@ -223,15 +227,15 @@ p.post-notice {
 	background-image: none;
 }
 
-p.post-notice.deleted:before { 
+p.post-notice.deleted:before {
 	background-image: url("./images/icon_topic_deleted.png");
 }
 
-p.post-notice.unapproved:before { 
+p.post-notice.unapproved:before {
 	background-image: url("./images/icon_topic_unapproved.gif");
 }
 
-p.post-notice.reported:before, p.post-notice.error:before { 
+p.post-notice.reported:before, p.post-notice.error:before {
 	background-image: url("./images/icon_topic_reported.gif");
 }
 
@@ -241,59 +245,20 @@ Colours and backgrounds for links.css
 -------------------------------------------------------------- */
 
 a { color: #105289; }
-a:visited	{ color: #105289; }
 a:hover	{ color: #D31141; }
-a:active	{ color: #368AD2; }
 
 /* Links on gradient backgrounds */
-#search-box a:link, .navbg a:link, .forumbg .header a:link, .forabg .header a:link, th a:link {
+.forumbg .header a, .forabg .header a, th a {
 	color: #FFFFFF;
 }
 
-#search-box a:visited, .navbg a:visited, .forumbg .header a:visited, .forabg .header a:visited, th a:visited {
-	color: #FFFFFF;
-}
-
-#search-box a:hover, .navbg a:hover, .forumbg .header a:hover, .forabg .header a:hover, th a:hover {
+.forumbg .header a:hover, .forabg .header a:hover, th a:hover {
 	color: #A8D8FF;
-}
-
-#search-box a:active, .navbg a:active, .forumbg .header a:active, .forabg .header a:active, th a:active {
-	color: #C8E6FF;
 }
 
 /* Notification mark read link */
 .dropdown-extended a.mark_read {
 	background-color: #FFFFFF;
-}
-
-/* Links for forum/topic lists */
-a.forumtitle {
-	color: #105289;
-}
-
-/* a.forumtitle:visited { color: #105289; } */
-
-a.forumtitle:hover {
-	color: #BC2A4D;
-}
-
-a.forumtitle:active {
-	color: #105289;
-}
-
-a.topictitle {
-	color: #105289;
-}
-
-/* a.topictitle:visited { color: #368AD2; } */
-
-a.topictitle:hover {
-	color: #BC2A4D;
-}
-
-a.topictitle:active {
-	color: #105289;
 }
 
 /* Post body links */
@@ -307,39 +272,13 @@ a.topictitle:active {
 	border-bottom-color: #5D8FBD;
 }
 
-.postlink:active {
-	color: #368AD2;
-}
-
 .postlink:hover {
 	background-color: #D0E4F6;
 	color: #0D4473;
 }
 
-.signature a, .signature a:visited, .signature a:hover, .signature a:active {
+.signature a, .signature a:hover {
 	background-color: transparent;
-}
-
-/* Profile links */
-.postprofile a:link, .postprofile a:visited, .postprofile dt.author a {
-	color: #105289;
-}
-
-.postprofile a:hover, .postprofile dt.author a:hover {
-	color: #D31141;
-}
-
-.postprofile a:active {
-	color: #105289;
-}
-
-/* Profile searchresults */
-.search .postprofile a {
-	color: #105289;
-}
-
-.search .postprofile a:hover {
-	color: #D31141;
 }
 
 /* Back to top of page */
@@ -368,7 +307,6 @@ a.arrow-left:hover {
 a.arrow-right:hover {
 	color: #368AD2;
 }
-
 
 /*
 --------------------------------------------------------------
@@ -658,7 +596,7 @@ dd.profile-warnings {
 --------------------------------------------------------------
 Colours and backgrounds for buttons.css
 -------------------------------------------------------------- */
-.button, .button:visited {
+.button {
 	border-color: #C7C3BF;
 	background-color: #FFFFFF;
 	background-image: -moz-linear-gradient(top, #FFFFFF, #E9E9E9);
@@ -668,7 +606,11 @@ Colours and backgrounds for buttons.css
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFFFFF', EndColorStr='#E9E9E9')";
 	box-shadow: 0 0 0 1px #FFFFFF inset;
 	-webkit-box-shadow: 0 0 0 1px #FFFFFF inset;
-	color: #BC2A4D;
+	color: #D31141;
+}
+
+.dropdown-select {
+	color: #536482;
 }
 
 .button:hover, .dropdown-visible .dropdown-select, .nojs .dropdown-container:hover .dropdown-select {
@@ -694,24 +636,36 @@ Colours and backgrounds for buttons.css
 
 /* Icon images
 ---------------------------------------- */
-.icon-faq						{ background-image: url("./images/icon_faq.gif"); }
-.icon-members					{ background-image: url("./images/icon_members.gif"); }
-.icon-home						{ background-image: url("./images/icon_home.gif"); }
-.icon-ucp						{ background-image: url("./images/icon_ucp.gif"); }
-.icon-register					{ background-image: url("./images/icon_register.gif"); }
-.icon-logout					{ background-image: url("./images/icon_logout.gif"); }
-.icon-bookmark					{ background-image: url("./images/icon_bookmark.gif"); }
-.icon-bump						{ background-image: url("./images/icon_bump.gif"); }
-.icon-subscribe					{ background-image: url("./images/icon_subscribe.gif"); }
-.icon-unsubscribe				{ background-image: url("./images/icon_unsubscribe.gif"); }
-.icon-pages						{ background-image: url("./images/icon_pages.gif"); }
+.icon-acp					{ background-image: url("./images/icon_acp.gif"); }
+.icon-bookmark				{ background-image: url("./images/icon_bookmark.gif"); }
+.icon-bump					{ background-image: url("./images/icon_bump.gif"); }
+.icon-contact				{ background-image: url("./images/icon_pm.gif"); }
+.icon-delete-cookies		{ background-image: url("./images/icon_delete_cookies.gif"); }
+.icon-download				{ background-image: url("./images/icon_download.gif"); }
+.icon-faq					{ background-image: url("./images/icon_faq.gif"); }
+.icon-home					{ background-image: url("./images/icon_home.gif"); }
+.icon-logout				{ background-image: url("./images/icon_logout.gif"); }
+.icon-mark					{ background-image: url("./images/icon_mark.gif"); }
+.icon-mcp					{ background-image: url("./images/icon_mcp.gif"); }
+.icon-members				{ background-image: url("./images/icon_members.gif"); }
+.icon-notification			{ background-image: url("./images/icon_notification.gif"); }
+.icon-pages					{ background-image: url("./images/icon_pages.gif"); }
+.icon-pm					{ background-image: url("./images/icon_pm.gif"); }
+.icon-print					{ background-image: url("./images/icon_print.gif"); }
+.icon-profile				{ background-image: url("./images/icon_profile.gif"); }
+.icon-register				{ background-image: url("./images/icon_register.gif"); }
 .icon-search, .responsive-search a	{ background-image: url("./images/icon_search.gif"); }
-.icon-notification				{ background-image: url("./images/icon_notification.gif"); }
-.icon-pm						{ background-image: url("./images/icon_pm.gif"); }
-.icon-download					{ background-image: url("./images/icon_download.gif"); }
-.icon-mark						{ background-image: url("./images/icon_mark.gif"); }
-.icon-sendemail					{ background-image: url("./images/icon_sendemail.gif"); }
-.icon-print						{ background-image: url("./images/icon_print.gif"); }
+.icon-search-active			{ background-image: url("./images/subforum_read.gif"); }
+.icon-search-advanced		{ background-image: url("./images/icon_search_adv.gif"); }
+.icon-search-new			{ background-image: url("./images/subforum_unread.gif"); }
+.icon-search-self			{ background-image: url("./images/icon_topic_latest.gif"); }
+.icon-search-unanswered		{ background-image: url("./images/icon_post_target.gif"); }
+.icon-search-unread			{ background-image: url("./images/subforum_unread.gif"); }
+.icon-sendemail				{ background-image: url("./images/icon_sendemail.gif"); }
+.icon-subscribe				{ background-image: url("./images/icon_subscribe.gif"); }
+.icon-team					{ background-image: url("./images/icon_team.gif"); }
+.icon-ucp					{ background-image: url("./images/icon_ucp.gif"); }
+.icon-unsubscribe			{ background-image: url("./images/icon_unsubscribe.gif"); }
 
 /* Profile & navigation icons */
 .contact-icon													{ background-image: url("./images/icons_contact.png"); }
@@ -814,7 +768,7 @@ ul.cplist {
 
 #tabs .tab > a:hover {
 	background: #DDEDFB;
-	color: #BC2A4D;
+	color: #D31141;
 }
 
 #tabs .activetab > a,
@@ -855,7 +809,7 @@ ul.cplist {
 }
 
 .responsive-tab .responsive-tab-link:hover:before {
-	border-color: #BC2A4D;
+	border-color: #D31141;
 }
 
 /* UCP navigation menu
@@ -1079,7 +1033,7 @@ a.button2, input.button2, input.button3 {
 }
 
 /* <a> button in the style of the form buttons */
-a.button1, a.button1:link, a.button1:visited, a.button1:active, a.button2, a.button2:link, a.button2:visited, a.button2:active {
+a.button1, a.button2 {
 	color: #000000;
 }
 
@@ -1122,7 +1076,7 @@ input.disabled {
 }
 
 .dropdown-extended ul li {
-	border-bottom-color: #B9B9B9;
+	border-top-color: #B9B9B9;
 }
 
 .dropdown-extended ul li:hover {
@@ -1181,6 +1135,10 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 }
 
 .dropdown li, .dropdown li li {
+	border-color: #DCDCDC;
+}
+
+.dropdown li.separator {
 	border-color: #DCDCDC;
 }
 
