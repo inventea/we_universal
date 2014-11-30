@@ -21,10 +21,10 @@
 <!-- ENDIF -->
 
 <!--
-	phpBB style name: prosilver
+	phpBB style name: we_universal
 	Based on style:   prosilver (this is the default phpBB3 style)
 	Original author:  Tom Beddard ( http://www.subBlue.com/ )
-	Modified by:
+	Modified by:      INVENTEA ( http://inventea.com/ )
 -->
 
 <link href="{T_THEME_PATH}/print.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" type="text/css" media="print" title="printonly" />
@@ -56,48 +56,49 @@
 
 <!-- EVENT overall_header_body_before -->
 
-<div id="wrap">
-	<a id="top" class="anchor" accesskey="t"></a>
-	<div id="page-header">
-		<div class="headerbar">
-			<div class="inner">
+<div id="wrapper" class="inventea-wrapper inventea-statusbar">
+	<span class="inventea-time"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></span>
+</div>
 
-			<div id="site-description">
-				<a id="logo" class="logo" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->">{SITE_LOGO_IMG}</a>
-				<h1>{SITENAME}</h1>
-				<p>{SITE_DESCRIPTION}</p>
-				<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
-			</div>
-
-			<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
-			<div id="search-box" class="search-box search-header">
-				<form action="{U_SEARCH}" method="get" id="search">
-				<fieldset>
-					<input name="keywords" id="keywords" type="search" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search tiny" size="20" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
-					<button class="button icon-button search-icon" type="submit" title="{L_SEARCH}">{L_SEARCH}</button>
-					<a href="{U_SEARCH}" class="button icon-button search-adv-icon" title="{L_SEARCH_ADV}">{L_SEARCH_ADV}</a>
-					{S_SEARCH_HIDDEN_FIELDS}
-				</fieldset>
-				</form>
-			</div>
-			<!-- ENDIF -->
-
-			</div>
-		</div>
-
+<header class="inventea-header">
+	<div class="inventea-dashboard">
 		<!-- INCLUDE navbar_header.html -->
-	</div>
 
+		<div class="inventea-sitename">
+			<h1><a href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->">{SITENAME}</a></h1>
+			<span>{SITE_DESCRIPTION}</span>
+		</div>
+	</div>
+</header>
+
+<div class="inventea-wrapper inventea-content">
 	<!-- EVENT overall_header_page_body_before -->
 
-	<a id="start_here" class="anchor"></a>
-	<div id="page-body">
-		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+	<div class="inventea-breadcrumbs-container">
+		<ul class="inventea-breadcrumbs" role="menubar">
+			<!-- DEFINE $MICRODATA = ' itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""' -->
+			<!-- EVENT overall_header_breadcrumbs_before -->
+			<li>
+				<!-- IF U_SITE_HOME --><span class="inventea-breadcrumbs-item"><a href="{U_SITE_HOME}"{$MICRODATA} data-navbar-reference="home">{L_SITE_HOME}</a></span><!-- ENDIF -->
+				<!-- EVENT overall_header_breadcrumb_prepend -->
+				<span class="inventea-breadcrumbs-item"><a href="{U_INDEX}" accesskey="h"{$MICRODATA} data-navbar-reference="index">{L_INDEX}</a></span>
+				<!-- BEGIN navlinks -->
+				<!-- EVENT overall_header_navlink_prepend -->
+				<span class="inventea-breadcrumbs-item"><a href="{navlinks.U_VIEW_FORUM}"{$MICRODATA}<!-- IF navlinks.MICRODATA --> {navlinks.MICRODATA}<!-- ENDIF -->>{navlinks.FORUM_NAME}</a></span>
+				<!-- EVENT overall_header_navlink_append -->
+				<!-- END navlinks -->
+				<!-- EVENT overall_header_breadcrumb_append -->
+			</li>
+			<!-- EVENT overall_header_breadcrumbs_after -->
+		</ul>
+	</div>
+
+	<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
 		<div id="information" class="rules">
 			<div class="inner">
 				<strong>{L_INFORMATION}{L_COLON}</strong> {L_BOARD_DISABLED}
 			</div>
 		</div>
-		<!-- ENDIF -->
+	<!-- ENDIF -->
 
-		<!-- EVENT overall_header_content_before -->
+	<!-- EVENT overall_header_content_before -->
