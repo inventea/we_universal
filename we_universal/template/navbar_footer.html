@@ -1,0 +1,23 @@
+<ul class="inventea-footer-menu" role="menubar">
+	<li class="inventea-footer-menu-item">
+		<!-- IF U_SITE_HOME --><a href="{U_SITE_HOME}" data-navbar-reference="home">{L_SITE_HOME}</a><!-- ENDIF -->
+
+		<!-- EVENT overall_footer_breadcrumb_prepend -->
+		<a href="{U_INDEX}" data-navbar-reference="index">{L_INDEX}</a>
+		<!-- EVENT overall_footer_breadcrumb_append -->
+	</li>
+
+	<!-- IF U_ACP --><li class="inventea-footer-menu-item"><a href="{U_ACP}" title="{L_ACP}" role="menuitem">{L_ACP_SHORT}</a></li><!-- ENDIF -->
+
+	<!-- IF U_CONTACT_US --><li class="inventea-footer-menu-item"><a href="{U_CONTACT_US}" role="menuitem">{L_CONTACT_US}</a></li><!-- ENDIF -->
+
+	<!-- EVENT overall_footer_teamlink_before -->
+	<!-- IF U_TEAM --><li class="inventea-footer-menu-item"><a href="{U_TEAM}" role="menuitem">{L_THE_TEAM}</a></li><!-- ENDIF -->
+	<!-- EVENT overall_footer_teamlink_after -->
+
+	<!-- IF not S_IS_BOT --><li class="inventea-footer-menu-item"><a href="{U_DELETE_COOKIES}" data-ajax="true" data-refresh="true" role="menuitem">{L_DELETE_COOKIES}</a></li><!-- ENDIF -->
+
+	<!-- EVENT overall_footer_timezone_before -->
+	<li class="inventea-footer-menu-item">{S_TIMEZONE}</li>
+	<!-- EVENT overall_footer_timezone_after -->
+</ul>
