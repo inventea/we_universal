@@ -413,8 +413,7 @@ a:active {
 	margin-bottom: 15px;
 	padding: 0;
 	border-bottom: 3px solid #cacaca;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	border-radius: 5px 5px 0 0;
 	background: #4c4c4c;
 }
 
@@ -563,6 +562,11 @@ table.table1 thead th,
 	width: auto;
 }
 
+li.header dl.icon dt .list-inner {
+	margin-right: 0;
+	padding-right: 0;
+}
+
 /* Subforums list on index */
 ul.topiclist li.row a.subforum {
 	padding: 0;
@@ -588,6 +592,7 @@ ul.topiclist.forums li.row dt,
 ul.topiclist.topics li.row dt {
 	width: 55px;
 	padding: 0;
+	background-repeat: no-repeat;
 	background-position: center center;
 	text-align: center;
 }
@@ -598,13 +603,17 @@ ul.topiclist.topics li.row dt {
 	margin-right: -20px;
 }
 
+a.lastsubject {
+	font-weight: normal;
+}
+
 dd.topics,
 dd.posts {
-	width: 120px;
+	width: 132px;
 }
 
 dd.lastpost {
-	width: 220px;
+	width: 250px;
 }
 
 /* Last post author and date icons */
@@ -2012,6 +2021,7 @@ li.pagination span a:hover {
  * Miscellaneous
  */
 .inventea-no-items {
+	display: block;
 	text-align: center;
 }
 
