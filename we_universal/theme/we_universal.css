@@ -1751,6 +1751,16 @@ select,
 	color: #525252;
 }
 
+input[type="search"] {
+	height: auto;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	margin: 0 3px 0 0;
+	vertical-align: text-bottom;
+}
+
 select,
 select:hover,
 .inputbox,
