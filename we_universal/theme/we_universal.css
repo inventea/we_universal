@@ -68,8 +68,6 @@ a:active {
 .inventea-wrapper,
 .inventea-dashboard,
 .inventea-footer {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	width: 95%;
 	max-width: 1170px;
@@ -142,8 +140,6 @@ a:active {
 
 .inventea-quick-search-input {
 	display: block;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	box-shadow: inset 0 1px 3px #ccc;
 	width: 100px;
@@ -1204,8 +1200,6 @@ a.postlink:hover {
 .postprofile ul.profile-icons li a,
 .postbody ul.profile-icons li a {
 	display: block;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	width: 28px;
 	padding-top: 5px;
@@ -1742,8 +1736,6 @@ textarea,
 
 select,
 .inputbox {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	box-shadow: inset 0 7px 5px -6px #e1e1e1;
 	height: 28px;
