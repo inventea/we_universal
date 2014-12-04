@@ -1273,51 +1273,32 @@ a.postlink:hover {
 	margin-left: 0;
 }
 
-#tabs li {
-	font-size: 12px;
-}
-
-/* Regular tab */
-#tabs a,
-#tabs a span {
-	padding: 0;
+#tabs .tab > a {
+	margin-top: 0;
+	padding: 11px;
+	border: 0;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	background: #dfdfdf;
 	color: #6b6b6b;
 }
 
-#tabs a span,
-#tabs .activetab a span {
-	padding: 11px;
-}
-
-#tabs a:focus span,
-#tabs a:hover span,
-#tabs a:active span {
+#tabs .tab > a:hover,
+#tabs .tab > a:active {
 	background: #e9e9e9;
 	color: #bc2a4d;
 }
 
-/* Active tab */
-#tabs .activetab a,
-#tabs .activetab a span {
+#tabs .activetab > a,
+#tabs .activetab > a:hover {
+	box-shadow: none;
+	border-bottom: 1px solid #ececec;
 	background: #ececec;
 	color: #414141;
 }
 
-#tabs .activetab a {
-	border-bottom: 1px solid #ececec;
-}
-
-#tabs .activetab a span {
-	padding-bottom: 12px;
-}
-
-#tabs .activetab a:focus span,
-#tabs .activetab a:hover span,
-#tabs .activetab a:active span {
-	background: #ececec;
+#tabs .activetab > a:hover,
+#tabs .activetab > a:active {
 	color: #bc2a4d;
 }
 
@@ -1332,10 +1313,9 @@ a.postlink:hover {
 	color: #525252;
 }
 
-#navigation a:focus,
 #navigation a:hover,
 #navigation a:active {
-	background: #b5b5b5;
+	background: #bbb;
 	color: #bc2a4d;
 }
 
@@ -1345,26 +1325,27 @@ a.postlink:hover {
 }
 
 /* MCP mini tabs */
-#minitabs li {
-	padding: 0;
+#minitabs {
+	margin-top: 8px;
 }
 
-#minitabs li a {
+#minitabs .tab > a {
 	display: block;
 	padding: 8px;
+	border-radius: 0;
 	background: #ccc;
 	color: #525252;
 }
 
-#minitabs li a:focus,
-#minitabs li a:hover {
-	background: #b5b5b5;
+#minitabs .tab > a:hover,
+#minitabs .tab > a:active {
+	background: #bbb;
 	color: #bc2a4d;
 }
 
-#minitabs .activetab a,
-#minitabs .activetab a:focus,
-#minitabs .activetab a:hover {
+#minitabs .activetab > a,
+#minitabs .activetab > a:focus,
+#minitabs .activetab > a:hover {
 	background: #f9f9f9;
 	color: #bc2a4d !important;
 }
