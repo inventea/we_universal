@@ -1841,8 +1841,23 @@ input.button2::-moz-focus-inner {
 }
 
 /* Quick login on index */
-fieldset.quick-login label {
+fieldset.quick-login {
+	margin-top: 10px;
 	line-height: 28px;
+}
+
+fieldset.quick-login label {
+	display: inline;
+	vertical-align: baseline;
+}
+
+fieldset.quick-login span {
+	margin-right: 2px;
+}
+
+fieldset.quick-login input.inputbox,
+fieldset.quick-login input.button2 {
+	vertical-align: top;
 }
 
 /* Quick search in viewforum and viewtopic */
