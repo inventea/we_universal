@@ -1,0 +1,497 @@
+/**
+ * Common tags
+ */
+html,
+body {
+	background: #f9f9f9;
+	color: #525252;
+}
+
+body {
+	margin: 0;
+	padding: 15px 0;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+h1 {
+	margin: 0 0 5px 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36px;
+}
+
+h2 {
+	margin-top: 0;
+	margin-bottom: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+	margin-top: 24px;
+	margin-bottom: 8px;
+	padding-bottom: 5px;
+	color: #3f3f3f;
+	font-size: 14px;
+}
+
+p {
+	margin-bottom: 18px;
+	line-height: 18px;
+	font-size: 12px;
+}
+
+hr {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+a:link,
+a:visited {
+	color :#3f3f3f;
+}
+
+a:focus,
+a:hover,
+a:active {
+	text-decoration: underline;
+	color: #bc2a4d;
+}
+
+/**
+ * Structure
+ *
+ * Main structure including wrapper, header, content and footer. Forum width
+ * can be fixed (eg. width: 970px;) or fluid (default) to better support
+ * various devices.
+ */
+.inventea-wrapper,
+.inventea-dashboard,
+.inventea-footer {
+	box-sizing: border-box;
+	width: 95%;
+	max-width: 1170px;
+	margin: auto;
+}
+
+.inventea-wrapper {
+	padding: 15px 20px;
+	border: 2px solid #e7e7e7;
+	background: #fff;
+}
+
+.inventea-statusbar {
+	position: relative;
+	height: 48px;
+	border-bottom: 0;
+	color: #959595;
+}
+
+.inventea-header {
+	width: 100%;
+	background: #292c2f;
+}
+
+.inventea-dashboard {
+	position: relative;
+	min-height: 230px;
+	background: url("./images/dashboard.jpg") center center no-repeat;
+	background-size: cover;
+}
+
+.inventea-content {
+	position: relative;
+	border-top: 0;
+}
+
+.inventea-footer-wrapper {
+	display: block;
+	box-shadow: inset 0 20px 30px -20px #d5d5d5;
+	width: 100%;
+	margin-top: -25px;
+	border-top: 1px solid #e2e2e2;
+}
+
+.inventea-footer {
+	overflow: hidden;
+	margin: 42px auto;
+	padding: 0 22px;
+	color: #959595;
+	line-height: 18px;
+	font-size: 12px;
+}
+
+/**
+ * Current time/last visit and quick search
+ */
+.inventea-quick-search {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+
+.inventea-quick-search-icon {
+	position: absolute;
+	top: 6px;
+	right: 10px;
+	color: #c5c5c5;
+	font-size: 13px;
+}
+
+.inventea-quick-search-input {
+	display: block;
+	box-sizing: border-box;
+	box-shadow: inset 0 1px 3px #ccc;
+	width: 100px;
+	height: 26px;
+	margin: 0;
+	padding: 5px 28px 5px 10px;
+	outline: 0;
+	border: 0;
+	border-radius: 30px;
+	color: #959595;
+	line-height: normal;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	transition: width 0.3s;
+}
+
+.inventea-quick-search-input:focus {
+	width: 180px;
+	cursor: text;
+}
+
+/**
+ * Forum name and description
+ */
+.inventea-sitename {
+	padding: 70px 50px 92px;
+	color: #fff;
+	font-size: 14px;
+}
+
+.inventea-sitename a {
+	color: #fff;
+}
+
+/**
+ * Primary navigation
+ *
+ * Main menu located in header. Consists of two navigation lines: forum related
+ * links on top and user related links on bottom. Displayed only on devices
+ * with larger screen resolutions (at least 768px width).
+ */
+.inventea-forum-menu,
+.inventea-user-menu {
+	position: absolute;
+}
+
+.inventea-forum-menu {
+	right: 0;
+}
+
+.inventea-user-menu {
+	bottom: 0;
+}
+
+.inventea-menu {
+	display: block;
+	list-style: none;
+}
+
+.inventea-menu-item {
+	float: left;
+}
+
+/* Space between menu items */
+.inventea-menu-item + .inventea-menu-item {
+	margin-left: 4px;
+}
+
+.inventea-menu-item > a {
+	display: block;
+	padding: 8px 10px;
+	background: rgba(0, 0, 0, 0.5);
+	color: #eee;
+}
+
+.inventea-menu-item > a:focus,
+.inventea-menu-item > a:hover,
+.inventea-menu-item > a:active {
+	background: rgba(0, 0, 0, 0.9);
+	text-decoration: none;
+}
+
+/**
+ * Secondary menu
+ *
+ * Dropdown menu activated after button click. Secondary mobile navigation
+ * is displayed only on devices with small screen resolutions (768px width
+ * or less).
+ */
+.inventea-toggle {
+	padding: 4px 6px 2px;
+	outline: 0;
+	border: 0;
+	border-bottom: 3px solid #ccc;
+	border-radius: 5px;
+	background: #e9e9e9;
+	color: #414141;
+}
+
+/* Remove unnecessary padding in Firefox */
+.inventea-toggle::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+.inventea-toggle:hover,
+.inventea-toggle:active {
+	outline: 0;
+	cursor: pointer;
+}
+
+.inventea-dropdown-menu {
+	position: absolute;
+	z-index: 1;
+	display: none;
+	box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+	list-style: none;
+	background: #292c2f;
+}
+
+/* Triangle above dropdown menu */
+.inventea-dropdown-menu::before {
+	content: "";
+	position: absolute;
+	right: 10px;
+	display: block;
+	width: 0;
+	height: 0;
+	margin-top: -12px;
+	border-style: solid;
+	border-width: 0 14px 12px 14px;
+	border-color: transparent transparent #292c2f transparent;
+}
+
+.inventea-dropdown-menu-item {
+	min-width: 190px;
+}
+
+/* Remove bottom border from last menu item */
+.inventea-dropdown-menu-item:last-child a {
+	border: 0;
+}
+
+.inventea-dropdown-menu-item a {
+	display: block;
+	padding: 12px 15px 12px 14px;
+	border-bottom: 1px solid #46474a;
+	color: #eee;
+}
+
+.inventea-dropdown-menu-item a:focus,
+.inventea-dropdown-menu-item a:hover {
+	background: #343639;
+	text-decoration: none;
+}
+
+.inventea-dropdown-menu-item .fa {
+	margin-right: 5px;
+	font-size: 14px;
+}
+
+/* Forum and topic actions dropdown menu */
+.inventea-actions-menu {
+	float: right;
+}
+
+.inventea-actions-menu-toggle {
+	font-size: 14px;
+}
+
+.inventea-actions-dropdown-menu  {
+	top: 57px;
+	right: 8px;
+}
+
+/* Don't display mobile menu on large screens */
+.inventea-mobile-menu {
+	display: none;
+}
+
+/**
+ * Breadcrumbs
+ */
+.inventea-breadcrumbs-container {
+	overflow: hidden;
+}
+
+.inventea-breadcrumbs {
+	display: block;
+	overflow: hidden;
+	float: left;
+	margin-top: 3px;
+	margin-bottom: 24px;
+	list-style: none;
+	line-height: 18px;
+}
+
+.inventea-breadcrumbs-item {
+	display: block;
+	float: left;
+}
+
+.inventea-breadcrumbs-item::before {
+	content: "/";
+	display: block;
+	float: right;
+	margin: 0 10px;
+	color: #cacaca;
+	font-size: 14px;
+}
+
+/* Don't display first separator */
+.inventea-breadcrumbs-item:last-child::before {
+	display: none;
+}
+
+/**
+ * Footer
+ */
+.inventea-footer a {
+	color: #525252;
+}
+
+.inventea-footer a:focus,
+.inventea-footer a:hover,
+.inventea-footer a:active {
+	color: #bc2a4d;
+}
+
+.inventea-footer-menu {
+	float: right;
+	list-style: none;
+}
+
+.inventea-footer-menu-item {
+	display: block;
+	float: left;
+}
+
+.inventea-footer-menu-item::before {
+	content: "/";
+	display: block;
+	float: right;
+	margin: 0 10px;
+	color: #cacaca;
+	font-size: 14px;
+}
+
+/* Don't display first separator */
+.inventea-footer-menu-item:last-child::before {
+	display: none;
+}
+
+.inventea-credits {
+	float: left;
+}
+
+/**
+ * Alerts
+ */
+div.rules,
+p.rules {
+	border: 1px solid #ebccd1;
+	background-color: #f2dede;
+	padding: 6px 9px;
+}
+
+div.rules {
+	margin-top: 10px;
+	margin-bottom: 15px;
+	line-height: 18px;
+	font-size: 12px;
+}
+
+p.rules img {
+	padding-top: 0;
+}
+
+/* Disabled board information */
+#information {
+	margin-top: 0;
+	margin-bottom: 24px;
+}
+
+.notice {
+	margin-bottom: 15px;
+	padding: 7px;
+	border: 1px solid #ddd;
+	background: #fbfbfb;
+	line-height: 18px;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+/**
+ * Pagination
+ */
+.pagination {
+	margin-top: 8px;
+}
+
+.pagination span strong,
+.pagination span a,
+.pagination span a:link,
+.pagination span a:visited,
+.pagination span a:active {
+	padding: 2px 4px;
+	font-size: 12px;
+}
+
+.row .pagination {
+	padding: 0;
+	background: none;
+	font-size: 12px;
+}
+
+/* Current page */
+.pagination span strong {
+	border-color: #cacaca;
+	background: #f2f2f2;
+	color: #959595;
+}
+
+.pagination span a,
+.pagination span a:link,
+.pagination span a:visited {
+	border-color: #b5b5b5;
+	background: #e7e7e7;
+	color: #525252;
+}
+
+/* Pagination on topics list */
+.row .pagination span a {
+	margin-right: 0;
+	margin-left: 4px;
+	border-color: #b5b5b5;
+	background: #f9f9f9;
+	color: #6b6b6b;
+}
+
+.pagination span a:focus,
+.pagination span a:hover,
+.pagination span a:active,
+.row .pagination span a:focus,
+.row .pagination span a:hover,
+.row .pagination span a:active,
+li.pagination span a:hover {
+	border-color: #bc2a4d;
+	background: #bc2a4d;
+	color: #fff;
+}
+
+/* Bottom pagination on memberlist */
+.section-memberlist hr + ul.linklist .pagination {
+	margin-top: 5px;
+}

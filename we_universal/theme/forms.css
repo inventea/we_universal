@@ -1,0 +1,261 @@
+/**
+ * Forms
+ */
+fieldset {
+	margin-bottom: 10px;
+}
+
+fieldset dd {
+	margin-bottom: 0;
+	margin-left: 42%;
+	vertical-align: middle;
+}
+
+fieldset.fields1 dt,
+fieldset.fields2 dt {
+	width: 30%;
+}
+
+fieldset.fields1 dd,
+fieldset.fields2 dd {
+	margin-left: 32%;
+}
+
+fieldset.display-options {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+/* Labels */
+label {
+	padding-right: 10px;
+}
+
+label,
+dd label {
+	display: inline-block;
+	color: #525252;
+	vertical-align: middle;
+}
+
+dt label,
+dd label {
+	line-height: 28px;
+}
+
+/* Inputs */
+input,
+select,
+textarea,
+#message-box textarea {
+	background: #fff;
+	line-height: 18px;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+#message-box textarea {
+	color: #414141;
+	line-height: 21px;
+	font-size: 14px;
+}
+
+select,
+.inputbox {
+	box-sizing: border-box;
+	box-shadow: inset 0 7px 5px -6px #e1e1e1;
+	height: 28px;
+	padding: 4px 6px;
+	color: #525252;
+}
+
+input[type="search"] {
+	height: auto;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	margin: 0 3px 0 0;
+	vertical-align: text-bottom;
+}
+
+select,
+select:hover,
+.inputbox,
+.inputbox:hover {
+	border-color: #ccc;
+}
+
+select:focus,
+.inputbox:focus {
+	box-shadow: 0 0 5px #c2c2c2;
+	outline: 0;
+	border-color: #b1b1b1;
+	color: #525252;
+}
+
+input.inputbox[type="file"] {
+	box-shadow: none;
+	height: auto;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+textarea.inputbox,
+select[multiple="multiple"] {
+	height: auto;
+}
+
+/* Input width */
+input.inputbox {
+	width: 80%;
+}
+
+input.medium {
+	width: 50%;
+}
+
+input.tiny {
+	width: 150px;
+}
+
+textarea.inputbox {
+	width: 80%;
+}
+
+dd select {
+	width: auto !important;
+}
+
+#register .inputbox,
+#login .inputbox {
+	width: 40% !important;
+}
+
+/* Buttons */
+a.button1,
+a.button2,
+input.button1,
+input.button2,
+input.button3 {
+	height: 28px;
+	padding: 0 6px;
+	border-color: #c5c5c5;
+	border-bottom-width: 2px;
+	background: #dfdfdf;
+	color: #525252;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+a.button2:link {
+	padding: 5px 6px 6px;
+}
+
+a.button1:focus,
+a.button1:hover,
+a.button1:active,
+a.button2:focus,
+a.button2:hover,
+a.button2:active,
+input.button1:focus,
+input.button1:hover,
+input.button1:active,
+input.button2:focus,
+input.button2:hover,
+input.button2:active,
+input.button3:focus,
+input.button3:hover,
+input.button3:active {
+	outline: 0;
+	border-color: #bc2a4d;
+	border-bottom: 2px solid #91203c;
+	background: #bc2a4d;
+	color: #fff;
+}
+
+/* Remove unnecessary padding from buttons in Firefox */
+a.button1::-moz-focus-inner,
+input.button1::-moz-focus-inner,
+input.button3::-moz-focus-inner,
+a.button2::-moz-focus-inner,
+input.button2::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+/* Quick login on index */
+fieldset.quick-login {
+	margin-top: 10px;
+	line-height: 28px;
+}
+
+fieldset.quick-login label {
+	display: inline;
+	vertical-align: baseline;
+}
+
+fieldset.quick-login span {
+	margin-right: 2px;
+}
+
+fieldset.quick-login input.inputbox,
+fieldset.quick-login input.button2 {
+	vertical-align: top;
+}
+
+/* Quick search in viewforum and viewtopic */
+input.search {
+	padding: 4px 6px;
+	background: none;
+}
+
+.section-search #keywords {
+	margin-bottom: 5px;
+}
+
+/* Margin for forgotten password link */
+#login #password {
+	margin-bottom: 10px;
+}
+
+/* Posting editor page */
+.section-posting fieldset.fields1 dt,
+.section-posting fieldset.fields2 dt,
+.section-ucp fieldset.fields1 dt,
+.section-ucp fieldset.fields2 dt,
+#login fieldset.fields1 dt {
+	width: 20%;
+}
+
+.section-posting fieldset.fields1 dd,
+.section-posting  fieldset.fields2 dd,
+.section-ucp fieldset.fields1 dd,
+.section-ucp fieldset.fields2 dd,
+#login fieldset.fields1 dd {
+	margin-left: 22%;
+}
+
+.section-posting #subject,
+.section-ucp #subject {
+	width: 50% !important;
+}
+
+#format-buttons {
+	margin-bottom: 6px;
+}
+
+#smiley-box {
+	width: 19%;
+}
+
+#options-panel,
+#attach-panel,
+#poll-panel {
+	padding-top: 12px;
+}
+
+.pmlist #username_list {
+	height: 78px;
+}

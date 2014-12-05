@@ -9,4 +9,7 @@
 */
 
 @import url("font-awesome.min.css");
-@import url("we_universal.css");
+@import url("common.css");
+@import url("content.css");
+@import url("cp.css");
+@import url("forms.css");
