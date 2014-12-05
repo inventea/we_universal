@@ -8,14 +8,5 @@
     --------------------------------------------------------------
 */
 
-@import url("common.css");
-@import url("links.css");
-@import url("content.css");
-@import url("buttons.css");
-@import url("cp.css");
-@import url("forms.css");
-@import url("colours.css");
-@import url("imageset.css");
 @import url("font-awesome.min.css");
 @import url("we_universal.css");
-@import url("we_universal_responsive.css");
