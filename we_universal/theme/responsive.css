@@ -1,0 +1,9 @@
+ul.topiclist dd {
+	display: table-cell;
+}
+
+ul.topiclist dd.topics,
+ul.topiclist dd.posts,
+ul.topiclist dd.lastpost {
+	display: none;
+}
