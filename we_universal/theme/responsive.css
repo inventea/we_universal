@@ -1,3 +1,39 @@
+/**
+ * Structure
+ */
+.inventea-wrapper,
+.inventea-dashboard,
+.inventea-footer {
+	width: 100%;
+	border: 0;
+}
+
+.inventea-wrapper {
+	padding: 15px 15px 6px;
+}
+
+.inventea-statusbar {
+	height: 46px;
+}
+
+.inventea-dashboard {
+	min-height: inherit;
+}
+
+.inventea-footer-wrapper {
+	box-shadow: none;
+	margin: 0;
+	border: 0;
+}
+
+.inventea-footer {
+	margin: 0;
+	padding: 0 15px 15px;
+}
+
+/**
+ * Forums and tables
+ */
 ul.topiclist dd {
 	display: table-cell;
 }
