@@ -34,7 +34,15 @@
 /**
  * Forums and tables
  */
-ul.topiclist dd {
+.forabg,
+.forumbg {
+	margin-right: 0;
+	margin-left: 0;
+	border-radius: 5px 5px 0 0;
+}
+
+ul.topiclist dd,
+ul.topiclist.forums dd.lastpost {
 	display: table-cell;
 }
 
@@ -42,4 +50,18 @@ ul.topiclist dd.topics,
 ul.topiclist dd.posts,
 ul.topiclist dd.lastpost {
 	display: none;
+}
+
+.forabg ul.topiclist li.row dd.lastpost {
+	background-color: #f1f1f1;
+}
+
+.forabg ul.topiclist li.row:nth-child(even) dd.lastpost {
+	background-color: #e9e9e9;
+}
+
+@media only screen and (max-width: 550px), only screen and (max-device-width: 550px) {
+	ul.topiclist.forums dd.lastpost {
+		display: none;
+	}
 }
