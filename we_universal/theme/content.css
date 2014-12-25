@@ -150,6 +150,7 @@ table.table1 thead th,
 #cp-main table.table1 thead th {
 	padding: 9px 7px;
 	text-align: center;
+	vertical-align: middle;
 	line-height: 18px;
 	font-weight: normal;
 }
@@ -1033,6 +1034,8 @@ ul.linklist li {
 .forumbg .header a:active,
 .forabg .header a:hover,
 .forabg .header a:active,
+th a:link,
+th a:visited,
 th a:hover,
 th a:active {
 	color: #fff;

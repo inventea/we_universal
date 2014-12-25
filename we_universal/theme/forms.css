@@ -220,6 +220,11 @@ input.search {
 	margin-bottom: 10px;
 }
 
+/* UCP */
+#timezone {
+	margin-top: 8px;
+}
+
 /* Posting editor page */
 .section-posting fieldset.fields1 dt,
 .section-posting fieldset.fields2 dt,
