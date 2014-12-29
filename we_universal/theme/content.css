@@ -160,9 +160,12 @@ table.table1 thead th,
 	width: auto;
 }
 
-li.header dl.icon dt .list-inner {
-	margin-right: 0;
-	padding-right: 0;
+li.header dl.icon dt .list-inner,
+ul.topiclist dt .list-inner,
+ul.topiclist.missing-column dt .list-inner,
+ul.topiclist.two-long-columns dt .list-inner {
+	margin: 0;
+	padding: 0;
 }
 
 /* Subforums list on index */
