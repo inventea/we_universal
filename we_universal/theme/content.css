@@ -15,8 +15,8 @@
 }
 
 /* Space between last category and quick login/statistics */
-.forabg:last-of-type {
-	margin-bottom: 30px;
+.online-list {
+	margin-top: 30px;
 }
 
 ul.forums,

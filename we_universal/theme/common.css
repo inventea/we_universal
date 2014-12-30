@@ -323,37 +323,50 @@ a:active {
 /**
  * Breadcrumbs
  */
-.inventea-breadcrumbs-container {
-	overflow: hidden;
-}
-
-.inventea-breadcrumbs {
-	display: block;
-	overflow: hidden;
-	float: left;
-	margin-top: 3px;
+ul.navlinks {
+	margin-top: 2px;
 	margin-bottom: 24px;
-	list-style: none;
+	border: 0;
 	line-height: 18px;
 }
 
-.inventea-breadcrumbs-item {
-	display: block;
-	float: left;
+/* Hide breadcrumbs icons */
+.navlinks .small-icon {
+	background: none;
 }
 
-.inventea-breadcrumbs-item::before {
+ul.linklist > li.breadcrumbs {
+	margin: 0;
+}
+
+.breadcrumbs .crumb {
+	font-weight: normal;
+}
+
+.breadcrumbs .crumb::after {
 	content: "/";
 	display: block;
 	float: right;
 	margin: 0 10px;
 	color: #cacaca;
 	font-size: 14px;
+	font-weight: normal;
 }
 
-/* Don't display first separator */
-.inventea-breadcrumbs-item:last-child::before {
-	display: none;
+/* Hide prosilver separators and don't display we_universal last separator */
+.breadcrumbs .crumb::before,
+li.breadcrumbs:last-child .crumb:last-child::after {
+	content: none;
+}
+
+li.breadcrumbs span:first-child > a {
+	padding: 0;
+}
+
+.breadcrumbs.wrapped .crumb a,
+.breadcrumbs.wrapped .crumb.wrapped-medium a,
+.breadcrumbs.wrapped .crumb.wrapped-tiny a {
+	letter-spacing: normal;
 }
 
 /**
