@@ -343,19 +343,20 @@ ul.linklist > li.breadcrumbs {
 	font-weight: normal;
 }
 
-.breadcrumbs .crumb::after {
+.breadcrumbs .crumb::before,
+.breadcrumbs .crumb:first-child::before {
 	content: "/";
 	display: block;
 	float: right;
 	margin: 0 10px;
+	padding: 0;
 	color: #cacaca;
 	font-size: 14px;
 	font-weight: normal;
 }
 
-/* Hide prosilver separators and don't display we_universal last separator */
-.breadcrumbs .crumb::before,
-li.breadcrumbs:last-child .crumb:last-child::after {
+/* Don't display first separator */
+.breadcrumbs:last-child .crumb:last-child::before {
 	content: none;
 }
 

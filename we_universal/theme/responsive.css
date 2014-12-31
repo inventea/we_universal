@@ -64,4 +64,10 @@ ul.topiclist dd.lastpost {
 	ul.topiclist.forums dd.lastpost {
 		display: none;
 	}
+
+	.section-index .time.rightside {
+		float: none;
+		margin-bottom: 24px;
+		text-align: center;
+	}
 }

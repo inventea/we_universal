@@ -14,11 +14,6 @@
 	background: #4c4c4c;
 }
 
-/* Space between last category and quick login/statistics */
-.online-list {
-	margin-top: 30px;
-}
-
 ul.forums,
 ul.topics,
 table.table1 tbody {
@@ -225,6 +220,33 @@ dd.lastpost .fa {
 dd.redirect {
 	width: 354px;
 	text-align: center;
+}
+
+/* Space between last category and quick login/statistics */
+.online-list {
+	margin-top: 30px;
+}
+
+.section-index .time {
+	margin-bottom: 8px;
+}
+
+.section-index .time.rightside {
+	float: left;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+/* Don't display current time on index if user is logged in */
+.section-index .time:nth-of-type(2) {
+	display: none;
+}
+
+/* Action-bars (container for post/reply buttons, pagination, etc.) */
+.action-bar {
+	margin-bottom: 8px;
+	line-height: 18px;
+	font-size: 12px;
 }
 
 /**
