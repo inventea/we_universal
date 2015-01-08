@@ -232,8 +232,8 @@ dd.redirect {
 	display: none;
 }
 
-.logged-out .inventea-time {
-	margin-bottom: 5px;
+.logged-out #nav-breadcrumbs {
+	margin-bottom: 29px;
 }
 
 /* Action-bars (container for post/reply buttons, pagination, etc.) */

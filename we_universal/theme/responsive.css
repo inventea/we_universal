@@ -1,4 +1,12 @@
 /**
+ * Common tags
+ */
+html,
+body {
+	background: #fff;
+}
+
+/**
  * Structure
  */
 .inventea-wrapper,
@@ -9,7 +17,7 @@
 }
 
 .inventea-wrapper {
-	padding: 15px 15px 6px;
+	padding: 15px 10px 6px;
 }
 
 .inventea-statusbar {
@@ -28,7 +36,19 @@
 
 .inventea-footer {
 	margin: 0;
-	padding: 0 15px 15px;
+	padding: 0 10px 10px;
+}
+
+/**
+ * Footer
+ */
+#nav-footer,
+.inventea-credits {
+	float: none;
+}
+
+#nav-footer {
+	margin-top: 12px;
 }
 
 /**
