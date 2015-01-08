@@ -65,9 +65,9 @@ ul.topiclist dd.lastpost {
 		display: none;
 	}
 
-	.section-index .time.rightside {
+	ul.linklist > li.inventea-time {
 		float: none;
-		margin-bottom: 24px;
+		margin: 3px 0 24px;
 		text-align: center;
 	}
 }

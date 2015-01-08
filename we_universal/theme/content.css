@@ -227,19 +227,13 @@ dd.redirect {
 	margin-top: 30px;
 }
 
+/* It is currently/Last visit was */
 .section-index .time {
-	margin-bottom: 8px;
-}
-
-.section-index .time.rightside {
-	float: left;
-	margin-bottom: 0;
-	margin-left: 0;
-}
-
-/* Don't display current time on index if user is logged in */
-.section-index .time:nth-of-type(2) {
 	display: none;
+}
+
+.logged-out .inventea-time {
+	margin-bottom: 5px;
 }
 
 /* Action-bars (container for post/reply buttons, pagination, etc.) */
@@ -1041,13 +1035,6 @@ span.corners-top span,
 span.corners-bottom span {
 	display: none;
 	background: none;
-}
-
-/* Small links near forums */
-ul.linklist li {
-	margin-bottom: 8px;
-	line-height: 18px;
-	font-size: 12px;
 }
 
 /* Forums layout related links */
