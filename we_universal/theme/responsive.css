@@ -91,3 +91,83 @@ ul.topiclist dd.lastpost {
 		text-align: center;
 	}
 }
+
+/**
+ * Posts and private messages
+ */
+.post .inner {
+	display: block;
+}
+
+.postprofile,
+.search .postprofile,
+.pm .postprofile,
+.post .postbody {
+	display: block;
+	overflow: hidden;
+	width: auto;
+}
+
+/* User profile */
+.postprofile,
+.pm .postprofile,
+.search .postprofile {
+	border-top-right-radius: 7px;
+	border-bottom-left-radius: 0;
+}
+
+.postprofile dt {
+	display: table;
+	text-align: left;
+}
+
+.section-viewtopic .postprofile dd,
+.section-ucp .postprofile dd {
+	display: none;
+}
+
+.inventea-online {
+	display: none;
+}
+
+.inventea-avatar {
+	margin-right: 18px;
+	margin-bottom: 0;
+	line-height: 0;
+}
+
+.inventea-avatar img {
+	width: auto;
+	height: 70px;
+}
+
+.inventea-post-author {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/* Post message */
+.post .postbody {
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 7px;
+}
+
+.post.bg1 .postbody::before {
+	border-color: transparent transparent #f8f8f8 transparent;
+}
+
+.post.bg2 .postbody::before {
+	border-color: transparent transparent #f2f2f2 transparent;
+}
+
+.post.reported .postbody::before {
+	border-color: transparent transparent #f7ecef transparent;
+}
+
+/* Post message left triangle */
+.post .postbody::before {
+	right: 25px;
+	margin-top: -34px;
+	margin-left: 0;
+	border-width: 0 14px 16px 14px;
+}
