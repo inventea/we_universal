@@ -103,6 +103,12 @@ a:active {
 	border-top: 0;
 }
 
+.inventea-content::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
 .inventea-footer-wrapper {
 	display: block;
 	box-shadow: inset 0 20px 30px -20px #d5d5d5;
@@ -139,10 +145,6 @@ a:active {
  * links on top and user related links on bottom. Displayed only on devices
  * with larger screen resolutions (at least 768px width).
  */
-.inventea-user-menu {
-	float: right;
-}
-
 .inventea-posts-menu,
 .inventea-forum-menu {
 	position: absolute;

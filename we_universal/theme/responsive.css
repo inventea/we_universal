@@ -53,16 +53,20 @@ body {
  * is displayed only on devices with small screen resolutions (768px width
  * or less).
  */
+.inventea-user-menu {
+	margin-right: 40px !important;
+}
+
 .inventea-posts-menu,
 .inventea-forum-menu {
 	display: none;
 }
 
 .inventea-mobile-dropdown-menu {
+	position: absolute;
+	right: 10px;
 	display: block;
-	float: right;
 	margin-top: -6px;
-	margin-left: 10px;
 }
 
 .inventea-mobile-dropdown-menu .dropdown {
