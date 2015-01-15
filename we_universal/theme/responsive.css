@@ -21,7 +21,8 @@ body {
 }
 
 .inventea-statusbar {
-	height: 46px;
+	height: 47px;
+	padding-top: 14px;
 }
 
 .inventea-dashboard {

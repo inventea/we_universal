@@ -183,6 +183,13 @@ ul.linklist.inventea-user-menu > li {
 .inventea-user-menu > .icon-pm > a::before { content: "\f0e0"; }
 .inventea-user-menu > .icon-notification > a::before { content: "\f0f3"; }
 
+/* Small avatar near username */
+.header-avatar img {
+	max-height: 21px;
+	margin: -3px 3px 0 0;
+	border-radius: 3px;
+}
+
 /* Menu items in dashboard */
 .inventea-posts-menu,
 .inventea-forum-menu {
