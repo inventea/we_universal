@@ -87,17 +87,17 @@
 			</li>
 			<!-- IF S_DISPLAY_PM -->
 				<li class="small-icon icon-pm rightside" data-skip-responsive="true">
-					<a href="{U_PRIVATEMSGS}" role="menuitem"><span>{L_PRIVATE_MESSAGES} [</span><strong>{PRIVATE_MESSAGE_COUNT}</strong><span>]</span></a>
+					<a href="{U_PRIVATEMSGS}" role="menuitem"><span>{L_PRIVATE_MESSAGES}</span><!-- IF PRIVATE_MESSAGE_COUNT > 0 --><strong>{PRIVATE_MESSAGE_COUNT}</strong><!-- ENDIF --></a>
 				</li>
 			<!-- ENDIF -->
 			<!-- IF S_NOTIFICATIONS_DISPLAY -->
 				<li class="small-icon icon-notification dropdown-container dropdown-{S_CONTENT_FLOW_END} rightside" data-skip-responsive="true">
-					<a href="{U_VIEW_ALL_NOTIFICATIONS}" id="notification_list_button" class="dropdown-trigger"><span>{L_NOTIFICATIONS} [</span><strong>{NOTIFICATIONS_COUNT}</strong><span>]</span></a>
+					<a href="{U_VIEW_ALL_NOTIFICATIONS}" id="notification_list_button" class="dropdown-trigger"><span>{L_NOTIFICATIONS}</span><!-- IF NOTIFICATIONS_COUNT > 0 --><strong>{NOTIFICATIONS_COUNT}</strong><!-- ENDIF --></a>
 					<!-- INCLUDE notification_dropdown.html -->
 				</li>
 			<!-- ENDIF -->
 		<!-- ELSE -->
-			<li class="small-icon icon-logout rightside"  data-skip-responsive="true"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">{L_LOGIN_LOGOUT}</a></li>
+			<li class="small-icon icon-logout rightside" data-skip-responsive="true"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">{L_LOGIN_LOGOUT}</a></li>
 			<!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
 				<li class="small-icon icon-register rightside" data-skip-responsive="true"><a href="{U_REGISTER}" role="menuitem">{L_REGISTER}</a></li>
 			<!-- ENDIF -->

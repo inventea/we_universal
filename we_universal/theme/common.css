@@ -81,7 +81,8 @@ a:active {
 
 .inventea-statusbar {
 	position: relative;
-	height: 48px;
+	height: 49px;
+	padding-top: 14px;
 	border-bottom: 0;
 	color: #959595;
 }
@@ -145,6 +146,44 @@ a:active {
  * links on top and user related links on bottom. Displayed only on devices
  * with larger screen resolutions (at least 768px width).
  */
+ul.linklist.inventea-user-menu > li {
+	margin-left: 21px;
+}
+
+/* Notifications and PMs counters */
+.inventea-user-menu > li > a > strong {
+	float: left;
+	margin: -3px 6px 0 -11px;
+	padding: 1px 3px 2px;
+	border-radius: 2px;
+	background: #bc2a4d;
+	color: #fff;
+	line-height: 1;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+.compact .icon-notification > a > strong,
+.compact .icon-pm > a > strong {
+	padding-left: 3px;
+}
+
+/* Link icons */
+.inventea-user-menu > li > a::before {
+	float: left;
+	margin-top: 1px;
+	margin-right: 6px;
+	color: #6b6b6b;
+	font-family: FontAwesome;
+	font-size: 16px;
+}
+
+.inventea-user-menu > .icon-logout > a::before { content: "\f090"; }
+.inventea-user-menu > .icon-register > a::before { content: "\f0c0"; }
+.inventea-user-menu > .icon-pm > a::before { content: "\f0e0"; }
+.inventea-user-menu > .icon-notification > a::before { content: "\f0f3"; }
+
+/* Menu items in dashboard */
 .inventea-posts-menu,
 .inventea-forum-menu {
 	position: absolute;
