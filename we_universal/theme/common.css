@@ -60,9 +60,10 @@ a:active {
 /**
  * Structure
  *
- * Main structure including wrapper, header, content and footer. Forum width
- * can be fixed (eg. width: 970px;) or fluid (default) to better support
- * various devices.
+ * Main structure including wrapper, header, content and footer. By default
+ * forum width is fluid (with support for Responsive Web Design). To change it
+ * to fixed width, remove below "max-width" property and set desired width. Next
+ * remove links to both responsive.css files in overall_header.html.
  */
 .inventea-wrapper,
 .inventea-dashboard,
@@ -140,14 +141,17 @@ a:active {
 }
 
 /**
- * Primary navigation
+ * User menu
  *
- * Main menu located in header. Consists of two navigation lines: forum related
- * links on top and user related links on bottom. Displayed only on devices
- * with larger screen resolutions (at least 768px width).
+ * Navigation bar on top of forum (above dashboard) containing notifications,
+ * private messages and dropdown profile links.
  */
 ul.linklist.inventea-user-menu > li {
-	margin-left: 21px;
+	margin-left: 0;
+}
+
+ul.linklist.inventea-user-menu > li + li {
+	margin-right: 21px;
 }
 
 /* Notifications and PMs counters */
@@ -163,12 +167,13 @@ ul.linklist.inventea-user-menu > li {
 	font-weight: normal;
 }
 
+/* Reset counters padding in responsive view */
 .compact .icon-notification > a > strong,
 .compact .icon-pm > a > strong {
 	padding-left: 3px;
 }
 
-/* Link icons */
+/* Menu items icons */
 .inventea-user-menu > li > a::before {
 	float: left;
 	margin-top: 1px;
@@ -190,7 +195,16 @@ ul.linklist.inventea-user-menu > li {
 	border-radius: 3px;
 }
 
-/* Menu items in dashboard */
+/**
+ * Forum navigation
+ *
+ * Main menu located in header (dashboard). Consists of two navigation lines:
+ * posts/topics related links on top and general forum links on bottom.
+ *
+ * Displayed only on devices with screen width bigger than 700px. On devices
+ * with low screen resolution it's replaced by dropdown menu with activation button
+ * located in user menu.
+ */
 .inventea-posts-menu,
 .inventea-forum-menu {
 	position: absolute;
@@ -254,6 +268,7 @@ ul.linklist > li {
 	margin: 0;
 }
 
+/* Items separator */
 .breadcrumbs .crumb::before,
 .breadcrumbs .crumb:first-child::before,
 ul.linklist > li:not(.breadcrumbs)::before,

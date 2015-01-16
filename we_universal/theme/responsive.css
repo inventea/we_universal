@@ -48,11 +48,11 @@ body {
 }
 
 /**
- * Secondary menu
+ * Secondary dropdown menu
  *
- * Dropdown menu activated after button click. Secondary mobile navigation
- * is displayed only on devices with small screen resolutions (768px width
- * or less).
+ * Alternative menu displayed only on devices with low screen resolution (700px
+ * or less). Activated by button located in user menu. Consists all links from
+ * dashboard reduced to single dropdown (see navbar_responsive_header.html).
  */
 .inventea-user-menu {
 	margin-right: 40px !important;
