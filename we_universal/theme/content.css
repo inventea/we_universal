@@ -542,7 +542,7 @@ p.author {
 }
 
 #cp-main .post .postbody::before {
-	display: none;
+	content: none;
 }
 
 #cp-main .postbody p {
@@ -573,7 +573,7 @@ p.author {
 }
 
 #postform .postbody::before {
-	display: none;
+	content: none;
 }
 
 #postform .postbody h3 {
@@ -1026,15 +1026,6 @@ hr + .topic-actions {
 .inventea-no-items {
 	display: block;
 	text-align: center;
-}
-
-/* Remove image rounded corners to use border-radius later */
-span.corners-top,
-span.corners-bottom,
-span.corners-top span,
-span.corners-bottom span {
-	display: none;
-	background: none;
 }
 
 /* Forums layout related links */

@@ -113,18 +113,6 @@ dl.mini dt {
 	line-height: 22px;
 }
 
-/* Remove rounded corners images */
-#cp-main span.corners-top,
-#cp-menu span.corners-top,
-#cp-main span.corners-top span,
-#cp-menu span.corners-top span,
-#cp-main span.corners-bottom,
-#cp-menu span.corners-bottom,
-#cp-main span.corners-bottom span,
-#cp-menu span.corners-bottom span {
-	background: none;
-}
-
 /* Inside panels */
 #cp-main h3,
 #cp-main hr,
