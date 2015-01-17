@@ -43,14 +43,15 @@
 
 <script type="text/javascript">
 jQuery(function($) {
-	var offset = 304;
+	var headerOffset = 304;
 
 	if (window.matchMedia('(max-width: 700px)').matches) {
-		offset = 200;
+		headerOffset = 47;
 	}
 
 	$('.inventea-headerbar').headroom({
-		offset: offset
+		offset: headerOffset,
+		tolerance: 5
 	});
 });
 </script>
