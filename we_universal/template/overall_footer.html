@@ -38,6 +38,22 @@
 <script type="text/javascript" src="{T_ASSETS_PATH}/javascript/core.js?assets_version={T_ASSETS_VERSION}"></script>
 <!-- INCLUDEJS forum_fn.js -->
 <!-- INCLUDEJS ajax.js -->
+<!-- INCLUDEJS headroom.min.js -->
+<!-- INCLUDEJS jQuery.headroom.min.js -->
+
+<script type="text/javascript">
+jQuery(function($) {
+	var offset = 304;
+
+	if (window.matchMedia('(max-width: 700px)').matches) {
+		offset = 200;
+	}
+
+	$('.inventea-headerbar').headroom({
+		offset: offset
+	});
+});
+</script>
 
 <!-- EVENT overall_footer_after -->
 

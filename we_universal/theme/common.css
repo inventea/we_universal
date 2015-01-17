@@ -80,7 +80,7 @@ a:active {
 	background: #fff;
 }
 
-.inventea-statusbar {
+.inventea-userbar {
 	position: relative;
 	height: 49px;
 	padding-top: 14px;
@@ -146,6 +146,30 @@ a:active {
  * Navigation bar on top of forum (above dashboard) containing notifications,
  * private messages and dropdown profile links.
  */
+.headroom {
+	transition: transform 160ms linear;
+}
+
+.headroom--unpinned {
+	transform: translateY(-100%);
+}
+
+.headroom--not-top.headroom--pinned {
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	display: block;
+	width: 100%;
+	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.25);
+	background: #fff;
+	transform: translateY(0%);
+}
+
+.headroom--not-top .inventea-userbar {
+	height: 47px;
+	border: 0;
+}
+
 ul.linklist.inventea-user-menu > li {
 	margin-left: 0;
 }
