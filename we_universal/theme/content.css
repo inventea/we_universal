@@ -433,7 +433,8 @@ dl.faq dt {
 	line-height: 18px;
 }
 
-.postprofile dt {
+.postprofile dt,
+.postprofile dd.profile-rank {
 	text-align: center;
 }
 
@@ -441,9 +442,23 @@ dl.faq dt {
 	color: #414141;
 }
 
-.inventea-avatar {
-	display: block;
+.postprofile .has-avatar .avatar-container {
 	margin-bottom: 14px;
+}
+
+.postprofile .avatar {
+	display: inline;
+	float: none;
+}
+
+.postprofile .avatar img {
+	display: inline;
+}
+
+.postprofile dt.no-profile-rank,
+.postprofile dd.profile-rank,
+.postprofile .search-result-date {
+	margin-bottom: 18px;
 }
 
 ul.profile-icons {
