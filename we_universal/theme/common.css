@@ -9,7 +9,7 @@ body {
 
 body {
 	margin: 0;
-	padding: 15px 0;
+	padding: 0;
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
 	font-size: 12px;
 }
@@ -65,6 +65,16 @@ a:active {
  * to fixed width, remove below "max-width" property and set desired width. Next
  * remove links to both responsive.css files in overall_header.html.
  */
+#wrap {
+	max-width: none;
+	min-width: 0;
+	margin: 0;
+	padding: 15px 0;
+	border: 0;
+	border-radius: 0;
+	background: none;
+}
+
 .inventea-wrapper,
 .inventea-dashboard,
 .inventea-footer {

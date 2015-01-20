@@ -9,6 +9,10 @@ body {
 /**
  * Structure
  */
+#wrap {
+	padding: 0;
+}
+
 .inventea-wrapper,
 .inventea-dashboard,
 .inventea-footer {
