@@ -218,7 +218,6 @@ ul.linklist.inventea-user-menu > li + li {
 /* Menu items icons */
 .inventea-user-menu > li > a::before {
 	float: left;
-	margin-top: 1px;
 	margin-right: 6px;
 	color: #6b6b6b;
 	font-family: FontAwesome;
@@ -226,7 +225,7 @@ ul.linklist.inventea-user-menu > li + li {
 }
 
 .inventea-user-menu > .icon-logout > a::before { content: "\f090"; }
-.inventea-user-menu > .icon-register > a::before { content: "\f0c0"; }
+.inventea-user-menu > .icon-register > a::before { content: "\f234"; }
 .inventea-user-menu > .icon-pm > a::before { content: "\f0e0"; }
 .inventea-user-menu > .icon-notification > a::before { content: "\f0f3"; }
 
