@@ -33,5 +33,5 @@ Assets
 ------
 
 * Header photo from [picjumbo](http://picjumbo.com)
-* [Font Awesome](http://fortawesome.github.io/Font-Awesome/) 4.1.0
-* [Zepto.js](http://zeptojs.com) 1.1.4 (lightweight jQuery alternative)
+* [Font Awesome](http://fortawesome.github.io/Font-Awesome/) 4.3.0
+* [Zepto.js](http://zeptojs.com) 1.1.6 (lightweight jQuery alternative)
