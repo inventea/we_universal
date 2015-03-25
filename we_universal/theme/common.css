@@ -159,35 +159,6 @@ a:active {
  * Sticky navigation on scroll provided by Headroom.js:
  * http://wicky.nillia.ms/headroom.js/
  */
-.headroom--not-top {
-	width: 100%;
-	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.25);
-	background: #fff;
-	backface-visibility: hidden;
-	transition: transform 200ms ease;
-}
-
-.headroom--not-top .inventea-userbar {
-	height: 47px;
-	border: 0;
-}
-
-.headroom--not-top.headroom--pinned,
-.headroom--not-top.headroom--unpinned {
-	position: fixed;
-	z-index: 1;
-}
-
-.headroom--not-top.headroom--pinned {
-	top: 0;
-	transform: translateY(0%);
-}
-
-.headroom--not-top.headroom--unpinned {
-	top: -60px;
-	transform: translateY(-100%);
-}
-
 ul.linklist.inventea-user-menu > li {
 	margin-left: 0;
 }
