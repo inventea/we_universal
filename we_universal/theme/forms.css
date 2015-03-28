@@ -1,10 +1,6 @@
 /**
  * Forms
  */
-fieldset {
-	margin-bottom: 10px;
-}
-
 fieldset dd {
 	margin-bottom: 0;
 	margin-left: 42%;
@@ -24,6 +20,10 @@ fieldset.fields2 dd {
 fieldset.display-options {
 	margin-top: 15px;
 	margin-bottom: 15px;
+}
+
+.panel fieldset {
+	margin-bottom: 10px;
 }
 
 /* Labels */
