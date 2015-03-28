@@ -362,7 +362,7 @@ dl.faq dt {
 .post.bg1,
 .post.bg2,
 .online {
-	background: none;
+	background-image: none;
 }
 
 .post.bg1 .postprofile {
