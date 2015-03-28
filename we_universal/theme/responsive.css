@@ -113,7 +113,9 @@ body {
  * Forums and tables
  */
 .forabg,
-.forumbg {
+.forumbg,
+.post,
+.panel {
 	margin-right: 0;
 	margin-left: 0;
 	border-radius: 5px 5px 0 0;
@@ -153,6 +155,11 @@ ul.topiclist dd.lastpost {
 /**
  * Posts and private messages
  */
+.post,
+.panel {
+	border-radius: 5px;
+}
+
 .post .inner {
 	display: block;
 }
@@ -228,4 +235,47 @@ ul.topiclist dd.lastpost {
 	margin-top: -34px;
 	margin-left: 0;
 	border-width: 0 14px 16px 14px;
+}
+
+/**
+ * Forms
+ */
+fieldset dt,
+fieldset.fields2 dt,
+.section-posting fieldset.fields1 dt,
+.section-posting fieldset.fields2 dt {
+	float: none;
+	width: auto;
+}
+
+/* Additional margin between description and input */
+fieldset dt span {
+	display: block;
+	margin-bottom: 10px;
+}
+
+/* Reduce input left margin */
+fieldset dd,
+fieldset.fields1 dd,
+fieldset.fields2 dd,
+.section-posting fieldset.fields1 dd,
+.section-posting  fieldset.fields2 dd {
+	margin-left: 0;
+}
+
+input[type="search"] {
+	box-sizing: border-box;
+}
+
+input.inputbox,
+textarea.inputbox {
+	width: 100%;
+}
+
+input.medium {
+	width: 50%;
+}
+
+input.tiny {
+	width: 125px;
 }
