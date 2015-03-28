@@ -1071,6 +1071,7 @@ a.topictitle:visited {
 }
 
 a.top {
+	overflow: visible;
 	width: auto;
 	height: auto;
 	background: none;
