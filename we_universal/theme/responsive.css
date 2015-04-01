@@ -279,3 +279,8 @@ input.medium {
 input.tiny {
 	width: 125px;
 }
+
+#register .inputbox,
+#login .inputbox {
+	width: 100% !important;
+}

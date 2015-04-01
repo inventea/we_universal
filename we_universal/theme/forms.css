@@ -131,7 +131,7 @@ dd select {
 
 #register .inputbox,
 #login .inputbox {
-	width: 40% !important;
+	width: 50% !important;
 }
 
 /* Buttons */
@@ -228,24 +228,13 @@ input.search {
 
 /* Posting editor page */
 .section-posting fieldset.fields1 dt,
-.section-posting fieldset.fields2 dt,
-.section-ucp fieldset.fields1 dt,
-.section-ucp fieldset.fields2 dt,
-#login fieldset.fields1 dt {
-	width: 20%;
+.section-posting fieldset.fields2 dt {
+	width: 21%;
 }
 
 .section-posting fieldset.fields1 dd,
-.section-posting  fieldset.fields2 dd,
-.section-ucp fieldset.fields1 dd,
-.section-ucp fieldset.fields2 dd,
-#login fieldset.fields1 dd {
-	margin-left: 22%;
-}
-
-.section-posting #subject,
-.section-ucp #subject {
-	width: 50% !important;
+.section-posting  fieldset.fields2 dd {
+	margin-left: 23%;
 }
 
 #format-buttons {
