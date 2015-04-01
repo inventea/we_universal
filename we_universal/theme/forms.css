@@ -221,8 +221,9 @@ input.search {
 }
 
 /* UCP */
-#timezone {
-	margin-top: 8px;
+#timezone,
+#dateformat {
+	margin-top: 8px !important;
 }
 
 /* Posting editor page */
