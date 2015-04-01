@@ -69,6 +69,15 @@ select,
 	color: #525252;
 }
 
+/*
+@todo: Temporary fix for auto expanding textarea:
+https://github.com/inventea/we_universal/issues/32
+Reset padding to default from prosilver.
+*/
+textarea.inputbox {
+	padding: 2px;
+}
+
 input[type="search"] {
 	height: auto;
 }
