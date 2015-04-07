@@ -19,6 +19,10 @@
 
 	<dl class="postprofile" id="profile{MESSAGE_ID}">
 		<dt class="<!-- IF RANK_TITLE or RANK_IMG -->has-profile-rank<!-- ELSE -->no-profile-rank<!-- ENDIF --> <!-- IF AUTHOR_AVATAR -->has-avatar<!-- ELSE -->no-avatar<!-- ENDIF -->">
+			<!-- IF S_ONLINE -->
+				<div class="inventea-online"><i class="fa fa-power-off"></i> {L_ONLINE}</div>
+			<!-- ENDIF -->
+
 			<div class="avatar-container">
 				<!-- EVENT ucp_pm_viewmessage_avatar_before -->
 				<!-- IF AUTHOR_AVATAR --><a href="{U_MESSAGE_AUTHOR}" class="avatar">{AUTHOR_AVATAR}</a><!-- ENDIF -->

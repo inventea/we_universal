@@ -130,6 +130,10 @@
 
 		<dl class="postprofile" id="profile{postrow.POST_ID}"<!-- IF postrow.S_POST_HIDDEN --> style="display: none;"<!-- ENDIF -->>
 			<dt class="<!-- IF postrow.RANK_TITLE or postrow.RANK_IMG -->has-profile-rank<!-- ELSE -->no-profile-rank<!-- ENDIF --> <!-- IF postrow.POSTER_AVATAR -->has-avatar<!-- ELSE -->no-avatar<!-- ENDIF -->">
+				<!-- IF postrow.S_ONLINE and not postrow.S_POST_HIDDEN -->
+					<div class="inventea-online"><i class="fa fa-power-off"></i> {L_ONLINE}</div>
+				<!-- ENDIF -->
+
 				<div class="avatar-container">
 					<!-- EVENT viewtopic_body_avatar_before -->
 					<!-- IF postrow.POSTER_AVATAR -->
