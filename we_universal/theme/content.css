@@ -445,13 +445,15 @@ dl.faq dt {
 	margin-bottom: 14px;
 }
 
-.postprofile .avatar {
-	display: inline;
-	float: none;
-}
+@media only screen and (min-width: 701px) {
+	.postprofile .avatar {
+		display: inline;
+		float: none;
+	}
 
-.postprofile .avatar img {
-	display: inline;
+	.postprofile .avatar img {
+		display: inline;
+	}
 }
 
 .postprofile dt.no-profile-rank,

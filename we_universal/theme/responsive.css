@@ -182,34 +182,19 @@ ul.topiclist dd.info {
 	border-bottom-left-radius: 0;
 }
 
+.post .postprofile {
+	padding: 18px;
+	margin-bottom: 0;
+	border: 0;
+}
+
 .postprofile dt {
-	display: table;
+	display: block;
 	text-align: left;
 }
 
-.section-viewtopic .postprofile dd,
-.section-ucp .postprofile dd {
-	display: none;
-}
-
-.inventea-online {
-	display: none;
-}
-
-.inventea-avatar {
-	margin-right: 18px;
-	margin-bottom: 0;
-	line-height: 0;
-}
-
-.inventea-avatar img {
-	width: auto;
-	height: 70px;
-}
-
-.inventea-post-author {
-	display: table-cell;
-	vertical-align: middle;
+.postprofile dd.profile-rank {
+	text-align: left;
 }
 
 /* Post message */
