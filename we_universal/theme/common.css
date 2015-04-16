@@ -417,62 +417,30 @@ p.rules img {
  * Pagination
  */
 .pagination {
-	margin-top: 8px;
 	font-size: 12px;
 }
 
-.pagination span strong,
-.pagination span a,
-.pagination span a:link,
-.pagination span a:visited,
-.pagination span a:active {
-	padding: 2px 4px;
-	font-size: 12px;
+.pagination li a,
+.pagination li span {
+	border-color: #b5b5b5;
+	border-radius: 0;
 }
 
-.row .pagination {
-	padding: 0;
-	background: none;
-	font-size: 12px;
+.pagination li a {
+	background: #e7e7e7;
+	color: #525252;
 }
 
-/* Current page */
-.pagination span strong {
+.pagination li.active span {
 	border-color: #cacaca;
 	background: #f2f2f2;
 	color: #959595;
 }
 
-.pagination span a,
-.pagination span a:link,
-.pagination span a:visited {
-	border-color: #b5b5b5;
-	background: #e7e7e7;
-	color: #525252;
-}
-
-/* Pagination on topics list */
-.row .pagination span a {
-	margin-right: 0;
-	margin-left: 4px;
-	border-color: #b5b5b5;
-	background: #f9f9f9;
-	color: #6b6b6b;
-}
-
-.pagination span a:focus,
-.pagination span a:hover,
-.pagination span a:active,
-.row .pagination span a:focus,
-.row .pagination span a:hover,
-.row .pagination span a:active,
-li.pagination span a:hover {
+.pagination li a:hover,
+.pagination .dropdown-visible a.dropdown-trigger,
+.nojs .pagination .dropdown-container:hover a.dropdown-trigger {
 	border-color: #bc2a4d;
-	background: #bc2a4d;
+	background-color: #bc2a4d;
 	color: #fff;
-}
-
-/* Bottom pagination on memberlist */
-.section-memberlist hr + ul.linklist .pagination {
-	margin-top: 5px;
 }
