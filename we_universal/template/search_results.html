@@ -139,13 +139,13 @@
 		<div class="postbody">
 			<h3><a href="{searchresults.U_VIEW_POST}">{searchresults.POST_SUBJECT}</a></h3>
 			<div class="content">{searchresults.MESSAGE}</div>
-		</div>
-	<!-- ENDIF -->
 
-	<!-- IF not searchresults.S_IGNORE_POST -->
-		<ul class="searchresults">
-			<li ><a href="{searchresults.U_VIEW_POST}" class="arrow-{S_CONTENT_FLOW_END}">{L_JUMP_TO_POST}</a></li>
-		</ul>
+			<!-- IF not searchresults.S_IGNORE_POST -->
+				<ul class="searchresults">
+					<li ><a href="{searchresults.U_VIEW_POST}" class="arrow-{S_CONTENT_FLOW_END}">{L_JUMP_TO_POST}</a></li>
+				</ul>
+			<!-- ENDIF -->
+		</div>
 	<!-- ENDIF -->
 
 			</div>

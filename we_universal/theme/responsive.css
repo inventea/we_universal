@@ -223,6 +223,10 @@ ul.topiclist dd.info {
 	border-width: 0 14px 16px 14px;
 }
 
+.search .postbody {
+	padding: 18px;
+}
+
 /**
  * Forms
  */
