@@ -1,22 +1,27 @@
-![we_universal](http://inventea.com/images/we_universal.png)
+![we_universal](https://inventea.com/images/we_universal.png)
 
 
-we_universal
-------------
+phpBB style: [we_universal](https://inventea.com/en/projects/we_universal)
+==========================================================================
 
-we_universal is a modern, clean and simple style for phpBB 3.0.x that uses
-principles of flat design and Responsive Web Design technique. Built with
-HTML5 & CSS3. Fits great on desktops and various mobile devices. Suitable
-for any kind of forum communities. Compatible with all major browsers.
+we_universal is a modern, clean style for **phpBB 3.0** and **phpBB 3.1**.
+It uses principles of flat design and Responsive Web Design technique. Fits
+great on desktops and various mobile devices. Suitable for any kind of forum
+communities. Compatible with all major browsers.
 
-Based on prosilver and built using template inheritance that simplifies
-customising and updating. All new CSS classes are prefixed with `inventia-`
-namespace and grouped in separate `we_universal.css` file.
+Based on default prosilver style. Built using [template and asset
+inheritance](https://www.phpbb.com/styles/create/#a-inheritance) which
+simplifies customisation and updating. Custom CSS classes are prefixed with
+`inventea-` namespace (previously `inventia-`). Since we_universal 2.4.0 single
+`we_universal.css` file is split into modules.
 
 Before reporting an issue please visit our
-[documentation](http://inventea.com/en/projects/we_universal/documentation) and
-[FAQ](http://inventea.com/en/projects/we_universal/faq) which covers common
+[documentation](https://inventea.com/en/projects/we_universal/documentation) and
+[FAQ](https://inventea.com/en/projects/we_universal/faq) which covers common
 problems and questions.
+
+**Caution: phpBB 3.0 and phpBB 3.1 styles are not compatible.** For phpBB 3.0
+choose we_universal 2.3.x. For phpBB 3.1 install we_universal 2.4.x or higher.
 
 
 Installation
