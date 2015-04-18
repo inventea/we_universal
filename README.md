@@ -29,8 +29,8 @@ style version, phpBB version, installed modifications/extensions list.
 Preview
 -------
 
-- https://inventea.com/phpbb/3.1/we_universal
-- https://inventea.com/phpbb/3.0/we_universal
+- we_universal for phpBB 3.1: https://inventea.com/phpbb/3.1/we_universal
+- we_universal for phpBB 3.0: https://inventea.com/phpbb/3.0/we_universal
 
 
 Installation
@@ -41,7 +41,7 @@ and `style.cfg`) to the `styles/` directory from your phpBB installation.
 Next go to *Administration Control Panel*, open *CUSTOMISE* tab, navigate to
 *Install Styles* page and click *Install style* on the list of new styles. 
 
-To activate the style, go to *Board settings* from *GENERAL* tab where you can
+To activate the style, go to *Board settings* from *GENERAL* tab, where you can
 select new default and guest style.
 
 
