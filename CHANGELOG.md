@@ -1,3 +1,16 @@
+2.4.0
+-----
+
+- First release for phpBB 3.1
+- Asset (CSS files and images) inheritance from prosilver
+- Single `we_universal.css` file split into modules
+- Replaced Zepto.js with jQuery 1.11.0 bundled with phpBB
+- Changed `inventia-` prefix to `inventea-`
+- Changed dashboard size from 1170x230 to 1170x240px
+- Moved media queries CSS to `responsive.css`
+- Additional `<body>` classes: `logged-in` and `logged-out`
+
+
 2.3.0
 -----
 
