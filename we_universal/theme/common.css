@@ -115,7 +115,7 @@ a:active {
 	border-top: 0;
 }
 
-.inventea-content::after {
+.inventea-content:after {
 	content: "";
 	display: block;
 	clear: both;
@@ -187,7 +187,7 @@ ul.linklist.inventea-user-menu > li + li {
 }
 
 /* Menu items icons */
-.inventea-user-menu > li > a::before {
+.inventea-user-menu > li > a:before {
 	float: left;
 	margin-right: 6px;
 	color: #6b6b6b;
@@ -195,10 +195,10 @@ ul.linklist.inventea-user-menu > li + li {
 	font-size: 16px;
 }
 
-.inventea-user-menu > .icon-logout > a::before { content: "\f090"; }
-.inventea-user-menu > .icon-register > a::before { content: "\f234"; }
-.inventea-user-menu > .icon-pm > a::before { content: "\f0e0"; }
-.inventea-user-menu > .icon-notification > a::before { content: "\f0f3"; }
+.inventea-user-menu > .icon-logout > a:before 		{ content: "\f090"; }
+.inventea-user-menu > .icon-register > a:before 	{ content: "\f234"; }
+.inventea-user-menu > .icon-pm > a:before 			{ content: "\f0e0"; }
+.inventea-user-menu > .icon-notification > a:before { content: "\f0f3"; }
 
 /* Small avatar near username */
 .header-avatar img {
@@ -281,10 +281,10 @@ ul.linklist > li {
 }
 
 /* Items separator */
-.breadcrumbs .crumb::before,
-.breadcrumbs .crumb:first-child::before,
-ul.linklist > li:not(.breadcrumbs)::before,
-#nav-footer > li.responsive-menu::after {
+.breadcrumbs .crumb:before,
+.breadcrumbs .crumb:first-child:before,
+ul.linklist > li:not(.breadcrumbs):before,
+#nav-footer > li.responsive-menu:after {
 	content: "/";
 	float: right;
 	margin: 0 10px;
@@ -294,14 +294,14 @@ ul.linklist > li:not(.breadcrumbs)::before,
 	font-weight: normal;
 }
 
-ul.linklist > li:not(.breadcrumbs)::before,
-#nav-footer > li.responsive-menu::after {
+ul.linklist > li:not(.breadcrumbs):before,
+#nav-footer > li.responsive-menu:after {
 	float: left;
 }
 
-.breadcrumbs:last-child .crumb:last-child::before,
-#nav-footer .breadcrumbs .crumb:last-child::before,
-ul.linklist > li.inventea-time::before {
+.breadcrumbs:last-child .crumb:last-child:before,
+#nav-footer .breadcrumbs .crumb:last-child:before,
+ul.linklist > li.inventea-time:before {
 	content: none;
 }
 
@@ -351,7 +351,7 @@ ul.linklist .small-icon > a {
 /**
  * Footer
  */
-.inventea-footer::after {
+.inventea-footer:after {
 	content: "";
 	display: block;
 	clear: both;

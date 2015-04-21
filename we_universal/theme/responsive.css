@@ -203,20 +203,20 @@ ul.topiclist dd.info {
 	border-bottom-left-radius: 7px;
 }
 
-.post.bg1 .postbody::before {
+.post.bg1 .postbody:before {
 	border-color: transparent transparent #f8f8f8 transparent;
 }
 
-.post.bg2 .postbody::before {
+.post.bg2 .postbody:before {
 	border-color: transparent transparent #f2f2f2 transparent;
 }
 
-.post.reported .postbody::before {
+.post.reported .postbody:before {
 	border-color: transparent transparent #f7ecef transparent;
 }
 
 /* Post message left triangle */
-.post .postbody::before {
+.post .postbody:before {
 	right: 25px;
 	margin-top: -34px;
 	margin-left: 0;

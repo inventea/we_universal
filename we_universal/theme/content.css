@@ -170,7 +170,7 @@ ul.topiclist li.row a.subforum {
 	white-space: nowrap;
 }
 
-ul.topiclist li.row a.subforum::before {
+ul.topiclist li.row a.subforum:before {
 	content: "\f07b";
 	display: inline-block;
 	margin-right: 4px;
@@ -179,7 +179,7 @@ ul.topiclist li.row a.subforum::before {
 	font-family: FontAwesome;
 }
 
-ul.topiclist li.row a.subforum.unread::before {
+ul.topiclist li.row a.subforum.unread:before {
 	color: #bc2a4d;
 }
 
@@ -475,20 +475,20 @@ ul.profile-icons {
 	border-bottom-right-radius: 7px;
 }
 
-.post.bg1 .postbody::before {
+.post.bg1 .postbody:before {
 	border-color: transparent #f8f8f8 transparent transparent;
 }
 
-.post.bg2 .postbody::before {
+.post.bg2 .postbody:before {
 	border-color: transparent #f2f2f2 transparent transparent;
 }
 
-.post.reported .postbody::before {
+.post.reported .postbody:before {
 	border-color: transparent #f7ecef transparent transparent;
 }
 
 /* Post message left triangle */
-.post .postbody::before {
+.post .postbody:before {
 	content: "";
 	position: absolute;
 	display: block;
@@ -555,7 +555,7 @@ p.author {
 	border-radius: 7px;
 }
 
-#cp-main .post .postbody::before {
+#cp-main .post .postbody:before {
 	content: none;
 }
 
@@ -586,7 +586,7 @@ p.author {
 	border-radius: 7px;
 }
 
-#postform .postbody::before {
+#postform .postbody:before {
 	content: none;
 }
 
@@ -769,7 +769,7 @@ blockquote blockquote blockquote {
 }
 
 /* Quote icon before "XYZ wrote:" */
-blockquote::before {
+blockquote:before {
 	content: "\f10d";
 	display: block;
 	font-family: FontAwesome;
@@ -867,27 +867,27 @@ a.postlink:hover {
 	text-decoration: none;
 }
 
-.postprofile ul.profile-icons li a::before,
-.postbody ul.profile-icons li a::before {
+.postprofile ul.profile-icons li a:before,
+.postbody ul.profile-icons li a:before {
 	display: block;
 	font-family: FontAwesome;
 	font-size: 14px;
 }
 
-.pm-icon a::before 		{ content: "\f075"; }
-.email-icon a::before 	{ content: "\f0e0"; }
-.web-icon a::before 	{ content: "\f0ac"; }
-.msnm-icon a::before 	{ content: "\f17a"; }
-.icq-icon a::before 	{ content: "\f069"; }
-.yahoo-icon a::before 	{ content: "\f19e"; }
-.aim-icon a::before 	{ content: "\f183"; }
-.jabber-icon a::before 	{ content: "\f0eb"; }
-.edit-icon a::before 	{ content: "\f040"; }
-.delete-icon a::before 	{ content: "\f00d"; }
-.report-icon a::before 	{ content: "\f071"; }
-.warn-icon a::before 	{ content: "\f056"; }
-.info-icon a::before 	{ content: "\f129"; }
-.quote-icon a::before 	{ content: "\f10d"; }
+.pm-icon a:before 		{ content: "\f075"; }
+.email-icon a:before 	{ content: "\f0e0"; }
+.web-icon a:before 	{ content: "\f0ac"; }
+.msnm-icon a:before 	{ content: "\f17a"; }
+.icq-icon a:before 	{ content: "\f069"; }
+.yahoo-icon a:before 	{ content: "\f19e"; }
+.aim-icon a:before 	{ content: "\f183"; }
+.jabber-icon a:before 	{ content: "\f0eb"; }
+.edit-icon a:before 	{ content: "\f040"; }
+.delete-icon a:before 	{ content: "\f00d"; }
+.report-icon a:before 	{ content: "\f071"; }
+.warn-icon a:before 	{ content: "\f056"; }
+.info-icon a:before 	{ content: "\f129"; }
+.quote-icon a:before 	{ content: "\f10d"; }
 
 /* Who is online */
 .inventea-quickmod + h3 {
@@ -1020,19 +1020,19 @@ hr + .topic-actions {
 	background: none;
 }
 
-.buttons div span::before {
+.buttons div span:before {
 	display: block;
 	margin-right: 7px;
 	font-family: FontAwesome;
 	font-size: 14px;
 }
 
-.forwardpm-icon span::before 	{ content: "\f064"; }
-.locked-icon span::before 		{ content: "\f023"; }
-.pmreply-icon span::before 		{ content: "\f112"; }
-.reply-icon span::before 		{ content: "\f112"; }
-.newpm-icon span::before 		{ content: "\f055"; }
-.post-icon span::before 		{ content: "\f055"; }
+.forwardpm-icon span:before 	{ content: "\f064"; }
+.locked-icon span:before 		{ content: "\f023"; }
+.pmreply-icon span:before 		{ content: "\f112"; }
+.reply-icon span:before 		{ content: "\f112"; }
+.newpm-icon span:before 		{ content: "\f055"; }
+.post-icon span:before 			{ content: "\f055"; }
 
 /**
  * Miscellaneous
@@ -1107,19 +1107,19 @@ a.right:hover {
 	color: #bc2a4d;
 }
 
-a.left::before,
-a.right::after {
+a.left:before,
+a.right:after {
 	display: inline-block;
 	color: #959595;
 	font-family: FontAwesome;
 }
 
-a.left::before {
+a.left:before {
 	content: "\f060";
 	margin-right: 6px;
 }
 
-a.right::after {
+a.right:after {
 	content: "\f061";
 	margin-left: 6px;
 }
