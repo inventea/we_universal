@@ -248,6 +248,7 @@ ul.linklist.inventea-user-menu > li + li {
 .inventea-menu li > a {
 	display: block;
 	padding: 8px 10px;
+	background: #333;
 	background: rgba(0, 0, 0, 0.5);
 	color: #eee;
 }

@@ -876,11 +876,11 @@ a.postlink:hover {
 
 .pm-icon a:before 		{ content: "\f075"; }
 .email-icon a:before 	{ content: "\f0e0"; }
-.web-icon a:before 	{ content: "\f0ac"; }
+.web-icon a:before 		{ content: "\f0ac"; }
 .msnm-icon a:before 	{ content: "\f17a"; }
-.icq-icon a:before 	{ content: "\f069"; }
+.icq-icon a:before 		{ content: "\f069"; }
 .yahoo-icon a:before 	{ content: "\f19e"; }
-.aim-icon a:before 	{ content: "\f183"; }
+.aim-icon a:before 		{ content: "\f183"; }
 .jabber-icon a:before 	{ content: "\f0eb"; }
 .edit-icon a:before 	{ content: "\f040"; }
 .delete-icon a:before 	{ content: "\f00d"; }
