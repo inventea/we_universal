@@ -11,25 +11,26 @@ any kind of forum communities and it is compatible with all major browsers.
 
 we_universal is built on top of prosilver and uses [template + asset
 inheritance](https://www.phpbb.com/styles/create/#a-inheritance). Custom CSS
-classes are prefixed with `inventea-` namespace (previously `inventia-`).
-Since we_universal 2.4.0 single `we_universal.css` file is split into separate
-files corresponding to the prosilver structure.
+classes are prefixed with `inventea-` namespace. Since we_universal 2.4.0
+single `we_universal.css` file is split into separate files corresponding
+to the prosilver structure.
 
-**Caution: phpBB 3.0 and phpBB 3.1 styles are not compatible.** For phpBB 3.0
-choose we_universal 2.3.x. For phpBB 3.1 install we_universal 2.4.x or higher.
+**phpBB 3.0 and phpBB 3.1 styles are not compatible.** For phpBB 3.0 choose
+we_universal 2.3.x. For phpBB 3.1 install we_universal 2.4.x or higher.
 
 Before reporting an issue please visit our
 [documentation](https://inventea.com/en/projects/we_universal/documentation)
 and [FAQ](https://inventea.com/en/projects/we_universal/faq) which covers common
-problems and questions. In support request or bug description please include:
-style version, phpBB version, installed modifications/extensions list.
+problems and questions. For support requests or bug descriptions please include:
+style version, phpBB version, screenshot, installed modifications/extensions
+list, browser and device.
 
 
 Preview
 -------
 
-- we_universal for phpBB 3.1: https://inventea.com/phpbb/3.1/we_universal
-- we_universal for phpBB 3.0: https://inventea.com/phpbb/3.0/we_universal
+- [we_universal for phpBB 3.1](https://inventea.com/phpbb/3.1/we_universal)
+- [we_universal for phpBB 3.0](https://inventea.com/phpbb/3.0/we_universal)
 
 
 Installation
