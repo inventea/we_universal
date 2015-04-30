@@ -23,7 +23,7 @@ Before reporting an issue please visit our
 and [FAQ](https://inventea.com/en/projects/we_universal/faq) which covers common
 problems and questions. For support requests or bug descriptions please include:
 style version, phpBB version, screenshot, installed modifications/extensions
-list, browser and device.
+list, browser and device info.
 
 
 Preview
@@ -41,7 +41,7 @@ and `style.cfg`) to the `styles/` directory from your phpBB installation.
 Next go to *Administration Control Panel*, open *CUSTOMISE* tab, navigate to
 *Install Styles* page and click *Install style* on the list of new styles. 
 
-To activate the style, go to *Board settings* from *GENERAL* tab, where you can
+To activate the style go to *Board settings* from *GENERAL* tab where you can
 select new default and guest style.
 
 
