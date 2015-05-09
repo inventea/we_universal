@@ -1,644 +1,447 @@
-/* General Markup Styles
----------------------------------------- */
-
-* {
-	/* Reset browsers default margin, padding and font sizes */
-	margin: 0;
-	padding: 0;
-}
-
-html {
-	font-size: 100%;
-	/* Always show a scrollbar for short pages - stops the jump when the scrollbar appears. non-IE browsers */
-	height: 101%;
+/**
+ * Common tags
+ */
+html,
+body {
+	background: #f9f9f9;
+	color: #525252;
 }
 
 body {
-	/* Text-Sizing with ems: http://www.clagnut.com/blog/348/ */
-	font-family: Verdana, Helvetica, Arial, sans-serif;
-	color: #828282;
-	background-color: #FFFFFF;
-	/*font-size: 62.5%;			 This sets the default font size to be equivalent to 10px */
-	font-size: 10px;
 	margin: 0;
-	padding: 12px 0;
+	padding: 0;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 12px;
 }
 
 h1 {
-	/* Forum name */
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	margin-right: 200px;
-	color: #FFFFFF;
-	margin-top: 15px;
-	font-weight: bold;
-	font-size: 2em;
+	margin: 0 0 5px 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36px;
 }
 
 h2 {
-	/* Forum header titles */
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-weight: normal;
-	color: #3f3f3f;
-	font-size: 2em;
-	margin: 0.8em 0 0.2em 0;
-}
-
-h2.solo {
-	margin-bottom: 1em;
+	margin-top: 0;
+	margin-bottom: 12px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 h3 {
-	/* Sub-headers (also used as post headers, but defined later) */
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	text-transform: uppercase;
-	border-bottom: 1px solid #CCCCCC;
-	margin-bottom: 3px;
-	padding-bottom: 2px;
-	font-size: 1.05em;
-	color: #989898;
-	margin-top: 20px;
-}
-
-h4 {
-	/* Forum and topic list titles */
-	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, Sans-serif;
-	font-size: 1.3em;
+	margin-top: 24px;
+	margin-bottom: 8px;
+	padding-bottom: 5px;
+	color: #3f3f3f;
+	font-size: 14px;
 }
 
 p {
-	line-height: 1.3em;
-	font-size: 1.1em;
-	margin-bottom: 1.5em;
-}
-
-img {
-	border-width: 0;
+	margin-bottom: 18px;
+	line-height: 18px;
+	font-size: 12px;
 }
 
 hr {
-	/* Also see tweaks.css */
-	border: 0 none #FFFFFF;
-	border-top: 1px solid #CCCCCC;
-	height: 1px;
-	margin: 5px 0;
-	display: block;
-	clear: both;
+	margin-top: 8px;
+	margin-bottom: 8px;
 }
 
-hr.dashed {
-	border-top: 1px dashed #CCCCCC;
-	margin: 10px 0;
+a:link,
+a:visited {
+	color :#3f3f3f;
 }
 
-hr.divider {
-	display: none;
+a:focus,
+a:hover,
+a:active {
+	text-decoration: underline;
+	color: #bc2a4d;
 }
 
-p.right {
-	text-align: right;
-}
-
-/* Main blocks
----------------------------------------- */
+/**
+ * Structure
+ *
+ * Main structure including wrapper, header, content and footer. By default
+ * forum width is fluid (with support for Responsive Web Design). To change it
+ * to fixed width, remove below "max-width" property and set desired width. Next
+ * remove links to both responsive.css files in overall_header.html.
+ */
 #wrap {
-	padding: 0 20px;
-	min-width: 650px;
+	max-width: none;
+	min-width: 0;
+	margin: 0;
+	padding: 15px 0;
+	border: 0;
+	border-radius: 0;
+	background: none;
 }
 
-#simple-wrap {
-	padding: 6px 10px;
+.inventea-wrapper,
+.inventea-dashboard,
+.inventea-footer {
+	box-sizing: border-box;
+	width: 95%;
+	max-width: 1170px;
+	margin: auto;
 }
 
-#page-body {
-	margin: 4px 0;
-	clear: both;
+.inventea-wrapper {
+	padding: 15px 20px;
+	border: 2px solid #e7e7e7;
+	background: #fff;
 }
 
-#page-footer {
-	clear: both;
-}
-
-#page-footer h3 {
-	margin-top: 20px;
-}
-
-#logo {
-	float: left;
-	width: auto;
-	padding: 10px 13px 0 10px;
-}
-
-a#logo:hover {
-	text-decoration: none;
-}
-
-/* Search box
---------------------------------------------- */
-#search-box {
-	color: #FFFFFF;
+.inventea-userbar {
 	position: relative;
-	margin-top: 30px;
-	margin-right: 5px;
+	height: 49px;
+	padding-top: 14px;
+	border-bottom: 0;
+	color: #959595;
+}
+
+.inventea-header {
+	width: 100%;
+	background: #292c2f;
+}
+
+.inventea-dashboard {
+	position: relative;
+	min-height: 240px;
+	background: url("./images/dashboard.jpg") center center no-repeat;
+	background-size: cover;
+}
+
+.inventea-content {
+	position: relative;
+	border-top: 0;
+}
+
+.inventea-content:after {
+	content: "";
 	display: block;
-	float: right;
-	text-align: right;
-	white-space: nowrap; /* For Opera */
-}
-
-#search-box #keywords {
-	width: 95px;
-	background-color: #FFF;
-}
-
-#search-box input {
-	border: 1px solid #b0b0b0;
-}
-
-/* .button1 style defined later, just a few tweaks for the search button version */
-#search-box input.button1 {
-	padding: 1px 5px;
-}
-
-#search-box li {
-	text-align: right;
-	margin-top: 4px;
-}
-
-#search-box img {
-	vertical-align: middle;
-	margin-right: 3px;
-}
-
-/* Site description and logo */
-#site-description {
-	float: left;
-	width: 70%;
-}
-
-#site-description h1 {
-	margin-right: 0;
-}
-
-/* Round cornered boxes and backgrounds
----------------------------------------- */
-.headerbar {
-	background: #ebebeb none repeat-x 0 0;
-	color: #FFFFFF;
-	margin-bottom: 4px;
-	padding: 0 5px;
-}
-
-.navbar {
-	background-color: #ebebeb;
-	padding: 0 10px;
-}
-
-.forabg {
-	background: #b1b1b1 none repeat-x 0 0;
-	margin-bottom: 4px;
-	padding: 0 5px;
 	clear: both;
 }
 
-.forumbg {
-	background: #ebebeb none repeat-x 0 0;
-	margin-bottom: 4px;
-	padding: 0 5px;
-	clear: both;
-}
-
-.panel {
-	margin-bottom: 4px;
-	padding: 0 10px;
-	background-color: #f3f3f3;
-	color: #3f3f3f;
-}
-
-.post {
-	padding: 0 10px;
-	margin-bottom: 4px;
-	background-repeat: no-repeat;
-	background-position: 100% 0;
-}
-
-.post:target .content {
-	color: #000000;
-}
-
-.post:target h3 a {
-	color: #000000;
-}
-
-.bg1	{ background-color: #f7f7f7;}
-.bg2	{ background-color: #f2f2f2; }
-.bg3	{ background-color: #ebebeb; }
-
-.rowbg {
-	margin: 5px 5px 2px 5px;
-}
-
-.ucprowbg {
-	background-color: #e2e2e2;
-}
-
-.fieldsbg {
-	/*border: 1px #DBDEE2 solid;*/
-	background-color: #eaeaea;
-}
-
-span.corners-top, span.corners-bottom, span.corners-top span, span.corners-bottom span {
-	font-size: 1px;
-	line-height: 1px;
+.inventea-footer-wrapper {
 	display: block;
-	height: 5px;
-	background-repeat: no-repeat;
+	box-shadow: inset 0 20px 30px -20px #d5d5d5;
+	width: 100%;
+	margin-top: -25px;
+	border-top: 1px solid #e2e2e2;
 }
 
-span.corners-top {
-	background-image: none;
-	background-position: 0 0;
-	margin: 0 -5px;
+.inventea-footer {
+	margin: 42px auto;
+	padding: 0 22px;
+	color: #959595;
+	line-height: 18px;
+	font-size: 12px;
 }
 
-span.corners-top span {
-	background-image: none;
-	background-position: 100% 0;
+/**
+ * Forum name and description
+ */
+.inventea-sitename {
+	padding: 76px 50px 98px;
+	color: #fff;
+	font-size: 14px;
 }
 
-span.corners-bottom {
-	background-image: none;
-	background-position: 0 100%;
-	margin: 0 -5px;
-	clear: both;
+.inventea-sitename a {
+	color: #fff;
 }
 
-span.corners-bottom span {
-	background-image: none;
-	background-position: 100% 100%;
-}
-
-.headbg span.corners-bottom {
-	margin-bottom: -1px;
-}
-
-.post span.corners-top, .post span.corners-bottom, .panel span.corners-top, .panel span.corners-bottom, .navbar span.corners-top, .navbar span.corners-bottom {
-	margin: 0 -10px;
-}
-
-.rules span.corners-top {
-	margin: 0 -10px 5px -10px;
-}
-
-.rules span.corners-bottom {
-	margin: 5px -10px 0 -10px;
-}
-
-/* Horizontal lists
-----------------------------------------*/
-ul.linklist {
-	display: block;
-	margin: 0;
-}
-
-ul.linklist li {
-	display: block;
-	list-style-type: none;
-	float: left;
-	width: auto;
-	margin-right: 5px;
-	font-size: 1.1em;
-	line-height: 2.2em;
-}
-
-ul.linklist li.rightside, p.rightside {
-	float: right;
-	margin-right: 0;
-	margin-left: 5px;
-	text-align: right;
-}
-
-ul.navlinks {
-	padding-bottom: 1px;
-	margin-bottom: 1px;
-	border-bottom: 1px solid #FFFFFF;
-	font-weight: bold;
-}
-
-ul.leftside {
-	float: left;
+/**
+ * User menu
+ *
+ * Navigation bar on top of forum (above dashboard) containing notifications,
+ * private messages and dropdown profile links.
+ *
+ * Sticky navigation on scroll provided by Headroom.js:
+ * http://wicky.nillia.ms/headroom.js/
+ */
+ul.linklist.inventea-user-menu > li {
 	margin-left: 0;
-	margin-right: 5px;
-	text-align: left;
 }
 
-ul.rightside {
-	float: right;
-	margin-left: 5px;
-	margin-right: -5px;
-	text-align: right;
+ul.linklist.inventea-user-menu > li + li {
+	margin-right: 21px;
 }
 
-/* Table styles
-----------------------------------------*/
-table.table1 {
-	/* See tweaks.css */
-}
-
-#ucp-main table.table1 {
-	padding: 2px;
-}
-
-table.table1 thead th {
-	font-weight: normal;
-	text-transform: uppercase;
-	color: #FFFFFF;
-	line-height: 1.3em;
-	font-size: 1em;
-	padding: 0 0 4px 3px;
-}
-
-table.table1 thead th span {
-	padding-left: 7px;
-}
-
-table.table1 tbody tr {
-	border: 1px solid #cfcfcf;
-}
-
-table.table1 tbody tr:hover, table.table1 tbody tr.hover {
-	background-color: #f6f6f6;
-	color: #000;
-}
-
-table.table1 td {
-	color: #6a6a6a;
-	font-size: 1.1em;
-}
-
-table.table1 tbody td {
-	padding: 5px;
-	border-top: 1px solid #FAFAFA;
-}
-
-table.table1 tbody th {
-	padding: 5px;
-	border-bottom: 1px solid #000000;
-	text-align: left;
-	color: #333333;
-	background-color: #FFFFFF;
-}
-
-/* Specific column styles */
-table.table1 .name		{ text-align: left; }
-table.table1 .posts		{ text-align: center !important; width: 7%; }
-table.table1 .joined	{ text-align: left; width: 15%; }
-table.table1 .active	{ text-align: left; width: 15%; }
-table.table1 .mark		{ text-align: center; width: 7%; }
-table.table1 .info		{ text-align: left; width: 30%; }
-table.table1 .info div	{ width: 100%; white-space: normal; overflow: hidden; }
-table.table1 .autocol	{ line-height: 2em; white-space: nowrap; }
-table.table1 thead .autocol { padding-left: 1em; }
-
-table.table1 span.rank-img {
-	float: right;
-	width: auto;
-}
-
-table.info td {
-	padding: 3px;
-}
-
-table.info tbody th {
-	padding: 3px;
-	text-align: right;
-	vertical-align: top;
-	color: #000000;
+/* Notifications and PMs counters */
+.inventea-user-menu > li > a > strong {
+	float: left;
+	margin: -3px 6px 0 -11px;
+	padding: 1px 3px 2px;
+	border-radius: 2px;
+	background: #bc2a4d;
+	color: #fff;
+	line-height: 1;
+	font-size: 11px;
 	font-weight: normal;
 }
 
-.forumbg table.table1 {
-	margin: 0;
+/* Reset counters padding in responsive view */
+.compact .icon-notification > a > strong,
+.compact .icon-pm > a > strong {
+	padding-left: 3px;
 }
 
-.forumbg-table > .inner {
-	margin: 0 -1px;
-}
-
-.forumbg-table > .inner > span.corners-top {
-	margin: 0 -4px -1px -4px;
-}
-
-.forumbg-table > .inner > span.corners-bottom {
-	margin: -1px -4px 0 -4px;
-}
-
-/* Misc layout styles
----------------------------------------- */
-/* column[1-2] styles are containers for two column layouts 
-   Also see tweaks.css */
-.column1 {
+/* Menu items icons */
+.inventea-user-menu > li > a:before {
 	float: left;
-	clear: left;
-	width: 49%;
+	margin-right: 6px;
+	color: #6b6b6b;
+	font-family: FontAwesome;
+	font-size: 16px;
 }
 
-.column2 {
-	float: right;
-	clear: right;
-	width: 49%;
+.inventea-user-menu > .icon-logout > a:before 		{ content: "\f090"; }
+.inventea-user-menu > .icon-register > a:before 	{ content: "\f234"; }
+.inventea-user-menu > .icon-pm > a:before 			{ content: "\f0e0"; }
+.inventea-user-menu > .icon-notification > a:before { content: "\f0f3"; }
+
+/* Small avatar near username */
+.header-avatar img {
+	max-height: 21px;
+	margin: -3px 3px 0 0;
+	border-radius: 3px;
 }
 
-/* General classes for placing floating blocks */
-.left-box {
-	float: left;
-	width: auto;
-	text-align: left;
+/**
+ * Forum navigation
+ *
+ * Main menu located in header (dashboard). Consists of two navigation lines:
+ * posts/topics related links on top and general forum links on bottom.
+ *
+ * Displayed only on devices with screen width bigger than 700px. On devices
+ * with low screen resolution it's replaced by dropdown menu with activation button
+ * located in user menu.
+ */
+.inventea-posts-menu,
+.inventea-forum-menu {
+	position: absolute;
 }
 
-.right-box {
-	float: right;
-	width: auto;
-	text-align: right;
+.inventea-posts-menu {
+	right: 0;
 }
 
-dl.details {
-	/*font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;*/
-	font-size: 1.1em;
+.inventea-forum-menu {
+	bottom: 0;
 }
 
-dl.details dt {
-	float: left;
-	clear: left;
-	width: 30%;
-	text-align: right;
-	color: #000000;
+.inventea-menu {
 	display: block;
+	list-style: none;
 }
 
-dl.details dd {
-	margin-left: 0;
-	padding-left: 5px;
-	margin-bottom: 5px;
-	color: #828282;
+.inventea-menu li {
 	float: left;
-	width: 65%;
+	background: none;
 }
 
-/* Pagination
----------------------------------------- */
-.pagination {
-	height: 1%; /* IE tweak (holly hack) */
-	width: auto;
-	text-align: right;
-	margin-top: 5px;
-	float: right;
+/* Space between menu items */
+.inventea-menu li + li {
+	margin-left: 4px;
 }
 
-.pagination span.page-sep {
-	display: none;
+.inventea-menu li > a {
+	display: block;
+	padding: 8px 10px;
+	background: #333;
+	background: rgba(0, 0, 0, 0.5);
+	color: #eee;
 }
 
-li.pagination {
-	margin-top: 0;
-}
-
-.pagination strong, .pagination b {
-	font-weight: normal;
-}
-
-.pagination span strong {
-	padding: 0 2px;
-	margin: 0 2px;
-	font-weight: normal;
-	color: #FFFFFF;
-	background-color: #bfbfbf;
-	border: 1px solid #bfbfbf;
-	font-size: 0.9em;
-}
-
-.pagination span a, .pagination span a:link, .pagination span a:visited, .pagination span a:active {
-	font-weight: normal;
-	text-decoration: none;
-	color: #747474;
-	margin: 0 2px;
-	padding: 0 2px;
-	background-color: #eeeeee;
-	border: 1px solid #bababa;
-	font-size: 0.9em;
-	line-height: 1.5em;
-}
-
-.pagination span a:hover {
-	border-color: #d2d2d2;
-	background-color: #d2d2d2;
-	color: #FFF;
+.inventea-menu li > a:focus,
+.inventea-menu li > a:hover,
+.inventea-menu li > a:active {
+	background: rgba(0, 0, 0, 0.9);
 	text-decoration: none;
 }
 
-.pagination img {
-	vertical-align: middle;
+/**
+ * Breadcrumbs and footer navigation
+ */
+#nav-breadcrumbs {
+	margin-top: 3px;
+	margin-bottom: 24px;
+	border: 0;
 }
 
-/* Pagination in viewforum for multipage topics */
-.row .pagination {
+ul.linklist > li {
+	margin: 0;
+	padding: 0;
+	line-height: 18px;
+	font-size: 12px;
+}
+
+#nav-footer > li.rightside {
+	float: left;
+	margin: 0;
+}
+
+/* Items separator */
+.breadcrumbs .crumb:before,
+.breadcrumbs .crumb:first-child:before,
+ul.linklist > li:not(.breadcrumbs):before,
+#nav-footer > li.responsive-menu:after {
+	content: "/";
+	float: right;
+	margin: 0 10px;
+	padding: 0;
+	color: #cacaca;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+ul.linklist > li:not(.breadcrumbs):before,
+#nav-footer > li.responsive-menu:after {
+	float: left;
+}
+
+.breadcrumbs:last-child .crumb:last-child:before,
+#nav-footer .breadcrumbs .crumb:last-child:before,
+ul.linklist > li.inventea-time:before {
+	content: none;
+}
+
+li.breadcrumbs span:first-child > a {
+	padding: 0;
+}
+
+.breadcrumbs .crumb {
+	font-weight: normal;
+}
+
+.breadcrumbs.wrapped .crumb a,
+.breadcrumbs.wrapped .crumb.wrapped-medium a,
+.breadcrumbs.wrapped .crumb.wrapped-tiny a {
+	letter-spacing: normal;
+}
+
+/* Responsive menu hamburger link */
+ul.linklist li.responsive-menu {
+	margin: 0 2px;
+}
+
+ul.linklist li.responsive-menu a.responsive-menu-link {
+	margin: 0 1px;
+	line-height: 18px;
+}
+
+ul.linklist li.responsive-menu a.responsive-menu-link:before {
+	top: 5px;
+	border-color: #525252;
+}
+
+ul.linklist li.responsive-menu a.responsive-menu-link:hover:before,
+ul.linklist li.responsive-menu.visible a.responsive-menu-link:before {
+	border-color: #bc2a4d;
+}
+
+/* Remove links icons */
+ul.linklist .small-icon {
+	background: none;
+}
+
+ul.linklist .small-icon > a {
+	padding: 0;
+}
+
+/**
+ * Footer
+ */
+.inventea-footer:after {
+	content: "";
 	display: block;
+	clear: both;
+}
+
+.inventea-footer a {
+	color: #525252;
+}
+
+.inventea-footer a:focus,
+.inventea-footer a:hover,
+.inventea-footer a:active {
+	color: #bc2a4d;
+}
+
+.inventea-credits {
+	float: left;
+}
+
+#nav-footer {
 	float: right;
-	width: auto;
-	margin-top: 0;
-	padding: 1px 0 1px 15px;
-	font-size: 0.9em;
-	background: none 0 50% no-repeat;
+	margin-bottom: 18px;
 }
 
-.row .pagination span a, li.pagination span a {
-	background-color: #FFFFFF;
-}
-
-.row .pagination span a:hover, li.pagination span a:hover {
-	background-color: #d2d2d2;
-}
-
-/* Miscellaneous styles
----------------------------------------- */
-#forum-permissions {
-	float: right;
-	width: auto;
-	padding-left: 5px;
-	margin-left: 5px;
-	margin-top: 10px;
-	text-align: right;
-}
-
-.copyright {
-	padding: 5px;
-	text-align: center;
-	color: #555555;
-}
-
-.small {
-	font-size: 0.9em !important;
-}
-
-.titlespace {
-	margin-bottom: 15px;
-}
-
-.headerspace {
-	margin-top: 20px;
-}
-
-.error {
-	color: #bcbcbc;
-	font-weight: bold;
-	font-size: 1em;
-}
-
-.reported {
-	background-color: #f7f7f7;
-}
-
-li.reported:hover {
-	background-color: #ececec;
+/**
+ * Alerts
+ */
+div.rules,
+p.rules {
+	border: 1px solid #ebccd1;
+	background-color: #f2dede;
+	padding: 6px 9px;
 }
 
 div.rules {
-	background-color: #ececec;
-	color: #bcbcbc;
-	padding: 0 10px;
-	margin: 10px 0;
-	font-size: 1.1em;
-}
-
-div.rules ul, div.rules ol {
-	margin-left: 20px;
-}
-
-p.rules {
-	background-color: #ececec;
-	background-image: none;
-	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	line-height: 18px;
+	font-size: 12px;
 }
 
 p.rules img {
-	vertical-align: middle;
-	padding-top: 5px;
+	padding-top: 0;
 }
 
-p.rules a {
-	vertical-align: middle;
-	clear: both;
+/* Disabled board information */
+#information {
+	margin-top: 0;
+	margin-bottom: 24px;
 }
 
-#top {
-	position: absolute;
-	top: -20px;
+.notice {
+	margin-bottom: 15px;
+	padding: 7px;
+	border: 1px solid #ddd;
+	background: #fbfbfb;
+	line-height: 18px;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 12px;
 }
 
-.clear {
-	display: block;
-	clear: both;
-	font-size: 1px;
-	line-height: 1px;
-	background: transparent;
+/**
+ * Pagination
+ */
+.pagination {
+	font-size: 12px;
+}
+
+.pagination li a,
+.pagination li span {
+	border-color: #b5b5b5;
+	border-radius: 0;
+}
+
+.pagination li a {
+	background: #e7e7e7;
+	color: #525252;
+}
+
+.pagination li.active span {
+	border-color: #cacaca;
+	background: #f2f2f2;
+	color: #959595;
+}
+
+.pagination li a:hover,
+.pagination .dropdown-visible a.dropdown-trigger,
+.nojs .pagination .dropdown-container:hover a.dropdown-trigger {
+	border-color: #bc2a4d;
+	background-color: #bc2a4d;
+	color: #fff;
 }

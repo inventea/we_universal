@@ -1,0 +1,37 @@
+<div class="dropdown-container hidden inventea-mobile-dropdown-menu">
+    <a href="#" class="dropdown-trigger inventea-toggle"><i class="fa fa-bars"></i></a>
+    <div class="dropdown hidden">
+        <div class="pointer"><div class="pointer-inner"></div></div>
+        <ul class="dropdown-contents" role="menubar">
+            <!-- IF U_SITE_HOME --><li><a href="{U_SITE_HOME}" role="menuitem"><i class="fa fa-fw fa-home"></i> {L_SITE_HOME}</a></li><!-- ENDIF -->
+            <li><a href="{U_INDEX}" role="menuitem"><i class="fa fa-fw <!-- IF U_SITE_HOME -->fa-globe<!-- ELSE -->fa-home<!-- ENDIF -->"></i> {L_INDEX}</a></li>
+
+            <!-- EVENT overall_header_navigation_prepend -->
+
+            <li><a href="{U_FAQ}" role="menuitem"><i class="fa fa-fw fa-info-circle"></i> {L_FAQ}</a></li>
+
+            <!-- EVENT navbar_header_quick_links_before -->
+
+            <!-- IF S_DISPLAY_SEARCH -->
+                <li><a href="{U_SEARCH}" role="menuitem"><i class="fa fa-fw fa-search"></i> {L_SEARCH}</a></li>
+                <!-- IF S_REGISTERED_USER --><li><a href="{U_SEARCH_SELF}" role="menuitem"><i class="fa fa-fw fa-comments-o"></i> {L_SEARCH_SELF}</a></li><!-- ENDIF -->
+                <!-- IF S_USER_LOGGED_IN --><li><a href="{U_SEARCH_NEW}" role="menuitem"><i class="fa fa-fw fa-comment"></i> {L_SEARCH_NEW}</a></li><!-- ENDIF -->
+                <!-- IF S_LOAD_UNREADS --><li><a href="{U_SEARCH_UNREAD}" role="menuitem"><i class="fa fa-fw fa-comments"></i> {L_SEARCH_UNREAD}</a></li><!-- ENDIF -->
+                <li><a href="{U_SEARCH_UNANSWERED}" role="menuitem"><i class="fa fa-fw fa-comment-o"></i> {L_SEARCH_UNANSWERED}</a></li>
+                <li><a href="{U_SEARCH_ACTIVE_TOPICS}" role="menuitem"><i class="fa fa-fw fa-check-circle-o"></i> {L_SEARCH_ACTIVE_TOPICS}</a></li>
+            <!-- ENDIF -->
+
+            <!-- EVENT navbar_header_quick_links_after -->
+
+            <!-- IF not S_IS_BOT -->
+                <!-- IF S_DISPLAY_MEMBERLIST --><li><a href="{U_MEMBERLIST}" role="menuitem"><i class="fa fa-fw fa-users"></i> {L_MEMBERLIST}</a></li><!-- ENDIF -->
+                <!-- IF U_TEAM --><li><a href="{U_TEAM}" role="menuitem"><i class="fa fa-fw fa-shield"></i> {L_THE_TEAM}</a></li><!-- ENDIF -->
+            <!-- ENDIF -->
+
+            <!-- IF U_MCP --><li><a href="{U_MCP}" title="{L_MCP_SHORT}" role="menuitem"><i class="fa fa-fw fa-tachometer"></i> {L_MCP}</a></li><!-- ENDIF -->
+            <!-- IF U_ACP --><li><a href="{U_ACP}" title="{L_ACP_SHORT}" role="menuitem"><i class="fa fa-fw fa-cog"></i> {L_ACP}</a></li><!-- ENDIF -->
+
+            <!-- EVENT overall_header_navigation_append -->
+        </ul>
+    </div>
+</div>

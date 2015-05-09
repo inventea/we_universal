@@ -1,0 +1,276 @@
+/**
+ * Common tags
+ */
+html,
+body {
+	background: #fff;
+}
+
+/**
+ * Structure
+ */
+#wrap {
+	padding: 0;
+}
+
+.inventea-wrapper,
+.inventea-dashboard,
+.inventea-footer {
+	width: 100%;
+	border: 0;
+}
+
+.inventea-wrapper {
+	padding: 15px 10px 6px;
+}
+
+.inventea-userbar {
+	height: 47px;
+	padding-top: 14px;
+}
+
+.inventea-dashboard {
+	min-height: inherit;
+}
+
+.inventea-footer-wrapper {
+	box-shadow: none;
+	margin: 0;
+	border: 0;
+}
+
+.inventea-footer {
+	margin: 0;
+	padding: 0 10px 10px;
+}
+
+/**
+ * Forum name and description
+ */
+.inventea-sitename {
+	padding: 43px 25px 46px;
+}
+
+/**
+ * Secondary dropdown menu
+ *
+ * Alternative menu displayed only on devices with low screen resolution (700px
+ * or less). Activated by button located in user menu. Consists all links from
+ * dashboard reduced to single dropdown (see navbar_responsive_header.html).
+ */
+.inventea-user-menu {
+	margin-right: 50px !important;
+}
+
+.inventea-posts-menu,
+.inventea-forum-menu {
+	display: none;
+}
+
+.inventea-mobile-dropdown-menu {
+	position: absolute;
+	right: 10px;
+	display: block;
+	margin-top: -6px;
+}
+
+.inventea-mobile-dropdown-menu .dropdown {
+	top: 30px;
+}
+
+.inventea-toggle {
+	display: block;
+	padding: 3px 6px 2px;
+	border-bottom: 3px solid #ccc;
+	border-radius: 5px;
+	background: #e9e9e9;
+	color: #414141;
+	line-height: 1;
+	font-size: 21px;
+}
+
+.inventea-toggle:focus,
+.inventea-toggle:hover,
+.inventea-toggle:active {
+	outline: 0;
+	color: #414141;
+	cursor: pointer;
+}
+
+/**
+ * Footer
+ */
+#nav-footer,
+.inventea-credits {
+	float: none;
+}
+
+#nav-footer {
+	margin-top: 12px;
+}
+
+/**
+ * Forums and tables
+ */
+.forabg,
+.forumbg,
+.post,
+.panel {
+	margin-right: 0;
+	margin-left: 0;
+	border-radius: 5px 5px 0 0;
+}
+
+ul.topiclist dd,
+ul.topiclist.forums dd.lastpost {
+	display: table-cell;
+}
+
+ul.topiclist dd.topics,
+ul.topiclist dd.posts,
+ul.topiclist dd.lastpost,
+ul.topiclist dd.info {
+	display: none;
+}
+
+.forabg ul.topiclist li.row dd.lastpost {
+	background-color: #f1f1f1;
+}
+
+.forabg ul.topiclist li.row:nth-child(even) dd.lastpost {
+	background-color: #e9e9e9;
+}
+
+@media only screen and (max-width: 550px), only screen and (max-device-width: 550px) {
+	ul.topiclist.forums dd.lastpost {
+		display: none;
+	}
+
+	ul.linklist > li.inventea-time {
+		float: none;
+		margin: 3px 0 24px;
+		text-align: center;
+	}
+}
+
+/**
+ * Posts and private messages
+ */
+.post,
+.panel {
+	border-radius: 5px;
+}
+
+.post .inner {
+	display: block;
+}
+
+.postprofile,
+.search .postprofile,
+.pm .postprofile,
+.post .postbody {
+	display: block;
+	overflow: hidden;
+	width: auto;
+}
+
+/* User profile */
+.postprofile,
+.pm .postprofile,
+.search .postprofile {
+	border-top-right-radius: 7px;
+	border-bottom-left-radius: 0;
+}
+
+.post .postprofile {
+	padding: 18px;
+	margin-bottom: 0;
+	border: 0;
+}
+
+.postprofile dt {
+	display: block;
+	text-align: left;
+}
+
+.postprofile dd.profile-rank {
+	text-align: left;
+}
+
+/* Post message */
+.post .postbody {
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 7px;
+}
+
+.post.bg1 .postbody:before {
+	border-color: transparent transparent #f8f8f8 transparent;
+}
+
+.post.bg2 .postbody:before {
+	border-color: transparent transparent #f2f2f2 transparent;
+}
+
+.post.reported .postbody:before {
+	border-color: transparent transparent #f7ecef transparent;
+}
+
+/* Post message left triangle */
+.post .postbody:before {
+	right: 25px;
+	margin-top: -34px;
+	margin-left: 0;
+	border-width: 0 14px 16px 14px;
+}
+
+.search .postbody {
+	padding: 18px;
+}
+
+/**
+ * Forms
+ */
+fieldset dt,
+fieldset.fields2 dt,
+.section-posting fieldset.fields1 dt,
+.section-posting fieldset.fields2 dt {
+	float: none;
+	width: auto;
+}
+
+/* Additional margin between description and input */
+fieldset dt span {
+	display: block;
+	margin-bottom: 10px;
+}
+
+/* Reduce input left margin */
+fieldset dd,
+fieldset.fields1 dd,
+fieldset.fields2 dd,
+.section-posting fieldset.fields1 dd,
+.section-posting  fieldset.fields2 dd {
+	margin-left: 0;
+}
+
+input[type="search"] {
+	box-sizing: border-box;
+}
+
+input.inputbox,
+textarea.inputbox {
+	width: 100%;
+}
+
+input.medium {
+	width: 50%;
+}
+
+input.tiny {
+	width: 125px;
+}
+
+#register .inputbox,
+#login .inputbox {
+	width: 100% !important;
+}
