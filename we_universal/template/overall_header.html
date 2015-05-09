@@ -2,7 +2,7 @@
 <html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 {META}
 <title><!-- IF UNREAD_NOTIFICATIONS_COUNT -->({UNREAD_NOTIFICATIONS_COUNT}) <!-- ENDIF --><!-- IF not S_VIEWTOPIC and not S_VIEWFORUM -->{SITENAME} - <!-- ENDIF --><!-- IF S_IN_MCP -->{L_MCP} - <!-- ELSEIF S_IN_UCP -->{L_UCP} - <!-- ENDIF -->{PAGE_TITLE}<!-- IF S_VIEWTOPIC or S_VIEWFORUM --> - {SITENAME}<!-- ENDIF --></title>
 
@@ -68,6 +68,8 @@
 		<nav class="inventea-wrapper inventea-userbar">
 			<!-- INCLUDE navbar_responsive_header.html -->
 
+			<!-- EVENT overall_header_searchbox_before -->
+
 			<ul class="linklist bulletin inventea-user-menu" role="menubar">
 				<!-- IF S_REGISTERED_USER -->
 					<li id="username_logged_in" class="rightside <!-- IF CURRENT_USER_AVATAR --> no-bulletin<!-- ENDIF -->" data-skip-responsive="true">
@@ -116,7 +118,8 @@
 	</div>
 
 	<header class="inventea-header">
-		<div class="inventea-dashboard">
+		<div class="inventea-dashboard" role="banner">
+			<!-- EVENT overall_header_navbar_before -->
 			<!-- INCLUDE navbar_header.html -->
 
 			<div class="inventea-sitename">
@@ -126,7 +129,7 @@
 		</div>
 	</header>
 
-	<div class="inventea-wrapper inventea-content">
+	<div class="inventea-wrapper inventea-content" role="main">
 		<!-- EVENT overall_header_page_body_before -->
 
 		<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
