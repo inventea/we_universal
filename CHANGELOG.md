@@ -1,3 +1,10 @@
+2.4.2
+-----
+
+- Update for phpBB 3.1.5
+- Adjust "Total redirects" row width on index [#42]
+
+
 2.4.1
 -----
 
