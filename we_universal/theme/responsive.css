@@ -129,7 +129,8 @@ ul.topiclist.forums dd.lastpost {
 ul.topiclist dd.topics,
 ul.topiclist dd.posts,
 ul.topiclist dd.lastpost,
-ul.topiclist dd.info {
+ul.topiclist dd.info,
+ul.topiclist dd.redirect {
 	display: none;
 }
 
