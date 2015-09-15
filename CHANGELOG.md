@@ -1,3 +1,10 @@
+2.4.3
+-----
+
+- Update for phpBB 3.1.6
+- Fix missing "Unread posts" title on forum/topic row hover [#47]
+
+
 2.4.2
 -----
 
