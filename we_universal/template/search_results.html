@@ -63,8 +63,8 @@
 		<!-- BEGIN searchresults -->
 			<!-- EVENT search_results_topic_before -->
 			<li class="row<!-- IF searchresults.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-				<dl>
-					<dt title="{searchresults.TOPIC_FOLDER_IMG_ALT}" class="icon {searchresults.TOPIC_IMG_STYLE}"><!-- IF searchresults.TOPIC_ICON_IMG --><img src="{T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}" alt="" title="" /><!-- ENDIF --></dt>
+				<dl title="{searchresults.TOPIC_FOLDER_IMG_ALT}">
+					<dt class="icon {searchresults.TOPIC_IMG_STYLE}"><!-- IF searchresults.TOPIC_ICON_IMG --><img src="{T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}" alt="" title="" /><!-- ENDIF --></dt>
 					<dd>
 						<!-- IF searchresults.S_UNREAD_TOPIC and not S_IS_BOT --><a href="{searchresults.U_NEWEST_POST}" class="icon-link"></a><!-- ENDIF -->
 						<div class="list-inner">
