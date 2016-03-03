@@ -355,6 +355,7 @@ dl.faq dt {
 
 .post .inner {
 	display: table;
+	table-layout: fixed;
 	width: 100%;
 }
 
@@ -467,7 +468,7 @@ ul.profile-icons {
 /* Post message */
 .post .postbody,
 .search .postbody {
-	width: auto;
+	width: 77%;
 }
 
 .post .postbody {
@@ -543,11 +544,6 @@ p.author {
 	color: #525252;
 	line-height: 18px;
 	font-size: 12px;
-}
-
-.postbody .content img,
-.signature img {
-	max-width: 100%;
 }
 
 /* Private message */
@@ -674,7 +670,6 @@ fieldset.polls dd div {
 /* Post related features */
 .attachbox {
 	clear: right;
-	max-width: 832px;
 	padding: 7px;
 	border: 1px solid #ccc;
 }
